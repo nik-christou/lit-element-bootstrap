@@ -1,0 +1,12 @@
+{
+    "name": "lit-element-bootstrap",
+    "version": "1.0.0-alpha.1",
+    "main": "lit-element-bootstrap.js",
+    "module": "lit-element-bootstrap.js",
+    "description": "An implementation of Bootstrap 4 components in LitElement",
+    "license": "MIT",
+    "dependencies": {
+        "lit-element": "^2.0.1",
+        "popper.js": "^1.14.4"
+    }
+}

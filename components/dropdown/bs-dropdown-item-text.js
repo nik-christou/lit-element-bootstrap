@@ -1,0 +1,33 @@
+
+import { LitElement, html, css } from 'lit-element';
+import { BsContentRebootCss } from '../../content';
+
+export class BsDropdownItemText extends LitElement {
+    
+    static get styles() {
+        return [
+            BsContentRebootCss,
+            css`
+                :host {
+                    display: block;
+                }
+                
+                .dropdown-item-text {
+                    display: block;
+                    padding: 0.25rem 1.5rem;
+                    color: #212529;
+                }
+            `
+        ];
+    }
+    
+    render() {
+        return html`
+            <span class="dropdown-item-text">
+                <slot></slot>
+            </span>
+        `;
+    }
+};
+
+window.customElements.define('bs-dropdown-item-text', BsDropdownItemText);
