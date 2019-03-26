@@ -4,6 +4,12 @@
     "main": "lit-element-bootstrap.js",
     "module": "lit-element-bootstrap.js",
     "description": "An implementation of Bootstrap 4 components in LitElement",
+    "keywords": ["LitElement", "Bootstrap 4"],
+    "homepage": "https://github.com/nik-christou/lit-element-bootstrap",
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/nik-christou/lit-element-bootstrap"
+    },
     "license": "MIT",
     "dependencies": {
         "lit-element": "^2.0.1",
