@@ -1,11 +1,11 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '../../content';
-import { BsColumnExtraSmallCss } from './bs-col-xs-css';
-import { BsColumnSmallCss } from './bs-col-sm-css';
-import { BsColumnMediumCss } from './bs-col-md-css';
-import { BsColumnLargeCss } from './bs-col-lg-css';
-import { BsColumnExtraLargeCss } from './bs-col-xl-css';
+import { BsColumnExtraSmallCss } from './bs-column-xs-css';
+import { BsColumnSmallCss } from './bs-column-sm-css';
+import { BsColumnMediumCss } from './bs-column-md-css';
+import { BsColumnLargeCss } from './bs-column-lg-css';
+import { BsColumnExtraLargeCss } from './bs-column-xl-css';
 
 export class BsColumn extends LitElement {
     

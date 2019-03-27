@@ -15,7 +15,7 @@ export class BsFormRow extends LitElement {
                     margin-left: -5px;
                 }
                 
-                ::slotted(bs-col) {
+                ::slotted(bs-column) {
                     padding-right: 5px !important;
                     padding-left: 5px !important;
                 }
