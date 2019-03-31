@@ -1,11 +1,11 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '../../content';
-import { BsDropdownSplitCss } from './bs-dropdown-split-css.js';
-import { BsDropdownToggleCss } from './bs-dropdown-toggle-css.js';
-import { BsDropdownNavCss } from './bs-dropdown-nav-css.js';
+import { BsDropdownSplitCss } from './bs-dropdown-split-css';
+import { BsDropdownToggleCss } from './bs-dropdown-toggle-css';
+import { BsDropdownNavCss } from './bs-dropdown-nav-css';
 
-import Popper from 'popper.js/dist/esm/popper.js';
+import Popper from 'popper.js/dist/esm/popper';
 
 export class BsDropdown extends LitElement {
     

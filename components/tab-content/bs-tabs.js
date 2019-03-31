@@ -2,7 +2,7 @@
 import { LitElement, html } from 'lit-element';
 import { BsContentRebootCss } from '../../content';
 
-import './bs-tab-content.js';
+import './bs-tab-content';
 
 export class BsTabs extends LitElement {
     

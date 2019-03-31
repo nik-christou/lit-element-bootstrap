@@ -2,7 +2,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '../../content';
 
-import '../button/close/bs-close-btn.js';
+import '../button/close/bs-close-btn';
 
 export class BsModalHeader extends LitElement {
     

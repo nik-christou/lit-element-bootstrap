@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsBadgeCss } from './bs-badge-css.js';
+import { BsBadgeCss } from './bs-badge-css';
 import { BsContentRebootCss } from '../../content';
 
 export class BsBadgeLink extends LitElement {

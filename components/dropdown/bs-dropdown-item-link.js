@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsDropdownItemMixin } from './bs-dropdown-item-mixin.js';
-import { BsDropdownItemCss } from './bs-dropdown-item-css.js';
+import { BsDropdownItemMixin } from './bs-dropdown-item-mixin';
+import { BsDropdownItemCss } from './bs-dropdown-item-css';
 import { BsContentRebootCss } from '../../content';
 
 export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {

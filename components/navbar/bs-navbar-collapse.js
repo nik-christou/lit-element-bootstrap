@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { installMediaQueryWatcher } from 'pwa-helpers/media-query.js';
+import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { BsContentRebootCss } from '../../content';
 
 export class BsNavbarCollapse extends LitElement {
