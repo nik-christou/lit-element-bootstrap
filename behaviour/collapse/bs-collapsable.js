@@ -51,17 +51,11 @@ export class BsCollapsable extends LitElement {
     }
     
     firstUpdated() {
-        super.firstUpdated();
         this.addEventListener('transitionend', event => this._afterCollapsingTransition(event));
         
         if(this.collapsed) {
             this._collapseCollapsable();
         }
-    }
-    
-    disconnectedCallback() {
-        this.removeEventListener('transitionend', event => this._afterCollapsingTransition(event));
-        super.disconnectedCallback();
     }
     
     _afterCollapsingTransition() {

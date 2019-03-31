@@ -48,15 +48,9 @@ export class BsAccordion extends LitElement {
     }
     
     firstUpdated() {
-        super.firstUpdated();
         this.addEventListener('bs-collapse-toggle', event => this._toggleCollapsable(event));
     }
     
-    disconnectedCallback() {
-        this.removeEventListener('bs-collapse-toggle', event => this._toggleCollapsable(event));
-        super.disconnectedCallback();
-    }
-
     _toggleCollapsable(event) {
 
         const target = event.detail.target;
