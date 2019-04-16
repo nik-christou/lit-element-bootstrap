@@ -7,6 +7,7 @@ export class BsNavLink extends LitElement {
     static get properties() {
         return {
             index: Number,
+            href: String,
             target: String,
             active: {type: Boolean, reflect: true},
             disabled: {type: Boolean, reflect: true}
@@ -80,7 +81,7 @@ export class BsNavLink extends LitElement {
     
     render() {
         return html`
-            <a href="${this.target}">
+            <a href="${this.href}" target="${this.target}">
                 <slot></slot>
             </a>
         `;
@@ -89,7 +90,8 @@ export class BsNavLink extends LitElement {
     constructor() {
         super();
         this.index = -1;
-        this.target = '#';
+        this.href = '';
+        this.target = '_blank';
         this.active = false;
         this.disabled = false;
     }
