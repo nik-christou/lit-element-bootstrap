@@ -1,4 +1,5 @@
 
+export * from './theme';
 export * from './content';
 export * from './layout/grid';
 export * from './utilities';

@@ -1,7 +1,7 @@
 
 import { css } from 'lit-element';
 
-export const AppDefaultTheme = css`
+export const DefaultThemeCss = css`
 
     :host {
         --blue: #007bff;
