@@ -1,3 +1,3 @@
 
-export { BsBreadrumb } from './bs-breadcrumb';
-export { BsBreadrumbItem } from './bs-breadcrumb-item';
+export { BsBreadcrumb } from './bs-breadcrumb';
+export { BsBreadcrumbItem } from './bs-breadcrumb-item';

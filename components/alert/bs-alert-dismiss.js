@@ -1,6 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsCloseButton } from '../button';
+
+import '../button/close/bs-close-btn';
 
 export class BsAlertDismiss extends LitElement {
 

@@ -28,6 +28,7 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
         
     static get properties() {
         return {
+            href: String,
             target: String
         };
     }
@@ -62,7 +63,7 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
     
     render() {
         return html`
-            <a href="${this.target}" class="btn">
+            <a href="${this.href}" target="${this.target}" rel="noreferrer" class="btn">
                 <slot></slot>
             </a>
         `;
@@ -70,7 +71,8 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '#';
+        this.target = '';
     }
 };
 

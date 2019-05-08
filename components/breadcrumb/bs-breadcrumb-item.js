@@ -1,14 +1,14 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '../../content/bs-content-reboot-css';
 
-export class BsBreadrumbItem extends LitElement {
+export class BsBreadcrumbItem extends LitElement {
     
     static get properties() {
         return {
-            title: {type: String, reflect: true },
-            target: { type: String, reflect: true },
-            active: { type: Boolean, reflect: true }
+            title: String,
+            href: String,
+            active: Boolean
         };
     }
     
@@ -43,7 +43,7 @@ export class BsBreadrumbItem extends LitElement {
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '#';
         this.active = false;
         this.title = '';
     }
@@ -53,9 +53,9 @@ export class BsBreadrumbItem extends LitElement {
         if(this.active) {
             return html`${this.title}`;
         } else {
-            return html`<a href="${this.target}">${this.title}</a>`;
+            return html`<a href="${this.href}">${this.title}</a>`;
         }
     }
 };
 
-window.customElements.define('bs-breadcrumb-item', BsBreadrumbItem);
+window.customElements.define('bs-breadcrumb-item', BsBreadcrumbItem);

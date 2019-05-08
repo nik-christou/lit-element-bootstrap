@@ -1,13 +1,13 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { BsBadgeCss } from './bs-badge-css';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '../../content/bs-content-reboot-css';
 
 export class BsBadgeLink extends LitElement {
     
     static get properties() {
         return {
-            target: String
+            href: String
         };
     }
     
@@ -110,7 +110,7 @@ export class BsBadgeLink extends LitElement {
     
     render() {
         return html`
-            <a href="${this.target}" class="badge">
+            <a href="${this.href}" class="badge">
                 <slot></slot>
             </a>
         `;
@@ -118,7 +118,7 @@ export class BsBadgeLink extends LitElement {
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '#';
     }
 };
 

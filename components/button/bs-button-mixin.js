@@ -71,7 +71,9 @@ const BsButtonMixin = (superClass) => class extends superClass {
     
     _handleButtonClick(event) {
         
-        event.preventDefault();
+        if(!this._isLinkButton()) {
+            event.preventDefault();
+        };
         
         if(this.disabled) {
             return;
@@ -111,6 +113,17 @@ const BsButtonMixin = (superClass) => class extends superClass {
         }
     }
     
+    _isLinkButton() {
+
+        const linkButtonElement = this.shadowRoot.querySelector('a');
+
+        if(linkButtonElement) {
+            return true;
+        }
+
+        return false;
+    }
+
     _retrieveButtonElement() {
         
         const buttonElement = this.shadowRoot.querySelector('button');

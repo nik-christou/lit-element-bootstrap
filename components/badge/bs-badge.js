@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsBadgeCss } from './bs-badge-css';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '../../content/bs-content-reboot-css';
 
 export class BsBadge extends LitElement {
     

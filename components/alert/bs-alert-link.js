@@ -6,7 +6,7 @@ export class BsAlertLink extends LitElement {
 
     static get properties() {
         return {
-            target: { type: String, reflect: true }
+            href: String
         };
     }
     
@@ -56,13 +56,13 @@ export class BsAlertLink extends LitElement {
 
     render() {
         return html`
-            <a href="[[target]]"><slot></slot></a>
+            <a href="${this.href}"><slot></slot></a>
         `;
     }
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '#';
     }
 };
 

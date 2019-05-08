@@ -1,7 +1,8 @@
 
 import { LitElement, html, css } from 'lit-element';
+import { BsBreadcrumbItem } from './bs-breadcrumb-item';
 
-export class BsBreadrumb extends LitElement {
+export class BsBreadcrumb extends LitElement {
     
     static get styles() {
         return css`
@@ -70,9 +71,9 @@ export class BsBreadrumb extends LitElement {
     }
     
     _isBreadcrumbItemElement(element) {
-        return element.nodeType === Node.ELEMENT_NODE 
-                && element.localName === 'bs-breadcrumb-item';
+        return element.nodeType === Node.ELEMENT_NODE && 
+            (element.localName === 'bs-breadcrumb-item' || element instanceof BsBreadcrumbItem);
     }
 };
 
-window.customElements.define('bs-breadcrumb', BsBreadrumb);
+window.customElements.define('bs-breadcrumb', BsBreadcrumb);
