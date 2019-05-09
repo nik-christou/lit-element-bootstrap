@@ -1,5 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
+import { ifDefined } from 'lit-html/directives/if-defined';
+
 import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
 import { BsButtonMixin } from './bs-button-mixin';
 import { BsButtonsCommonCss } from './css/bs-button-common-css';
@@ -63,7 +65,7 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
     
     render() {
         return html`
-            <a href="${this.href}" target="${this.target}" rel="noreferrer" class="btn">
+            <a href="${ifDefined(this.href)}" target="${ifDefined(this.target)}" rel="noreferrer" class="btn">
                 <slot></slot>
             </a>
         `;
@@ -71,8 +73,8 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
     
     constructor() {
         super();
-        this.href = '#';
-        this.target = '';
+        this.href = undefined;
+        this.target = undefined;
     }
 };
 
