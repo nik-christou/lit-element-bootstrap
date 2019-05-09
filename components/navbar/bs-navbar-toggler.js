@@ -10,7 +10,7 @@ export class BsNavbarToggler extends LitElement {
             css`
                 
                 button {
-                    padding: 0.25rem 0.75rem;
+                    padding: var(--navbar-toggler-padding, 0.25rem 0.75rem);
                     font-size: var(--navbar-toggler-font-size, 1.25rem);
                     line-height: 1;
                     border: var(--navbar-toggler-border, 1px solid transparent);
