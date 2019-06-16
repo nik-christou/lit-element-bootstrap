@@ -1,41 +1,18 @@
 {
     "name": "lit-element-bootstrap",
     "version": "1.0.0-alpha.10",
-    "module": "index.js",
+    "main": "lit-element-bootstrap.js",
+    "module": "lit-element-bootstrap.js",
     "description": "An implementation of Bootstrap v4.1.3 components in LitElement",
-    "keywords": [
-        "LitElement",
-        "Bootstrap 4",
-        "Web Components"
-    ],
+    "keywords": ["LitElement", "Bootstrap 4", "Web Components"],
     "homepage": "https://github.com/nik-christou/lit-element-bootstrap",
     "repository": {
-        "type": "git",
-        "url": "https://github.com/nik-christou/lit-element-bootstrap"
+        "type" : "git",
+        "url" : "https://github.com/nik-christou/lit-element-bootstrap"
     },
     "license": "MIT",
-    "scripts": {
-        "pika:build": "pack build",
-        "pika:publish": "pack publish",
-        "version": "npx @pika/pack build"
-    },
     "dependencies": {
         "lit-element": "^2.1.0",
         "popper.js": "^1.14.4"
-    },
-    "devDependencies": {
-        "@pika/pack": "^0.4.0",
-        "@pika/plugin-build-web": "^0.4.0",
-        "@pika/plugin-standard-pkg": "^0.4.0"
-    },
-    "@pika/pack": {
-        "pipeline": [
-            [
-                "@pika/plugin-standard-pkg"
-            ],
-            [
-                "@pika/plugin-build-web"
-            ]
-        ]
     }
 }
