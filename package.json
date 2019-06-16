@@ -15,8 +15,8 @@
     },
     "license": "MIT",
     "scripts": {
-        "pika:build": "pack build",
-        "pika:publish": "pack publish",
+        "pika:build": "npx @pika/pack build",
+        "pika:publish": "npx @pika/pack publish",
         "version": "npx @pika/pack build"
     },
     "dependencies": {
