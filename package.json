@@ -20,7 +20,8 @@
         "version": "npx @pika/pack build"
     },
     "dependencies": {
-        "lit-element": "^2.1.0",
+        "lit-element": "^2.2.0",
+        "lit-html": "^1.1.0",
         "popper.js": "^1.14.4"
     },
     "devDependencies": {
