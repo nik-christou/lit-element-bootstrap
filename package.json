@@ -1,6 +1,6 @@
 {
     "name": "lit-element-bootstrap",
-    "version": "1.0.0-alpha.10",
+    "version": "1.0.0-alpha.13",
     "main": "lit-element-bootstrap.js",
     "module": "lit-element-bootstrap.js",
     "description": "An implementation of Bootstrap v4.1.3 components in LitElement",
@@ -12,7 +12,9 @@
     },
     "license": "MIT",
     "dependencies": {
-        "lit-element": "^2.1.0",
-        "popper.js": "^1.14.4"
+        "lit-element": "^2.2.0",
+        "lit-html": "^1.1.0",
+        "popper.js": "^1.14.4",
+        "pwa-helpers": "^0.9.1"
     }
 }
