@@ -13,7 +13,7 @@
     "license": "MIT",
     "dependencies": {
         "lit-element": "^2.2.0",
-        "lit-html": "^1.1.0",
+        "lit-html": "^1.1.1",
         "popper.js": "^1.14.4",
         "pwa-helpers": "^0.9.1"
     }

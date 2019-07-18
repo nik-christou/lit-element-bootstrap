@@ -1,7 +1,5 @@
 
 import { LitElement, html } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
-
 import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
 import { BsButtonMixin } from './bs-button-mixin';
 import { BsButtonsCommonCss } from './css/bs-button-common-css';
@@ -27,14 +25,14 @@ import { BsButtonLargeCss } from './css/bs-button-large-css';
 import { BsButtonSmallCss } from './css/bs-button-small-css';
 
 export class BsLinkButton extends BsButtonMixin(LitElement) {
-        
+
     static get properties() {
         return {
             href: String,
             target: String
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -62,15 +60,15 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
             BsButtonSmallCss
         ];
     }
-    
+
     render() {
         return html`
-            <a href="${ifDefined(this.href)}" target="${ifDefined(this.target)}" rel="noreferrer" class="btn">
+            <a href=${this.href ? this.href : 'javascript:'} target="${this.target ? this.target : 'javascript:'}" rel="noreferrer" class="btn">
                 <slot></slot>
             </a>
         `;
     }
-    
+
     constructor() {
         super();
         this.href = undefined;
