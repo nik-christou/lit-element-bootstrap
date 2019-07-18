@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '../../content';
 
 export class BsNavLink extends LitElement {
-    
+
     static get properties() {
         return {
             index: Number,
@@ -13,7 +13,7 @@ export class BsNavLink extends LitElement {
             disabled: {type: Boolean, reflect: true}
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -78,7 +78,7 @@ export class BsNavLink extends LitElement {
             `
         ];
     }
-    
+
     render() {
         return html`
             <a href="${this.href}" target="${this.target}">
@@ -86,32 +86,32 @@ export class BsNavLink extends LitElement {
             </a>
         `;
     }
-    
+
     constructor() {
         super();
         this.index = -1;
         this.href = '';
-        this.target = '_blank';
+        this.target = '';
         this.active = false;
         this.disabled = false;
     }
-    
+
     firstUpdated() {
         const navLink = this.shadowRoot.querySelector('a');
         navLink.addEventListener('click', event => this._handleClickEvent(event));
     }
-    
+
     _handleClickEvent(event) {
 
         if (this.disabled) {
             event.preventDefault();
             return;
         }
-        
+
         if(this.target === '#') {
             event.preventDefault();
         }
-        
+
         const navLinkClickEvent = new CustomEvent('nav-link', {
             bubbles: true,
             composed: true,
@@ -122,7 +122,7 @@ export class BsNavLink extends LitElement {
 
         this.dispatchEvent(navLinkClickEvent);
     }
-};
+}
 
 window.customElements.define('bs-nav-link', BsNavLink);
 
