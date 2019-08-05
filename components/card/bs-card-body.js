@@ -98,7 +98,7 @@ export class BsCardBody extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-body', BsCardBody);
+if (!window.customElements.get("bs-card-body"))  window.customElements.define('bs-card-body', BsCardBody);
 
 
 

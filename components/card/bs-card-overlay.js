@@ -31,7 +31,7 @@ export class BsCardOverlay extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-overlay', BsCardOverlay);
+if (!window.customElements.get("bs-card-overlay"))  window.customElements.define('bs-card-overlay', BsCardOverlay);
 
 
 

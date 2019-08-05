@@ -71,4 +71,4 @@ export class BsPageLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-page-link', BsPageLink);
+if(!window.customElements.get('bs-page-link')) window.customElements.define('bs-page-link', BsPageLink);

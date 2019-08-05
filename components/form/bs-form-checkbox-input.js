@@ -98,4 +98,4 @@ export class BsFormCheckboxInput extends BsFormInputMixin(LitElement) {
     }
 };
 
-window.customElements.define('bs-form-checkbox-input', BsFormCheckboxInput);
+if(!window.customElements.get('bs-form-checkbox-input'))  window.customElements.define('bs-form-checkbox-input', BsFormCheckboxInput);

@@ -144,4 +144,4 @@ export class BsAccordion extends LitElement {
     }
 };
 
-window.customElements.define('bs-accordion', BsAccordion);
+if(!window.customElements.get("bs-accordion")) window.customElements.define('bs-accordion', BsAccordion);

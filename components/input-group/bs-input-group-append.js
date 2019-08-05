@@ -132,4 +132,4 @@ export class BsInputGroupAppend extends LitElement {
     }
 };
 
-window.customElements.define('bs-input-group-append', BsInputGroupAppend);
+if(!window.customElements.get('bs-input-group-append'))  window.customElements.define('bs-input-group-append', BsInputGroupAppend);

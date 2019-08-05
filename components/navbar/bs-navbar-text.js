@@ -28,4 +28,4 @@ export class BsNavbarText extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-text', BsNavbarText);
+if(!window.customElements.get('bs-navbar-text')) window.customElements.define('bs-navbar-text', BsNavbarText);

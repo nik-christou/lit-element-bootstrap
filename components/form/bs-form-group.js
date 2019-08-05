@@ -244,4 +244,4 @@ export class BsFormGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-group', BsFormGroup);
+if(!window.customElements.get('bs-form-group'))  window.customElements.define('bs-form-group', BsFormGroup);

@@ -87,4 +87,4 @@ export class BsCarouselIndicators extends LitElement {
     }
 };
 
-window.customElements.define('bs-carousel-indicators', BsCarouselIndicators);
+if (!window.customElements.get("bs-carousel-indicators")) window.customElements.define('bs-carousel-indicators', BsCarouselIndicators);

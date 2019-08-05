@@ -20,4 +20,4 @@ export class BsDropdownItemButton extends BsDropdownItemMixin(LitElement) {
     }
 };
 
-window.customElements.define('bs-dropdown-item-button', BsDropdownItemButton);
+if (!window.customElements.get("bs-dropdown-item-button"))  window.customElements.define('bs-dropdown-item-button', BsDropdownItemButton);

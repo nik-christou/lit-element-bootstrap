@@ -130,4 +130,4 @@ export class BsDropdownMenu extends LitElement {
     }
 };
 
-window.customElements.define('bs-dropdown-menu', BsDropdownMenu);
+if (!window.customElements.get("bs-dropdown-menu")) window.customElements.define('bs-dropdown-menu', BsDropdownMenu);

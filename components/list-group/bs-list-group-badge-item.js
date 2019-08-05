@@ -90,4 +90,4 @@ export class BsListGroupBadgeItem extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-badge-item', BsListGroupBadgeItem);
+if(!window.customElements.get('bs-list-group-badge-item')) window.customElements.define('bs-list-group-badge-item', BsListGroupBadgeItem);

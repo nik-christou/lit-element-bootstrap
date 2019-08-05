@@ -415,4 +415,4 @@ export class BsModal extends LitElement {
     }
 };
 
-window.customElements.define('bs-modal', BsModal);
+if(!window.customElements.get('bs-modal'))  window.customElements.define('bs-modal', BsModal);

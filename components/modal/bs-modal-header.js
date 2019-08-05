@@ -59,4 +59,4 @@ export class BsModalHeader extends LitElement {
     }
 };
 
-window.customElements.define('bs-modal-header', BsModalHeader);
+if(!window.customElements.get('bs-modal-header')) window.customElements.define('bs-modal-header', BsModalHeader);

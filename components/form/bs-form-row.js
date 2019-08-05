@@ -40,4 +40,4 @@ export class BsFormRow extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-row', BsFormRow);
+if(!window.customElements.get('bs-form-row')) window.customElements.define('bs-form-row', BsFormRow);

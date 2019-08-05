@@ -31,6 +31,6 @@ export class BsCardLinks extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-links', BsCardLinks);
+if (!window.customElements.get("bs-card-links")) window.customElements.define('bs-card-links', BsCardLinks);
 
 

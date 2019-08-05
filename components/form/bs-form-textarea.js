@@ -80,4 +80,4 @@ export class BsFormTextarea extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-textarea', BsFormTextarea);
+if(!window.customElements.get('bs-form-textarea'))  window.customElements.define('bs-form-textarea', BsFormTextarea);

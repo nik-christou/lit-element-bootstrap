@@ -97,4 +97,4 @@ export class BsNav extends LitElement {
     }
 };
 
-window.customElements.define('bs-nav', BsNav);
+if(!window.customElements.get('bs-nav'))  window.customElements.define('bs-nav', BsNav);

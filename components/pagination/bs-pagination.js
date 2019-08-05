@@ -70,4 +70,4 @@ export class BsPagination extends LitElement {
     }
 };
 
-window.customElements.define('bs-pagination', BsPagination);
+if(!window.customElements.get('bs-pagination')) window.customElements.define('bs-pagination', BsPagination);

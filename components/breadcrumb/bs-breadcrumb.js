@@ -76,4 +76,4 @@ export class BsBreadcrumb extends LitElement {
     }
 };
 
-window.customElements.define('bs-breadcrumb', BsBreadcrumb);
+if (!window.customElements.get("bs-breadcrumb"))  window.customElements.define('bs-breadcrumb', BsBreadcrumb);

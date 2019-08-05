@@ -72,5 +72,5 @@ export class BsInputButton extends BsButtonMixin(LitElement) {
     }
 };
 
-window.customElements.define('bs-input-button', BsInputButton);
+if (!window.customElements.get("bs-input-button"))  window.customElements.define('bs-input-button', BsInputButton);
 

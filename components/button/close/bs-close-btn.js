@@ -56,4 +56,4 @@ export class BsCloseButton extends LitElement {
     }
 };
 
-window.customElements.define('bs-close-btn', BsCloseButton);
+if (!window.customElements.get("bs-close-btn")) window.customElements.define('bs-close-btn', BsCloseButton);

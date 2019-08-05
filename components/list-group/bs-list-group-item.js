@@ -21,4 +21,4 @@ export class BsListGroupItem extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-item', BsListGroupItem);
+if(!window.customElements.get('bs-list-group-item'))  window.customElements.define('bs-list-group-item', BsListGroupItem);

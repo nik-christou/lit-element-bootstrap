@@ -36,4 +36,4 @@ export class BsFormInput extends BsFormInputMixin(LitElement) {
     }
 };
 
-window.customElements.define('bs-form-input', BsFormInput);
+if(!window.customElements.get('bs-form-input'))  window.customElements.define('bs-form-input', BsFormInput);

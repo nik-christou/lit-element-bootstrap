@@ -49,4 +49,4 @@ export class BsInputGroupText extends LitElement {
     }
 };
 
-window.customElements.define('bs-input-group-text', BsInputGroupText);
+if(!window.customElements.get('bs-input-group-text')) window.customElements.define('bs-input-group-text', BsInputGroupText);

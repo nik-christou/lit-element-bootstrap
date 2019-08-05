@@ -45,4 +45,4 @@ export class BsCardDeck extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-deck', BsCardDeck);
+if (!window.customElements.get("bs-card-deck"))  window.customElements.define('bs-card-deck', BsCardDeck);

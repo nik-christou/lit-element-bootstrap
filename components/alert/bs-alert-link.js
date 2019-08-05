@@ -66,4 +66,4 @@ export class BsAlertLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-alert-link', BsAlertLink);
+if(!window.customElements.get("bs-alert-link"))  window.customElements.define('bs-alert-link', BsAlertLink);

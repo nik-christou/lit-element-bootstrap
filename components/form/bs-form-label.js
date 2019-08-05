@@ -83,4 +83,4 @@ export class BsFormLabel extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-label', BsFormLabel);
+if(!window.customElements.get('bs-form-label'))  window.customElements.define('bs-form-label', BsFormLabel);

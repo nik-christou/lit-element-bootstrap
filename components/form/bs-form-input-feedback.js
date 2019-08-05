@@ -139,4 +139,4 @@ export class BsFormInputFeedback extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-input-feedback', BsFormInputFeedback);
+if(!window.customElements.get('bs-form-input-feedback')) window.customElements.define('bs-form-input-feedback', BsFormInputFeedback);

@@ -59,4 +59,4 @@ export class BsNavbarBrandLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-brand-link', BsNavbarBrandLink);
+if(!window.customElements.get('bs-navbar-brand-link'))  window.customElements.define('bs-navbar-brand-link', BsNavbarBrandLink);

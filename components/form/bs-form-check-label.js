@@ -58,4 +58,4 @@ export class BsFormCheckLabel extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-check-label', BsFormCheckLabel);
+if(!window.customElements.get('bs-form-check-label')) window.customElements.define('bs-form-check-label', BsFormCheckLabel);

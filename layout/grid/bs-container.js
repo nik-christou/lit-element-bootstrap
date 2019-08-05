@@ -61,5 +61,5 @@ export class BsContainer extends LitElement {
     }
 };
 
-window.customElements.define('bs-container', BsContainer);
+if(!window.customElements.get('bs-container'))  window.customElements.define('bs-container', BsContainer);
 

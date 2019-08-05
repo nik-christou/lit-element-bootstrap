@@ -37,4 +37,4 @@ export class BsTabs extends LitElement {
     }
 };
 
-window.customElements.define('bs-tabs', BsTabs);
+if(!window.customElements.get('bs-tabs')) window.customElements.define('bs-tabs', BsTabs);

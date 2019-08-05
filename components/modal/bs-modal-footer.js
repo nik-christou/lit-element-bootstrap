@@ -36,5 +36,5 @@ export class BsModalFooter extends LitElement {
     }
 };
 
-window.customElements.define('bs-modal-footer', BsModalFooter);
+if(!window.customElements.get('bs-modal-footer')) window.customElements.define('bs-modal-footer', BsModalFooter);
 

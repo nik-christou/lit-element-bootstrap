@@ -21,4 +21,4 @@ export class BsBadge extends LitElement {
     }
 };
 
-window.customElements.define('bs-badge', BsBadge);
+if (!window.customElements.get("bs-badge")) window.customElements.define('bs-badge', BsBadge);

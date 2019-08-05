@@ -26,4 +26,4 @@ export class BsDropdownDivider extends LitElement {
     }
 };
 
-window.customElements.define('bs-dropdown-divider', BsDropdownDivider);
+if (!window.customElements.get("bs-dropdown-divider"))  window.customElements.define('bs-dropdown-divider', BsDropdownDivider);

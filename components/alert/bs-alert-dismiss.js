@@ -25,4 +25,4 @@ export class BsAlertDismiss extends LitElement {
     }
 };
 
-window.customElements.define('bs-alert-dismiss', BsAlertDismiss);
+if(!window.customElements.get("bs-alert-dismiss"))  window.customElements.define('bs-alert-dismiss', BsAlertDismiss);

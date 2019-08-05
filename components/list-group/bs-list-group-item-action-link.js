@@ -68,4 +68,4 @@ export class BsListGroupItemActionLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-item-action-link', BsListGroupItemActionLink);
+if(!window.customElements.get('bs-list-group-item-action-link')) window.customElements.define('bs-list-group-item-action-link', BsListGroupItemActionLink);

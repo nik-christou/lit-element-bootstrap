@@ -31,4 +31,4 @@ export class BsNavbarNav extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-nav', BsNavbarNav);
+if(!window.customElements.get('bs-navbar-nav')) window.customElements.define('bs-navbar-nav', BsNavbarNav);

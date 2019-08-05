@@ -26,5 +26,5 @@ export class BsModalBody extends LitElement {
     }
 };
 
-window.customElements.define('bs-modal-body', BsModalBody);
+if(!window.customElements.get('bs-modal-body')) window.customElements.define('bs-modal-body', BsModalBody);
 

@@ -124,4 +124,4 @@ export class BsListGroupActionFlush extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-action-flush', BsListGroupActionFlush);
+if(!window.customElements.get('bs-list-group-action-flush')) window.customElements.define('bs-list-group-action-flush', BsListGroupActionFlush);

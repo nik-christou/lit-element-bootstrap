@@ -30,4 +30,4 @@ export class BsCardFooter extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-footer', BsCardFooter);
+if (!window.customElements.get("bs-card-footer"))   window.customElements.define('bs-card-footer', BsCardFooter);

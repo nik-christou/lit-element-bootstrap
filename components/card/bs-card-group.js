@@ -85,4 +85,4 @@ export class BsCardGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-group', BsCardGroup);
+if (!window.customElements.get("bs-card-group")) window.customElements.define('bs-card-group', BsCardGroup);

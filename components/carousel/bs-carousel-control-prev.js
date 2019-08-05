@@ -69,4 +69,4 @@ export class BsCarouselControlPrev extends LitElement {
     }
 };
 
-window.customElements.define('bs-carousel-control-prev', BsCarouselControlPrev);
+if (!window.customElements.get("bs-carousel-control-prev")) window.customElements.define('bs-carousel-control-prev', BsCarouselControlPrev);

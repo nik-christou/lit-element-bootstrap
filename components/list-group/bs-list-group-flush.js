@@ -43,4 +43,4 @@ export class BsListGroupFlush extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-flush', BsListGroupFlush);
+if(!window.customElements.get('bs-list-group-flush'))  window.customElements.define('bs-list-group-flush', BsListGroupFlush);
