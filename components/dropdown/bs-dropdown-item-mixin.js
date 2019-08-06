@@ -19,7 +19,7 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
     firstUpdated() {
         const buttonElement = this._retrieveButtonElement();
         this._applyButtonActivateState(buttonElement);
-        buttonElement.addEventListener('click', event => this._handleButtonClick(event));
+        buttonElement.addEventListener('mousedown', event => this._handleButtonClick(event));
     }
     
     _retrieveButtonElement() {
@@ -48,8 +48,6 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
     }
     
     _handleButtonClick(event) {
-        
-        event.preventDefault();
         
         if(!this.disabled) {
             
