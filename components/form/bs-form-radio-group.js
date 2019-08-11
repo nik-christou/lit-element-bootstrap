@@ -100,4 +100,4 @@ export class BsFormRadioGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-radio-group', BsFormRadioGroup);
+if(!window.customElements.get('bs-form-radio-group')) window.customElements.define('bs-form-radio-group', BsFormRadioGroup);

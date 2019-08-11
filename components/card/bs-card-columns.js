@@ -45,4 +45,4 @@ export class BsCardColumns extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-columns', BsCardColumns);
+if (!window.customElements.get("bs-card-columns")) window.customElements.define('bs-card-columns', BsCardColumns);

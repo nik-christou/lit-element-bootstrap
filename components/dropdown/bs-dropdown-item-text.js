@@ -30,4 +30,4 @@ export class BsDropdownItemText extends LitElement {
     }
 };
 
-window.customElements.define('bs-dropdown-item-text', BsDropdownItemText);
+if (!window.customElements.get("bs-dropdown-item-text")) window.customElements.define('bs-dropdown-item-text', BsDropdownItemText);

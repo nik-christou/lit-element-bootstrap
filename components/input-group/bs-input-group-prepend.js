@@ -134,4 +134,4 @@ export class BsInputGroupPrepend extends LitElement {
     }
 };
 
-window.customElements.define('bs-input-group-prepend', BsInputGroupPrepend);
+if(!window.customElements.get('bs-input-group-prepend')) window.customElements.define('bs-input-group-prepend', BsInputGroupPrepend);

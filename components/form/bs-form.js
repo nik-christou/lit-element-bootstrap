@@ -331,4 +331,4 @@ export class BsForm extends LitElement {
     }
 };
 
-window.customElements.define('bs-form', BsForm);
+if(!window.customElements.get('bs-form')) window.customElements.define('bs-form', BsForm);

@@ -69,4 +69,4 @@ export class BsCarouselControlNext extends LitElement {
     }
 };
 
-window.customElements.define('bs-carousel-control-next', BsCarouselControlNext);
+if (!window.customElements.get("bs-carousel-control-next")) window.customElements.define('bs-carousel-control-next', BsCarouselControlNext);

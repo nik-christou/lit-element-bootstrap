@@ -81,4 +81,4 @@ export class BsNavbar extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar', BsNavbar);
+if(!window.customElements.get('bs-navbar')) window.customElements.define('bs-navbar', BsNavbar);

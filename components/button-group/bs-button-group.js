@@ -126,4 +126,4 @@ export class BsButtonGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-button-group', BsButtonGroup);
+if (!window.customElements.get("bs-button-group"))  window.customElements.define('bs-button-group', BsButtonGroup);

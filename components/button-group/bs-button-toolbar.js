@@ -25,4 +25,4 @@ export class BsButtonToolbar extends LitElement {
     }
 };
 
-window.customElements.define('bs-button-toolbar', BsButtonToolbar);
+if (!window.customElements.get("bs-button-toolbar"))  window.customElements.define('bs-button-toolbar', BsButtonToolbar);

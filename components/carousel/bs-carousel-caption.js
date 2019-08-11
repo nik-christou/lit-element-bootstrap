@@ -30,4 +30,4 @@ export class BsCarouselCaption extends LitElement {
     }
 };
 
-window.customElements.define('bs-carousel-caption', BsCarouselCaption);
+if (!window.customElements.get("bs-carousel-caption")) window.customElements.define('bs-carousel-caption', BsCarouselCaption);

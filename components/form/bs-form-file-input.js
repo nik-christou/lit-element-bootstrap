@@ -42,4 +42,4 @@ export class BsFormFileInput extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-file-input', BsFormFileInput);
+if(!window.customElements.get('bs-form-file-input')) window.customElements.define('bs-form-file-input', BsFormFileInput);

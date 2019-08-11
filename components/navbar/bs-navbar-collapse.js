@@ -150,4 +150,4 @@ export class BsNavbarCollapse extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-collapse', BsNavbarCollapse);
+if(!window.customElements.get('bs-navbar-collapse')) window.customElements.define('bs-navbar-collapse', BsNavbarCollapse);

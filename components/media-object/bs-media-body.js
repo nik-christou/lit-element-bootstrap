@@ -22,5 +22,5 @@ export class BsMediaBody extends LitElement {
     }
 };
 
-window.customElements.define('bs-media-body', BsMediaBody);
+if(!window.customElements.get('bs-media-body')) window.customElements.define('bs-media-body', BsMediaBody);
 

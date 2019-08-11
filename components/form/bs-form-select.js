@@ -155,4 +155,4 @@ export class BsFormSelect extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-select', BsFormSelect);
+if(!window.customElements.get('bs-form-select')) window.customElements.define('bs-form-select', BsFormSelect);

@@ -35,4 +35,4 @@ export class BsRow extends LitElement {
     }
 };
 
-window.customElements.define('bs-row', BsRow);
+if(!window.customElements.get('bs-row')) window.customElements.define('bs-row', BsRow);

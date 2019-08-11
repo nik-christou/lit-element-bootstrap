@@ -42,4 +42,4 @@ export class BsCollapseToggle extends LitElement {
     }
 };
 
-window.customElements.define('bs-collapse-toggle', BsCollapseToggle);
+if(!window.customElements.get("bs-collapse-toggle")) window.customElements.define('bs-collapse-toggle', BsCollapseToggle);

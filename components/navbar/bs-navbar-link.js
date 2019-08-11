@@ -50,4 +50,4 @@ export class BsNavbarLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-link', BsNavbarLink);
+if(!window.customElements.get('bs-navbar-link')) window.customElements.define('bs-navbar-link', BsNavbarLink);

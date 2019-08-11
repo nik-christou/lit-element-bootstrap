@@ -545,4 +545,4 @@ export class BsCarousel extends LitElement {
     }
 };
 
-window.customElements.define('bs-carousel', BsCarousel);
+if (!window.customElements.get("bs-carousel"))  window.customElements.define('bs-carousel', BsCarousel);

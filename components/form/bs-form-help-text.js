@@ -27,4 +27,4 @@ export class BsFormHelpText extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-help-text', BsFormHelpText);
+if(!window.customElements.get('bs-form-help-text')) window.customElements.define('bs-form-help-text', BsFormHelpText);

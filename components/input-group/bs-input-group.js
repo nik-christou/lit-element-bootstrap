@@ -198,4 +198,4 @@ export class BsInputGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-input-group', BsInputGroup);
+if(!window.customElements.get('bs-input-group')) window.customElements.define('bs-input-group', BsInputGroup);

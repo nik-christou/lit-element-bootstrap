@@ -225,4 +225,4 @@ export class BsFormCheckGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-check-group', BsFormCheckGroup);
+if(!window.customElements.get('bs-form-check-group')) window.customElements.define('bs-form-check-group', BsFormCheckGroup);

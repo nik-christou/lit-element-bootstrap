@@ -78,4 +78,4 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
     }
 };
 
-window.customElements.define('bs-link-button', BsLinkButton);
+if (!window.customElements.get("bs-link-button")) window.customElements.define('bs-link-button', BsLinkButton);

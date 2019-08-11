@@ -27,4 +27,4 @@ export class BsFormRange extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-range', BsFormRange);
+if(!window.customElements.get('bs-form-range')) window.customElements.define('bs-form-range', BsFormRange);

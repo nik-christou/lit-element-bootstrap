@@ -62,4 +62,4 @@ export class BsNavbarToggler extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-toggler', BsNavbarToggler);
+if(!window.customElements.get('bs-navbar-toggler')) window.customElements.define('bs-navbar-toggler', BsNavbarToggler);

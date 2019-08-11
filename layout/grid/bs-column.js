@@ -27,4 +27,4 @@ export class BsColumn extends LitElement {
     }
 };
 
-window.customElements.define('bs-column', BsColumn);
+if(!window.customElements.get('bs-column')) window.customElements.define('bs-column', BsColumn);

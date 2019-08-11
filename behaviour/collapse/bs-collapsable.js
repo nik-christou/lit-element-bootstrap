@@ -184,4 +184,4 @@ export class BsCollapsable extends LitElement {
     }
 };
 
-window.customElements.define('bs-collapsable', BsCollapsable);
+if(!window.customElements.get("bs-collapsable"))  window.customElements.define('bs-collapsable', BsCollapsable);

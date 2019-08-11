@@ -27,4 +27,4 @@ export class BsDropdownHeader extends LitElement {
     }
 };
 
-window.customElements.define('bs-dropdown-header', BsDropdownHeader);
+if (!window.customElements.get("bs-dropdown-header"))   window.customElements.define('bs-dropdown-header', BsDropdownHeader);

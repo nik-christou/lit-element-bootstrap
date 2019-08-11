@@ -38,4 +38,4 @@ export class BsJumbotron extends LitElement {
     }
 };
 
-window.customElements.define('bs-jumbotron', BsJumbotron);
+if(!window.customElements.get('bs-jumbotron')) window.customElements.define('bs-jumbotron', BsJumbotron);

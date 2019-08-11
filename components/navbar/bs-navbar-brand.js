@@ -37,4 +37,4 @@ export class BsNavbarBrand extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-brand', BsNavbarBrand);
+if(!window.customElements.get('bs-navbar-brand')) window.customElements.define('bs-navbar-brand', BsNavbarBrand);

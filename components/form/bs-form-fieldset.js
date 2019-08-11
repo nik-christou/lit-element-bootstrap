@@ -140,4 +140,4 @@ export class BsFormFieldset extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-fieldset', BsFormFieldset);
+if(!window.customElements.get('bs-form-fieldset')) window.customElements.define('bs-form-fieldset', BsFormFieldset);

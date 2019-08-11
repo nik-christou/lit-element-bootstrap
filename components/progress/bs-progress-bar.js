@@ -94,4 +94,4 @@ export class BsProgressBar extends LitElement {
     }
 };
 
-window.customElements.define('bs-progress-bar', BsProgressBar);
+if(!window.customElements.get('bs-progress-bar')) window.customElements.define('bs-progress-bar', BsProgressBar);

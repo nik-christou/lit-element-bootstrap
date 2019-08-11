@@ -73,5 +73,5 @@ export class BsCard extends LitElement {
     }
 };
 
-window.customElements.define('bs-card', BsCard);
+if (!window.customElements.get("bs-card")) window.customElements.define('bs-card', BsCard);
 

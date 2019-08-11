@@ -124,5 +124,5 @@ export class BsNavLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-nav-link', BsNavLink);
+if(!window.customElements.get('bs-nav-link')) window.customElements.define('bs-nav-link', BsNavLink);
 

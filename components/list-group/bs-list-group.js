@@ -33,4 +33,4 @@ export class BsListGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group', BsListGroup);
+if(!window.customElements.get('bs-list-group')) window.customElements.define('bs-list-group', BsListGroup);

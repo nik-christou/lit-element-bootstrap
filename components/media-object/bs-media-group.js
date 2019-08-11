@@ -23,5 +23,5 @@ export class BsMediaGroup extends LitElement {
     }
 };
 
-window.customElements.define('bs-media-group', BsMediaGroup);
+if(!window.customElements.get('bs-media-group')) window.customElements.define('bs-media-group', BsMediaGroup);
 

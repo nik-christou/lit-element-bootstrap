@@ -71,4 +71,4 @@ export class BsFormInputPlaintext extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-input-plaintext', BsFormInputPlaintext);
+if(!window.customElements.get('bs-form-input-plaintext')) window.customElements.define('bs-form-input-plaintext', BsFormInputPlaintext);

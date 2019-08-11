@@ -51,4 +51,4 @@ export class BsAlertHr extends LitElement {
     }
 };
 
-window.customElements.define('bs-alert-hr', BsAlertHr);
+if(!window.customElements.get("bs-alert-hr")) window.customElements.define('bs-alert-hr', BsAlertHr);

@@ -23,6 +23,6 @@ export class BsCardSubtitle extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-subtitle', BsCardSubtitle);
+if (!window.customElements.get("bs-card-subtitle")) window.customElements.define('bs-card-subtitle', BsCardSubtitle);
 
 

@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '../../content/bs-content-reboot-css';
 
 export class BsBreadcrumbItem extends LitElement {
-    
+
     static get properties() {
         return {
             title: String,
@@ -11,7 +11,7 @@ export class BsBreadcrumbItem extends LitElement {
             active: Boolean
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -34,23 +34,23 @@ export class BsBreadcrumbItem extends LitElement {
             `
         ];
     }
-    
+
     render() {
         return html`
             ${this._selectTemplateToLoad()}
         `;
     }
-    
+
     constructor() {
         super();
         this.href = '#';
         this.active = false;
         this.title = '';
     }
-    
+
     _selectTemplateToLoad() {
-        
-        if(this.active) {
+
+        if (this.active) {
             return html`${this.title}`;
         } else {
             return html`<a href="${this.href}">${this.title}</a>`;
@@ -58,4 +58,4 @@ export class BsBreadcrumbItem extends LitElement {
     }
 };
 
-window.customElements.define('bs-breadcrumb-item', BsBreadcrumbItem);
+if (!window.customElements.get("bs-breadcrumb-item")) window.customElements.define('bs-breadcrumb-item', BsBreadcrumbItem);

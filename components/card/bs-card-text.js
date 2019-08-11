@@ -26,4 +26,4 @@ export class BsCardText extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-text', BsCardText);
+if (!window.customElements.get("bs-card-text"))  window.customElements.define('bs-card-text', BsCardText);

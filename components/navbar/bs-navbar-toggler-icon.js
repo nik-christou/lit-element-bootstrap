@@ -26,4 +26,4 @@ export class BsNavbarTogglerIcon extends LitElement {
     }
 };
 
-window.customElements.define('bs-navbar-toggler-icon', BsNavbarTogglerIcon);
+if(!window.customElements.get('bs-navbar-toggler-icon')) window.customElements.define('bs-navbar-toggler-icon', BsNavbarTogglerIcon);

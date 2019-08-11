@@ -114,4 +114,4 @@ export class BsListGroupAction extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-action', BsListGroupAction);
+if(!window.customElements.get('bs-list-group-action'))  window.customElements.define('bs-list-group-action', BsListGroupAction);

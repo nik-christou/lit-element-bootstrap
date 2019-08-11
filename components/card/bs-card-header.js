@@ -48,5 +48,5 @@ export class BsCardHeader extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-header', BsCardHeader);
+if (!window.customElements.get("bs-card-header")) window.customElements.define('bs-card-header', BsCardHeader);
 

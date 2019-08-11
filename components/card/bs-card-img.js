@@ -57,4 +57,4 @@ export class BsCardImg extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-img', BsCardImg);
+if (!window.customElements.get("bs-card-img")) window.customElements.define('bs-card-img', BsCardImg);

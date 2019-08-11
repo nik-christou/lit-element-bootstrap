@@ -57,4 +57,4 @@ export class BsPageItem extends LitElement {
     }
 };
 
-window.customElements.define('bs-page-item', BsPageItem);
+if(!window.customElements.get('bs-page-item')) window.customElements.define('bs-page-item', BsPageItem);

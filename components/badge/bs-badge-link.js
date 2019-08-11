@@ -122,4 +122,4 @@ export class BsBadgeLink extends LitElement {
     }
 };
 
-window.customElements.define('bs-badge-link', BsBadgeLink);
+if (!window.customElements.get("bs-badge-link"))  window.customElements.define('bs-badge-link', BsBadgeLink);

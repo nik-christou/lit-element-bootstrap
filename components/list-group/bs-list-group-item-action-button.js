@@ -96,4 +96,4 @@ export class BsListGroupItemActionButton extends LitElement {
     }
 };
 
-window.customElements.define('bs-list-group-item-action-button', BsListGroupItemActionButton);
+if(!window.customElements.get('bs-list-group-item-action-button')) window.customElements.define('bs-list-group-item-action-button', BsListGroupItemActionButton);

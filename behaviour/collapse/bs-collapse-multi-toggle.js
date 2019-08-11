@@ -42,4 +42,4 @@ export class BsCollapseMultiToggle extends LitElement {
     }
 };
 
-window.customElements.define('bs-collapse-multi-toggle', BsCollapseMultiToggle);
+if(!window.customElements.get("bs-collapse-multi-toggle"))  window.customElements.define('bs-collapse-multi-toggle', BsCollapseMultiToggle);

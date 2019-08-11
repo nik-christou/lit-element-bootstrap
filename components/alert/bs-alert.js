@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '../../content';
 
 export class BsAlert extends LitElement {
-    
+
     static get properties() {
         return {
             show: { type: Boolean, reflect: true },
@@ -11,7 +11,7 @@ export class BsAlert extends LitElement {
             dismissable: { type: Boolean, reflect: true }
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -101,7 +101,7 @@ export class BsAlert extends LitElement {
             `
         ];
     }
-    
+
     render() {
         return html`
             <slot name="heading"></slot>
@@ -109,48 +109,48 @@ export class BsAlert extends LitElement {
             <slot name="dismiss"></slot>
         `;
     }
-    
+
     constructor() {
         super();
         this.show = false;
         this.fade = false;
         this.dismissable = false;
     }
-    
+
     firstUpdated() {
         const alertElement = this.shadowRoot.host;
         alertElement.addEventListener('transitionend', () => this._afterElementTransition());
         this.addEventListener('close-button-click', () => this._handleAlertDismiss());
     }
-    
+
     _afterElementTransition() {
         this._fireClosedEvent();
     }
-    
+
     _handleAlertDismiss() {
         this._fireCloseEvent();
         this.show = false;
     }
-    
+
     _fireClosedEvent() {
-        
+
         const alertClosedEvent = new CustomEvent('closed.bs.alert', {
-            bubbles: true, 
+            bubbles: true,
             composed: true
         });
-        
+
         this.dispatchEvent(alertClosedEvent);
     }
-    
+
     _fireCloseEvent() {
-        
+
         const alertCloseEvent = new CustomEvent('close.bs.alert', {
-            bubbles: true, 
+            bubbles: true,
             composed: true
         });
-        
+
         this.dispatchEvent(alertCloseEvent);
     }
 };
 
-window.customElements.define('bs-alert', BsAlert);
+if (!window.customElements.get("bs-alert")) window.customElements.define('bs-alert', BsAlert);

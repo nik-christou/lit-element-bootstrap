@@ -93,4 +93,4 @@ export class BsTabContent extends LitElement {
     }
 };
 
-window.customElements.define('bs-tab-content', BsTabContent);
+if(!window.customElements.get('bs-tab-content')) window.customElements.define('bs-tab-content', BsTabContent);

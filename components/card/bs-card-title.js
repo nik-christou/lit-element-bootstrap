@@ -22,4 +22,4 @@ export class BsCardTitle extends LitElement {
     }
 };
 
-window.customElements.define('bs-card-title', BsCardTitle);
+if (!window.customElements.get("bs-card-title")) window.customElements.define('bs-card-title', BsCardTitle);

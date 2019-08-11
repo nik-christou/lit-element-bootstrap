@@ -38,4 +38,4 @@ export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
     }
 };
 
-window.customElements.define('bs-dropdown-item-link', BsDropdownItemLink);
+if (!window.customElements.get("bs-dropdown-item-link")) window.customElements.define('bs-dropdown-item-link', BsDropdownItemLink);

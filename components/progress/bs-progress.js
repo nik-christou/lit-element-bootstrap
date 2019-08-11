@@ -27,4 +27,4 @@ export class BsProgress extends LitElement {
     }
 };
 
-window.customElements.define('bs-progress', BsProgress);
+if(!window.customElements.get('bs-progress')) window.customElements.define('bs-progress', BsProgress);

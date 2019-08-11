@@ -126,4 +126,4 @@ export class BsFormRadioInput extends LitElement {
     }
 };
 
-window.customElements.define('bs-form-radio-input', BsFormRadioInput);
+if(!window.customElements.get('bs-form-radio-input'))  window.customElements.define('bs-form-radio-input', BsFormRadioInput);
