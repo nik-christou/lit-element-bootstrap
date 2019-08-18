@@ -1,19 +1,12 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
+
+import { BsFormInputMixin } from './bs-form-input-mixin';
 import { BsFormControlSizeCss } from './css/bs-form-control-size-css';
 import { BsContentRebootCss } from '../../content';
 
-export class BsFormInputPlaintext extends LitElement {
-    
-    static get properties() {
-        return {
-            placeholder: String,
-            value: String,
-            type: String,
-            readonly: {type: Boolean, reflect: true}
-        };
-    }
+export class BsFormInputPlaintext extends BsFormInputMixin(LitElement) {
     
     static get styles() {
         return [
@@ -56,19 +49,19 @@ export class BsFormInputPlaintext extends LitElement {
     render() {
         return html`
             <input 
-                type=${this.type}
-                ?readonly=${this.readonly}
+                type="text"
                 .value=${this.value}
-                placeholder=${ifDefined(this.placeholder)} />
+                name=${ifDefined(this.name)}
+                maxlength=${ifDefined(this.maxlength)}
+                minlength=${ifDefined(this.minlength)}
+                pattern=${ifDefined(this.pattern)}
+                placeholder=${ifDefined(this.placeholder)}
+                ?readonly=${this.readonly}
+                ?required=${this.required}
+                ?disabled=${this.disabled} />
         `;
-    }
-    
-    constructor() {
-        super();
-        this.value = '';
-        this.type = 'text';
-        this.readonly = false;
     }
 };
 
-if(!window.customElements.get('bs-form-input-plaintext')) window.customElements.define('bs-form-input-plaintext', BsFormInputPlaintext);
+if(!window.customElements.get('bs-form-input-plaintext')) 
+window.customElements.define('bs-form-input-plaintext', BsFormInputPlaintext);

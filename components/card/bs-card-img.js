@@ -32,7 +32,7 @@ export class BsCardImg extends LitElement {
                 }
                 
                 :host([position="bottom"]) ::slotted(img),
-                :host([position="bottom"]) ::slotted(svg), {
+                :host([position="bottom"]) ::slotted(svg) {
                     border-bottom-left-radius: var(--card-img-bottom-left-border-radius, calc(0.25rem - 1px));
                     border-bottom-right-radius: var(--card-img-bottom-right-border-radius, calc(0.25rem - 1px));
                 }

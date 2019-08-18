@@ -1,7 +1,11 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
-import { BsColumnExtraSmallCss, BsColumnSmallCss, BsColumnMediumCss, BsColumnLargeCss, BsColumnExtraLargeCss } from '../../layout/grid';
+import { BsColumnExtraSmallCss, 
+         BsColumnSmallCss, 
+         BsColumnMediumCss, 
+         BsColumnLargeCss, 
+         BsColumnExtraLargeCss } from '../../layout/grid';
 
 export class BsFormLabel extends LitElement {
     

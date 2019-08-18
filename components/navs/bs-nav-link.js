@@ -81,7 +81,7 @@ export class BsNavLink extends LitElement {
     
     render() {
         return html`
-            <a href="${this.href}" target="${this.target}">
+            <a href="${this.href}" .target="${this.target}">
                 <slot></slot>
             </a>
         `;
@@ -91,7 +91,7 @@ export class BsNavLink extends LitElement {
         super();
         this.index = -1;
         this.href = '';
-        this.target = '_blank';
+        this.target = '_self';
         this.active = false;
         this.disabled = false;
     }

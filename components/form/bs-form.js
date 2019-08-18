@@ -14,7 +14,7 @@ export class BsForm extends LitElement {
             enctype: {type: String, reflect: true},
             inline: {type: Boolean, reflect: true},
             novalidate: {type: Boolean, reflect: true},
-            autocomplete: {type: Boolean, reflect: true},
+            autocomplete: {type: String, reflect: true},
             acceptCharset: {type: String, reflect: true}
         };
     }
@@ -56,13 +56,13 @@ export class BsForm extends LitElement {
             <form
                 name=${ifDefined(this.name)}
                 action=${ifDefined(this.action)}
-                method=${this.method}
-                enctype=${this.enctype}
+                .method=${this.method}
+                .enctype=${this.enctype}
                 accept-charset=${this.acceptCharset}
                 ?novalidate=${this.novalidate}
-                ?autocomplete=${this.autocomplete}>
+                .autocomplete=${this.autocomplete}>
                 <slot></slot>
-            <form>
+            </form>
         `;
     }
     
@@ -70,7 +70,7 @@ export class BsForm extends LitElement {
         super();
         this.inline = false;
         this.novalidate = false;
-        this.autocomplete = false;
+        this.autocomplete = 'off';
         this.ajax = false;
         this.method = "get";
         this.enctype = "application/x-www-form-urlencoded";

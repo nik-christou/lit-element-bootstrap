@@ -14,7 +14,7 @@ export class BsFormTextarea extends LitElement {
             minlength: Number,
             tabIndex: Number,
             placeholder: String,
-            wrap: {type: Boolean, reflect: true},
+            wrap: {type: String, reflect: true},
             required: {type: Boolean, reflect: true},
             disabled: {type: Boolean, reflect: true},
             valid: {type: Boolean, reflect: true},
@@ -41,7 +41,7 @@ export class BsFormTextarea extends LitElement {
             <textarea 
                 class="form-control"
                 tabIndex=${ifDefined(this.tabIndex)}
-                ?wrap=${this.wrap}
+                .wrap=${this.wrap}
                 rows=${ifDefined(this.rows)}
                 cols=${ifDefined(this.cols)}
                 minlength=${ifDefined(this.minlength)}
@@ -57,7 +57,7 @@ export class BsFormTextarea extends LitElement {
     constructor() {
         super();
         this.value = '';
-        this.wrap = false;
+        this.wrap = 'off';
         this.required = false;
         this.disabled = false;
         this.valid = false;

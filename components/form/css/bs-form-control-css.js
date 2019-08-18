@@ -12,7 +12,6 @@ export const BsFormControlCss = css`
         display: var(--bs-form-control-display, block);
         position: var(--bs-form-control-position);
         width: var(--bs-form-control-width, 100%);
-        vertical-align: var(--bs-form-control-vertical-align);
         height: var(--bs-form-control-height, calc(2.25rem + 2px));
         padding: var(--bs-form-control-padding, 0.375rem 0.75rem);
         font-size: var(--bs-form-control-font-size, 1rem);
@@ -27,6 +26,10 @@ export const BsFormControlCss = css`
         border-bottom-right-radius: var(--bs-form-control-border-bottom-right-radius, 0.25rem);
         border-bottom-left-radius: var(--bs-form-control-border-bottom-left-radius, 0.25rem);
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .form-control {
+        vertical-align: var(--bs-form-control-vertical-align);
     }
 
     @media screen and (prefers-reduced-motion: reduce) {

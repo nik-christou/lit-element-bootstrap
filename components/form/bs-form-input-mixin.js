@@ -7,17 +7,23 @@ const BsFormInputMixin = (superClass) => class extends superClass {
             value: String,
             placeholder: String,
             type: String,
+            pattern: String,
+            maxlength: Number,
+            minlength: Number,
+            min: Number,
+            max: Number,
+            step: Number,
             readonly: {type: Boolean, reflect: true},
             inline: {type: Boolean, reflect: true},
             disabled: {type: Boolean, reflect: true},
             required: {type: Boolean, reflect: true},
             valid: {type: Boolean, reflect: true},
             invalid: {type: Boolean, reflect: true},
-            skipValidation: {type: Boolean, reflect: true},
-            browserValidation: {type: Boolean, reflect: true},
+            skipValidation: {type: Boolean, attribute: 'skip-validation'},
+            browserValidation: {type: Boolean, attribute: 'browser-validation'},
             browserMissingValueMsg: {type: String, attribute: 'browser-missing-value-msg'},
             browserMismatchValueMsg: {type: String, attribute: 'browser-mismatch-value-msg'},
-            browserPatternValueMag: {type: String, attribute: 'browser-pattern-value-msg'},
+            browserPatternValueMsg: {type: String, attribute: 'browser-pattern-value-msg'},
             browserTooLongValueMsg: {type: String, attribute: 'browser-too-long-value-msg'},
             browserTooShortValueMsg: {type: String, attribute: 'browser-too-short-value-msg'},
             browserRangeUnderflowMsg: {type: String, attribute: 'browser-range-underflow-msg'},
@@ -29,9 +35,8 @@ const BsFormInputMixin = (superClass) => class extends superClass {
     
     constructor() {
         super();
-        this.name = '';
-        this.value = '';
         this.type = 'text';
+        this.value = undefined;
         this.readonly = false;
         this.inline = false;
         this.disabled = false;
@@ -42,7 +47,7 @@ const BsFormInputMixin = (superClass) => class extends superClass {
         this.browserValidation = false;
         this.browserMissingValueMsg = '';
         this.browserMismatchValueMsg = '';
-        this.browserPatternValueMag = '';
+        this.browserPatternValueMsg = '';
         this.browserTooLongValueMsg = '';
         this.browserTooShortValueMsg = '';
         this.browserRangeUnderflowMsg = '';
@@ -77,19 +82,24 @@ const BsFormInputMixin = (superClass) => class extends superClass {
     getInputName() {
         return this.name;
     }
+
+    getInputValue() {
+        const inputElement = this.shadowRoot.querySelector('input');
+        return inputElement.value;
+    }
     
     isValidatable() {
         return !this.skipValidation;
     }
     
     validate() {
-        
+
         if(this.skipValidation) {
             return;
         }
         
         const inputElement = this.shadowRoot.querySelector('input');
-        
+
         const validityState = inputElement.validity;
         
         if(this.browserValidation) {
@@ -124,10 +134,10 @@ const BsFormInputMixin = (superClass) => class extends superClass {
     }
     
     _executeBrowserValidation(inputElement, validityState) {
-        
+
         // has user specified custom message
         const customValidationMessage = this._getCustomValidationMessage(validityState);
-        
+
         if(customValidationMessage) {
             inputElement.setCustomValidity(customValidationMessage);
         }
@@ -137,38 +147,56 @@ const BsFormInputMixin = (superClass) => class extends superClass {
     
     _getCustomValidationMessage(validityState) {
         
+        // true if the element has a required attribute, but no value
+        // false if the element has a required attribute, with value
         if(validityState.valueMissing) {
             return this.browserMissingValueMsg;
         }
         
+        // true if the value is not in the required syntax (when type is email or url)
+        // false if the syntax is correct
         if(validityState.typeMismatch) {
             return this.browserMismatchValueMsg;
         }
         
+        // true if the value does not match the specified pattern
+        // false if it does match the specified pattern
         if(validityState.patternMismatch) {
             return this.browserPatternValueMsg;
         }
         
+        // true if the value exceeds the specified maxlength
+        // false if its length is less than or equal to the maximum length
         if(validityState.tooLong) {
             return this.browserTooLongValueMsg;
         }
         
+        // true if the value fails to meet the specified minlength
+        // false if its length is greater than or equal to the minimum length
         if(validityState.tooShort) {
             return this.browserTooShortValueMsg;
         }
         
+        // true if the value is less than the minimum specified by the min attribute
+        // false if it is greater than or equal to the minimum
         if(validityState.rangeUnderflow) {
             return this.browserRangeUnderflowMsg;
         }
         
+        // true if the value is greater than the maximum specified by the max attribute
+        // false if it is less than or equal to the maximum
         if(validityState.rangeOverflow) {
             return this.browserRangeOverflowMsg;
         }
         
+        // true if the value does not fit the rules determined by the step attribute 
+        // (that is, it's not evenly divisible by the step value)
+        // false if it does fit the step rule
         if(validityState.stepMismatch) {
             return this.browserStepMismatchMsg;
         }
         
+        // true if the user has provided input that the browser is unable to convert
         if(validityState.badInput) {
             return this.browserBadInputValueMsg;
         }

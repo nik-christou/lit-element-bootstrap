@@ -39,7 +39,7 @@ export class BsModalHeader extends LitElement {
                 <div class="modal-title">
                     <slot></slot>
                 </div>
-                <bs-close-btn><bs-close-btn>
+                <bs-close-btn></bs-close-btn>
             </div>
         `;
     }
