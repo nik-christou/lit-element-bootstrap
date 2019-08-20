@@ -40,12 +40,15 @@ const BsButtonMixin = (superClass) => class extends superClass {
     }
     
     _disabledChanged() {
+        const buttonElement = this._retrieveButtonElement();
         
         if(this.disabled) {
             
-            const buttonElement = this._retrieveButtonElement();
             buttonElement.classList.add('disabled');
             buttonElement.setAttribute('disabled', '');
+        } else {
+            buttonElement.classList.remove('disabled');
+            buttonElement.removeAttribute('disabled');
         }
     }
     
