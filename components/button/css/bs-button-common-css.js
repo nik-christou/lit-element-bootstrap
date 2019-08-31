@@ -3,7 +3,6 @@ import { css } from 'lit-element';
 
 export const BsButtonsCommonCss = css`
 
-
     :host {
         display: inline-block;
         width: var(--bs-button-width);

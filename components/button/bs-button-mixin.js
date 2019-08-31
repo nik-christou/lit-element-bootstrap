@@ -1,4 +1,15 @@
 
+const defaultThemeColors = new Map([
+    ['primary', '#007bff'],
+    ['secondary', '#6c757d'],
+    ['success', '#28a745'],
+    ['info', '#17a2b8'],
+    ['warning', '#ffc107'],
+    ['danger', '#dc3545'],
+    ['light', '#f8f9fa'],
+    ['dark', '#343a40']
+]);
+
 const BsButtonMixin = (superClass) => class extends superClass {
     
     static get properties() {
@@ -28,6 +39,8 @@ const BsButtonMixin = (superClass) => class extends superClass {
         
         this.addEventListener('click', event => this._handleButtonClick(event));
         this.addEventListener('focusout', event => this._handleFocusOut(event));
+
+        this._setupDefaultThemeColors();
     }
     
     updated(changedProperties) {
@@ -36,6 +49,27 @@ const BsButtonMixin = (superClass) => class extends superClass {
         
         if (changedProperties.has('disabled')) {
             this._disabledChanged();
+        }
+    }
+
+    _setupDefaultThemeColors() {
+
+        const hostElement = this.shadowRoot.host;
+
+        for (let [key, value] of defaultThemeColors) {
+            
+            if(hostElement.hasAttribute(key)) {
+                this._updateCssProperty(hostElement, key, value);
+            }
+        }
+    }
+
+    _updateCssProperty(hostElement, cssPropName, cssPropValue) {
+        
+        const cssVarName = '--'+cssPropName;
+
+        if(!getComputedStyle(hostElement).getPropertyValue(cssVarName)) {
+            hostElement.style.setProperty(cssVarName, cssPropValue);
         }
     }
     
