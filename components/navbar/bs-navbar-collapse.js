@@ -1,6 +1,5 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
 import { BsContentRebootCss } from '../../content';
 
 export class BsNavbarCollapse extends LitElement {
@@ -8,7 +7,6 @@ export class BsNavbarCollapse extends LitElement {
     static get properties() {
         return {
             expanded: {type: Boolean, reflect: true},
-            collapsed: {type: Boolean, reflect: true},
             transitioning: {type: Boolean, reflect: true}
         };
     }
@@ -18,15 +16,13 @@ export class BsNavbarCollapse extends LitElement {
             BsContentRebootCss,
             css`
                 :host {
-                    display: var(--navbar-collapse-display);
-                    -ms-flex-preferred-size: var(--navbar-collapse-ms-flex-preferred-size, 100%);
-                    flex-basis: var(--navbar-collapse-flex-basis, 100%);
-                    -ms-flex-positive: 1;
                     flex-grow: 1;
-                    -ms-flex-align: center;
+                    height: 0;
+                    overflow: hidden;          
                     align-items: center;
-                    height: auto;
                     transition: height 0.35s ease;
+                    display: var(--navbar-collapse-display);
+                    flex-basis: var(--navbar-collapse-flex-basis, 100%);
                 }
                 
                 :host([transitioning]) {
@@ -36,6 +32,14 @@ export class BsNavbarCollapse extends LitElement {
                 @media screen and (prefers-reduced-motion: reduce) {
                     :host {
                         transition: none;
+                    }
+                }
+
+                @media (min-width: 992px) {
+                    
+                    :host {
+                        height: auto;
+                        overflow: inherit;                        
                     }
                 }
             `
@@ -50,13 +54,11 @@ export class BsNavbarCollapse extends LitElement {
     
     constructor() {
         super();
-        this.expanded = true;
-        this.collapsed = false;
+        this.expanded = false;
         this.transitioning = false;
     }
     
     firstUpdated() {
-        installMediaQueryWatcher('(min-width: 992px)', (matches) => this._minLargeDeviceLayoutChanged(matches));
         this.addEventListener('transitionend', event => this._afterCollapsingTransition(event));
     }
     
@@ -70,18 +72,8 @@ export class BsNavbarCollapse extends LitElement {
         this.transitioning = false;
     }
     
-    _minLargeDeviceLayoutChanged(matches) {
-        
-        if(matches) {
-            this.expanded = true;
-            this.collapsed = false;
-            this.transitioning = false;
-            this.shadowRoot.host.style.overflow = 'inherit';
-            this.shadowRoot.host.style.height = 'auto';
-        }
-    }
-    
     toggle() {
+
         this.transitioning = true;
 
         if(this.expanded) {
@@ -93,12 +85,10 @@ export class BsNavbarCollapse extends LitElement {
     
     _expand() {
         this.expanded = true;
-        this.collapsed = false;
         this.shadowRoot.host.style.height = this._getSlottedElementsHeight()+'px';
     }
     
     _collapse() {
-        this.collapsed = true;
         this.expanded = false;
         this._updateHeightBeforeCollapse();
         this.shadowRoot.host.style.overflow = 'hidden';
@@ -150,4 +140,5 @@ export class BsNavbarCollapse extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-navbar-collapse')) window.customElements.define('bs-navbar-collapse', BsNavbarCollapse);
+if(!window.customElements.get('bs-navbar-collapse')) 
+    window.customElements.define('bs-navbar-collapse', BsNavbarCollapse);
