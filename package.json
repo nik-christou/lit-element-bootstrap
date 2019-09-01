@@ -1,6 +1,6 @@
 {
   "name": "lit-element-bootstrap",
-  "version": "1.0.0-alpha.15",
+  "version": "1.0.0-alpha.16",
   "main": "lit-element-bootstrap.js",
   "module": "lit-element-bootstrap.js",
   "description": "An implementation of Bootstrap v4.1.3 components in LitElement",
