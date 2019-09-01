@@ -75,19 +75,7 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
         this.href = '';
         this.target = '_self';
     }
-
-    firstUpdated() {
-
-        const btnElement = this.shadowRoot.querySelector('a');
-        btnElement.addEventListener('click', event => this._handleClickEvent(event));
-    }
-
-    _handleClickEvent(event) {
-
-        if(!this.href) {
-            event.preventDefault();
-        }
-    }
 };
 
-if (!window.customElements.get("bs-link-button")) window.customElements.define('bs-link-button', BsLinkButton);
+if (!window.customElements.get("bs-link-button")) 
+    window.customElements.define('bs-link-button', BsLinkButton);

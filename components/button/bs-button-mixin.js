@@ -37,8 +37,8 @@ const BsButtonMixin = (superClass) => class extends superClass {
         this._applyButtonActivateState(btnElement);
         this._applyButtonTypeIfApplicable();
         
-        this.addEventListener('click', event => this._handleButtonClick(event));
-        this.addEventListener('focusout', event => this._handleFocusOut(event));
+        btnElement.addEventListener('click', event => this._handleButtonClick(event));
+        btnElement.addEventListener('focusout', event => this._handleFocusOut(event));
 
         this._setupDefaultThemeColors();
     }
@@ -85,8 +85,6 @@ const BsButtonMixin = (superClass) => class extends superClass {
     
     _handleFocusOut(event) {
         
-        event.preventDefault();
-        
         if(this.disabled) {
             return;
         }
@@ -105,10 +103,10 @@ const BsButtonMixin = (superClass) => class extends superClass {
     
     _handleButtonClick(event) {
         
-        if(!this._isLinkButton()) {
+        if(this._blockAllowDefaultEvent()) {
             event.preventDefault();
         };
-        
+
         if(this.disabled) {
             return;
         }
@@ -147,15 +145,15 @@ const BsButtonMixin = (superClass) => class extends superClass {
         }
     }
     
-    _isLinkButton() {
+    _blockAllowDefaultEvent() {
 
         const linkButtonElement = this.shadowRoot.querySelector('a');
 
-        if(linkButtonElement) {
-            return true;
+        if(!linkButtonElement && !this.href) {
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     _retrieveButtonElement() {
