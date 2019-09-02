@@ -103,13 +103,14 @@ export class BsNavLink extends LitElement {
     
     _handleClickEvent(event) {
 
-        if (this.disabled) {
+        if(!this.href) {
             event.preventDefault();
             return;
         }
-        
-        if(this.target === '#') {
+
+        if (this.disabled) {
             event.preventDefault();
+            return;
         }
         
         const navLinkClickEvent = new CustomEvent('nav-link', {
