@@ -1,8 +1,9 @@
 
-import { LitElement, html, css } from 'lit-element';
-import { BsDropdownItemMixin } from './bs-dropdown-item-mixin';
-import { BsDropdownItemCss } from './bs-dropdown-item-css';
-import { BsContentRebootCss } from '../../content';
+import { LitElement, html } from 'lit-element';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsDropdownItemMixin } from './bs-dropdown-item-mixin.js';
+import { BsDropdownItemCss } from './bs-dropdown-item-css.js';
 
 export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
     
@@ -10,6 +11,7 @@ export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
         return {
             index: Number,
             title: String,
+            href: String,
             target: String
         };
     }
@@ -23,10 +25,7 @@ export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
     
     render() {
         return html`
-
-            <!-- TODO: replace the title property with a slot -->
-            
-            <a href="${this.target}" class="dropdown-item">${this.title}</a>
+            <a href="${this.href}" .target="${this.target}" class="dropdown-item">${this.title}</a>
         `;
     }
     
@@ -34,8 +33,10 @@ export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
         super();
         this.index = 0;
         this.title = '';
-        this.target = '#';
+        this.href = '';
+        this.target = '_self';
     }
 };
 
-if (!window.customElements.get("bs-dropdown-item-link")) window.customElements.define('bs-dropdown-item-link', BsDropdownItemLink);
+if (!window.customElements.get("bs-dropdown-item-link"))
+    window.customElements.define('bs-dropdown-item-link', BsDropdownItemLink);

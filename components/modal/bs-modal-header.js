@@ -1,8 +1,8 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
-import '../button/close/bs-close-btn';
+import '@lit-element-bootstrap/button/bs-close-button.js';
 
 export class BsModalHeader extends LitElement {
     
@@ -20,9 +20,9 @@ export class BsModalHeader extends LitElement {
                     border-top-right-radius: 0.3rem;
                 }
                 
-                bs-close-btn {
-                    --bs-close-btn-padding: 1rem;
-                    --bs-close-btn-margin: -1rem -1rem -1rem auto;
+                bs-close-button {
+                    --bs-close-button-padding: 1rem;
+                    --bs-close-button-margin: -1rem -1rem -1rem auto;
                 }
                 
                 .modal-title {
@@ -39,7 +39,7 @@ export class BsModalHeader extends LitElement {
                 <div class="modal-title">
                     <slot></slot>
                 </div>
-                <bs-close-btn></bs-close-btn>
+                <bs-close-button></bs-close-button>
             </div>
         `;
     }
@@ -59,4 +59,5 @@ export class BsModalHeader extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-modal-header')) window.customElements.define('bs-modal-header', BsModalHeader);
+if(!window.customElements.get('bs-modal-header')) 
+    window.customElements.define('bs-modal-header', BsModalHeader);

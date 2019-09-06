@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsDropdownHeader extends LitElement {
     
@@ -27,4 +27,5 @@ export class BsDropdownHeader extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-dropdown-header"))   window.customElements.define('bs-dropdown-header', BsDropdownHeader);
+if (!window.customElements.get("bs-dropdown-header"))   
+    window.customElements.define('bs-dropdown-header', BsDropdownHeader);

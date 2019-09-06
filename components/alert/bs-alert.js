@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsAlert extends LitElement {
 
@@ -153,4 +153,5 @@ export class BsAlert extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-alert")) window.customElements.define('bs-alert', BsAlert);
+if (!window.customElements.get("bs-alert")) 
+    window.customElements.define('bs-alert', BsAlert);

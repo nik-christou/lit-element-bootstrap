@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsTextColorCss } from '../../utilities';
-import { BsContentRebootCss } from '../../content';
+import { BsTextColorCss } from '@lit-element-bootstrap/utilities/bs-text-colors-css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsFormHelpText extends LitElement {
     
@@ -27,4 +27,5 @@ export class BsFormHelpText extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-help-text')) window.customElements.define('bs-form-help-text', BsFormHelpText);
+if(!window.customElements.get('bs-form-help-text')) 
+    window.customElements.define('bs-form-help-text', BsFormHelpText);

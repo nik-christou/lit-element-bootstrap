@@ -1,8 +1,9 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsTextCss, BsSizingCss } from '../../utilities';
-import { configureFlushListGroupBorders } from './helper/bs-card-list-group-helper';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+import { BsTextCss, BsSizingCss } from '@lit-element-bootstrap/utilities';
+
+import { configureFlushListGroupBorders } from './helper/bs-card-list-group-helper.js';
 
 export class BsCard extends LitElement {
     
@@ -73,5 +74,6 @@ export class BsCard extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card")) window.customElements.define('bs-card', BsCard);
+if (!window.customElements.get("bs-card")) 
+    window.customElements.define('bs-card', BsCard);
 

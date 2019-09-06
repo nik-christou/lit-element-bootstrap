@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsPageItem extends LitElement {
     
@@ -57,4 +57,5 @@ export class BsPageItem extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-page-item')) window.customElements.define('bs-page-item', BsPageItem);
+if(!window.customElements.get('bs-page-item')) 
+    window.customElements.define('bs-page-item', BsPageItem);

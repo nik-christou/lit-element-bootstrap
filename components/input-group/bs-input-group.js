@@ -1,9 +1,10 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsInputGroupCss } from './bs-input-group-css';
-import { BsInputGroupLargeCss } from './bs-input-group-large-css';
-import { BsInputGroupSmallCss } from './bs-input-group-small-css';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsInputGroupCss } from './bs-input-group-css.js';
+import { BsInputGroupLargeCss } from './bs-input-group-large-css.js';
+import { BsInputGroupSmallCss } from './bs-input-group-small-css.js';
 
 export class BsInputGroup extends LitElement {
     
@@ -198,4 +199,5 @@ export class BsInputGroup extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-input-group')) window.customElements.define('bs-input-group', BsInputGroup);
+if(!window.customElements.get('bs-input-group')) 
+    window.customElements.define('bs-input-group', BsInputGroup);

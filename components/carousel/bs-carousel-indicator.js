@@ -1,6 +1,6 @@
 
 import { LitElement, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCarouselIndicator extends LitElement {
 
@@ -80,4 +80,5 @@ export class BsCarouselIndicator extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-carousel-indicator")) window.customElements.define('bs-carousel-indicator', BsCarouselIndicator);
+if (!window.customElements.get("bs-carousel-indicator")) 
+    window.customElements.define('bs-carousel-indicator', BsCarouselIndicator);

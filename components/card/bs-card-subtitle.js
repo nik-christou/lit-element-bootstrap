@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCardSubtitle extends LitElement {
     
@@ -23,6 +23,7 @@ export class BsCardSubtitle extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-subtitle")) window.customElements.define('bs-card-subtitle', BsCardSubtitle);
+if (!window.customElements.get("bs-card-subtitle")) 
+    window.customElements.define('bs-card-subtitle', BsCardSubtitle);
 
 

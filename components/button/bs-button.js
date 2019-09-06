@@ -1,28 +1,29 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
-import { BsButtonMixin } from './bs-button-mixin';
-import { BsButtonsCommonCss } from './css/bs-button-common-css';
-import { BsButtonPrimaryCss } from './css/bs-button-primary-css';
-import { BsButtonSecondaryCss } from './css/bs-button-secondary-css';
-import { BsButtonSuccessCss } from './css/bs-button-success-css';
-import { BsButtonInfoCss } from './css/bs-button-info-css';
-import { BsButtonWarningCss } from './css/bs-button-warning-css';
-import { BsButtonDangerCss } from './css/bs-button-danger-css';
-import { BsButtonLightCss } from './css/bs-button-light-css';
-import { BsButtonDarkCss } from './css/bs-button-dark-css';
-import { BsButtonPrimaryOutlineCss } from './css/bs-button-primary-outline-css';
-import { BsButtonSecondaryOutlineCss } from './css/bs-button-secondary-outline-css';
-import { BsButtonSuccessOutlineCss } from './css/bs-button-success-outline-css';
-import { BsButtonInfoOutlineCss } from './css/bs-button-info-outline-css';
-import { BsButtonWarningOutlineCss } from './css/bs-button-warning-outline-css';
-import { BsButtonDangerOutlineCss } from './css/bs-button-danger-outline-css';
-import { BsButtonLightOutlineCss } from './css/bs-button-light-outline-css';
-import { BsButtonDarkOutlineCss } from './css/bs-button-dark-outline-css';
-import { BsButtonLinkCss } from './css/bs-button-link-css';
-import { BsButtonBlockCss } from './css/bs-button-block-css';
-import { BsButtonLargeCss } from './css/bs-button-large-css';
-import { BsButtonSmallCss } from './css/bs-button-small-css';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
+
+import { BsButtonMixin } from './bs-button-mixin.js';
+import { BsButtonsCommonCss } from './css/bs-button-common-css.js';
+import { BsButtonPrimaryCss } from './css/bs-button-primary-css.js';
+import { BsButtonSecondaryCss } from './css/bs-button-secondary-css.js';
+import { BsButtonSuccessCss } from './css/bs-button-success-css.js';
+import { BsButtonInfoCss } from './css/bs-button-info-css.js';
+import { BsButtonWarningCss } from './css/bs-button-warning-css.js';
+import { BsButtonDangerCss } from './css/bs-button-danger-css.js';
+import { BsButtonLightCss } from './css/bs-button-light-css.js';
+import { BsButtonDarkCss } from './css/bs-button-dark-css.js';
+import { BsButtonPrimaryOutlineCss } from './css/bs-button-primary-outline-css.js';
+import { BsButtonSecondaryOutlineCss } from './css/bs-button-secondary-outline-css.js';
+import { BsButtonSuccessOutlineCss } from './css/bs-button-success-outline-css.js';
+import { BsButtonInfoOutlineCss } from './css/bs-button-info-outline-css.js';
+import { BsButtonWarningOutlineCss } from './css/bs-button-warning-outline-css.js';
+import { BsButtonDangerOutlineCss } from './css/bs-button-danger-outline-css.js';
+import { BsButtonLightOutlineCss } from './css/bs-button-light-outline-css.js';
+import { BsButtonDarkOutlineCss } from './css/bs-button-dark-outline-css.js';
+import { BsButtonLinkCss } from './css/bs-button-link-css.js';
+import { BsButtonBlockCss } from './css/bs-button-block-css.js';
+import { BsButtonLargeCss } from './css/bs-button-large-css.js';
+import { BsButtonSmallCss } from './css/bs-button-small-css.js';
 
 export class BsButton extends BsButtonMixin(LitElement) {
     
@@ -63,5 +64,6 @@ export class BsButton extends BsButtonMixin(LitElement) {
     }
 };
 
-if (!window.customElements.get("bs-button")) window.customElements.define('bs-button', BsButton);
+if (!window.customElements.get("bs-button")) 
+    window.customElements.define('bs-button', BsButton);
 

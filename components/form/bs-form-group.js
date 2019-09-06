@@ -1,7 +1,11 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsColumnExtraSmallCss, BsColumnSmallCss, BsColumnMediumCss, BsColumnLargeCss, BsColumnExtraLargeCss } from '../../layout/grid';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+import { BsColumnExtraSmallCss, 
+    BsColumnSmallCss, 
+    BsColumnMediumCss, 
+    BsColumnLargeCss, 
+    BsColumnExtraLargeCss } from '@lit-element-bootstrap/layout';
 
 export class BsFormGroup extends LitElement {
     
@@ -244,4 +248,5 @@ export class BsFormGroup extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-group'))  window.customElements.define('bs-form-group', BsFormGroup);
+if(!window.customElements.get('bs-form-group'))  
+    window.customElements.define('bs-form-group', BsFormGroup);

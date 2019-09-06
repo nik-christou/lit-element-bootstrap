@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCardOverlay extends LitElement {
 
@@ -31,7 +31,8 @@ export class BsCardOverlay extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-overlay"))  window.customElements.define('bs-card-overlay', BsCardOverlay);
+if (!window.customElements.get("bs-card-overlay"))  
+    window.customElements.define('bs-card-overlay', BsCardOverlay);
 
 
 

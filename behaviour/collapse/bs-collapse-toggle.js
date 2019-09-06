@@ -3,6 +3,8 @@ import { LitElement, html } from 'lit-element';
 
 export class BsCollapseToggle extends LitElement {
     
+    // TODO: replace the target attribute with data-target attribute !!!
+
     static get properties() {
         return {
             target: {type: String, reflect: true}
@@ -42,4 +44,5 @@ export class BsCollapseToggle extends LitElement {
     }
 };
 
-if(!window.customElements.get("bs-collapse-toggle")) window.customElements.define('bs-collapse-toggle', BsCollapseToggle);
+if(!window.customElements.get("bs-collapse-toggle")) 
+    window.customElements.define('bs-collapse-toggle', BsCollapseToggle);

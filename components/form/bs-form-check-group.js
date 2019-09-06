@@ -1,7 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsFormCheckGroup extends LitElement {
     
@@ -225,4 +224,5 @@ export class BsFormCheckGroup extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-check-group')) window.customElements.define('bs-form-check-group', BsFormCheckGroup);
+if(!window.customElements.get('bs-form-check-group')) 
+    window.customElements.define('bs-form-check-group', BsFormCheckGroup);

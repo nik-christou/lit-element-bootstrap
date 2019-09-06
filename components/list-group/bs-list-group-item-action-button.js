@@ -1,8 +1,9 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
-import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css';
-import { BsListGroupItemActionCommonCss } from './bs-list-group-item-action-common-css';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
+
+import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css.js';
+import { BsListGroupItemActionCommonCss } from './bs-list-group-item-action-common-css.js';
 
 export class BsListGroupItemActionButton extends LitElement {
     
@@ -96,4 +97,5 @@ export class BsListGroupItemActionButton extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-list-group-item-action-button')) window.customElements.define('bs-list-group-item-action-button', BsListGroupItemActionButton);
+if(!window.customElements.get('bs-list-group-item-action-button')) 
+    window.customElements.define('bs-list-group-item-action-button', BsListGroupItemActionButton);

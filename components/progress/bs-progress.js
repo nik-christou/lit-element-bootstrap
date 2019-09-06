@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsProgress extends LitElement {
     
@@ -27,4 +27,5 @@ export class BsProgress extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-progress')) window.customElements.define('bs-progress', BsProgress);
+if(!window.customElements.get('bs-progress')) 
+    window.customElements.define('bs-progress', BsProgress);

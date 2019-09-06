@@ -650,6 +650,194 @@
   resolved "https://registry.yarnpkg.com/@bundled-es-modules/chai/-/chai-4.2.2.tgz#88dffebd7cd1e87397738107c3c54b9b4ea56e5e"
   integrity sha512-iGmVYw2/zJCoqyKTtWEYCtFmMyi8WmACQKtky0lpNyEKWX0YIOpKWGD7saMXL+tPpllss0otilxV0SLwyi3Ytg==
 
+"@lit-element-bootstrap/alert@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/alert/-/alert-1.0.0-alpha.1.tgz#2ec9742d1e0440ea6c6a8bd868767cfecdb71882"
+  integrity sha512-IShi4l/KPgcz+Vb/HwkeUo1TzMG7alm2+w3Jv7hY6nAv1VpGDXk/O0yVAfxxYlWgSCPlpMYCikk3tCARCSVvvQ==
+  dependencies:
+    "@lit-element-bootstrap/button" "^1.0.0-alpha.2"
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/badge@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/badge/-/badge-1.0.0-alpha.1.tgz#9507ec996a154a2418c6886f79e0d69ee037b475"
+  integrity sha512-a65PH2xWd02m9PpvtPZL6K9CZpdw4NCEYXcSK9WifNE/o+x5F1SttJDnD7GEW5GC/NHz/C1p9QF5rcNDBJSopA==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "^2.2.0"
+
+"@lit-element-bootstrap/breadcrumb@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/breadcrumb/-/breadcrumb-1.0.0-alpha.1.tgz#42092553c23e8f17bf82e0534bb0aaccea248ed4"
+  integrity sha512-E1OuY9FhRqUlsc7OIABFTY/fQaSg0yIzJxHxn3uIGZlUYzeRCjLCOV/q57hGMCbR8WlE8TbENtKhPVjTTjNQLg==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/button-group@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/button-group/-/button-group-1.0.0-alpha.1.tgz#32a1fc3304678a08d24f2d36d5da4adfae86ea52"
+  integrity sha512-EJRZloRPAQHqnA4msKNT+1BoxhcbIEmYTVca67dmOZPivx9Cx0xWbWJt5O2yk3/ALfct2QzjijPS0zL8me0LCQ==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/button@^1.0.0-alpha.2", "@lit-element-bootstrap/button@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/button/-/button-1.0.0-alpha.3.tgz#bd37b3be83b41bb93ac615e1427cbdb4225ef4f8"
+  integrity sha512-x+Tsd08KSXzo6Rz3VxOXNlKuNwOE+N8KHUV5mSlgtYvzEhEsEW0ZqGdNAXR7srwW2xe6ZHQ+u+LnRYj8YNstuQ==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/card@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/card/-/card-1.0.0-alpha.1.tgz#9e0a2442638434de6071dcbd7d24d0ca4270dce1"
+  integrity sha512-Z4Nmuc9hedPOijrbXjirIESc4rQ7LgzEDYQW1X7dkP1AUdkwDl8vKG74ND/HzAuMjDHUuTWxM+WFkaOQKzouOQ==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    "@lit-element-bootstrap/utilities" "^1.0.0-alpha.1"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/carousel@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/carousel/-/carousel-1.0.0-alpha.1.tgz#71bebd6a9835a633a05c5736c4cef5ec4859e22f"
+  integrity sha512-i0mzPRl4X3WjAS+HckP+HGzwc0SumNgjGaFoICvN1eYS2cr2XHdhCma0LGf3gJJedk7KTu3NB4nODBqfhkptjA==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/collapse@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/collapse/-/collapse-1.0.0-alpha.1.tgz#d692d411071d8e6fcfcd4952f518847f10a739de"
+  integrity sha512-fhR71+TWXR+8uQaEWGBbrZx2pz6FKvH8MT/1cWXmqZWzZ4iQJduYOT6u5gdYsMUxpzENVL/qkT926ggpQeGP7g==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/content@1.0.0-alpha.2", "@lit-element-bootstrap/content@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/content/-/content-1.0.0-alpha.2.tgz#f67046586f98d9032f85a2c5d288b252c39e14d8"
+  integrity sha512-KAw6S2QTGVtxhrPvite3Gd7DoX8D1T3nyMGupVIvYDBQ0KLt13fPgblmzvr/XZ19KM4Bj77Xc+RxIULCj6r8pg==
+  dependencies:
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/dropdown@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/dropdown/-/dropdown-1.0.0-alpha.1.tgz#896d855da19c2643199665420da2a4898de848d2"
+  integrity sha512-bajjG+iUUUSu8dTdSYNazjKhUFFGNhIodJGyr7cDWEHlHaI2ywuxpWUmR5OOSloSqh3j7LAgu2rx87swzpzovw==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/form@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/form/-/form-1.0.0-alpha.1.tgz#3daf81f4eaff9d56aa3cbb3f4cb05ab97c5d0e87"
+  integrity sha512-iqMxtv2SwtcxIi4iuASugfiJG3kdoijdQ7NHkrM27lvijdoYOa3wz8iz/vmAlwSJtOQ/YiU8p+dgx96ntZhUhw==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    "@lit-element-bootstrap/layout" "^1.0.0-alpha.1"
+    "@lit-element-bootstrap/utilities" "^1.0.0-alpha.1"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/input-group@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/input-group/-/input-group-1.0.0-alpha.1.tgz#f93281a1366ba82a9516c26e0b3377a630c1ad1f"
+  integrity sha512-1ZQp9uzESxIUOXsKj7be5mpD2x9c4GS5F2P8NUjh/jnMg5wytu9CITjQAubd/mN7X1GAG+FZ4bMynznN9vIagg==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/jumbotron@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/jumbotron/-/jumbotron-1.0.0-alpha.1.tgz#69c43c9dfe53990ac27cb2653cacfe4e84755b77"
+  integrity sha512-3DFfpu/u3xV2eIxR9xaYlh6AXc/i3YN+RzkzJNclqW5ieF5xeViOqDE55BzZ4dFCWHnJnIsP7NW7wjneDpiIew==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/layout@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/layout/-/layout-1.0.0-alpha.1.tgz#d8a3116e7c8e488907b1b3fea3e5877347246fa6"
+  integrity sha512-1UdiSLfFcE4NvyV/vS2OB37DWF3oebdShDZVEQzc535p1FCl3v1vpI26He4//GkEYesnNZEkErVYpFErAdDhhw==
+  dependencies:
+    "@lit-element-bootstrap/content" "1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/list-group@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/list-group/-/list-group-1.0.0-alpha.1.tgz#da0d3a81b1b84c8552b7b0b1c45f993a20bd2eca"
+  integrity sha512-+4PTb1AeDFQ0dGrffMnUU51QFVQ1gHNrgiI2+PCsZyXUN7IMSLgmfpyp31MQqYyEtCqSPLBpJveXy3dqe33e5w==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    "@lit-element-bootstrap/utilities" "^1.0.0-alpha.1"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/media-object@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/media-object/-/media-object-1.0.0-alpha.1.tgz#778c656dc2054734e9aab5a53ba3139d36d044fc"
+  integrity sha512-vGlayq1GDrbFzGwKfr822ZzayGfmHOcAO0EFNbTW6xhLiNYdXPr2YkQw9Jyebgbi0JVm35VxP+VDM6w3HFXTCw==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/modal@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/modal/-/modal-1.0.0-alpha.3.tgz#d52d13991a2632eabbb536f7c123cf3158f73740"
+  integrity sha512-8CoQyjdr2gQFmnF6L+3DmfOfmntN4w2maaVbDCNcK1ROSxnDOaBgskLDddfuRqtnniBmiyuJvVJPss05IBrV8A==
+  dependencies:
+    "@lit-element-bootstrap/button" "^1.0.0-alpha.3"
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/navbar@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/navbar/-/navbar-1.0.0-alpha.1.tgz#4ab1c20e57787cd2d3eaeaeca975796c29a41ae1"
+  integrity sha512-0fjmJGkfjKq0MJwEQIZBNx8i2coJFd9c8YYxvu9MtuUJmE3djG4/+pEUsAk6XiLSAb2ugH1dg34Xx2zeX5juIQ==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    "@lit-element-bootstrap/utilities" "^1.0.0-alpha.1"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/navs@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/navs/-/navs-1.0.0-alpha.1.tgz#dd74027969c280d953736d223d7d059e4f25554e"
+  integrity sha512-D2ZGDZBLu5byrZ0v4nalHzU4lXwsYgmAwOJyDVkubsCuMrUyXJv5y9cVbW8Qftd+S5D5QB1gu6X0/+g5V3TLSA==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/pagination@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/pagination/-/pagination-1.0.0-alpha.1.tgz#5ee2670bd77b9865188002deb239b9a3d3995ace"
+  integrity sha512-GNT/YEiHJDzeInT2/U9pH9zn7G08UhU5WK+K00Pt3zf0gc7otaRVB01ufMDeaTeibqqaR1WtnkOX1aZy7a5hng==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/progress@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/progress/-/progress-1.0.0-alpha.1.tgz#ff3e2f2a7d6857d5ecf258ad0c8084c51320210f"
+  integrity sha512-bfGG4OEBBXAKtpKIq8QgoCbsQMttPszQDzO5aV9EgAs6DvEjZU376m4L5lyvL4YpfRD45iDXZxPnUa4Ph5DK6g==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/theme@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/theme/-/theme-1.0.0-alpha.1.tgz#1cecd31e69236ba508293d45202f85b7ef68040c"
+  integrity sha512-Wyb7M94cs9wl+05Oak3QQytNNXcC+okC9oAaM3TrNSYJw0TuxM6Xcv+kALthfgzm9w5Q7qAUXfI/JAMPjusztA==
+  dependencies:
+    lit-element "2.2.0"
+
+"@lit-element-bootstrap/utilities@^1.0.0-alpha.1":
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/utilities/-/utilities-1.0.0-alpha.1.tgz#5b15e2c4cfb59564c0c173bc71edc7859a70eeda"
+  integrity sha512-fp6GQl7mKxxuI4A98NR7M3Wg402VhMcm+OpLjZDWgEawvCwI64+z1+FtPpQMB0zctv7wlU7B6o/E/1GB9J6Aqw==
+  dependencies:
+    lit-element "2.2.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -3220,6 +3408,13 @@ lit-analyzer@^1.1.8:
     vscode-css-languageservice "4.0.2-next.1"
     vscode-html-languageservice "2.1.12"
     web-component-analyzer "~0.1.11"
+
+lit-element@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.2.0.tgz#e853be38021f0c7743a10180affdf84b8a02400c"
+  integrity sha512-Mzs3H7IO4wAnpzqreHw6dQqp9IG+h/oN8X9pgNbMZbE7x6B0aNOwP5Nveox/5HE+65ZfW2PeULEjoHkrwpTnuQ==
+  dependencies:
+    lit-html "^1.0.0"
 
 lit-element@^2.2.0:
   version "2.2.1"

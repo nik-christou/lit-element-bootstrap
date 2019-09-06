@@ -1,9 +1,10 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsDropdownSplitCss } from './bs-dropdown-split-css';
-import { BsDropdownToggleCss } from './bs-dropdown-toggle-css';
-import { BsDropdownNavCss } from './bs-dropdown-nav-css';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsDropdownSplitCss } from './bs-dropdown-split-css.js';
+import { BsDropdownToggleCss } from './bs-dropdown-toggle-css.js';
+import { BsDropdownNavCss } from './bs-dropdown-nav-css.js';
 
 import Popper from 'popper.js/dist/esm/popper';
 
@@ -170,4 +171,5 @@ export class BsDropdown extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-dropdown")) window.customElements.define('bs-dropdown', BsDropdown);
+if (!window.customElements.get("bs-dropdown")) 
+    window.customElements.define('bs-dropdown', BsDropdown);

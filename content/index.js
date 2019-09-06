@@ -1,7 +1,7 @@
 
-export { BsContentCodeCss } from './bs-content-code-css';
-export { BsContenTableCss } from './bs-content-table-css';
-export { BsContentImageCss } from './bs-content-images-css';
-export { BsContentRebootCss } from './bs-content-reboot-css';
-export { BsContentFiguresCss } from './bs-content-figures-css';
-export { BsContentTypographyCss } from './bs-content-typography-css';
+export { BsContentCodeCss } from './bs-content-code-css.js';
+export { BsContenTableCss } from './bs-content-table-css.js';
+export { BsContentImageCss } from './bs-content-images-css.js';
+export { BsContentRebootCss } from './bs-content-reboot-css.js';
+export { BsContentFiguresCss } from './bs-content-figures-css.js';
+export { BsContentTypographyCss } from './bs-content-typography-css.js';

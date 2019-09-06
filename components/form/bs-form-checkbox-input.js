@@ -1,8 +1,9 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsFormInputMixin } from './bs-form-input-mixin';
-import { BsPositionCss } from '../../utilities';
-import { BsContentRebootCss } from '../../content';
+import { BsPositionCss } from '@lit-element-bootstrap/utilities/bs-position-css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsFormInputMixin } from './bs-form-input-mixin.js';
 
 export class BsFormCheckboxInput extends BsFormInputMixin(LitElement) {
     
@@ -98,4 +99,5 @@ export class BsFormCheckboxInput extends BsFormInputMixin(LitElement) {
     }
 };
 
-if(!window.customElements.get('bs-form-checkbox-input'))  window.customElements.define('bs-form-checkbox-input', BsFormCheckboxInput);
+if(!window.customElements.get('bs-form-checkbox-input'))  
+    window.customElements.define('bs-form-checkbox-input', BsFormCheckboxInput);

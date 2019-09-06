@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsJumbotron extends LitElement {
     
@@ -38,4 +38,5 @@ export class BsJumbotron extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-jumbotron')) window.customElements.define('bs-jumbotron', BsJumbotron);
+if(!window.customElements.get('bs-jumbotron')) 
+    window.customElements.define('bs-jumbotron', BsJumbotron);

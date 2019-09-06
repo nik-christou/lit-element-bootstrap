@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsPagination extends LitElement {
     
@@ -70,4 +70,5 @@ export class BsPagination extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-pagination')) window.customElements.define('bs-pagination', BsPagination);
+if(!window.customElements.get('bs-pagination')) 
+    window.customElements.define('bs-pagination', BsPagination);

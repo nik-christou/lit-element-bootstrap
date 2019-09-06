@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 export class BsFormCheckLabel extends LitElement {
     
@@ -58,4 +58,5 @@ export class BsFormCheckLabel extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-check-label')) window.customElements.define('bs-form-check-label', BsFormCheckLabel);
+if(!window.customElements.get('bs-form-check-label')) 
+    window.customElements.define('bs-form-check-label', BsFormCheckLabel);

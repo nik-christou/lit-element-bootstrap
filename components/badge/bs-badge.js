@@ -1,7 +1,8 @@
 
 import { LitElement, html } from 'lit-element';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
+
 import { BsBadgeCss } from './bs-badge-css';
-import { BsContentRebootCss } from '../../content/bs-content-reboot-css';
 
 export class BsBadge extends LitElement {
     
@@ -21,4 +22,5 @@ export class BsBadge extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-badge")) window.customElements.define('bs-badge', BsBadge);
+if (!window.customElements.get("bs-badge")) 
+    window.customElements.define('bs-badge', BsBadge);

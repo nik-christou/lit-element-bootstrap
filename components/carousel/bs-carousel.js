@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 const Direction = {
     NEXT: 'next',
@@ -545,4 +545,5 @@ export class BsCarousel extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-carousel"))  window.customElements.define('bs-carousel', BsCarousel);
+if (!window.customElements.get("bs-carousel"))  
+    window.customElements.define('bs-carousel', BsCarousel);

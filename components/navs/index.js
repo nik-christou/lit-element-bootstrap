@@ -1,4 +1,4 @@
 
-export { BsNav } from './bs-nav';
-export { BsNavLink } from './bs-nav-link';
-export { BsNavItem } from './bs-nav-item';
+export { BsNav } from './bs-nav.js';
+export { BsNavLink } from './bs-nav-link.js';
+export { BsNavItem } from './bs-nav-item.js';

@@ -1,11 +1,12 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsNavbarLink extends LitElement {
 
     static get properties() {
         return {
+            href: String,
             target: String
         };
     }
@@ -38,7 +39,7 @@ export class BsNavbarLink extends LitElement {
     
     render() {
         return html`
-            <a href="${this.target}">
+            <a href="${this.target}" .target="${this.target}">
                 <slot></slot>
             </a>
         `;
@@ -46,8 +47,10 @@ export class BsNavbarLink extends LitElement {
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '';
+        this.target = '_self';
     }
 };
 
-if(!window.customElements.get('bs-navbar-link')) window.customElements.define('bs-navbar-link', BsNavbarLink);
+if(!window.customElements.get('bs-navbar-link')) 
+    window.customElements.define('bs-navbar-link', BsNavbarLink);

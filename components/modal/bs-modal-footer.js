@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsModalFooter extends LitElement {
     
@@ -36,5 +36,6 @@ export class BsModalFooter extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-modal-footer')) window.customElements.define('bs-modal-footer', BsModalFooter);
+if(!window.customElements.get('bs-modal-footer')) 
+    window.customElements.define('bs-modal-footer', BsModalFooter);
 

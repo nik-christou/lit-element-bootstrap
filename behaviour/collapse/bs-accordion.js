@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsAccordion extends LitElement {
     
@@ -144,4 +144,5 @@ export class BsAccordion extends LitElement {
     }
 };
 
-if(!window.customElements.get("bs-accordion")) window.customElements.define('bs-accordion', BsAccordion);
+if(!window.customElements.get("bs-accordion")) 
+    window.customElements.define('bs-accordion', BsAccordion);

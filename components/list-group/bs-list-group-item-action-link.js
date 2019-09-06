@@ -1,14 +1,16 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
-import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css';
-import { BsListGroupItemActionCommonCss } from './bs-list-group-item-action-common-css';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
+
+import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css.js';
+import { BsListGroupItemActionCommonCss } from './bs-list-group-item-action-common-css.js';
 
 export class BsListGroupItemActionLink extends LitElement {
 
     static get properties() {
         return {
             index: Number,
+            href: String,
             target: String,
             active: {type: Boolean, reflect: true},
             disabled: {type: Boolean, reflect: true}
@@ -26,7 +28,7 @@ export class BsListGroupItemActionLink extends LitElement {
 
     render() {
         return html`
-            <a href="[${this.target}" class="list-group-item list-group-item-action">
+            <a href="${this.href}" .target="${this.target}" class="list-group-item list-group-item-action">
                 <slot></slot>
             </a>
         `;
@@ -36,7 +38,8 @@ export class BsListGroupItemActionLink extends LitElement {
         super();
         this.index = -1;
         this.active = false;
-        this.target = '#';
+        this.href = '#';
+        this.target = '_self';
         this.disabled = false;
     }
 
@@ -68,4 +71,5 @@ export class BsListGroupItemActionLink extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-list-group-item-action-link')) window.customElements.define('bs-list-group-item-action-link', BsListGroupItemActionLink);
+if(!window.customElements.get('bs-list-group-item-action-link')) 
+    window.customElements.define('bs-list-group-item-action-link', BsListGroupItemActionLink);

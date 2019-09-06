@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCardColumns extends LitElement {
     
@@ -45,4 +45,5 @@ export class BsCardColumns extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-columns")) window.customElements.define('bs-card-columns', BsCardColumns);
+if (!window.customElements.get("bs-card-columns")) 
+    window.customElements.define('bs-card-columns', BsCardColumns);

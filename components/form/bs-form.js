@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsForm extends LitElement {
     
@@ -331,4 +331,5 @@ export class BsForm extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form')) window.customElements.define('bs-form', BsForm);
+if(!window.customElements.get('bs-form')) 
+    window.customElements.define('bs-form', BsForm);

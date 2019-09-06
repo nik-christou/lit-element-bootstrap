@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsFormRow extends LitElement {
     
@@ -40,4 +40,5 @@ export class BsFormRow extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-row')) window.customElements.define('bs-form-row', BsFormRow);
+if(!window.customElements.get('bs-form-row')) 
+    window.customElements.define('bs-form-row', BsFormRow);

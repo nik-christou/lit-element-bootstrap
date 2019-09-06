@@ -3,6 +3,8 @@ import { LitElement, html } from 'lit-element';
 
 export class BsCollapseMultiToggle extends LitElement {
     
+    // TODO: replace the multitarget attribute with a data-multi-target attribute !!!
+
     static get properties() {
         return {
             multiTarget: {type: String, reflect: true}
@@ -42,4 +44,5 @@ export class BsCollapseMultiToggle extends LitElement {
     }
 };
 
-if(!window.customElements.get("bs-collapse-multi-toggle"))  window.customElements.define('bs-collapse-multi-toggle', BsCollapseMultiToggle);
+if(!window.customElements.get("bs-collapse-multi-toggle"))  
+    window.customElements.define('bs-collapse-multi-toggle', BsCollapseMultiToggle);

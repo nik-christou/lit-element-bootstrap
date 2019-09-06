@@ -1,8 +1,9 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
-import { BsFormControlCss } from './css/bs-form-control-css';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsFormControlCss } from './css/bs-form-control-css.js';
 
 export class BsFormTextarea extends LitElement {
     
@@ -80,4 +81,5 @@ export class BsFormTextarea extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-textarea'))  window.customElements.define('bs-form-textarea', BsFormTextarea);
+if(!window.customElements.get('bs-form-textarea'))  
+    window.customElements.define('bs-form-textarea', BsFormTextarea);

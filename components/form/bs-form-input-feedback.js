@@ -1,6 +1,5 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { ifDefined } from 'lit-html/directives/if-defined';
 import { BsContentRebootCss } from '../../content';
 
 export class BsFormInputFeedback extends LitElement {
@@ -139,4 +138,5 @@ export class BsFormInputFeedback extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-input-feedback')) window.customElements.define('bs-form-input-feedback', BsFormInputFeedback);
+if(!window.customElements.get('bs-form-input-feedback')) 
+    window.customElements.define('bs-form-input-feedback', BsFormInputFeedback);

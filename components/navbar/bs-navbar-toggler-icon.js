@@ -1,6 +1,6 @@
 
 import { LitElement, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsNavbarTogglerIcon extends LitElement {
     
@@ -26,4 +26,5 @@ export class BsNavbarTogglerIcon extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-navbar-toggler-icon')) window.customElements.define('bs-navbar-toggler-icon', BsNavbarTogglerIcon);
+if(!window.customElements.get('bs-navbar-toggler-icon')) 
+    window.customElements.define('bs-navbar-toggler-icon', BsNavbarTogglerIcon);

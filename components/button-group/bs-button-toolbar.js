@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsButtonToolbar extends LitElement {
     
@@ -25,4 +25,5 @@ export class BsButtonToolbar extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-button-toolbar"))  window.customElements.define('bs-button-toolbar', BsButtonToolbar);
+if (!window.customElements.get("bs-button-toolbar"))  
+    window.customElements.define('bs-button-toolbar', BsButtonToolbar);

@@ -1,7 +1,8 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css.js';
 
 export class BsListGroupItem extends LitElement {
     
@@ -21,4 +22,5 @@ export class BsListGroupItem extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-list-group-item'))  window.customElements.define('bs-list-group-item', BsListGroupItem);
+if(!window.customElements.get('bs-list-group-item'))  
+    window.customElements.define('bs-list-group-item', BsListGroupItem);

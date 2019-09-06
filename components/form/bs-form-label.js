@@ -1,11 +1,11 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
 import { BsColumnExtraSmallCss, 
          BsColumnSmallCss, 
          BsColumnMediumCss, 
          BsColumnLargeCss, 
-         BsColumnExtraLargeCss } from '../../layout/grid';
+         BsColumnExtraLargeCss } from '@lit-element-bootstrap/layout';
 
 export class BsFormLabel extends LitElement {
     
@@ -87,4 +87,5 @@ export class BsFormLabel extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-label'))  window.customElements.define('bs-form-label', BsFormLabel);
+if(!window.customElements.get('bs-form-label'))  
+    window.customElements.define('bs-form-label', BsFormLabel);

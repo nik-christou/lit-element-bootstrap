@@ -1,2 +1,2 @@
 
-export { BsJumbotron } from './bs-jumbotron';
+export { BsJumbotron } from './bs-jumbotron.js';

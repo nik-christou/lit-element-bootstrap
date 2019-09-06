@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCollapsable extends LitElement {
     
@@ -184,4 +184,5 @@ export class BsCollapsable extends LitElement {
     }
 };
 
-if(!window.customElements.get("bs-collapsable"))  window.customElements.define('bs-collapsable', BsCollapsable);
+if(!window.customElements.get("bs-collapsable")) 
+    window.customElements.define('bs-collapsable', BsCollapsable);

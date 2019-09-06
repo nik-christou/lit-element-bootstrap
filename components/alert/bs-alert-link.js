@@ -1,12 +1,13 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 export class BsAlertLink extends LitElement {
 
     static get properties() {
         return {
-            href: String
+            href: String,
+            target: String
         };
     }
     
@@ -56,14 +57,16 @@ export class BsAlertLink extends LitElement {
 
     render() {
         return html`
-            <a href="${this.href}"><slot></slot></a>
+            <a href="${this.href}" .target="${this.target}"><slot></slot></a>
         `;
     }
     
     constructor() {
         super();
-        this.href = '#';
+        this.href = '';
+        this.target = '_self';
     }
 };
 
-if(!window.customElements.get("bs-alert-link"))  window.customElements.define('bs-alert-link', BsAlertLink);
+if(!window.customElements.get("bs-alert-link"))  
+    window.customElements.define('bs-alert-link', BsAlertLink);

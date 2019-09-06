@@ -1,7 +1,8 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsListGroupCommonCss } from './bs-list-group-common-css';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsListGroupCommonCss } from './bs-list-group-common-css.js';
 
 export class BsListGroupFlush extends LitElement {
     
@@ -43,4 +44,5 @@ export class BsListGroupFlush extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-list-group-flush'))  window.customElements.define('bs-list-group-flush', BsListGroupFlush);
+if(!window.customElements.get('bs-list-group-flush'))  
+    window.customElements.define('bs-list-group-flush', BsListGroupFlush);

@@ -1,5 +1,5 @@
 
-export { BsAlert } from './bs-alert';
-export { BsAlertHr } from './bs-alert-hr';
-export { BsAlertLink } from './bs-alert-link';
-export { BsAlertDismiss } from './bs-alert-dismiss';
+export { BsAlert } from './bs-alert.js';
+export { BsAlertHr } from './bs-alert-hr.js';
+export { BsAlertLink } from './bs-alert-link.js';
+export { BsAlertDismiss } from './bs-alert-dismiss.js';

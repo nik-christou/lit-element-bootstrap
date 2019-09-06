@@ -1,8 +1,9 @@
 
-import { LitElement, html, css } from 'lit-element';
-import { BsDropdownItemMixin } from './bs-dropdown-item-mixin';
-import { BsDropdownItemCss } from './bs-dropdown-item-css';
-import { BsContentRebootCss } from '../../content';
+import { LitElement, html } from 'lit-element';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsDropdownItemCss } from './bs-dropdown-item-css.js';
+import { BsDropdownItemMixin } from './bs-dropdown-item-mixin.js';
 
 export class BsDropdownItemButton extends BsDropdownItemMixin(LitElement) {
     
@@ -20,4 +21,5 @@ export class BsDropdownItemButton extends BsDropdownItemMixin(LitElement) {
     }
 };
 
-if (!window.customElements.get("bs-dropdown-item-button"))  window.customElements.define('bs-dropdown-item-button', BsDropdownItemButton);
+if (!window.customElements.get("bs-dropdown-item-button"))  
+    window.customElements.define('bs-dropdown-item-button', BsDropdownItemButton);

@@ -1,9 +1,10 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsNavbarExpandLargeCss } from './css/bs-navbar-expand-lg-css';
-import { BsNavbarLightColorCss } from './css/bs-navbar-light-color-css';
-import { BsNavbarDarkColorCss } from './css/bs-navbar-dark-color-css';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+
+import { BsNavbarExpandLargeCss } from './css/bs-navbar-expand-lg-css.js';
+import { BsNavbarLightColorCss } from './css/bs-navbar-light-color-css.js';
+import { BsNavbarDarkColorCss } from './css/bs-navbar-dark-color-css.js';
 
 export class BsNavbar extends LitElement {
     
@@ -81,4 +82,5 @@ export class BsNavbar extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-navbar')) window.customElements.define('bs-navbar', BsNavbar);
+if(!window.customElements.get('bs-navbar')) 
+    window.customElements.define('bs-navbar', BsNavbar);

@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCarouselControlNext extends LitElement {
     
@@ -69,4 +69,5 @@ export class BsCarouselControlNext extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-carousel-control-next")) window.customElements.define('bs-carousel-control-next', BsCarouselControlNext);
+if (!window.customElements.get("bs-carousel-control-next")) 
+    window.customElements.define('bs-carousel-control-next', BsCarouselControlNext);

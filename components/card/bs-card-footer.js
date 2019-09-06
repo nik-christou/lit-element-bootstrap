@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsCardFooter extends LitElement {
     
@@ -30,4 +30,5 @@ export class BsCardFooter extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-footer"))   window.customElements.define('bs-card-footer', BsCardFooter);
+if (!window.customElements.get("bs-card-footer"))   
+    window.customElements.define('bs-card-footer', BsCardFooter);

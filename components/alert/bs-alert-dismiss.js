@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
 
-import '../button/close/bs-close-btn';
+import '@lit-element-bootstrap/button/bs-close-button.js';
 
 export class BsAlertDismiss extends LitElement {
 
@@ -20,9 +20,10 @@ export class BsAlertDismiss extends LitElement {
 
     render() {
         return html`
-            <bs-close-btn class="dismiss-button"></bs-close-btn>
+            <bs-close-button class="dismiss-button"></bs-close-button>
         `;
     }
 };
 
-if(!window.customElements.get("bs-alert-dismiss"))  window.customElements.define('bs-alert-dismiss', BsAlertDismiss);
+if(!window.customElements.get("bs-alert-dismiss"))  
+    window.customElements.define('bs-alert-dismiss', BsAlertDismiss);

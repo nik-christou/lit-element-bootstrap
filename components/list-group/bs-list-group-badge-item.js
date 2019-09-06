@@ -1,8 +1,10 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css';
-import { BsFlexJustifyCss, BsFlexDisplayCss, BsFlexAlignItemsCss } from '../../utilities/flex';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+import { BsFlexJustifyCss, BsFlexDisplayCss, BsFlexAlignItemsCss } from '@lit-element-bootstrap/utilities/flex';
+
+import { BsListGroupItemCommonCss } from './bs-list-group-item-common-css.js';
+
 
 export class BsListGroupBadgeItem extends LitElement {
     
@@ -90,4 +92,5 @@ export class BsListGroupBadgeItem extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-list-group-badge-item')) window.customElements.define('bs-list-group-badge-item', BsListGroupBadgeItem);
+if(!window.customElements.get('bs-list-group-badge-item')) 
+    window.customElements.define('bs-list-group-badge-item', BsListGroupBadgeItem);

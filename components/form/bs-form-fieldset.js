@@ -1,6 +1,6 @@
 
-import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { LitElement, html } from 'lit-element';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsFormFieldset extends LitElement {
 
@@ -140,4 +140,5 @@ export class BsFormFieldset extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-fieldset')) window.customElements.define('bs-form-fieldset', BsFormFieldset);
+if(!window.customElements.get('bs-form-fieldset')) 
+    window.customElements.define('bs-form-fieldset', BsFormFieldset);

@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
-import { configureCardLinks } from './helper/bs-card-links-helper';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+import { configureCardLinks } from './helper/bs-card-links-helper.js';
 
 export class BsCardLinks extends LitElement {
     
@@ -31,6 +31,7 @@ export class BsCardLinks extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-links")) window.customElements.define('bs-card-links', BsCardLinks);
+if (!window.customElements.get("bs-card-links")) 
+    window.customElements.define('bs-card-links', BsCardLinks);
 
 

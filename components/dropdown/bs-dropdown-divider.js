@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsDropdownDivider extends LitElement {
     
@@ -26,4 +26,5 @@ export class BsDropdownDivider extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-dropdown-divider"))  window.customElements.define('bs-dropdown-divider', BsDropdownDivider);
+if (!window.customElements.get("bs-dropdown-divider"))  
+    window.customElements.define('bs-dropdown-divider', BsDropdownDivider);

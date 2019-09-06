@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
-import { BsSpacingCss } from '../../utilities';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
+import { BsSpacingCss } from '@lit-element-bootstrap/utilities/bs-spacing-css.js';
 
 export class BsNavbarBrand extends LitElement {
     
@@ -37,4 +37,5 @@ export class BsNavbarBrand extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-navbar-brand')) window.customElements.define('bs-navbar-brand', BsNavbarBrand);
+if(!window.customElements.get('bs-navbar-brand')) 
+    window.customElements.define('bs-navbar-brand', BsNavbarBrand);

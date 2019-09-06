@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsBreadcrumbItem } from './bs-breadcrumb-item';
+import { BsBreadcrumbItem } from './bs-breadcrumb-item.js';
 
 export class BsBreadcrumb extends LitElement {
     
@@ -76,4 +76,5 @@ export class BsBreadcrumb extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-breadcrumb"))  window.customElements.define('bs-breadcrumb', BsBreadcrumb);
+if (!window.customElements.get("bs-breadcrumb"))  
+    window.customElements.define('bs-breadcrumb', BsBreadcrumb);

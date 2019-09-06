@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content/bs-content-reboot-css';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsBreadcrumbItem extends LitElement {
 
@@ -43,9 +43,9 @@ export class BsBreadcrumbItem extends LitElement {
 
     constructor() {
         super();
-        this.href = '#';
-        this.active = false;
+        this.href = '';
         this.title = '';
+        this.active = false;
     }
 
     _selectTemplateToLoad() {
@@ -58,4 +58,5 @@ export class BsBreadcrumbItem extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-breadcrumb-item")) window.customElements.define('bs-breadcrumb-item', BsBreadcrumbItem);
+if (!window.customElements.get("bs-breadcrumb-item")) 
+    window.customElements.define('bs-breadcrumb-item', BsBreadcrumbItem);

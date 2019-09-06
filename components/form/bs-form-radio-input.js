@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsPositionCss } from '../../utilities';
-import { BsContentRebootCss } from '../../content';
+import { BsPositionCss } from '@lit-element-bootstrap/utilities/bs-position-css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsFormRadioInput extends LitElement {
     
@@ -126,4 +126,5 @@ export class BsFormRadioInput extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-radio-input'))  window.customElements.define('bs-form-radio-input', BsFormRadioInput);
+if(!window.customElements.get('bs-form-radio-input'))  
+    window.customElements.define('bs-form-radio-input', BsFormRadioInput);

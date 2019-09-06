@@ -1,12 +1,13 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsPageLink extends LitElement {
     
     static get properties() {
         return {
-            target: {type: String, reflect: true},
+            href: String,
+            target: String,
             disabled: {type: Boolean, reflect: true}
         };
     }
@@ -60,15 +61,17 @@ export class BsPageLink extends LitElement {
     
     render() {
         return html`
-            <a href="${this.target}"><slot></slot></a>
+            <a href="${this.href}" .target="${this.target}"><slot></slot></a>
         `;
     }
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '';
+        this.target = '_self';
         this.disabled = false;
     }
 };
 
-if(!window.customElements.get('bs-page-link')) window.customElements.define('bs-page-link', BsPageLink);
+if(!window.customElements.get('bs-page-link')) 
+    window.customElements.define('bs-page-link', BsPageLink);

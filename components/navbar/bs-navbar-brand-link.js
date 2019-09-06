@@ -1,12 +1,13 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss, BsContentTypographyCss } from '../../content';
-import { BsSpacingCss } from '../../utilities';
+import { BsContentRebootCss, BsContentTypographyCss } from '@lit-element-bootstrap/content';
+import { BsSpacingCss } from '@lit-element-bootstrap/utilities/bs-spacing-css.js';
 
 export class BsNavbarBrandLink extends LitElement {
 
     static get properties() {
         return {
+            href: String,
             target: String
         };
     }
@@ -47,7 +48,7 @@ export class BsNavbarBrandLink extends LitElement {
 
     render() {
         return html`
-            <a href="${this.target}">
+            <a href="${this.href}" .target="${this.target}">
                 <slot></slot>
             </a>
         `;
@@ -55,8 +56,10 @@ export class BsNavbarBrandLink extends LitElement {
     
     constructor() {
         super();
-        this.target = '#';
+        this.href = '';
+        this.target = '_self';
     }
 };
 
-if(!window.customElements.get('bs-navbar-brand-link'))  window.customElements.define('bs-navbar-brand-link', BsNavbarBrandLink);
+if(!window.customElements.get('bs-navbar-brand-link'))  
+    window.customElements.define('bs-navbar-brand-link', BsNavbarBrandLink);

@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '../../content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
 
 export class BsMedia extends LitElement {
     
@@ -23,5 +23,6 @@ export class BsMedia extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-media')) window.customElements.define('bs-media', BsMedia);
+if(!window.customElements.get('bs-media')) 
+    window.customElements.define('bs-media', BsMedia);
 
