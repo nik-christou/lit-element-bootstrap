@@ -1,6 +1,6 @@
 {
   "name": "@lit-element-bootstrap/alert",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Bootstrap v4.1.3 alert component in LitElement",
   "main": "index.js",
   "module": "index.js",
@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@lit-element-bootstrap/button": "^1.0.0-alpha.2",
+    "@lit-element-bootstrap/button": "^1.0.0-alpha.4",
     "@lit-element-bootstrap/content": "^1.0.0-alpha.2",
     "lit-element": "2.2.0"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@lit-element-bootstrap/button",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Bootstrap v4.1.3 button components in LitElement",
   "main": "index.js",
   "module": "index.js",

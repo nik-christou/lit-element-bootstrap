@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@lit-element-bootstrap/button@^1.0.0-alpha.2":
-  version "1.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/button/-/button-1.0.0-alpha.2.tgz#502e8d410d42f2400de592dbe781a417f0c96d06"
-  integrity sha512-hnSt2cFro+N6UIG4aZHq8bXEfVjjEEeXmHTIh6blH+UzpuE1/xdvJJONw08BYS+N/+mFcQ9L5lJur5e0e/9AuA==
+"@lit-element-bootstrap/button@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/button/-/button-1.0.0-alpha.4.tgz#57ddb1a1a321ebbf7f13bbe016bc0b0f3cb1d336"
+  integrity sha512-ZQMK2ahSLzgT0wzmtZ0wrj6QDtge3SOQ4qXLY0349Bm8gyBJ2hKTrl/aTBtWYfC/7oDwSom92RjXkZcAcGSxmA==
   dependencies:
     "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
     lit-element "2.2.0"

@@ -1,6 +1,6 @@
 {
   "name": "lit-element-bootstrap",
-  "version": "1.0.0-alpha.21",
+  "version": "1.0.0-alpha.22",
   "main": "lit-element-bootstrap.js",
   "module": "lit-element-bootstrap.js",
   "type": "module",
@@ -31,7 +31,7 @@
     "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false"
   },
   "dependencies": {
-    "@lit-element-bootstrap/button": "^1.0.0-alpha.3",
+    "@lit-element-bootstrap/button": "^1.0.0-alpha.4",
     "@lit-element-bootstrap/content": "^1.0.0-alpha.2",
     "@lit-element-bootstrap/layout": "^1.0.0-alpha.1",
     "@lit-element-bootstrap/utilities": "^1.0.0-alpha.1",
