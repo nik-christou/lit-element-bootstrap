@@ -106,7 +106,7 @@ const BsButtonMixin = (superClass) => class extends superClass {
     
     _handleButtonClick(event) {
         
-        if(this._blockAllowDefaultEvent()) {
+        if(this._blockDefaultEvent()) {
             event.preventDefault();
         };
 
@@ -121,7 +121,10 @@ const BsButtonMixin = (superClass) => class extends superClass {
             bubbles: true, 
             composed: true,
             detail: {
-                action: this.action
+                active: this.active,
+                action: this.action,
+                toggle: this.toggle,
+                dropdown: this.dropdownToggle
             }
         });
 
@@ -148,11 +151,11 @@ const BsButtonMixin = (superClass) => class extends superClass {
         }
     }
     
-    _blockAllowDefaultEvent() {
+    _blockDefaultEvent() {
 
         const linkButtonElement = this.shadowRoot.querySelector('a');
 
-        if(!linkButtonElement && !this.href) {
+        if(linkButtonElement && this.href) {
             return false;
         }
 
