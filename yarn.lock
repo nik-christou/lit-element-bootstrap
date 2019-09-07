@@ -645,6 +645,14 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@lit-element-bootstrap/button@^1.0.0-alpha.3":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/button/-/button-1.0.0-alpha.3.tgz#bd37b3be83b41bb93ac615e1427cbdb4225ef4f8"
+  integrity sha512-x+Tsd08KSXzo6Rz3VxOXNlKuNwOE+N8KHUV5mSlgtYvzEhEsEW0ZqGdNAXR7srwW2xe6ZHQ+u+LnRYj8YNstuQ==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.2"
+    lit-element "2.2.0"
+
 "@lit-element-bootstrap/content@1.0.0-alpha.2", "@lit-element-bootstrap/content@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@lit-element-bootstrap/content/-/content-1.0.0-alpha.2.tgz#f67046586f98d9032f85a2c5d288b252c39e14d8"
