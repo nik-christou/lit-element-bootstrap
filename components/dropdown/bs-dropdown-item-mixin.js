@@ -1,4 +1,7 @@
 
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
+import { BsDropdownItemCss } from './bs-dropdown-item-css.js';
+
 const BsDropdownItemMixin = (superClass) => class extends superClass {
     
     static get properties() {
@@ -10,18 +13,36 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
         };
     }
     
+    static get styles() {
+        return [
+            BsContentRebootCss,
+            BsDropdownItemCss
+        ];
+    }
+    
     constructor() {
         super();
+        this.index = 0;
+        this.title = '';
         this.active = false;
         this.disabled = false;
     }
     
     firstUpdated() {
         const buttonElement = this._retrieveButtonElement();
-        this._applyButtonActivateState(buttonElement);
-        buttonElement.addEventListener('mousedown', event => this._handleButtonClick(event));
+        buttonElement.addEventListener('mousedown', _ => this._handleButtonClick());
     }
     
+    toggleHover() {
+        const buttonElement = this._retrieveButtonElement();
+        buttonElement.classList.toggle('hover');
+    }
+
+    isHover() {
+        const buttonElement = this._retrieveButtonElement();
+        return buttonElement.classList.contains('hover');
+    }
+
     _retrieveButtonElement() {
         
         const linkElement = this.shadowRoot.querySelector('a.dropdown-item');
@@ -47,7 +68,7 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
         }
     }
     
-    _handleButtonClick(event) {
+    _handleButtonClick() {
         
         if(!this.disabled) {
             

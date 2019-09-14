@@ -20,7 +20,13 @@ export const BsDropdownItemCss = css`
         border: 0;
     }
 
-    .dropdown-item:hover, 
+    .dropdown-item.hover {
+        color: #16181b;
+        text-decoration: none;
+        background-color: #f8f9fa;
+    }
+
+    .dropdown-item:hover,
     .dropdown-item:focus {
         color: #16181b;
         text-decoration: none;

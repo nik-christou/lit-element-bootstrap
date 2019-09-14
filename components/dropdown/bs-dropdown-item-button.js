@@ -1,17 +1,11 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
-
-import { BsDropdownItemCss } from './bs-dropdown-item-css.js';
 import { BsDropdownItemMixin } from './bs-dropdown-item-mixin.js';
 
 export class BsDropdownItemButton extends BsDropdownItemMixin(LitElement) {
     
     static get styles() {
-        return [
-            BsContentRebootCss,
-            BsDropdownItemCss
-        ];
+        return [super.styles];
     }
     
     render() {

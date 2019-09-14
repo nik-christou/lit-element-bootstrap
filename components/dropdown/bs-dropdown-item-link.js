@@ -1,26 +1,18 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot-css.js';
-
 import { BsDropdownItemMixin } from './bs-dropdown-item-mixin.js';
-import { BsDropdownItemCss } from './bs-dropdown-item-css.js';
 
 export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
     
     static get properties() {
         return {
-            index: Number,
-            title: String,
             href: String,
             target: String
         };
     }
     
     static get styles() {
-        return [
-            BsContentRebootCss,
-            BsDropdownItemCss
-        ];
+        return [super.styles];
     }
     
     render() {
@@ -31,8 +23,6 @@ export class BsDropdownItemLink extends BsDropdownItemMixin(LitElement) {
     
     constructor() {
         super();
-        this.index = 0;
-        this.title = '';
         this.href = '';
         this.target = '_self';
     }

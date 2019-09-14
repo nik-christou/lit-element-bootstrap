@@ -9,12 +9,13 @@ import { BsDropdownNavCss } from './bs-dropdown-nav-css.js';
 import Popper from 'popper.js/dist/esm/popper';
 
 export class BsDropdown extends LitElement {
-    
+
     static get properties() {
         return {
             _popper: Popper,
             offset: String,
-            split: Boolean
+            split: Boolean,
+            ariasHasPopup: {type: String, reflect: true, attribute: 'aria-haspopup'}
         };
     } 
     
@@ -44,6 +45,7 @@ export class BsDropdown extends LitElement {
         this._popper = null;
         this.offset = '';
         this.split = false;
+        this.ariasHasPopup = 'true';
     }
     
     firstUpdated() {
