@@ -14,7 +14,7 @@ export class BsDropdown extends LitElement {
         return {
             _popper: Popper,
             offset: String,
-            split: Boolean,
+            split: {type: Boolean, reflect: true},
             ariasHasPopup: {type: String, reflect: true, attribute: 'aria-haspopup'}
         };
     } 
@@ -54,8 +54,8 @@ export class BsDropdown extends LitElement {
         const slotNodes = slotElement.assignedNodes();
         
         const dropdownMenuElement = this._findDropdownMenuElement(slotNodes);
-        this.addEventListener('bs-button-click', () => this._handleBtnClicked(dropdownMenuElement));
-        this.addEventListener('bs-button-focusout', () => this._handleBtnFocusOut(dropdownMenuElement));
+        this.addEventListener('bs-button-click', event => this._handleBtnClicked(event, dropdownMenuElement));
+        this.addEventListener('bs-button-focusout', _ => this._handleBtnFocusOut(dropdownMenuElement));
         
         // if the dropdown is part of a navbar, don't add popper.js
         if(!this._isParentElementNavItem()) {
@@ -68,7 +68,7 @@ export class BsDropdown extends LitElement {
         
         const dropdDownMenuPlacement = dropdownMenuElement.getAttribute('x-placement');
         const referenceElement = this._findReferenceElement(dropdownButtonElement);
-        
+
         const config = this._createPopperConfig(dropdDownMenuPlacement);
         this._popper = new Popper(referenceElement, dropdownMenuElement, config);
     }
@@ -107,7 +107,13 @@ export class BsDropdown extends LitElement {
         };
     }
     
-    _handleBtnClicked(dropdownMenuElement) {
+    _handleBtnClicked(event, dropdownMenuElement) {
+
+        // check if event was fired from a dropdown button
+        if(!event.detail.dropdown) {
+            return;
+        }
+
         dropdownMenuElement.toggleMenu();
         this.active = !this.active;
     }
@@ -118,7 +124,7 @@ export class BsDropdown extends LitElement {
     }
     
     _findReferenceElement(dropdownButtonElement) {
-        
+
         if(this.split) {
             return dropdownButtonElement;
         } 
@@ -143,7 +149,9 @@ export class BsDropdown extends LitElement {
     _findDropdownMenuElement(slotNodes) {
         
         for (let index = 0; index < slotNodes.length; index++) {
+            
             const slotItem = slotNodes[index];
+
             if (this._isDropdownMenuElement(slotItem)) {
                 return slotItem;
             }
