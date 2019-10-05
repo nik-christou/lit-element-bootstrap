@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
 import { BsContainerCss } from './bs-container.css.js';
 
 export class BsContainer extends LitElement {

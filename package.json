@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@lit-element-bootstrap/button": "^1.0.0-alpha.5",
-    "@lit-element-bootstrap/content": "^1.0.0-alpha.2",
+    "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
     "@lit-element-bootstrap/layout": "^1.0.0-alpha.1",
     "@lit-element-bootstrap/utilities": "^1.0.0-alpha.1",
     "lit-element": "2.2.0",
