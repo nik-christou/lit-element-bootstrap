@@ -1,6 +1,6 @@
 {
   "name": "@lit-element-bootstrap/utilities",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.4",
   "description": "Bootstrap v4.1.3 css utilities component in LitElement",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -18,6 +18,9 @@
   "dependencies": {
     "lit-element": "^2.2.1"
   },
+  "scripts": {
+    "pika:build": "pika build"
+  },
   "@pika/pack": {
     "pipeline": [
       [
@@ -27,7 +30,10 @@
         "@pika/plugin-build-web"
       ],
       [
-        "@pika/plugin-bundle-web", {"entrypoint": "unpkg"}
+        "@pika/plugin-bundle-web",
+        {
+            "entrypoint": "unpkg"
+        }
       ]
     ]
   }
