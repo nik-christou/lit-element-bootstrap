@@ -1,0 +1,44 @@
+{
+  "name": "@lit-element-bootstrap/breadcrumb",
+  "version": "1.0.0-alpha.2",
+  "description": "Bootstrap v4.1.3 breadcrumb component in LitElement",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "type": "module",
+  "author": "Nikolas Christou",
+  "homepage": "https://github.com/nik-christou/lit-element-bootstrap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nik-christou/lit-element-bootstrap"
+  },
+  "license": "MIT",
+  "scripts": {
+    "pika:build": "pika build"
+  },
+  "dependencies": {
+    "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
+    "lit-element": "^2.2.1"
+  },
+  "devDependencies": {
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-web": "^0.6.1",
+    "@pika/plugin-bundle-web": "^0.6.1",
+    "@pika/plugin-standard-pkg": "^0.6.1"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-bundle-web",
+        {
+            "entrypoint": "unpkg"
+        }
+      ]
+    ]
+  }
+}
