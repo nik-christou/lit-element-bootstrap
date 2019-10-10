@@ -7,7 +7,7 @@ import { BsFormControlSizeCss } from './bs-form-control-size.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
 
 export class BsFormInput extends BsFormInputMixin(LitElement) {
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -15,13 +15,13 @@ export class BsFormInput extends BsFormInputMixin(LitElement) {
             BsFormControlSizeCss
         ];
     }
-    
+
     render() {
         return html`
-            <input 
+            <input
                 class="form-control"
                 .type=${this.type}
-                value=${ifDefined(this.value)}
+                .value=${this.value}
                 name=${ifDefined(this.name)}
                 maxlength=${ifDefined(this.maxlength)}
                 minlength=${ifDefined(this.minlength)}

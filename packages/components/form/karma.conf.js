@@ -12,13 +12,12 @@ module.exports = config => {
         require.resolve('@open-wc/karma-esm'), // load plugin
         'karma-*', // fallback: resolve any karma- plugins
       ],
-    
+
       frameworks: ['esm'],
-    
+
       esm: {
         nodeResolve: true, // if you are using 'bare module imports' you will need this option
         compatibility: 'all', // set compatibility mode to all
-        compatibility: 'none',
       },
     }),
   );
