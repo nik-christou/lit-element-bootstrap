@@ -15,41 +15,5 @@
     "type": "git",
     "url": "https://github.com/nik-christou/lit-element-bootstrap"
   },
-  "license": "MIT",
-  "scripts": {
-    "analyze-components": "lit-analyzer components",
-    "analyze-behaviour": "lit-analyzer behaviour",
-    "analyze-content": "lit-analyzer content",
-    "analyze-layout": "lit-analyzer layout",
-    "analyze-theme": "lit-analyzer theme",
-    "analyze-utilities": "lit-analyzer utilities",
-    "test": "karma start --coverage",
-    "test:watch": "karma start --auto-watch=true --single-run=false",
-    "test:update-snapshots": "karma start --update-snapshots",
-    "test:prune-snapshots": "karma start --prune-snapshots",
-    "test:compatibility": "karma start --compatibility all --coverage",
-    "test:compatibility:watch": "karma start --compatibility all --auto-watch=true --single-run=false"
-  },
-  "dependencies": {
-    "@lit-element-bootstrap/button": "^1.0.0-alpha.5",
-    "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
-    "@lit-element-bootstrap/layout": "^1.0.0-alpha.1",
-    "@lit-element-bootstrap/utilities": "^1.0.0-alpha.1",
-    "lit-element": "2.2.0",
-    "popper.js": "^1.14.4",
-    "pwa-helpers": "^0.9.1"
-  },
-  "devDependencies": {
-    "@open-wc/karma-esm": "^2.5.7",
-    "@open-wc/testing": "^2.3.3",
-    "@open-wc/testing-karma": "^3.1.32",
-    "deepmerge": "^4.0.0",
-    "karma": "^4.3.0",
-    "lit-analyzer": "^1.1.8",
-    "sinon": "^7.4.2",
-    "@pika/pack": "^0.5.0",
-    "@pika/plugin-build-web": "^0.6.1",
-    "@pika/plugin-bundle-web": "^0.6.1",
-    "@pika/plugin-standard-pkg": "^0.6.1"
-  }
+  "license": "MIT"
 }
