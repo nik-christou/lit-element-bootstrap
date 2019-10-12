@@ -1,6 +1,6 @@
 {
   "name": "@lit-element-bootstrap/list-group",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Bootstrap v4.1.3 list-group component in LitElement",
   "main": "index.js",
   "module": "index.js",
