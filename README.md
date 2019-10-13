@@ -1,6 +1,8 @@
 # lit-element-bootstrap
 An implementation of Bootstrap v4.1.3 components in LitElement, published as individual packages
 
+Note: previously published lit-element-bootstrap package which included all bootstrap packages as one exported module in now deprecated. Use the individual packages to import what you need.
+
 [@lit-element-bootstrap/content](https://www.npmjs.com/package/@lit-element-bootstrap/content)<br/>
 [@lit-element-bootstrap/utilities](https://www.npmjs.com/package/@lit-element-bootstrap/utilities)<br/>
 [@lit-element-bootstrap/layout](https://www.npmjs.com/package/@lit-element-bootstrap/layout)<br/>
@@ -24,8 +26,6 @@ An implementation of Bootstrap v4.1.3 components in LitElement, published as ind
 [@lit-element-bootstrap/collapse](https://www.npmjs.com/package/@lit-element-bootstrap/collapse)<br/>
 [@lit-element-bootstrap/theme](https://www.npmjs.com/package/@lit-element-bootstrap/theme)<br/>
 [@lit-element-bootstrap/navs](https://www.npmjs.com/package/@lit-element-bootstrap/navs)
-
- Note: previously published lit-element-bootstrap package which included all bootstrap packages as one exported module in now deprecated. Use the individual packages to import what you need.
 
 ## Documentation and demo examples
 [Go to docs and demo](https://lit-element-bootstrap.dev)
