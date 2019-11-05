@@ -138,8 +138,7 @@ export class BsDropdown extends LitElement {
             
             const slotItem = slotNodes[index];
             
-            if (this._isDropdownButtonElement(slotItem) && 
-                this._isDropdownButtonToggle(slotItem)) {
+            if (this._isDropdownButtonToggle(slotItem)) {
                 
                 return slotItem;
             }
@@ -159,19 +158,13 @@ export class BsDropdown extends LitElement {
     }
     
     _isDropdownButtonToggle(element) {
-        return element.hasAttribute('dropdown-toggle');
+        return element.nodeType === Node.ELEMENT_NODE &&
+            element.hasAttribute('dropdown-toggle');
     }
     
     _isDropdownMenuElement(element) {
         return element.nodeType === Node.ELEMENT_NODE 
                 && (element.localName === 'bs-dropdown-menu');
-    }
-    
-    _isDropdownButtonElement(element) {
-        return element.nodeType === Node.ELEMENT_NODE && 
-                (element.localName === 'bs-button' || 
-                 element.localName === 'bs-link-button' || 
-                 element.localName === 'bs-input-button');
     }
     
     _isParentElementNavItem() {
