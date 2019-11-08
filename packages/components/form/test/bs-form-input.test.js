@@ -114,7 +114,7 @@ describe('bs-form-input', () => {
     it('value attribute is set by default to undefined', async () => {
 
         // given
-        const valueDefaultValue = undefined;
+        const valueDefaultValue = '';
 
         // when
         const bsFormInput = (await fixture('<bs-form-input></bs-form-input>'));
