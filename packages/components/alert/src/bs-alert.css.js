@@ -1,7 +1,6 @@
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsAlertCss = css`
-
     *,
     *::before,
     *::after {
@@ -29,11 +28,11 @@ export const BsAlertCss = css`
         padding-right: 4rem;
     }
 
-    :host ::slotted([slot=heading]) {
+    :host ::slotted([slot="heading"]) {
         color: inherit;
     }
 
-    :host ::slotted([slot=dismiss]) {
+    :host ::slotted([slot="dismiss"]) {
         position: absolute;
         top: 0;
         right: 0;

@@ -1,13 +1,15 @@
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsAlertHrCss = css`
-
     :host([context="primary"]) {
         --alert-hr-bd-top-color: var(--alert-hr-primary-bd-top-color, #9fcdff);
     }
 
     :host([context="secondary"]) {
-        --alert-hr-bd-top-color: var(--alert-hr-secondary-bd-top-color, #c8cbcf);
+        --alert-hr-bd-top-color: var(
+            --alert-hr-secondary-bd-top-color,
+            #c8cbcf
+        );
     }
 
     :host([context="success"]) {

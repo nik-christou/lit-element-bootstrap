@@ -1,6 +1,5 @@
-
-import { LitElement, html } from 'lit-element';
-import { BsAlertLinkCss } from './bs-alert-link.css.js';
+import { LitElement, html } from "lit-element";
+import { BsAlertLinkCss } from "./bs-alert-link.css.js";
 
 /**
  * Alert link component
@@ -33,7 +32,6 @@ import { BsAlertLinkCss } from './bs-alert-link.css.js';
  * @cssproperty --alert-link-dark-color - The dark context link color. default: #040505
  */
 export class BsAlertLink extends LitElement {
-
     static get properties() {
         return {
             href: {
@@ -48,9 +46,7 @@ export class BsAlertLink extends LitElement {
     }
 
     static get styles() {
-        return [
-            BsAlertLinkCss
-        ];
+        return [BsAlertLinkCss];
     }
 
     render() {
@@ -63,10 +59,10 @@ export class BsAlertLink extends LitElement {
 
     constructor() {
         super();
-        this.href = '';
-        this.target = '_self';
+        this.href = "";
+        this.target = "_self";
     }
-};
+}
 
-if(!window.customElements.get("bs-alert-link"))
-    window.customElements.define('bs-alert-link', BsAlertLink);
+if (!window.customElements.get("bs-alert-link"))
+    window.customElements.define("bs-alert-link", BsAlertLink);

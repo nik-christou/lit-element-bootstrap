@@ -1,7 +1,6 @@
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsAlertLinkCss = css`
-
     :host([context="primary"]) {
         --alert-link-color: var(--alert-link-primary-color, #002752);
     }

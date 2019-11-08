@@ -1,8 +1,6 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsAlertDismissCss = css`
-
     .close {
         border: 0;
         float: right;

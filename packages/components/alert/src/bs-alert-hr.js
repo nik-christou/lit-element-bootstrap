@@ -1,6 +1,5 @@
-
-import { LitElement, html } from 'lit-element';
-import { BsAlertHrCss } from './bs-alert-hr.css.js';
+import { LitElement, html } from "lit-element";
+import { BsAlertHrCss } from "./bs-alert-hr.css.js";
 
 /**
  * Alert hr component
@@ -21,11 +20,8 @@ import { BsAlertHrCss } from './bs-alert-hr.css.js';
  * @cssproperty --alert-hr-dark-bd-top-color - The hr dark context top border color. default: #b9bbbe
  */
 export class BsAlertHr extends LitElement {
-
     static get styles() {
-        return [
-            BsAlertHrCss
-        ];
+        return [BsAlertHrCss];
     }
 
     render() {
@@ -33,7 +29,7 @@ export class BsAlertHr extends LitElement {
             <hr />
         `;
     }
-};
+}
 
-if(!window.customElements.get("bs-alert-hr"))
-    window.customElements.define('bs-alert-hr', BsAlertHr);
+if (!window.customElements.get("bs-alert-hr"))
+    window.customElements.define("bs-alert-hr", BsAlertHr);

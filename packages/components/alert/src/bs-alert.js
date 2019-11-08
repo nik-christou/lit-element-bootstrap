@@ -1,6 +1,5 @@
-
-import { LitElement, html } from 'lit-element';
-import { BsAlertCss } from './bs-alert.css.js';
+import { LitElement, html } from "lit-element";
+import { BsAlertCss } from "./bs-alert.css.js";
 
 /**
  * Alert component
@@ -49,7 +48,6 @@ import { BsAlertCss } from './bs-alert.css.js';
  * @cssproperty --alert-dark-bd-color - The dark context border color. default: #c6c8ca
  */
 export class BsAlert extends LitElement {
-
     static get properties() {
         return {
             dismissable: {
@@ -60,9 +58,7 @@ export class BsAlert extends LitElement {
     }
 
     static get styles() {
-        return [
-            BsAlertCss
-        ];
+        return [BsAlertCss];
     }
 
     render() {
@@ -81,11 +77,14 @@ export class BsAlert extends LitElement {
     firstUpdated() {
         super.firstUpdated();
         this._addAriaRole();
-        this.addEventListener('close.button.click', async _ => await this.dismiss());
+        this.addEventListener(
+            "close.button.click",
+            async _ => await this.dismiss()
+        );
     }
 
     _addAriaRole() {
-        this.setAttribute('role', 'alert');
+        this.setAttribute("role", "alert");
     }
 
     /**
@@ -95,22 +94,20 @@ export class BsAlert extends LitElement {
      * @return {Promise} A Promise which is resolved when dismissal has finished with transition.
      */
     async dismiss() {
-
-        if(!this.dismissable) {
+        if (!this.dismissable) {
             return;
         }
 
         return new Promise(resolve => {
-
             const afterTransitionEnd = _ => {
                 this._fireClosedEvent();
-                this.removeEventListener('transitionend', afterTransitionEnd);
+                this.removeEventListener("transitionend", afterTransitionEnd);
                 resolve();
-            }
+            };
 
             this._fireCloseEvent();
-            this.addEventListener('transitionend', afterTransitionEnd);
-            requestAnimationFrame(() => this.style.opacity = '0');
+            this.addEventListener("transitionend", afterTransitionEnd);
+            requestAnimationFrame(() => (this.style.opacity = "0"));
         });
     }
 
@@ -118,13 +115,12 @@ export class BsAlert extends LitElement {
      * Schedule updates to occur just before the next frame
      */
     async performUpdate() {
-        await new Promise((resolve) => requestAnimationFrame(() => resolve()));
+        await new Promise(resolve => requestAnimationFrame(() => resolve()));
         super.performUpdate();
     }
 
     _fireCloseEvent() {
-
-        const alertCloseEvent = new CustomEvent('close.bs.alert', {
+        const alertCloseEvent = new CustomEvent("close.bs.alert", {
             bubbles: true,
             composed: true
         });
@@ -133,15 +129,13 @@ export class BsAlert extends LitElement {
     }
 
     _fireClosedEvent() {
-
-        const alertClosedEvent = new CustomEvent('closed.bs.alert', {
+        const alertClosedEvent = new CustomEvent("closed.bs.alert", {
             bubbles: true,
             composed: true
         });
 
         this.dispatchEvent(alertClosedEvent);
     }
-};
+}
 
-if (!customElements.get("bs-alert"))
-    customElements.define('bs-alert', BsAlert);
+if (!customElements.get("bs-alert")) customElements.define("bs-alert", BsAlert);
