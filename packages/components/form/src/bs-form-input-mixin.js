@@ -37,6 +37,7 @@ const BsFormInputMixin = (superClass) => class extends superClass {
         super();
         this.type = 'text';
         this.readonly = false;
+        this.value = '';
         this.inline = false;
         this.disabled = false;
         this.required = false;
