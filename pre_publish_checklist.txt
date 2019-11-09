@@ -1,0 +1,76 @@
+
+==========================
+Visual Studio Code Plugins
+==========================
+
+- lit-Plugins
+- VS DocBlockr
+- Prettier - Code formatter
+
+
+=======================================================
+Justin's Checklist for Publishing Web Components to NPM
+=======================================================
+- Publish standard ES2017
+- Publish standard JavaScript modules
+- Do not use .mjs file extensions
+- Only publish a single build
+- Important package.json fields:
+	a. Set "type" to "module"
+	b. Set "main" to the main entry point module
+	c. Set "module" to the same file as "main"
+	d. Include polyfills in devDependencies, not dependencies
+- Do not bundle
+- Do not minify
+- Always self-define elements
+- Export element classes
+- Do not import polyfills into modules
+- Import dependencies with "bare" or "named" import specifiers
+- Always include file extensions in import specifiers
+- Publish a custom-elements.json file documenting your elements
+- Include good TypeScript typings
+
+Source: http://104.154.68.174/2019/11/01/how-to-publish-web-components-to-npm
+
+=================
+Generated typings
+=================
+All typings that are custom elements should also declare 
+inside the *.d.ts file using TypeScript's interface augmentation:
+
+declare global {
+    interface HTMLElementTagNameMap {
+      "my-element": MyElement
+    }
+}
+
+Source: http://104.154.68.174/2019/11/01/how-to-publish-web-components-to-npm
+
+======================================
+Definition of done (before publishing)
+======================================
+
+- Generate all typings of source files "yarn run tsc:build" and fix any issues
+- All typings that are custom elements have been declared (see above)
+- Run prettier on all generated typescript typings ???
+- Make sure there are no test failures and coverage is good "yarn run test:coverage"
+- Run lit-analayzer "yarn run lit-analyze" to find issues
+- Run wca-analyzer "yarn run wca-analyze:json" to generate new custom-elements.json
+- Run prettier on all js and test file "yarn run format:prettier" 
+
+=======================
+Pre-publish preparation
+=======================
+
+- Run pika build command
+- Inside the generated pkg folder:
+	- Rename dist-web -> unpkg
+	- Extract all files from dist-src to ./pkg and remove dist-src
+	- Copy custom-elements.js to ./pkg
+	- Copy all typings to ./pkg
+- Modify the generated package.json:
+	- remove "devDependencies"
+	- remove "files" array
+	- add a "main" entrypoint pointing to index.js
+	- change all remaining entrypoints to point to index.js
+	- add a "types" entrypoint pointing to index.d.ts

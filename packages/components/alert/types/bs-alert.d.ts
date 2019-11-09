@@ -1,6 +1,3 @@
-import { LitElement, html } from "lit-element";
-import { BsAlertCss } from "./bs-alert.css.js";
-
 /**
  * Alert component
  *
@@ -48,93 +45,35 @@ import { BsAlertCss } from "./bs-alert.css.js";
  * @cssproperty --alert-dark-bd-color - The dark context border color. default: #c6c8ca
  */
 export class BsAlert extends LitElement {
-    static get properties() {
-        return {
-            dismissable: {
-                type: Boolean,
-                reflect: true
-            }
+    static get properties(): {
+        dismissable: {
+            type: BooleanConstructor;
+            reflect: boolean;
         };
-    }
-
-    static get styles() {
-        return [BsAlertCss];
-    }
-
-    render() {
-        return html`
-            <slot name="heading"></slot>
-            <slot></slot>
-            <slot name="dismiss"></slot>
-        `;
-    }
-
-    constructor() {
-        super();
-        this.dismissable = false;
-    }
-
-    firstUpdated() {
-        this._addAriaRole();
-        this.addEventListener(
-            "close.button.click",
-            async _ => await this.dismiss()
-        );
-    }
-
-    _addAriaRole() {
-        this.setAttribute("role", "alert");
-    }
-
+    };
+    static get styles(): import("lit-element").CSSResult[];
+    render(): import("lit-element").TemplateResult;
+    dismissable: boolean;
+    firstUpdated(): void;
+    _addAriaRole(): void;
     /**
      * Dismisses an alert
      *
      * @async
      * @return {Promise} A Promise which is resolved when dismissal has finished with transition.
      */
-    async dismiss() {
-        if (!this.dismissable) {
-            return;
-        }
-
-        return new Promise(resolve => {
-            const afterTransitionEnd = _ => {
-                this._fireClosedEvent();
-                this.removeEventListener("transitionend", afterTransitionEnd);
-                resolve();
-            };
-
-            this._fireCloseEvent();
-            this.addEventListener("transitionend", afterTransitionEnd);
-            requestAnimationFrame(() => (this.style.opacity = "0"));
-        });
-    }
-
+    dismiss(): Promise<any>;
     /**
      * Schedule updates to occur just before the next frame
      */
-    async performUpdate() {
-        await new Promise(resolve => requestAnimationFrame(() => resolve()));
-        super.performUpdate();
-    }
+    performUpdate(): Promise<void>;
+    _fireCloseEvent(): void;
+    _fireClosedEvent(): void;
+}
+import { LitElement } from "lit-element";
 
-    _fireCloseEvent() {
-        const alertCloseEvent = new CustomEvent("close.bs.alert", {
-            bubbles: true,
-            composed: true
-        });
-
-        this.dispatchEvent(alertCloseEvent);
-    }
-
-    _fireClosedEvent() {
-        const alertClosedEvent = new CustomEvent("closed.bs.alert", {
-            bubbles: true,
-            composed: true
-        });
-
-        this.dispatchEvent(alertClosedEvent);
+declare global {
+    interface HTMLElementTagNameMap {
+      "bs-alert": BsAlert
     }
 }
-
-if (!customElements.get("bs-alert")) customElements.define("bs-alert", BsAlert);

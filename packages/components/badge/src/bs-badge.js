@@ -1,17 +1,17 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsBadgeCss } from './bs-badge.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsBadgeRebootCss } from './bs-badge-reboot.css.js';
 
 export class BsBadge extends LitElement {
 
     static get styles() {
         return [
-            BsContentRebootCss,
+            BsBadgeRebootCss,
             BsBadgeCss
         ];
     }
-
+    
     render() {
         return html`
             <span class="badge">

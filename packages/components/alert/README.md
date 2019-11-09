@@ -1,4 +1,4 @@
-# lit-element-bootstrap/alert
+# @lit-element-bootstrap/alert
 
 An implementation of Bootstrap v4.3.1 alert components in LitElement.
 

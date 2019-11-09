@@ -2,19 +2,26 @@
 import { LitElement, html } from 'lit-element';
 import { BsBadgeCss } from './bs-badge.css.js';
 import { BsBadgeLinkCss } from './bs-badge-link.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsBadgeRebootCss } from './bs-badge-reboot.css.js';
 
 export class BsBadgeLink extends LitElement {
 
     static get properties() {
         return {
-            href: String
+            href: {
+                type: String,
+                reflect: true
+            },
+            target: {
+                type: String,
+                reflect: true
+            }
         };
     }
 
     static get styles() {
         return [
-            BsContentRebootCss,
+            BsBadgeRebootCss,
             BsBadgeCss,
             BsBadgeLinkCss
         ];
@@ -22,7 +29,7 @@ export class BsBadgeLink extends LitElement {
 
     render() {
         return html`
-            <a href="${this.href}" class="badge">
+            <a href="${this.href}" .target="${this.target}" class="badge">
                 <slot></slot>
             </a>
         `;
@@ -30,7 +37,8 @@ export class BsBadgeLink extends LitElement {
 
     constructor() {
         super();
-        this.href = '#';
+        this.href = '';
+        this.target = '_self';
     }
 };
 
