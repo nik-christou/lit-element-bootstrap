@@ -1,72 +1,76 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsBadgeCss = css`
-                
-    .badge {
+    :host([pill]) {
+        --badge-pd-right: var(--badge-pill-pd-top, 0.6em);
+        --badge-pd-left: var(--badge-pill-pd-left, 0.6em);
+        --badge-bd-radius: var(--badge-pill-bd-radius, 10rem);
+    }
+
+    :host([context="primary"]) {
+        --badge-color: var(--badge-primary-color, #fff);
+        --badge-bg-color: var(--badge-primary-bg-color, #007bff);
+    }
+
+    :host([context="secondary"]) {
+        --badge-color: var(--badge-secondary-color, #fff);
+        --badge-bg-color: var(--badge-secondary-bg-color, #6c757d);
+    }
+
+    :host([context="success"]) {
+        --badge-color: var(--badge-success-color, #fff);
+        --badge-bg-color: var(--badge-success-bg-color, #28a745);
+    }
+
+    :host([context="info"]) {
+        --badge-color: var(--badge-info-color, #fff);
+        --badge-bg-color: var(--badge-info-bg-color, #17a2b8);
+    }
+
+    :host([context="warning"]) {
+        --badge-color: var(--badge-warning-color, #212529);
+        --badge-bg-color: var(--badge-warning-bg-color, #ffc107);
+    }
+
+    :host([context="danger"]) {
+        --badge-color: var(--badge-danger-color, #fff);
+        --badge-bg-color: var(--badge-danger-bg-color, #dc3545);
+    }
+
+    :host([context="light"]) {
+        --badge-color: var(--badge-light-color, #212529);
+        --badge-bg-color: var(--badge-light-bg-color, #f8f9fa);
+    }
+
+    :host([context="dark"]) {
+        --badge-color: var(--badge-dark-color, #fff);
+        --badge-bg-color: var(--badge-dark-bg-color, #343a40);
+    }
+
+    :host {
         display: inline-block;
-        padding: 0.25em 0.4em;
-        font-size: 75%;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
+        padding-top: var(--badge-pd-top, 0.25em);
+        padding-bottom: var(--badge-pd-bottom, 0.25em);
+        padding-left: var(--badge-pd-left, 0.4em);
+        padding-right: var(--badge-pd-right, 0.4em);
+        font-size: var(--badge-font-size, 75%);
+        font-weight: var(--badge-font-wg, 700);
+        line-height: var(--badge-line-hg, 1);
+        text-align: var(--badge-text-align, center);
         white-space: nowrap;
         vertical-align: baseline;
-        border-radius: 0.25rem;
+        border-radius: var(--badge-bd-radius, 0.25rem);
+        color: var(--badge-color);
+        background-color: var(--badge-bg-color);
     }
 
-    .badge:empty {
+    @media (prefers-reduced-motion: reduce) {
+        :host {
+            transition: none;
+        }
+    }
+
+    :host:empty {
         display: none;
-    }
-
-    :host-context(.btn) .badge {
-        position: relative;
-        top: -1px;
-    }
-
-    :host([pill]) .badge {
-        padding-right: 0.6em;
-        padding-left: 0.6em;
-        border-radius: 10rem;
-    }
-
-    :host([primary]) .badge {
-        color: #fff;
-        background-color: #007bff;
-    }
-
-    :host([secondary]) .badge {
-        color: #fff;
-        background-color: #6c757d;
-    }
-
-    :host([success]) .badge {
-        color: #fff;
-        background-color: #28a745;
-    }
-
-    :host([info]) .badge {
-        color: #fff;
-        background-color: #17a2b8;
-    }
-
-    :host([warning]) .badge {
-        color: #212529;
-        background-color: #ffc107;
-    }
-
-    :host([danger]) .badge {
-        color: #fff;
-        background-color: #dc3545;
-    }
-
-    :host([light]) .badge {
-        color: #212529;
-        background-color: #f8f9fa;
-    }
-
-    :host([dark]) .badge {
-        color: #fff;
-        background-color: #343a40;
     }
 `;

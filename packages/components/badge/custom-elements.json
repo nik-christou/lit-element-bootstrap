@@ -1,0 +1,533 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "bs-badge-link",
+      "description": "Badge Link Component",
+      "jsDoc": "/**\n * Badge Link Component\n * \n * @element bs-badge-link\n * \n * @attribute href - The hyper link to point to\n * @attribute target - The context target\n * @attribute pill - Indicates if badge should be displayed as a pill\n * @attribute {primary|secondary|success|info|warning|danger|light|dark} context -\n * Indicates the styling context to use\n *\n * @property {String} href - The hyper link to point, default: ''\n * @property {String} target - The context target. default: _self\n * \n * @slot Slot for badge link content\n * \n * @cssproperty --badge-link-color - Text color, default: #007bff\n * @cssproperty --badge-link-bg-color - Background color, default: transparent\n * @cssproperty --badge-link-pd-top - Padding top, default: 0.25em\n * @cssproperty --badge-link-pd-bottom - Padding bottom, default: 0.25em\n * @cssproperty --badge-link-pd-left - Padding left, default: 0.4em\n * @cssproperty --badge-link-pd-right- Padding right, default: 0.4em\n * @cssproperty --badge-link-font-size - Font size, default: 75%\n * @cssproperty --badge-link-font-wg - Font weight, default: 700\n * @cssproperty --badge-link-line-hg - Line height, default: 1\n * @cssproperty --badge-link-text-align - Text align, default: center\n * @cssproperty --badge-link-bd-radius - Border radius, default: 0.25rem\n * @cssproperty --badge-link-pill-pd-top - Pill padding right, default: 0.6em\n * @cssproperty --badge-link-pill-pd-left - Pill padding left, default: 0.6em\n * @cssproperty --badge-link-pill-bd-radius - Pill border radius, default: 10rem\n * @cssproperty --badge-link-primary-color - Primary context text color, default: #fff\n * @cssproperty --badge-link-primary-bg-color - Primary context background color, default: #007bff\n * @cssproperty --badge-link-primary-text-decoration - Primary context text decoration, default: none\n * @cssproperty --badge-link-primary-hover-color - Primary context hover text color, default: #fff\n * @cssproperty --badge-link-primary-hover-bg-color - Primary context hover background color, default: #0062cc\n * @cssproperty --badge-link-primary-focus-color - Primary context focus text color, default: #fff\n * @cssproperty --badge-link-primary-focus-bg-color - Primary context focus background color, default: #0062cc\n * @cssproperty --badge-link-primary-link-outline - Primary context link outline, default: 0\n * @cssproperty --badge-link-primary-link-box-shadow - Primary context link box shadow, default: 0 0 0 0.2rem rgba(0, 123, 255, 0.5)\n * @cssproperty --badge-link-secondary-color - Secondary context text color, default: #fff\n * @cssproperty --badge-link-secondary-bg-color - Secondary context background color, default: #6c757d\n * @cssproperty --badge-link-secondary-text-decoration - Secondary context text decoration, default: none\n * @cssproperty --badge-link-secondary-hover-color - Secondary context hover text color, default: #fff\n * @cssproperty --badge-link-secondary-hover-bg-color - Secondary context hover background color, default: #545b62\n * @cssproperty --badge-link-secondary-focus-color - Secondary context focus text color, default: #fff\n * @cssproperty --badge-link-secondary-focus-bg-color - Secondary context focus background color, default: #545b62\n * @cssproperty --badge-link-secondary-link-outline - Secondary context link outline, default: 0\n * @cssproperty --badge-link-secondary-link-box-shadow - Secondary context link box shadow, default: 0 0 0 0.2rem rgba(108, 117, 125, 0.5)\n * @cssproperty --badge-link-success-color - Success context text color, default: #fff\n * @cssproperty --badge-link-success-bg-color - Success context background color, default: #28a745\n * @cssproperty --badge-link-success-text-decoration - Success context text decoration, default: none\n * @cssproperty --badge-link-success-hover-color - Success context hover text color, default: #fff\n * @cssproperty --badge-link-success-hover-bg-color - Success context hover background color, default: #1e7e34\n * @cssproperty --badge-link-success-focus-color - Success context focus text color, default: #fff\n * @cssproperty --badge-link-success-focus-bg-color - Success context focus background color, default: #1e7e34\n * @cssproperty --badge-link-success-link-outline - Success context link outline, default: 0\n * @cssproperty --badge-link-success-link-box-shadow - Success context link box shadow, default: 0 0 0 0.2rem rgba(40, 167, 69, 0.5)\n * @cssproperty --badge-link-info-color - Info context text color, default: #fff\n * @cssproperty --badge-link-info-bg-color - Info context background color, default: #17a2b8\n * @cssproperty --badge-link-info-text-decoration - Info context text decoration, default: none\n * @cssproperty --badge-link-info-hover-color - Info context hover text color, default: #fff\n * @cssproperty --badge-link-info-hover-bg-color - Info context hover background color, default: #117a8b\n * @cssproperty --badge-link-info-focus-color - Info context focus text color, default: #fff\n * @cssproperty --badge-link-info-focus-bg-color - Info context focus background color, default: #117a8b\n * @cssproperty --badge-link-info-link-outline - Info context link outline, default: 0\n * @cssproperty --badge-link-info-link-box-shadow - Info context link box shadow, default: 0 0 0 0.2rem rgba(23, 162, 184, 0.5)\n * @cssproperty --badge-link-warning-color - Warning context text color, default: #212529\n * @cssproperty --badge-link-warning-bg-color - Warning context background color, default: #ffc107\n * @cssproperty --badge-link-warning-text-decoration - Warning context text decoration, default: none\n * @cssproperty --badge-link-warning-hover-color - Warning context hover text color, default: #212529\n * @cssproperty --badge-link-warning-hover-bg-color - Warning context hover background color, default: #d39e00\n * @cssproperty --badge-link-warning-focus-color - Warning context focus text color, default: #212529\n * @cssproperty --badge-link-warning-focus-bg-color - Warning context focus background color, default: #d39e00\n * @cssproperty --badge-link-warning-link-outline - Warning context link outline, default: 0\n * @cssproperty --badge-link-warning-link-box-shadow - Warning context link box shadow, default: 0 0 0 0.2rem rgba(255, 193, 7, 0.5)\n * @cssproperty --badge-link-danger-color - Danger context text color, default: #fff\n * @cssproperty --badge-link-danger-bg-color - Danger context background color, default: #dc3545\n * @cssproperty --badge-link-danger-text-decoration - Danger context text decoration, default: none\n * @cssproperty --badge-link-danger-hover-color - Danger context hover text color, default: #fff\n * @cssproperty --badge-link-danger-hover-bg-color - Danger context hover background color, default: #bd2130\n * @cssproperty --badge-link-danger-focus-color - Danger context focus text color, default: #fff\n * @cssproperty --badge-link-danger-focus-bg-color - Danger context focus background color, default: #bd2130\n * @cssproperty --badge-link-danger-link-outline - Danger context link outline, default: 0\n * @cssproperty --badge-link-danger-link-box-shadow - Danger context link box shadow, default: 0 0 0 0.2rem rgba(220, 53, 69, 0.5) \n * @cssproperty --badge-link-light-color - Light context text color, default: #212529\n * @cssproperty --badge-link-light-bg-color - Light context background color, default: #f8f9fa\n * @cssproperty --badge-link-light-text-decoration - Light context text decoration, default: none\n * @cssproperty --badge-link-light-hover-color - Light context hover text color, default: #212529\n * @cssproperty --badge-link-light-hover-bg-color - Light context hover background color, default: #dae0e5\n * @cssproperty --badge-link-light-focus-color - Light context focus text color, default: #212529\n * @cssproperty --badge-link-light-focus-bg-color - Light context focus background color, default: #dae0e5\n * @cssproperty --badge-link-light-link-outline - Light context link outline, default: 0\n * @cssproperty --badge-link-light-link-box-shadow - Light context link box shadow, default: 0 0 0 0.2rem rgba(248, 249, 250, 0.5)\n * @cssproperty --badge-link-dark-color - Dark context text color, default: #fff\n * @cssproperty --badge-link-dark-bg-color - Dark context background color, default: #f8f9fa\n * @cssproperty --badge-link-dark-text-decoration - Dark context text decoration, default: none\n * @cssproperty --badge-link-dark-hover-color - Dark context hover text color, default: #fff\n * @cssproperty --badge-link-dark-hover-bg-color - Dark context hover background color, default: #1d2124\n * @cssproperty --badge-link-dark-focus-color - Dark context focus text color, default: #fff\n * @cssproperty --badge-link-dark-focus-bg-color - Dark context focus background color, default: #1d2124\n * @cssproperty --badge-link-dark-link-outline - Dark context link outline, default: 0\n * @cssproperty --badge-link-dark-link-box-shadow - Dark context link box shadow, default: 0 0 0 0.2rem rgba(52, 58, 64, 0.5)\n */",
+      "attributes": [
+        {
+          "name": "pill",
+          "description": "Indicates if badge should be displayed as a pill",
+          "type": "any"
+        },
+        {
+          "name": "context",
+          "description": "Indicates the styling context to use",
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"danger\" | \"light\" | \"dark\""
+        },
+        {
+          "name": "href",
+          "type": "string"
+        },
+        {
+          "name": "target",
+          "type": "string"
+        }
+      ],
+      "properties": [
+        {
+          "name": "href",
+          "type": "string"
+        },
+        {
+          "name": "target",
+          "type": "string"
+        }
+      ],
+      "slots": [
+        {
+          "name": "Slot for badge link content"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--badge-link-dark-link-box-shadow",
+          "description": "Dark context link box shadow, default: 0 0 0 0.2rem rgba(52, 58, 64, 0.5)"
+        },
+        {
+          "name": "--badge-link-dark-link-outline",
+          "description": "Dark context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-dark-focus-bg-color",
+          "description": "Dark context focus background color, default: #1d2124"
+        },
+        {
+          "name": "--badge-link-dark-focus-color",
+          "description": "Dark context focus text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-dark-hover-bg-color",
+          "description": "Dark context hover background color, default: #1d2124"
+        },
+        {
+          "name": "--badge-link-dark-hover-color",
+          "description": "Dark context hover text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-dark-text-decoration",
+          "description": "Dark context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-dark-bg-color",
+          "description": "Dark context background color, default: #f8f9fa"
+        },
+        {
+          "name": "--badge-link-dark-color",
+          "description": "Dark context text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-light-link-box-shadow",
+          "description": "Light context link box shadow, default: 0 0 0 0.2rem rgba(248, 249, 250, 0.5)"
+        },
+        {
+          "name": "--badge-link-light-link-outline",
+          "description": "Light context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-light-focus-bg-color",
+          "description": "Light context focus background color, default: #dae0e5"
+        },
+        {
+          "name": "--badge-link-light-focus-color",
+          "description": "Light context focus text color, default: #212529"
+        },
+        {
+          "name": "--badge-link-light-hover-bg-color",
+          "description": "Light context hover background color, default: #dae0e5"
+        },
+        {
+          "name": "--badge-link-light-hover-color",
+          "description": "Light context hover text color, default: #212529"
+        },
+        {
+          "name": "--badge-link-light-text-decoration",
+          "description": "Light context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-light-bg-color",
+          "description": "Light context background color, default: #f8f9fa"
+        },
+        {
+          "name": "--badge-link-light-color",
+          "description": "Light context text color, default: #212529"
+        },
+        {
+          "name": "--badge-link-danger-link-box-shadow",
+          "description": "Danger context link box shadow, default: 0 0 0 0.2rem rgba(220, 53, 69, 0.5)"
+        },
+        {
+          "name": "--badge-link-danger-link-outline",
+          "description": "Danger context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-danger-focus-bg-color",
+          "description": "Danger context focus background color, default: #bd2130"
+        },
+        {
+          "name": "--badge-link-danger-focus-color",
+          "description": "Danger context focus text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-danger-hover-bg-color",
+          "description": "Danger context hover background color, default: #bd2130"
+        },
+        {
+          "name": "--badge-link-danger-hover-color",
+          "description": "Danger context hover text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-danger-text-decoration",
+          "description": "Danger context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-danger-bg-color",
+          "description": "Danger context background color, default: #dc3545"
+        },
+        {
+          "name": "--badge-link-danger-color",
+          "description": "Danger context text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-warning-link-box-shadow",
+          "description": "Warning context link box shadow, default: 0 0 0 0.2rem rgba(255, 193, 7, 0.5)"
+        },
+        {
+          "name": "--badge-link-warning-link-outline",
+          "description": "Warning context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-warning-focus-bg-color",
+          "description": "Warning context focus background color, default: #d39e00"
+        },
+        {
+          "name": "--badge-link-warning-focus-color",
+          "description": "Warning context focus text color, default: #212529"
+        },
+        {
+          "name": "--badge-link-warning-hover-bg-color",
+          "description": "Warning context hover background color, default: #d39e00"
+        },
+        {
+          "name": "--badge-link-warning-hover-color",
+          "description": "Warning context hover text color, default: #212529"
+        },
+        {
+          "name": "--badge-link-warning-text-decoration",
+          "description": "Warning context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-warning-bg-color",
+          "description": "Warning context background color, default: #ffc107"
+        },
+        {
+          "name": "--badge-link-warning-color",
+          "description": "Warning context text color, default: #212529"
+        },
+        {
+          "name": "--badge-link-info-link-box-shadow",
+          "description": "Info context link box shadow, default: 0 0 0 0.2rem rgba(23, 162, 184, 0.5)"
+        },
+        {
+          "name": "--badge-link-info-link-outline",
+          "description": "Info context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-info-focus-bg-color",
+          "description": "Info context focus background color, default: #117a8b"
+        },
+        {
+          "name": "--badge-link-info-focus-color",
+          "description": "Info context focus text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-info-hover-bg-color",
+          "description": "Info context hover background color, default: #117a8b"
+        },
+        {
+          "name": "--badge-link-info-hover-color",
+          "description": "Info context hover text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-info-text-decoration",
+          "description": "Info context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-info-bg-color",
+          "description": "Info context background color, default: #17a2b8"
+        },
+        {
+          "name": "--badge-link-info-color",
+          "description": "Info context text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-success-link-box-shadow",
+          "description": "Success context link box shadow, default: 0 0 0 0.2rem rgba(40, 167, 69, 0.5)"
+        },
+        {
+          "name": "--badge-link-success-link-outline",
+          "description": "Success context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-success-focus-bg-color",
+          "description": "Success context focus background color, default: #1e7e34"
+        },
+        {
+          "name": "--badge-link-success-focus-color",
+          "description": "Success context focus text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-success-hover-bg-color",
+          "description": "Success context hover background color, default: #1e7e34"
+        },
+        {
+          "name": "--badge-link-success-hover-color",
+          "description": "Success context hover text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-success-text-decoration",
+          "description": "Success context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-success-bg-color",
+          "description": "Success context background color, default: #28a745"
+        },
+        {
+          "name": "--badge-link-success-color",
+          "description": "Success context text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-secondary-link-box-shadow",
+          "description": "Secondary context link box shadow, default: 0 0 0 0.2rem rgba(108, 117, 125, 0.5)"
+        },
+        {
+          "name": "--badge-link-secondary-link-outline",
+          "description": "Secondary context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-secondary-focus-bg-color",
+          "description": "Secondary context focus background color, default: #545b62"
+        },
+        {
+          "name": "--badge-link-secondary-focus-color",
+          "description": "Secondary context focus text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-secondary-hover-bg-color",
+          "description": "Secondary context hover background color, default: #545b62"
+        },
+        {
+          "name": "--badge-link-secondary-hover-color",
+          "description": "Secondary context hover text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-secondary-text-decoration",
+          "description": "Secondary context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-secondary-bg-color",
+          "description": "Secondary context background color, default: #6c757d"
+        },
+        {
+          "name": "--badge-link-secondary-color",
+          "description": "Secondary context text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-primary-link-box-shadow",
+          "description": "Primary context link box shadow, default: 0 0 0 0.2rem rgba(0, 123, 255, 0.5)"
+        },
+        {
+          "name": "--badge-link-primary-link-outline",
+          "description": "Primary context link outline, default: 0"
+        },
+        {
+          "name": "--badge-link-primary-focus-bg-color",
+          "description": "Primary context focus background color, default: #0062cc"
+        },
+        {
+          "name": "--badge-link-primary-focus-color",
+          "description": "Primary context focus text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-primary-hover-bg-color",
+          "description": "Primary context hover background color, default: #0062cc"
+        },
+        {
+          "name": "--badge-link-primary-hover-color",
+          "description": "Primary context hover text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-primary-text-decoration",
+          "description": "Primary context text decoration, default: none"
+        },
+        {
+          "name": "--badge-link-primary-bg-color",
+          "description": "Primary context background color, default: #007bff"
+        },
+        {
+          "name": "--badge-link-primary-color",
+          "description": "Primary context text color, default: #fff"
+        },
+        {
+          "name": "--badge-link-pill-bd-radius",
+          "description": "Pill border radius, default: 10rem"
+        },
+        {
+          "name": "--badge-link-pill-pd-left",
+          "description": "Pill padding left, default: 0.6em"
+        },
+        {
+          "name": "--badge-link-pill-pd-top",
+          "description": "Pill padding right, default: 0.6em"
+        },
+        {
+          "name": "--badge-link-bd-radius",
+          "description": "Border radius, default: 0.25rem"
+        },
+        {
+          "name": "--badge-link-text-align",
+          "description": "Text align, default: center"
+        },
+        {
+          "name": "--badge-link-line-hg",
+          "description": "Line height, default: 1"
+        },
+        {
+          "name": "--badge-link-font-wg",
+          "description": "Font weight, default: 700"
+        },
+        {
+          "name": "--badge-link-font-size",
+          "description": "Font size, default: 75%"
+        },
+        {
+          "name": "--badge-link-pd-right- Padding right, default: 0.4em"
+        },
+        {
+          "name": "--badge-link-pd-left",
+          "description": "Padding left, default: 0.4em"
+        },
+        {
+          "name": "--badge-link-pd-bottom",
+          "description": "Padding bottom, default: 0.25em"
+        },
+        {
+          "name": "--badge-link-pd-top",
+          "description": "Padding top, default: 0.25em"
+        },
+        {
+          "name": "--badge-link-bg-color",
+          "description": "Background color, default: transparent"
+        },
+        {
+          "name": "--badge-link-color",
+          "description": "Text color, default: #007bff"
+        }
+      ]
+    },
+    {
+      "name": "bs-badge",
+      "description": "Badge Component",
+      "jsDoc": "/**\n * Badge Component\n * \n * @element bs-badge\n * \n * @attribute pill - Indicates if badge should be displayed as a pill\n * @attribute {primary|secondary|success|info|warning|danger|light|dark} context -\n * Indicates the styling context to use\n * \n * @slot Slot for badge content\n * \n * @cssproperty --badge-color - The badge text color, default: user agent\n * @cssproperty --badge-bg-color - The badge background color, default: user agent\n * @cssproperty --badge-pd-top - The badge padding top, default: 0.25em\n * @cssproperty --badge-pd-bottom - The badge padding bottom, default: 0.25em\n * @cssproperty --badge-pd-left - The badge padding left, default: 0.4em\n * @cssproperty --badge-pd-right- The badge padding right, default: 0.4em\n * @cssproperty --badge-font-size - The badge font size, default: 75%\n * @cssproperty --badge-font-wg - The badge font weight, default: 700\n * @cssproperty --badge-line-hg - The badge line height, default: 1\n * @cssproperty --badge-text-align - The badge text align, default: center\n * @cssproperty --badge-bd-radius - The badge border radius, default: 0.25rem\n * @cssproperty --badge-pill-pd-top - The badge pill padding top, default: 0.6em\n * @cssproperty --badge-pill-pd-left - The badge pill padding left, default: 0.6em\n * @cssproperty --badge-pill-bd-radius - The badge pill border radius, default: 10rem\n * @cssproperty --badge-primary-color - The badge primary context text color, default: #fff\n * @cssproperty --badge-primary-bg-color - The badge primary context background color, default: #007bff \n * @cssproperty --badge-secondary-color - The badge secondary context text color, default: #fff\n * @cssproperty --badge-secondary-bg-color - The badge secondary context background color, default: #6c757d\n * @cssproperty --badge-success-color - The badge success context text color, default: #fff\n * @cssproperty --badge-success-bg-color - The badge success context background color, default: #28a745\n * @cssproperty --badge-info-color - The badge info context text color, default: #fff\n * @cssproperty --badge-info-bg-color - The badge info context background color, default: #17a2b8\n * @cssproperty --badge-warning-color - The badge warning context text color, default: #212529\n * @cssproperty --badge-warning-bg-color - The badge warning context background color, default: #ffc107\n * @cssproperty --badge-danger-color - The badge danger context text color, default: #fff\n * @cssproperty --badge-danger-bg-color - The badge danger context background color, default: #dc3545\n * @cssproperty --badge-light-color - The badge light context text color, default: #212529\n * @cssproperty --badge-light-bg-color - The badge light context background color, default: #f8f9fa\n * @cssproperty --badge-dark-color - The badge dark context text color, default: #fff\n * @cssproperty --badge-dark-bg-color - The badge dark context background color, default: #343a40\n */",
+      "attributes": [
+        {
+          "name": "pill",
+          "description": "Indicates if badge should be displayed as a pill",
+          "type": "any"
+        },
+        {
+          "name": "context",
+          "description": "Indicates the styling context to use",
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"danger\" | \"light\" | \"dark\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "Slot for badge content"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--badge-dark-bg-color",
+          "description": "The badge dark context background color, default: #343a40"
+        },
+        {
+          "name": "--badge-dark-color",
+          "description": "The badge dark context text color, default: #fff"
+        },
+        {
+          "name": "--badge-light-bg-color",
+          "description": "The badge light context background color, default: #f8f9fa"
+        },
+        {
+          "name": "--badge-light-color",
+          "description": "The badge light context text color, default: #212529"
+        },
+        {
+          "name": "--badge-danger-bg-color",
+          "description": "The badge danger context background color, default: #dc3545"
+        },
+        {
+          "name": "--badge-danger-color",
+          "description": "The badge danger context text color, default: #fff"
+        },
+        {
+          "name": "--badge-warning-bg-color",
+          "description": "The badge warning context background color, default: #ffc107"
+        },
+        {
+          "name": "--badge-warning-color",
+          "description": "The badge warning context text color, default: #212529"
+        },
+        {
+          "name": "--badge-info-bg-color",
+          "description": "The badge info context background color, default: #17a2b8"
+        },
+        {
+          "name": "--badge-info-color",
+          "description": "The badge info context text color, default: #fff"
+        },
+        {
+          "name": "--badge-success-bg-color",
+          "description": "The badge success context background color, default: #28a745"
+        },
+        {
+          "name": "--badge-success-color",
+          "description": "The badge success context text color, default: #fff"
+        },
+        {
+          "name": "--badge-secondary-bg-color",
+          "description": "The badge secondary context background color, default: #6c757d"
+        },
+        {
+          "name": "--badge-secondary-color",
+          "description": "The badge secondary context text color, default: #fff"
+        },
+        {
+          "name": "--badge-primary-bg-color",
+          "description": "The badge primary context background color, default: #007bff"
+        },
+        {
+          "name": "--badge-primary-color",
+          "description": "The badge primary context text color, default: #fff"
+        },
+        {
+          "name": "--badge-pill-bd-radius",
+          "description": "The badge pill border radius, default: 10rem"
+        },
+        {
+          "name": "--badge-pill-pd-left",
+          "description": "The badge pill padding left, default: 0.6em"
+        },
+        {
+          "name": "--badge-pill-pd-top",
+          "description": "The badge pill padding top, default: 0.6em"
+        },
+        {
+          "name": "--badge-bd-radius",
+          "description": "The badge border radius, default: 0.25rem"
+        },
+        {
+          "name": "--badge-text-align",
+          "description": "The badge text align, default: center"
+        },
+        {
+          "name": "--badge-line-hg",
+          "description": "The badge line height, default: 1"
+        },
+        {
+          "name": "--badge-font-wg",
+          "description": "The badge font weight, default: 700"
+        },
+        {
+          "name": "--badge-font-size",
+          "description": "The badge font size, default: 75%"
+        },
+        {
+          "name": "--badge-pd-right- The badge padding right, default: 0.4em"
+        },
+        {
+          "name": "--badge-pd-left",
+          "description": "The badge padding left, default: 0.4em"
+        },
+        {
+          "name": "--badge-pd-bottom",
+          "description": "The badge padding bottom, default: 0.25em"
+        },
+        {
+          "name": "--badge-pd-top",
+          "description": "The badge padding top, default: 0.25em"
+        },
+        {
+          "name": "--badge-bg-color",
+          "description": "The badge background color, default: user agent"
+        },
+        {
+          "name": "--badge-color",
+          "description": "The badge text color, default: user agent"
+        }
+      ]
+    }
+  ]
+}

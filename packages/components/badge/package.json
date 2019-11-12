@@ -17,6 +17,7 @@
   },
   "scripts": {
     "pika:build": "pika build",
+    "tsc:build": "rimraf ./types && tsc -p tsconfig.json",
     "serve:demo": "es-dev-server --node-resolve --app-index demo.html",
     "lit-analyze": "lit-analyzer src --failFast",
     "wca-analyze": "wca analyze src",
@@ -29,16 +30,15 @@
     "test:watch:coverage": "karma start --auto-watch=true --single-run=false --coverage"
   },
   "dependencies": {
-    "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2"
   },
   "devDependencies": {
-    "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
-    "@lit-element-bootstrap/theme": "1.0.0-alpha.2",
     "@lit-element-bootstrap/button": "^1.0.0-alpha.7",
-    "@open-wc/prettier-config": "^0.1.12",
+    "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
+    "@lit-element-bootstrap/theme": "^1.0.0-alpha.2",
     "@open-wc/karma-esm": "^2.9.6",
+    "@open-wc/prettier-config": "^0.1.12",
     "@open-wc/testing": "^2.3.9",
     "@pika/pack": "^0.5.0",
     "@pika/plugin-build-web": "^0.7.1",
@@ -46,8 +46,8 @@
     "@pika/plugin-standard-pkg": "^0.7.1",
     "axe-core": "^3.4.0",
     "chai": "^4.2.0",
-    "eslint": "^6.6.0",
     "es-dev-server": "^1.22.0",
+    "eslint": "^6.6.0",
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
@@ -55,7 +55,9 @@
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.5",
     "lit-analyzer": "^1.1.9",
+    "rimraf": "^3.0.0",
     "sinon": "^7.5.0",
+    "typescript": "^3.7.2",
     "web-component-analyzer": "^0.1.20"
   },
   "@pika/pack": {
