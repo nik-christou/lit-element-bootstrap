@@ -1,8 +1,3 @@
-import { LitElement, html } from "lit-element";
-import { BsBreadcrumbItem } from "./bs-breadcrumb-item.js";
-import { BsBreadcrumbCss } from "./bs-breadcrumb.css.js";
-import { BsBreadcrumbRebootCss } from "./bs-breadcrumb-reboot.css.js";
-
 /**
  * Breadcrumb Element
  *
@@ -21,16 +16,8 @@ import { BsBreadcrumbRebootCss } from "./bs-breadcrumb-reboot.css.js";
  * @cssproperty --breadcrumb-border-radius - Border radius. default: 0.25rem
  */
 export class BsBreadcrumb extends LitElement {
-    static get styles() {
-        return [BsBreadcrumbRebootCss, BsBreadcrumbCss];
-    }
-
-    render() {
-        return html`
-            <slot></slot>
-        `;
-    }
-
+    static get styles(): import("lit-element").CSSResult[];
+    render(): import("lit-element").TemplateResult;
     /**
      * When breadcrumb item is first updated:
      *   1) The aria label is added to the host element
@@ -40,57 +27,25 @@ export class BsBreadcrumb extends LitElement {
      *
      * @return  {void}
      */
-    firstUpdated(_updatedProperties) {
-        super.firstUpdated(_updatedProperties);
-        this._addAriaLabel();
-        this._removeDividerFromFirstBreadcrumItem();
-    }
-
+    firstUpdated(_updatedProperties: Map<any, any>): void;
     /**
      * Adds an arial label attribute with value of 'breadcrumb'
      *
      * @return  {void}
      */
-    _addAriaLabel() {
-        this.setAttribute("aria-label", "breadcrumb");
-    }
-
+    _addAriaLabel(): void;
     /**
      * Reset the left padding and remove the ::before content for the first breadcrumb item
      *
      * @return  {void}
      */
-    _removeDividerFromFirstBreadcrumItem() {
-        const breadcrumbItemElement = this._findFirstBreadcrumbItem();
-
-        if (!breadcrumbItemElement) {
-            return;
-        }
-
-        /** @type {HTMLElement} */ (breadcrumbItemElement).style.setProperty(
-            "--breadcrumb-item-padding-left",
-            "0"
-        );
-        /** @type {HTMLElement} */ (breadcrumbItemElement).style.setProperty(
-            "--breadcrumb-item-divider-content",
-            "none"
-        );
-    }
-
+    _removeDividerFromFirstBreadcrumItem(): void;
     /**
      * Finds the first breadcrumb item element in the slotted content
      *
      * @return  {Node}  The first BsBreadcrumbItem <bs-breadcrumb-item> found
      */
-    _findFirstBreadcrumbItem() {
-        const slot = this.shadowRoot.querySelector("slot");
-        const slottedElements = slot.assignedElements();
-
-        return slottedElements.find(element =>
-            this._isBreadcrumbItemElement(element)
-        );
-    }
-
+    _findFirstBreadcrumbItem(): Node;
     /**
      * Verify that the given element is an HTMLElement and it is an instance of BsBreadcrumbItem
      *
@@ -98,14 +53,12 @@ export class BsBreadcrumb extends LitElement {
      *
      * @return  {Boolean}  true if the node is an HTMLElement and an instance of BsBreadcrumbItem
      */
-    _isBreadcrumbItemElement(element) {
-        return (
-            element.nodeType === Node.ELEMENT_NODE &&
-            (element.localName === "bs-breadcrumb-item" ||
-                element instanceof BsBreadcrumbItem)
-        );
+    _isBreadcrumbItemElement(element: Element): boolean;
+}
+import { LitElement } from "lit-element";
+
+declare global {
+    interface HTMLElementTagNameMap {
+      "bs-breadcrumb": BsBreadcrumb
     }
 }
-
-if (!window.customElements.get("bs-breadcrumb"))
-    window.customElements.define("bs-breadcrumb", BsBreadcrumb);

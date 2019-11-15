@@ -1,7 +1,3 @@
-import { LitElement, html, TemplateResult } from "lit-element";
-import { BsBreadcrumbItemCss } from "./bs-breadcrumb-item.css.js";
-import { BsBreadcrumbRebootCss } from "./bs-breadcrumb-reboot.css.js";
-
 /**
  * Breadcrumb item
  *
@@ -31,45 +27,29 @@ import { BsBreadcrumbRebootCss } from "./bs-breadcrumb-reboot.css.js";
  * @cssproperty --breadcrumb-link-item-text-decoration Link text decoration. default: underline
  */
 export class BsBreadcrumbItem extends LitElement {
-    static get properties() {
-        return {
-            title: {
-                type: String,
-                reflect: true
-            },
-            href: {
-                type: String,
-                reflect: true
-            },
-            target: {
-                type: String,
-                reflect: true
-            },
-            active: {
-                type: Boolean,
-                reflect: true
-            }
+    static get properties(): {
+        title: {
+            type: StringConstructor;
+            reflect: boolean;
         };
-    }
-
-    static get styles() {
-        return [BsBreadcrumbRebootCss, BsBreadcrumbItemCss];
-    }
-
-    render() {
-        return html`
-            ${this._selectTemplateToLoad()}
-        `;
-    }
-
-    constructor() {
-        super();
-        this.title = "";
-        this.href = "";
-        this.target = "_self";
-        this.active = false;
-    }
-
+        href: {
+            type: StringConstructor;
+            reflect: boolean;
+        };
+        target: {
+            type: StringConstructor;
+            reflect: boolean;
+        };
+        active: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+    };
+    static get styles(): import("lit-element").CSSResult[];
+    render(): TemplateResult;
+    href: string;
+    target: string;
+    active: boolean;
     /**
      * If the element is set as active (meaning the last breadcrumb item)
      * then the template will bu just the title. Otherwise it will be
@@ -77,18 +57,13 @@ export class BsBreadcrumbItem extends LitElement {
      *
      * @return  {TemplateResult}  the template to render
      */
-    _selectTemplateToLoad() {
-        if (this.active) {
-            return html`
-                <span>${this.title}</span>
-            `;
-        } else {
-            return html`
-                <a href="${this.href}">${this.title}</a>
-            `;
-        }
+    _selectTemplateToLoad(): TemplateResult;
+}
+import { LitElement } from "lit-element";
+import { TemplateResult } from "lit-element";
+
+declare global {
+    interface HTMLElementTagNameMap {
+      "bs-breadcrumb-item": BsBreadcrumbItem
     }
 }
-
-if (!window.customElements.get("bs-breadcrumb-item"))
-    window.customElements.define("bs-breadcrumb-item", BsBreadcrumbItem);
