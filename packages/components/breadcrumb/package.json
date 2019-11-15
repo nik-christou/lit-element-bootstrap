@@ -1,6 +1,6 @@
 {
   "name": "@lit-element-bootstrap/breadcrumb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bootstrap v4.3.1 breadcrumb component in LitElement",
   "main": "src/index.js",
   "module": "src/index.js",

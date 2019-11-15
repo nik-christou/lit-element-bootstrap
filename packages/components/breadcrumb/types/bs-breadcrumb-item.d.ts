@@ -24,7 +24,7 @@
  * @cssproperty --breadcrumb-item-link-text-decoration Link text decoration. default: none
  * @cssproperty --breadcrumb-item-link-bg-color Link background color. default: transparent
  * @cssproperty --breadcrumb-link-item-link-hover-color Link hover text color. default: #0056b3
- * @cssproperty --breadcrumb-link-item-text-decoration Link text decoration. default: underline
+ * @cssproperty --breadcrumb-item-link-hover-text-decoration Link hover text decoration. default: underline
  */
 export class BsBreadcrumbItem extends LitElement {
     static get properties(): {

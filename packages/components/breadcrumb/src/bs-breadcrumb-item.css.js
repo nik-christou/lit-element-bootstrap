@@ -26,7 +26,7 @@ export const BsBreadcrumbItemCss = css`
 
     a:hover {
         color: var(--breadcrumb-link-item-link-hover-color, #0056b3);
-        text-decoration: var(--breadcrumb-link-item-text-decoration, underline);
+        text-decoration: var(--breadcrumb-item-link-hover-text-decoration, underline);
     }
 
     a:not([href]):not([tabindex]) {

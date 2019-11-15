@@ -57,8 +57,15 @@ Definition of done (before publishing)
 - Run lit-analayzer "yarn run lit-analyze" to find issues
 - Run wca-analyzer "yarn run wca-analyze:json" to generate new custom-elements.json
 - Run prettier on all js and test file "yarn run format:prettier" 
+  
   ================================
-- README file has been updated !!!
+  README file has been updated !!!
+  README file has been updated !!!
+  README file has been updated !!!
+  README file has been updated !!!
+  README file has been updated !!!
+  README file has been updated !!!
+  README file has been updated !!!
   ================================
 
 =======================
@@ -71,6 +78,9 @@ Pre-publish preparation
 	- Extract all files from dist-src to ./pkg and remove dist-src
 	- Copy custom-elements.js to ./pkg
 	- Copy all typings to ./pkg
+	
+	- Copy the readme file !!!!!!!!!!!!!!!!!
+
 - Modify the generated package.json:
 	- adjust the version if not already done. (needs to be same for package.json files both inside the ./pkg and outside)
 	- remove "devDependencies"

@@ -26,12 +26,12 @@ export class BreadcrumbDemo extends LitElement {
                     padding-right: 15px;
                 }
 
-                bs-breadcrumb.arrowSeparator {
-                    --divider: ">";
+                .arrowSeparator {
+                    --breadcrumb-item-divider-content: ">";
                 }
 
-                bs-breadcrumb.svgSeparator {
-                    --divider: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
+                .svgSeparator {
+                    --breadcrumb-item-divider-content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
                 }
             `
         ];
