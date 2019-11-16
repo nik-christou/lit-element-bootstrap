@@ -1,7 +1,7 @@
 
 import { css } from 'lit-element';
 
-export const BsButtonsCommonCss = css`
+export const BsButtonCommonCss = css`
 
     :host {
         display: inline-block;
@@ -42,7 +42,7 @@ export const BsButtonsCommonCss = css`
         border-bottom-left-radius: var(--bs-button-border-bottom-left-radius, 0.25rem);
         transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
-    
+
     .btn::after {
         display: var(--bs-button-after-display);
         width: var(--bs-button-after-width);
@@ -55,7 +55,7 @@ export const BsButtonsCommonCss = css`
         border-bottom: var(--bs-button-after-border-bottom);
         border-left: var(--bs-button-after-border-left);
     }
-    
+
     .btn:empty::after {
         margin-left: var(--bs-button-empty-after-margin-left);
     }
@@ -72,13 +72,13 @@ export const BsButtonsCommonCss = css`
         border-bottom: var(--bs-button-before-border-bottom);
         border-left: var(--bs-button-before-border-left);
     }
-    
+
     @media screen and (prefers-reduced-motion: reduce) {
         .btn {
             transition: none;
         }
     }
-    
+
     .btn:hover {
         text-decoration: none;
         color: var(--bs-button-color-hover);
@@ -86,7 +86,7 @@ export const BsButtonsCommonCss = css`
         z-index: var(--bs-button-hover-z-index);
         border-color: var(--bs-button-border-color-hover);
     }
-    
+
     .btn:focus,
     .btn.focus {
         outline: 0;
@@ -101,7 +101,7 @@ export const BsButtonsCommonCss = css`
         opacity: 0.65;
         pointer-events: none;
     }
-    
+
     :host(:not(:disabled):not(.disabled)) .btn {
         cursor: pointer;
         z-index: var(--bs-button-active-z-index);
