@@ -14,11 +14,11 @@ const BsButtonMixin = (superClass) => class extends superClass {
 
     static get properties() {
         return {
-            action: String,
-            toggle: {type: Boolean, reflect: true},
-            active: {type: Boolean, reflect: true},
-            disabled: {type: Boolean, reflect: true},
-            dropdownToggle: {type: Boolean, reflect: true, attribute: 'dropdown-toggle'}
+            action: { type: String },
+            toggle: { type: Boolean, reflect: true },
+            active: { type: Boolean, reflect: true },
+            disabled: { type: Boolean, reflect: true },
+            dropdownToggle: { type: Boolean, reflect: true, attribute: 'dropdown-toggle' }
         };
     }
 

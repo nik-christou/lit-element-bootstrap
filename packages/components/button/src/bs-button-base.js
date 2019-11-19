@@ -1,4 +1,15 @@
 
+const defaultThemeColors = new Map([
+    ['primary', '#007bff'],
+    ['secondary', '#6c757d'],
+    ['success', '#28a745'],
+    ['info', '#17a2b8'],
+    ['warning', '#ffc107'],
+    ['danger', '#dc3545'],
+    ['light', '#f8f9fa'],
+    ['dark', '#343a40']
+]);
+
 import { LitElement, html } from 'lit-element';
 import { BsButtonRebootCss } from './bs-button-reboot.js';
 import { BsButtonCommonCss } from './css/bs-button-common.css.js';
@@ -23,22 +34,10 @@ import { BsButtonBlockCss } from './css/bs-button-block.css.js';
 import { BsButtonLargeCss } from './css/bs-button-large.css.js';
 import { BsButtonSmallCss } from './css/bs-button-small.css.js';
 
-const defaultThemeColors = new Map([
-    ['primary', '#007bff'],
-    ['secondary', '#6c757d'],
-    ['success', '#28a745'],
-    ['info', '#17a2b8'],
-    ['warning', '#ffc107'],
-    ['danger', '#dc3545'],
-    ['light', '#f8f9fa'],
-    ['dark', '#343a40']
-]);
-
-export class BsButton extends LitElement {
+export class BsButtonBase extends LitElement {
 
     static get properties() {
         return {
-            type: { type: String }, // specific to this implementation. button type [submit, button, reset]
             toggle: { type: Boolean, reflect: true }, // indicates if active state can be toggled...
             active: { type: Boolean, reflect: true }, // indicates if the button is in active state
             disabled: { type: Boolean, reflect: true } // indicates if the button is in disabled state
@@ -49,11 +48,8 @@ export class BsButton extends LitElement {
         // this is expected in the dropdown element in order to display the menu
     }
 
-    // disabled should always take priority
-
     static get styles() {
         return [
-            super.styles,
             BsButtonRebootCss,
             BsButtonCommonCss,
             BsButtonPrimaryCss,
@@ -72,26 +68,17 @@ export class BsButton extends LitElement {
             BsButtonDangerOutlineCss,
             BsButtonLightOutlineCss,
             BsButtonDarkOutlineCss,
-            BsButtonLinkCss,
+            BsButtonLinkCss, // link css should be moved to bs-button-link
             BsButtonBlockCss,
             BsButtonLargeCss,
             BsButtonSmallCss
         ];
     }
 
-    render() {
-        return html`
-            <button class="btn">
-                <slot></slot>
-            </button>
-        `;
-    }
-
     constructor() {
         super();
         this.active = false;
         this.toggle = false;
-        this.type = 'button';
         this.disabled = false;
         // this.dropdownToggle = false;
     }
@@ -101,11 +88,7 @@ export class BsButton extends LitElement {
      */
     firstUpdated(_updatedProperties) {
 
-        super.firstUpdated(_updatedProperties);
-
-        const buttonElement = this.shadowRoot.querySelector('button');
-
-        this._applyButtonType(buttonElement);
+        const buttonElement = this.retrieveButtonElement();
 
         if(this.disabled) {
             this._applyDisabledState(buttonElement);
@@ -121,11 +104,21 @@ export class BsButton extends LitElement {
         this._setupDefaultThemeColors();
     }
 
+    /**
+     * Must return the HTMLElement that represents the button implementation
+     *
+     * @abstract
+     * @return {HTMLElement}
+     */
+    retrieveButtonElement() {
+        throw new Error('You have to implement method retrieveButtonElement!');
+    }
+
     // attribute disabled is only valid for button & input elements
     // it is not valid for anchor tags
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLElement} btnElement
      */
     _removeDisabledState(btnElement) {
         btnElement.classList.remove('disabled');
@@ -133,7 +126,7 @@ export class BsButton extends LitElement {
     }
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLElement} btnElement
      */
     _applyDisabledState(btnElement) {
         btnElement.classList.add('disabled');
@@ -141,40 +134,18 @@ export class BsButton extends LitElement {
     }
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLElement} btnElement
      */
     _removeActiveState(btnElement) {
         btnElement.classList.remove('active');
     }
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLElement} btnElement
      */
     _applyActiveState(btnElement) {
         btnElement.classList.add('active');
     }
-
-    /**
-     * Applies selected type to <button> element
-     *
-     * @param {HTMLButtonElement} btnElement
-     */
-    _applyButtonType(btnElement) {
-
-        switch (this.type) {
-            case 'button':
-                btnElement.setAttribute('type', 'button');
-                break;
-            case 'reset':
-                btnElement.setAttribute('type', 'reset');
-                break;
-            case 'submit':
-                btnElement.setAttribute('type', 'submit');
-                break;
-            default:
-                btnElement.setAttribute('type', 'button');
-            }
-        }
 
     _setupDefaultThemeColors() {
 
@@ -233,7 +204,7 @@ export class BsButton extends LitElement {
             composed: true,
             detail: {
                 active: this.active,
-                type: this.type,
+                // type: this.type, this could be used inside the form
                 toggle: this.toggle
                 //dropdown: this.dropdownToggle
             }
@@ -268,7 +239,3 @@ export class BsButton extends LitElement {
         }
     }
 };
-
-if (!window.customElements.get("bs-button"))
-    window.customElements.define('bs-button', BsButton);
-

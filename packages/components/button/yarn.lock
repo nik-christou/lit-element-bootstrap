@@ -693,12 +693,29 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@lit-element-bootstrap/button-group@^1.0.0-alpha.2":
+  version "1.0.0-alpha.2"
+  resolved "https://registry.npmjs.org/@lit-element-bootstrap/button-group/-/button-group-1.0.0-alpha.2.tgz#d2352f45f5dd00940934d90eb189aa21cef73241"
+  integrity sha512-k4MEPD9cegvoEqFnXLSRy4EzgZ0U2kYsy8+Aor9eZ/YTMCUyhik0ZNdDpJ047xqVaXchyHJDEUGR2ytsv7DvRA==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.3"
+    lit-element "^2.2.1"
+
 "@lit-element-bootstrap/content@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
   resolved "https://registry.npmjs.org/@lit-element-bootstrap/content/-/content-1.0.0-alpha.3.tgz#e3f191ec304b1d4fcfe38123ec288090197eb42e"
   integrity sha512-uE8xjp0EoHdPaEurDyJYf/inQg2IJQdBYdzYrz8qrIPYK3dh8xCgcoNOXSxrFqeHB2rm7SJfWFiEyL0AdCwGLg==
   dependencies:
     lit-element "^2.2.1"
+
+"@lit-element-bootstrap/dropdown@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.npmjs.org/@lit-element-bootstrap/dropdown/-/dropdown-1.0.0-alpha.4.tgz#0743211ca4b45a1562c1c3c5fecb155bb491874d"
+  integrity sha512-n7nMq3kecFCqBNwlOMaoCCKG4c+mf7bhBUe6dUDk+If+3HiEyc0pR/8tzjJP3EfJ71W/T7oA5IqRs59X1mzHdw==
+  dependencies:
+    "@lit-element-bootstrap/content" "^1.0.0-alpha.3"
+    lit-element "^2.2.1"
+    popper.js "^1.15.0"
 
 "@lit-element-bootstrap/theme@^1.0.0-alpha.2":
   version "1.0.0-alpha.2"
@@ -5186,6 +5203,11 @@ pkg-dir@^4.1.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
+
+popper.js@^1.15.0:
+  version "1.16.0"
+  resolved "https://registry.npmjs.org/popper.js/-/popper.js-1.16.0.tgz#2e1816bcbbaa518ea6c2e15a466f4cb9c6e2fbb3"
+  integrity sha512-+G+EkOPoE5S/zChTpmBSSDYmhXJ5PsW8eMhH8cP/CQHMFPBG/kC9Y5IIw6qNYgdJ+/COf0ddY2li28iHaZRSjw==
 
 portfinder@^1.0.21:
   version "1.0.25"

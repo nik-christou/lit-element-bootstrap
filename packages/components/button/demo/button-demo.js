@@ -4,6 +4,12 @@ import { DefaultThemeCss } from '@lit-element-bootstrap/theme/default-theme-css.
 import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
 import { BsContentTypographyCss } from '@lit-element-bootstrap/content/bs-content-typography.css.js';
 
+import '@lit-element-bootstrap/dropdown/bs-dropdown.js';
+import '@lit-element-bootstrap/dropdown/bs-dropdown-menu.js';
+import '@lit-element-bootstrap/dropdown/bs-dropdown-item-link.js';
+import '@lit-element-bootstrap/dropdown/bs-dropdown-divider.js';
+import '@lit-element-bootstrap/button-group/bs-button-group.js';
+
 import '../src/bs-button.js';
 import '../src/bs-input-button.js';
 import '../src/bs-link-button.js';
@@ -129,7 +135,34 @@ export class ButtonDemo extends LitElement {
                 <br />
                 <div>
                     <bs-button primary toggle>Single toggle</bs-button>
+                    <bs-button primary toggle disabled>Single toggle</bs-button>
                 </div>
+
+                <br />
+                <div>
+                    <bs-dropdown>
+                        <bs-button primary dropdown-toggle>Primary</bs-button>
+                        <bs-dropdown-menu down x-placement="bottom-start">
+                            <bs-dropdown-item-link title="Action" index="0"></bs-dropdown-item-link>
+                            <bs-dropdown-item-link title="Another action" index="1"></bs-dropdown-item-link>
+                            <bs-dropdown-item-link title="Something else here" index="2"></bs-dropdown-item-link>
+                            <bs-dropdown-divider></bs-dropdown-divider>
+                            <bs-dropdown-item-link title="Separated link" index="3"></bs-dropdown-item-link>
+                        </bs-dropdown-menu>
+                    </bs-dropdown>
+                </div>
+
+                <br />
+                <div>
+                    <bs-button-group horizontal>
+                        <bs-button secondary toggle>Left</bs-button>
+                        <bs-button active secondary toggle>Middle</bs-button>
+                        <bs-button secondary toggle>Right</bs-button>
+                    </bs-button-group>
+                </div>
+
+                <br />
+                <br />
             </div>
         `;
     }
