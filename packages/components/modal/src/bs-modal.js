@@ -62,13 +62,8 @@ export class BsModal extends LitElement {
 
         this.addEventListener('bs-modal-dismiss', () => this._handleDismissEvent());
 
-        const modalElement = this.shadowRoot.querySelector('.modal');
-        modalElement.addEventListener('click', () => this._handleModalClick());
-
-        const modalContentElement = this.shadowRoot.querySelector('.modal-content');
-        modalContentElement.addEventListener('click', event => this._handleModalContentClick(event));
-
         const modalBackdrop = this.shadowRoot.querySelector('.modal-backdrop');
+        modalBackdrop.addEventListener('click', () => this._handleBackdropClickEvent());
         modalBackdrop.addEventListener('transitionend', () => this._handleModalBackdropTransitionEnd());
 
         const modalDialogElement = this.shadowRoot.querySelector('.modal-dialog');
@@ -79,17 +74,6 @@ export class BsModal extends LitElement {
         if(this.dismissable) {
             this.close();
         }
-    }
-
-    _handleModalClick() {
-        if(this.opened) {
-            this.close();
-        }
-    }
-
-    _handleModalContentClick(event) {
-        event.stopPropagation();
-        event.preventDefault();
     }
 
     _handleBackdropClickEvent() {
