@@ -14,6 +14,7 @@ export const BsModalCss = css`
         outline: 0;
         opacity: var(--bs-modal-opacity, 0);
         transition: opacity 0.15s linear;
+        pointer-events: none;
     }
 
     :host([opened]) .modal {
