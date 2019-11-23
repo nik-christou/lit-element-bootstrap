@@ -22,6 +22,9 @@ trim_trailing_whitespace = false
 [*.json]
 indent_size = 4
 
+[package.json]
+indent_size = 2
+
 [*.{html,js,md}]
 block_comment_start = /**
 block_comment = *
