@@ -43,7 +43,7 @@ export class ButtonDemo extends LitElement {
 
                 <br />
                 <div>
-                    <bs-button primary>Primary</bs-button>
+                    <bs-button context="primary">Primary</bs-button>
                     <bs-button secondary>Secondary</bs-button>
                     <bs-button success>Success</bs-button>
                     <bs-button danger>Danger</bs-button>

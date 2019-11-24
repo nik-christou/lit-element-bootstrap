@@ -14,33 +14,19 @@ const BsButtonMixin = (superClass) => class extends superClass {
 
     static get properties() {
         return {
-            action: { type: String },
-            toggle: { type: Boolean, reflect: true },
-            active: { type: Boolean, reflect: true },
-            disabled: { type: Boolean, reflect: true },
-            dropdownToggle: { type: Boolean, reflect: true, attribute: 'dropdown-toggle' }
+            
         };
     }
 
-    constructor(...args) {
-        super(...args);
-        this.active = false;
-        this.toggle = false;
-        this.action = 'button';
-        this.disabled = false;
-        this.dropdownToggle = false;
+    constructor() {
+        super();
+        
     }
 
-    firstUpdated() {
+    firstUpdated(_updatedProperties) {
 
-        const btnElement = this._retrieveButtonElement();
-        this._applyButtonActivateState(btnElement);
-        this._applyButtonTypeIfApplicable();
+        super.firstUpdated(_updatedProperties);
 
-        btnElement.addEventListener('click', event => this._handleButtonClick(event));
-        btnElement.addEventListener('focusout', event => this._handleFocusOut(event));
-
-        this._setupDefaultThemeColors();
     }
 
     updated(changedProperties) {
@@ -122,9 +108,8 @@ const BsButtonMixin = (superClass) => class extends superClass {
             composed: true,
             detail: {
                 active: this.active,
-                action: this.action,
                 toggle: this.toggle,
-                dropdown: this.dropdownToggle
+                // dropdown: this.dropdownToggle
             }
         });
 
@@ -137,7 +122,7 @@ const BsButtonMixin = (superClass) => class extends superClass {
 
         // added the this.dropdownToggle to enable "active"
         // look and feel during the dropdown menu opened
-        if(this.toggle || this.dropdownToggle) {
+        if(this.toggle /* || this.dropdownToggle */) {
 
             if(this.active) {
                 buttonElement.classList.remove('active');
@@ -151,16 +136,17 @@ const BsButtonMixin = (superClass) => class extends superClass {
         }
     }
 
-    _blockDefaultEvent() {
+    // This should be moved to the link button
+    // _blockDefaultEvent() {
 
-        const linkButtonElement = this.shadowRoot.querySelector('a');
+    //     const linkButtonElement = this.shadowRoot.querySelector('a');
 
-        if(linkButtonElement && this.href) {
-            return false;
-        }
+    //     if(linkButtonElement && this.href) {
+    //         return false;
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 
     _retrieveButtonElement() {
 

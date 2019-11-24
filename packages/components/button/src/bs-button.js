@@ -18,21 +18,28 @@ import { BsButtonWarningOutlineCss } from './css/bs-button-warning-outline.css.j
 import { BsButtonDangerOutlineCss } from './css/bs-button-danger-outline.css.js';
 import { BsButtonLightOutlineCss } from './css/bs-button-light-outline.css.js';
 import { BsButtonDarkOutlineCss } from './css/bs-button-dark-outline.css.js';
-import { BsButtonLinkCss } from './css/bs-button-link.css.js';
 import { BsButtonBlockCss } from './css/bs-button-block.css.js';
 import { BsButtonLargeCss } from './css/bs-button-large.css.js';
 import { BsButtonSmallCss } from './css/bs-button-small.css.js';
 
-const defaultThemeColors = new Map([
-    ['primary', '#007bff'],
-    ['secondary', '#6c757d'],
-    ['success', '#28a745'],
-    ['info', '#17a2b8'],
-    ['warning', '#ffc107'],
-    ['danger', '#dc3545'],
-    ['light', '#f8f9fa'],
-    ['dark', '#343a40']
-]);
+// const defaultThemeColors = new Map([
+//     ['primary', '#007bff'],
+//     ['secondary', '#6c757d'],
+//     ['success', '#28a745'],
+//     ['info', '#17a2b8'],
+//     ['warning', '#ffc107'],
+//     ['danger', '#dc3545'],
+//     ['light', '#f8f9fa'],
+//     ['dark', '#343a40']
+// ]);
+
+// dropdownToggle is used in the click event data
+// this is expected in the dropdown element in order to display the menu
+
+// disabled should always take priority
+
+// attribute disabled is only valid for button & input elements
+// it is not valid for anchor tags
 
 export class BsButton extends LitElement {
 
@@ -41,19 +48,13 @@ export class BsButton extends LitElement {
             type: { type: String }, // specific to this implementation. button type [submit, button, reset]
             toggle: { type: Boolean, reflect: true }, // indicates if active state can be toggled...
             active: { type: Boolean, reflect: true }, // indicates if the button is in active state
-            disabled: { type: Boolean, reflect: true } // indicates if the button is in disabled state
-            //dropdownToggle: { type: Boolean, reflect: true, attribute: 'dropdown-toggle' } // indicates if active state can be toggled as part of a dropdown
+            disabled: { type: Boolean, reflect: true }, // indicates if the button is in disabled state
+            dropdownToggle: { type: Boolean, reflect: true, attribute: 'dropdown-toggle' }
         };
-
-        // dropdownToggle is used in the click event data
-        // this is expected in the dropdown element in order to display the menu
     }
-
-    // disabled should always take priority
 
     static get styles() {
         return [
-            super.styles,
             BsButtonRebootCss,
             BsButtonCommonCss,
             BsButtonPrimaryCss,
@@ -72,7 +73,6 @@ export class BsButton extends LitElement {
             BsButtonDangerOutlineCss,
             BsButtonLightOutlineCss,
             BsButtonDarkOutlineCss,
-            BsButtonLinkCss,
             BsButtonBlockCss,
             BsButtonLargeCss,
             BsButtonSmallCss
@@ -93,7 +93,7 @@ export class BsButton extends LitElement {
         this.toggle = false;
         this.type = 'button';
         this.disabled = false;
-        // this.dropdownToggle = false;
+        this.dropdownToggle = false;
     }
 
     /**
@@ -101,101 +101,112 @@ export class BsButton extends LitElement {
      */
     firstUpdated(_updatedProperties) {
 
-        super.firstUpdated(_updatedProperties);
-
         const buttonElement = this.shadowRoot.querySelector('button');
 
         this._applyButtonType(buttonElement);
 
-        if(this.disabled) {
-            this._applyDisabledState(buttonElement);
-        }
-
-        if(this.active) {
-            this._applyActiveState(buttonElement);
-        }
+        if(this.disabled) this._applyDisabledState(buttonElement);
+        if(this.active) this._applyActiveState(buttonElement);
 
         buttonElement.addEventListener('click', _ => this._handleButtonClick());
         buttonElement.addEventListener('focusout', _ => this._handleFocusOut());
 
-        this._setupDefaultThemeColors();
-    }
-
-    // attribute disabled is only valid for button & input elements
-    // it is not valid for anchor tags
-
-    /**
-     * @param {HTMLButtonElement} btnElement
-     */
-    _removeDisabledState(btnElement) {
-        btnElement.classList.remove('disabled');
-        btnElement.removeAttribute('disabled');
+        // this._setupDefaultThemeColors();
     }
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * Reflects changes on the disabled property
+     *
+     * @param   {Map}  _changedProperties Map of changed properties
      */
-    _applyDisabledState(btnElement) {
-        btnElement.classList.add('disabled');
-        btnElement.setAttribute('disabled', '');
+    updated(_changedProperties) {
+
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has('disabled')) {
+
+            const buttonElement = this.shadowRoot.querySelector('button');
+
+            if(this.disabled) {
+                this._applyDisabledState(buttonElement);
+            } else {
+                this._removeDisabledState(buttonElement);                
+            }
+        }
     }
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLButtonElement} buttonElement
      */
-    _removeActiveState(btnElement) {
-        btnElement.classList.remove('active');
+    _removeDisabledState(buttonElement) {
+        buttonElement.classList.remove('disabled');
+        buttonElement.removeAttribute('disabled');
     }
 
     /**
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLButtonElement} buttonElement
      */
-    _applyActiveState(btnElement) {
-        btnElement.classList.add('active');
+    _applyDisabledState(buttonElement) {
+        buttonElement.classList.add('disabled');
+        buttonElement.setAttribute('disabled', '');
+    }
+
+    /**
+     * @param {HTMLButtonElement} buttonElement
+     */
+    _removeActiveState(buttonElement) {
+        buttonElement.classList.remove('active');
+    }
+
+    /**
+     * @param {HTMLButtonElement} buttonElement
+     */
+    _applyActiveState(buttonElement) {
+        buttonElement.classList.add('active');
     }
 
     /**
      * Applies selected type to <button> element
      *
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLButtonElement} buttonElement
      */
-    _applyButtonType(btnElement) {
+    _applyButtonType(buttonElement) {
 
         switch (this.type) {
             case 'button':
-                btnElement.setAttribute('type', 'button');
+                buttonElement.setAttribute('type', 'button');
                 break;
             case 'reset':
-                btnElement.setAttribute('type', 'reset');
+                buttonElement.setAttribute('type', 'reset');
                 break;
             case 'submit':
-                btnElement.setAttribute('type', 'submit');
+                buttonElement.setAttribute('type', 'submit');
                 break;
             default:
-                btnElement.setAttribute('type', 'button');
+                buttonElement.setAttribute('type', 'button');
             }
         }
 
-    _setupDefaultThemeColors() {
+    // _setupDefaultThemeColors() {
 
-        const hostElement = this.shadowRoot.host;
+    //     const hostElement = this.shadowRoot.host;
 
-        for (let [key, value] of defaultThemeColors) {
+    //     for (let [key, value] of defaultThemeColors) {
 
-            if(hostElement.hasAttribute(key)) {
-                this._updateCssProperty(hostElement, key, value);
-            }
-        }
-    }
+    //         if(hostElement.hasAttribute(key)) {
+    //             this._updateCssProperty(hostElement, key, value);
+    //         }
+    //     }
+    // }
 
-    _updateCssProperty(hostElement, cssPropName, cssPropValue) {
+    // _updateCssProperty(hostElement, cssPropName, cssPropValue) {
 
-        const cssVarName = '--'+cssPropName;
+    //     const cssVarName = '--'+cssPropName;
 
-        if(!getComputedStyle(hostElement).getPropertyValue(cssVarName)) {
-            hostElement.style.setProperty(cssVarName, cssPropValue);
-        }
-    }
+    //     if(!getComputedStyle(hostElement).getPropertyValue(cssVarName)) {
+    //         hostElement.style.setProperty(cssVarName, cssPropValue);
+    //     }
+    // }
 
     _handleFocusOut() {
 
@@ -203,10 +214,10 @@ export class BsButton extends LitElement {
             return;
         }
 
-        if(this.active /* && this.dropdownToggle */) {
+        if(this.active && this.dropdownToggle) {
 
-            const btnElement = this.shadowRoot.querySelector('button');
-            this._updateToggleableActiveState(btnElement);
+            const buttonElement = this.shadowRoot.querySelector('button');
+            this._updateToggleableActiveState(buttonElement);
         }
 
         const btnFocusOutEvent = new CustomEvent('bs-button-focusout', {
@@ -223,10 +234,10 @@ export class BsButton extends LitElement {
             return;
         }
 
-        const btnElement = this.shadowRoot.querySelector('button');
-        btnElement.focus();
+        const buttonElement = this.shadowRoot.querySelector('button');
+        buttonElement.focus();
 
-        this._updateToggleableActiveState(btnElement);
+        this._updateToggleableActiveState(buttonElement);
 
         const btnClickedEvent = new CustomEvent('bs-button-click', {
             bubbles: true,
@@ -234,8 +245,8 @@ export class BsButton extends LitElement {
             detail: {
                 active: this.active,
                 type: this.type,
-                toggle: this.toggle
-                //dropdown: this.dropdownToggle
+                toggle: this.toggle,
+                dropdown: this.dropdownToggle
             }
         });
 
@@ -247,21 +258,19 @@ export class BsButton extends LitElement {
      * Used in cases where the active state should not be lost when the
      * mouse is moved away from the button. Toggle and dropdown are examples
      *
-     * @param {HTMLButtonElement} btnElement
+     * @param {HTMLButtonElement} buttonElement
      */
-    _updateToggleableActiveState(btnElement) {
+    _updateToggleableActiveState(buttonElement) {
 
         // added the this.dropdownToggle to enable "active"
         // look and feel during the dropdown menu opened
-        //
-        // there is an issue: if button is part of a button-group
-        // then the active state is not sticky !!!
-        if(this.toggle /* || this.dropdownToggle */) {
+        // and also to the button-group "selected" item
+        if(this.toggle || this.dropdownToggle) {
 
             if(this.active) {
-                this._removeActiveState(btnElement);
+                this._removeActiveState(buttonElement);
             } else {
-                this._applyActiveState(btnElement);
+                this._applyActiveState(buttonElement);
             }
 
             this.active = !this.active;

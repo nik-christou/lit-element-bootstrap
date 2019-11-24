@@ -1,6 +1,7 @@
-
 import { LitElement, html } from 'lit-element';
-import { BsButtonRebootCss } from './bs-button-reboot.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentTypographyCss } from '@lit-element-bootstrap/content/bs-content-typography.css.js';
+
 import { BsButtonMixin } from './bs-button-mixin.js';
 import { BsButtonCommonCss } from './css/bs-button-common.css.js';
 import { BsButtonPrimaryCss } from './css/bs-button-primary.css.js';
@@ -24,19 +25,12 @@ import { BsButtonBlockCss } from './css/bs-button-block.css.js';
 import { BsButtonLargeCss } from './css/bs-button-large.css.js';
 import { BsButtonSmallCss } from './css/bs-button-small.css.js';
 
-export class BsLinkButton extends BsButtonMixin(LitElement) {
-
-    static get properties() {
-        return {
-            ...super.properties,
-            href: String,
-            target: String
-        };
-    }
+export class BsButtonOld extends BsButtonMixin(LitElement) {
 
     static get styles() {
         return [
-            BsButtonRebootCss,
+            BsContentRebootCss,
+            BsContentTypographyCss,
             BsButtonCommonCss,
             BsButtonPrimaryCss,
             BsButtonSecondaryCss,
@@ -63,18 +57,12 @@ export class BsLinkButton extends BsButtonMixin(LitElement) {
 
     render() {
         return html`
-            <a href="${this.href}" .target="${this.target}" class="btn">
+            <button class="btn">
                 <slot></slot>
-            </a>
+            </button>
         `;
-    }
-
-    constructor() {
-        super();
-        this.href = '';
-        this.target = '_self';
     }
 };
 
-if (!window.customElements.get("bs-link-button"))
-    window.customElements.define('bs-link-button', BsLinkButton);
+if (!window.customElements.get("bs-button-old"))
+    window.customElements.define('bs-button-old', BsButtonOld);
