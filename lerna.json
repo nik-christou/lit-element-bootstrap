@@ -7,7 +7,6 @@
     "packages/theme",
     "packages/utilities"
   ],
-  "npmClient": "yarn",
   "version": "independent",
   "command": {
     "publish": {
