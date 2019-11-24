@@ -1,0 +1,21 @@
+{
+  "packages": [
+    "packages/behaviour/*",
+    "packages/components/*",
+    "packages/content",
+    "packages/layout",
+    "packages/theme",
+    "packages/utilities"
+  ],
+  "npmClient": "yarn",
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    },
+    "version": {
+      "message": "chore: release new versions",
+      "conventionalCommits": true
+    }
+  }
+}

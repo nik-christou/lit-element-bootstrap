@@ -1,0 +1,11 @@
+{
+    "name": "lit-elements-bootstrap",
+    "private": true,
+    "scripts": {
+        "postinstall": "lerna bootstrap"
+    },
+    "devDependencies": {
+        "lerna": "^3.13.0",
+        "standard-changelog": "^2.0.11"
+    }
+}

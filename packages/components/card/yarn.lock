@@ -680,20 +680,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@lit-element-bootstrap/content@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/content/-/content-1.0.0-alpha.3.tgz#e3f191ec304b1d4fcfe38123ec288090197eb42e"
-  integrity sha512-uE8xjp0EoHdPaEurDyJYf/inQg2IJQdBYdzYrz8qrIPYK3dh8xCgcoNOXSxrFqeHB2rm7SJfWFiEyL0AdCwGLg==
-  dependencies:
-    lit-element "^2.2.1"
-
-"@lit-element-bootstrap/utilities@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/utilities/-/utilities-1.0.0-alpha.4.tgz#f63d5af366b70779c2a31135928e9c98f000f228"
-  integrity sha512-z1jhVNWFlFCDDs6wzbtC+p7xPpIAlvnlEXPg7Gp7s4/Qn5jo1ZBlsGeWDxRSPeJouTy/S5qqc7hskKD1b4B/nw==
-  dependencies:
-    lit-element "^2.2.1"
-
 "@pika/babel-plugin-esm-import-rewrite@^0.3.7":
   version "0.3.16"
   resolved "https://registry.npmjs.org/@pika/babel-plugin-esm-import-rewrite/-/babel-plugin-esm-import-rewrite-0.3.16.tgz#884aa5ca51f1727e0a932eca8602b6a99e0aa163"

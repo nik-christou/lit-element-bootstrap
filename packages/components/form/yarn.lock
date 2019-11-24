@@ -693,43 +693,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@lit-element-bootstrap/button@^1.0.0-alpha.7":
-  version "1.0.0-alpha.7"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/button/-/button-1.0.0-alpha.7.tgz#d9e19efb5a93c15aeecbfd149693044048d0166e"
-  integrity sha512-FBVMvRl4AnuQwDhIVBpufgYohRr7SCgPQBfrp6ddFKXkBkj0fCyGgiSEBC8buW7hWabSWI+H97G41USNg3zWMA==
-  dependencies:
-    "@lit-element-bootstrap/content" "^1.0.0-alpha.3"
-    lit-element "^2.2.1"
-
-"@lit-element-bootstrap/content@^1.0.0-alpha.3":
-  version "1.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/content/-/content-1.0.0-alpha.3.tgz#e3f191ec304b1d4fcfe38123ec288090197eb42e"
-  integrity sha512-uE8xjp0EoHdPaEurDyJYf/inQg2IJQdBYdzYrz8qrIPYK3dh8xCgcoNOXSxrFqeHB2rm7SJfWFiEyL0AdCwGLg==
-  dependencies:
-    lit-element "^2.2.1"
-
-"@lit-element-bootstrap/layout@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/layout/-/layout-1.0.0-alpha.4.tgz#de012c1c5209cd2c88f31108f560881c46069e3d"
-  integrity sha512-UujkTjFxfOfzdaLUq8Msh9OHi0WBz1Rb7uMe1oD7y/fZjRdTtUObLkn2g4mQmIFQyx8+FUA+vPzlOibflhVuxg==
-  dependencies:
-    "@lit-element-bootstrap/content" "^1.0.0-alpha.3"
-    lit-element "^2.2.1"
-
-"@lit-element-bootstrap/theme@^1.0.0-alpha.2":
-  version "1.0.0-alpha.2"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/theme/-/theme-1.0.0-alpha.2.tgz#377b760a8682939771424a5b74c8fcf4d49be2c3"
-  integrity sha512-ELHSy1c4dc4uwrDiPhRI/K50kBWd0z8vdKonc6v/oFymEVhU/zM3yLfDkK7VeJizCmFWkhy/HjMQcArgAAWWPA==
-  dependencies:
-    lit-element "^2.2.1"
-
-"@lit-element-bootstrap/utilities@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.npmjs.org/@lit-element-bootstrap/utilities/-/utilities-1.0.0-alpha.4.tgz#f63d5af366b70779c2a31135928e9c98f000f228"
-  integrity sha512-z1jhVNWFlFCDDs6wzbtC+p7xPpIAlvnlEXPg7Gp7s4/Qn5jo1ZBlsGeWDxRSPeJouTy/S5qqc7hskKD1b4B/nw==
-  dependencies:
-    lit-element "^2.2.1"
-
 "@open-wc/building-utils@^2.10.2":
   version "2.10.2"
   resolved "https://registry.npmjs.org/@open-wc/building-utils/-/building-utils-2.10.2.tgz#100b05e7b23aceae5f2dbf0d3cf0a546fb0f23d5"
