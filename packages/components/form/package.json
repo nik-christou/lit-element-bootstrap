@@ -15,7 +15,7 @@
   "scripts": {
     "pika:build": "pika build",
     "serve:demo": "es-dev-server --node-resolve --app-index demo.html",
-    "test": "karma start --coverage",
+    "test": "karma start",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
     "test:prune-snapshots": "karma start --prune-snapshots",

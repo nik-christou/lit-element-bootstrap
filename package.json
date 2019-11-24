@@ -2,7 +2,8 @@
     "name": "lit-elements-bootstrap",
     "private": true,
     "scripts": {
-        "postinstall": "lerna bootstrap"
+        "postinstall": "lerna bootstrap",
+        "test": "lerna run test --ignore @lit-element-bootstrap/collapse"
     },
     "devDependencies": {
         "lerna": "^3.13.0",
