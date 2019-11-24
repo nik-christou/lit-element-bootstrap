@@ -17,7 +17,8 @@ module.exports = config => {
 
       esm: {
         nodeResolve: true, // if you are using 'bare module imports' you will need this option
-        compatibility: 'all', // set compatibility mode to all
+        compatibility: 'all', // set compatibility mode to all,
+        preserveSymlinks: true
       },
     }),
   );
