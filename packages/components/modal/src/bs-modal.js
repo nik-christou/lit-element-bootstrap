@@ -65,9 +65,6 @@ export class BsModal extends LitElement {
         const modalBackdrop = this.shadowRoot.querySelector('.modal-backdrop');
         modalBackdrop.addEventListener('click', () => this._handleBackdropClickEvent());
         modalBackdrop.addEventListener('transitionend', () => this._handleModalBackdropTransitionEnd());
-
-        const modalDialogElement = this.shadowRoot.querySelector('.modal-dialog');
-        modalDialogElement.addEventListener('transitionend', () => this._handleModalDialogTransitionEnd());
     }
 
     _handleDismissEvent() {
