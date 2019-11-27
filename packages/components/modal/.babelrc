@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        ["module-resolver", {
+            "root": ["."],
+            "alias": {
+                "@lit-element-bootstrap/button": "@lit-element-bootstrap/button/src"
+            }
+        }]
+    ]
+}
