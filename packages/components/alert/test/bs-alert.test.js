@@ -2,7 +2,7 @@
 import sinon from 'sinon/pkg/sinon-esm.js';
 import { html, fixture, aTimeout } from '@open-wc/testing';
 
-import '../src/bs-alert.js';
+import '../bs-alert.js';
 
 describe('bs-alert', () => {
 

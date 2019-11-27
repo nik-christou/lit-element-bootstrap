@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit-element";
-import { BsAlertLinkCss } from "./bs-alert-link.css.js";
+import { BsAlertLinkCss } from "./";
 
 /**
  * Alert link component

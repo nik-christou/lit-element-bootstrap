@@ -1,3 +1,6 @@
+import { LitElement, html } from "lit-element";
+import { BsAlertHrCss } from "./";
+
 /**
  * Alert hr component
  *
@@ -17,13 +20,16 @@
  * @cssproperty --alert-hr-dark-bd-top-color - The hr dark context top border color. default: #b9bbbe
  */
 export class BsAlertHr extends LitElement {
-    static get styles(): import("lit-element").CSSResult[];
-    render(): import("lit-element").TemplateResult;
-}
-import { LitElement } from "lit-element";
+    static get styles() {
+        return [BsAlertHrCss];
+    }
 
-declare global {
-    interface HTMLElementTagNameMap {
-      "bs-alert-hr": BsAlertHr
+    render() {
+        return html`
+            <hr />
+        `;
     }
 }
+
+if (!window.customElements.get("bs-alert-hr"))
+    window.customElements.define("bs-alert-hr", BsAlertHr);

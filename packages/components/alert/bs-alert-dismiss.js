@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit-element";
-import { BsAlertDismissCss } from "./bs-alert-dismiss.css.js";
+import { BsAlertDismissCss } from "./";
 
 /**
  * Alert dismiss component

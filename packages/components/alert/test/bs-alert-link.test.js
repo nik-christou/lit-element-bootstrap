@@ -1,7 +1,7 @@
 
 import { html, fixture } from '@open-wc/testing';
 
-import '../src/bs-alert-link.js';
+import '../bs-alert-link.js';
 
 describe('bs-alert-link', () => {
 

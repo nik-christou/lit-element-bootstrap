@@ -1,7 +1,7 @@
 import sinon from 'sinon/pkg/sinon-esm.js';
 import { html, fixture, aTimeout } from '@open-wc/testing';
 
-import '../src/bs-alert-dismiss.js';
+import '../bs-alert-dismiss.js';
 
 describe('bs-alert-dismiss', () => {
 

@@ -3,10 +3,10 @@ import { LitElement, html, css } from 'lit-element';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { DefaultThemeCss } from '@lit-element-bootstrap/theme';
 
-import '../src/bs-alert.js';
-import '../src/bs-alert-hr.js';
-import '../src/bs-alert-link.js';
-import '../src/bs-alert-dismiss.js';
+import '../bs-alert.js';
+import '../bs-alert-hr.js';
+import '../bs-alert-link.js';
+import '../bs-alert-dismiss.js';
 
 export class AlertDemo extends LitElement {
 
