@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 import { BsColumnExtraSmallCss } from './bs-column-xs.css.js';
 import { BsColumnSmallCss } from './bs-column-sm.css.js';

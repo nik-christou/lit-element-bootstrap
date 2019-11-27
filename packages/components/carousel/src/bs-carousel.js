@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { BsCarouselCss } from './bs-carousel.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 const Direction = {
     NEXT: 'next',

@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsCollapsableCss } from './bs-collapsable.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCollapsable extends LitElement {
 

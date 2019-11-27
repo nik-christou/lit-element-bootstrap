@@ -1,9 +1,9 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormRange extends LitElement {
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -19,7 +19,7 @@ export class BsFormRange extends LitElement {
             `
         ];
     }
-    
+
     render() {
         return html`
             <input type="range" class="form-control-range" />
@@ -27,5 +27,5 @@ export class BsFormRange extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-range')) 
+if(!window.customElements.get('bs-form-range'))
     window.customElements.define('bs-form-range', BsFormRange);

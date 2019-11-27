@@ -4,7 +4,7 @@ import { BsNavbarCss } from './bs-navbar.css.js';
 import { BsNavbarExpandLargeCss } from './bs-navbar-expand-lg.css.js';
 import { BsNavbarLightColorCss } from './bs-navbar-light-color.css.js';
 import { BsNavbarDarkColorCss } from './bs-navbar-dark-color.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsNavbar extends LitElement {
 

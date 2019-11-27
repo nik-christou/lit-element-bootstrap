@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsCarouselCaptionCss } from './bs-carousel-caption.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCarouselCaption extends LitElement {
 

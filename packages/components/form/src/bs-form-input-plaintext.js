@@ -4,10 +4,10 @@ import { ifDefined } from 'lit-html/directives/if-defined';
 import { BsFormInputMixin } from './bs-form-input-mixin.js';
 import { BsFormControlSizeCss } from './bs-form-control-size.css.js';
 import { BsFormInputPlaintextCss } from './bs-form-input-plaintext.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormInputPlaintext extends BsFormInputMixin(LitElement) {
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -15,7 +15,7 @@ export class BsFormInputPlaintext extends BsFormInputMixin(LitElement) {
             BsFormInputPlaintextCss
         ];
     }
-    
+
     render() {
         return html`
             <input 
@@ -33,5 +33,5 @@ export class BsFormInputPlaintext extends BsFormInputMixin(LitElement) {
     }
 };
 
-if(!window.customElements.get('bs-form-input-plaintext')) 
+if(!window.customElements.get('bs-form-input-plaintext'))
     window.customElements.define('bs-form-input-plaintext', BsFormInputPlaintext);

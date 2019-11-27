@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsModalHeaderCss } from './bs-modal-header.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 import '@lit-element-bootstrap/button/bs-close-button.js';
 

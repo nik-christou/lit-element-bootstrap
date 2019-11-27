@@ -1,10 +1,10 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsListGroupItemCommonCss } from './bs-list-group-item-common.css.js';
-import { BsFlexJustifyCss } from '@lit-element-bootstrap/utilities/bs-flex-justify.css.js';
-import { BsFlexDisplayCss } from '@lit-element-bootstrap/utilities/bs-flex-display.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
-import { BsFlexAlignItemsCss } from '@lit-element-bootstrap/utilities/bs-flex-align-items.css.js';
+import { BsFlexJustifyCss } from '@lit-element-bootstrap/utilities';
+import { BsFlexDisplayCss } from '@lit-element-bootstrap/utilities';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
+import { BsFlexAlignItemsCss } from '@lit-element-bootstrap/utilities';
 
 export class BsListGroupBadgeItem extends LitElement {
 

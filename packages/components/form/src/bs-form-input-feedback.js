@@ -1,10 +1,10 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsFormInputFeedbackCss } from './bs-form-input-feedback.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormInputFeedback extends LitElement {
-    
+
     static get properties() {
         return {
             validValueMsg: {type: String, attribute: 'valid-value-msg'},
@@ -22,20 +22,20 @@ export class BsFormInputFeedback extends LitElement {
             invalid: {type: Boolean, reflect: true}
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
             BsFormInputFeedbackCss
         ];
     }
-    
+
     render() {
         return html`
             ${this.feedbackMsg}
         `;
     }
-    
+
     constructor() {
         super();
         this.feedbackMsg = '';
@@ -52,72 +52,72 @@ export class BsFormInputFeedback extends LitElement {
         this.valid = false;
         this.invalid = false;
     }
-    
+
     showValidationFeedback(validityState) {
-        
+
         if(validityState.valid) {
-            
+
             this.valid = true;
             this.invalid = false;
-            
+
             if(this.validValueMsg) {
                 this.feedbackMsg = this.validValueMsg;
             } else {
                 this.feedbackMsg = '';
             }
-            
+
         } else {
-            
+
             this.valid = false;
             this.invalid = true;
-            
+
             const validationMsg = this._getCustomValidationMessage(validityState);
-            
+
             if(validationMsg) {
                 this.feedbackMsg = validationMsg;
             }
         }
     }
-    
+
     _getCustomValidationMessage(validityState) {
-        
+
         if(validityState.valueMissing) {
             return this.missingValueMsg;
         }
-        
+
         if(validityState.typeMismatch) {
             return this.mismatchValueMsg;
         }
-        
+
         if(validityState.patternMismatch) {
             return this.patternValueMsg;
         }
-        
+
         if(validityState.tooLong) {
             return this.tooLongValueMsg;
         }
-        
+
         if(validityState.tooShort) {
             return this.tooShortValueMsg;
         }
-        
+
         if(validityState.rangeUnderflow) {
             return this.rangeUnderflowMsg;
         }
-        
+
         if(validityState.rangeOverflow) {
             return this.rangeOverflowMsg;
         }
-        
+
         if(validityState.stepMismatch) {
             return this.stepMismatchMsg;
         }
-        
+
         if(validityState.badInput) {
             return this.badInputValueMsg;
         }
     }
 };
 
-if(!window.customElements.get('bs-form-input-feedback')) 
+if(!window.customElements.get('bs-form-input-feedback'))
     window.customElements.define('bs-form-input-feedback', BsFormInputFeedback);

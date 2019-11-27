@@ -2,7 +2,7 @@
 import { LitElement, html } from 'lit-element';
 import { BsListGroupFlushCss } from './bs-list-group-flush.css.js';
 import { BsListGroupCommonCss } from './bs-list-group-common.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsListGroupFlush extends LitElement {
 

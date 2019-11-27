@@ -1,9 +1,9 @@
 
 import { BsDropdownItemCss } from './bs-dropdown-item.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 const BsDropdownItemMixin = (superClass) => class extends superClass {
-    
+
     static get properties() {
         return {
             title: String,
@@ -12,14 +12,14 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
             disabled: {type: Boolean, reflect: true}
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
             BsDropdownItemCss
         ];
     }
-    
+
     constructor() {
         super();
         this.index = 0;
@@ -27,12 +27,12 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
         this.active = false;
         this.disabled = false;
     }
-    
+
     firstUpdated() {
         const buttonElement = this._retrieveButtonElement();
         buttonElement.addEventListener('mousedown', _ => this._handleButtonClick());
     }
-    
+
     toggleHover() {
         const buttonElement = this._retrieveButtonElement();
         buttonElement.classList.toggle('hover');
@@ -44,21 +44,21 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
     }
 
     _retrieveButtonElement() {
-        
+
         const linkElement = this.shadowRoot.querySelector('a.dropdown-item');
         const buttonElement = this.shadowRoot.querySelector('button.dropdown-item');
-        
+
         if(linkElement) {
             return linkElement;
         }
-        
+
         if(buttonElement) {
             return buttonElement;
         }
     }
-    
+
     _applyButtonActivateState(btnElement) {
-        
+
         if(this.disabled && !this.active) {
             btnElement.classList.toggle('disabled');
         }
@@ -67,19 +67,19 @@ const BsDropdownItemMixin = (superClass) => class extends superClass {
             btnElement.classList.toggle('active');
         }
     }
-    
+
     _handleButtonClick() {
-        
+
         if(!this.disabled) {
-            
+
             const btnClickedEvent = new CustomEvent('bs-dropdown-item-click', {
-                bubbles: true, 
+                bubbles: true,
                 composed: true,
                 detail: {
                     index: this.index
                 }
             });
-            
+
             this.dispatchEvent(btnClickedEvent);
         }
     }

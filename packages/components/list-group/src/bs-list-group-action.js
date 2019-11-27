@@ -2,7 +2,7 @@
 import { LitElement, html } from 'lit-element';
 import { BsListGroupActionCss } from './bs-list-group-action.css.js';
 import { BsListGroupCommonCss } from './bs-list-group-common.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsListGroupAction extends LitElement {
 
