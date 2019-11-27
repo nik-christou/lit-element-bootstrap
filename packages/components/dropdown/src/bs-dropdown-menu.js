@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsDropdownMenuCss } from './bs-dropdown-menu.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 const Direction = {
     UP: 'up',
@@ -18,20 +18,20 @@ export class BsDropdownMenu extends LitElement {
             ariaLabelledBy: {type: String, reflect: true, attribute:'aria-labelledby'}
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
             BsDropdownMenuCss
         ];
     }
-    
+
     render() {
         return html`
             <slot></slot>
         `;
     }
-    
+
     constructor() {
         super();
         this.show = false;
@@ -53,19 +53,19 @@ export class BsDropdownMenu extends LitElement {
     firstUpdated() {
         this._displayIfStatic();
     }
-    
+
     toggleMenu() {
         this.show = !this.show;
         this._updateAriaExpanded();
         this._changeDisplayValueInCollapsedNavbar();
     }
-    
+
     openMenu() {
         this.show = true;
         this._updateAriaExpanded();
         this.shadowRoot.host.focus();
     }
-    
+
     closeMenu() {
         this.show = false;
         this._updateAriaExpanded();
@@ -77,14 +77,14 @@ export class BsDropdownMenu extends LitElement {
     }
 
     _changeDisplayValueInCollapsedNavbar() {
-        
+
         const compStyles = window.getComputedStyle(this.shadowRoot.host);
         const displayValue = compStyles.getPropertyValue('display');
-        
+
         if(this.show && displayValue === 'none') {
             this.shadowRoot.host.style.display = 'block';
         }
-        
+
         if(!this.show && displayValue === 'block') {
             this.shadowRoot.host.style.display = 'none';
         }
@@ -158,17 +158,17 @@ export class BsDropdownMenu extends LitElement {
         const activeDropdownItemElement = this._findActivatedDropdownItem(dropdownItemElements);
 
         const activeDropdownItemElementIndex = this._findActiveDropdownItemIndex(
-            activeDropdownItemElement, 
+            activeDropdownItemElement,
             direction,
             numberOfDropdownItems);
 
         const newDropdownItemElementIndex = this._calculateNewDropdownItemIndex(
-            activeDropdownItemElementIndex, 
+            activeDropdownItemElementIndex,
             direction,
             numberOfDropdownItems);
 
         const newActiveDropdownItemElement = dropdownItemElements[newDropdownItemElementIndex];
-        
+
         if(activeDropdownItemElement) {
             activeDropdownItemElement.toggleHover();
         }
@@ -204,15 +204,15 @@ export class BsDropdownMenu extends LitElement {
             return new Number(activeDropdownItemElement.index);
         }
 
-        // if nothing was activated before and DOWN direction set 
+        // if nothing was activated before and DOWN direction set
         // -1 as the previously activated index in order to select
         // the first element at index position 0;
         if(!activeDropdownItemElement && direction === Direction.DOWN) {
             return -1;
         }
 
-        // if nothing was activated before and UP direction set 
-        // to number of items + 1 as the previously activated index 
+        // if nothing was activated before and UP direction set
+        // to number of items + 1 as the previously activated index
         // in order to select for the last element at index position of last item;
         if(!activeDropdownItemElement && direction === Direction.UP) {
             return new Number(lastDropdownItemElementIndex);
@@ -228,24 +228,24 @@ export class BsDropdownMenu extends LitElement {
             if(this._isDropdownItemElementHover(dropdownItem)) {
                 return dropdownItem;
             }
-        }        
+        }
     }
 
     _extractDropdownItemElements(slotNodes) {
 
         const elementNodes = [];
-    
+
         for (let index = 0; index < slotNodes.length; ++index) {
-            
+
             let slotItem = slotNodes[index];
 
-            if (this._isDropdownItemLinkElement(slotItem) || 
+            if (this._isDropdownItemLinkElement(slotItem) ||
                 this._isDropdownItemButtonElement(slotItem)) {
 
                 elementNodes.push(slotItem);
             }
         }
-    
+
         return elementNodes;
     }
 
@@ -254,15 +254,15 @@ export class BsDropdownMenu extends LitElement {
     }
 
     _isDropdownItemLinkElement(element) {
-        return element.nodeType === Node.ELEMENT_NODE 
+        return element.nodeType === Node.ELEMENT_NODE
                 && (element.localName === 'bs-dropdown-item-link');
-    }   
+    }
 
     _isDropdownItemButtonElement(element) {
-        return element.nodeType === Node.ELEMENT_NODE 
+        return element.nodeType === Node.ELEMENT_NODE
                 && (element.localName === 'bs-dropdown-item-button');
     }
 };
 
-if (!window.customElements.get("bs-dropdown-menu")) 
+if (!window.customElements.get("bs-dropdown-menu"))
     window.customElements.define('bs-dropdown-menu', BsDropdownMenu);

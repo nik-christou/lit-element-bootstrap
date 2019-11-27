@@ -4,7 +4,7 @@ import { ifDefined } from 'lit-html/directives/if-defined';
 import { BsFormInputMixin } from './bs-form-input-mixin.js';
 import { BsFormControlCss } from './bs-form-control.css.js';
 import { BsFormControlSizeCss } from './bs-form-control-size.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormInput extends BsFormInputMixin(LitElement) {
 

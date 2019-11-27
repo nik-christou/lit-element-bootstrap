@@ -1,10 +1,10 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsTextColorCss } from '@lit-element-bootstrap/utilities/bs-text-colors.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsTextColorCss } from '@lit-element-bootstrap/content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormHelpText extends LitElement {
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -17,7 +17,7 @@ export class BsFormHelpText extends LitElement {
             `
         ];
     }
-    
+
     render() {
         return html`
             <small class="form-text text-muted">
@@ -27,5 +27,5 @@ export class BsFormHelpText extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-help-text')) 
+if(!window.customElements.get('bs-form-help-text'))
     window.customElements.define('bs-form-help-text', BsFormHelpText);

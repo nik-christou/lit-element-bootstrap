@@ -2,8 +2,8 @@
 import { LitElement, html } from 'lit-element';
 import { BsListGroupItemCommonCss } from './bs-list-group-item-common.css.js';
 import { BsListGroupItemActionCommonCss } from './bs-list-group-item-action-common.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
-import { BsContentTypographyCss } from '@lit-element-bootstrap/content/bs-content-typography.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
+import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 export class BsListGroupItemActionButton extends LitElement {
 

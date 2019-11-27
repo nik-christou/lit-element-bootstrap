@@ -2,10 +2,10 @@
 import { LitElement, html, css } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 import { BsFormControlCss } from './bs-form-control.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormTextarea extends LitElement {
-    
+
     static get properties() {
         return {
             rows: Number,
@@ -22,7 +22,7 @@ export class BsFormTextarea extends LitElement {
             value: {type: String, reflect: true}
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -34,7 +34,7 @@ export class BsFormTextarea extends LitElement {
             `
         ];
     }
-    
+
     render() {
         return html`
             
@@ -53,7 +53,7 @@ export class BsFormTextarea extends LitElement {
             </textarea>
         `;
     }
-    
+
     constructor() {
         super();
         this.value = '';
@@ -63,22 +63,22 @@ export class BsFormTextarea extends LitElement {
         this.valid = false;
         this.invalid = false;
     }
-    
+
     setFocus() {
         const textareaElement = this.shadowRoot.querySelector('textarea');
         textareaElement.focus();
     }
-    
+
     validate() {
         const textareaElement = this.shadowRoot.querySelector('textarea');
         return textareaElement.checkValidity();
     }
-    
+
     getValidity() {
         const textareaElement = this.shadowRoot.querySelector('textarea');
         return textareaElement.validity;
     }
 };
 
-if(!window.customElements.get('bs-form-textarea'))  
+if(!window.customElements.get('bs-form-textarea'))
     window.customElements.define('bs-form-textarea', BsFormTextarea);

@@ -1,11 +1,11 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsFormRadioInputCss } from './bs-form-radio-input.css.js';
-import { BsPositionCss } from '@lit-element-bootstrap/utilities/bs-position.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsPositionCss } from '@lit-element-bootstrap/content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormRadioInput extends LitElement {
-    
+
     static get properties() {
         return {
             name: String,
@@ -15,7 +15,7 @@ export class BsFormRadioInput extends LitElement {
             checked: {type: Boolean, reflect: true}
         };
     }
-    
+
     static get styles() {
         return [
             BsContentRebootCss,
@@ -23,7 +23,7 @@ export class BsFormRadioInput extends LitElement {
             BsFormRadioInputCss
         ];
     }
-    
+
     render() {
         return html`
             <input 
@@ -34,7 +34,7 @@ export class BsFormRadioInput extends LitElement {
                 ?disabled=${this.disabled} />
         `;
     }
-    
+
     constructor() {
         super();
         this.name = '';
@@ -43,17 +43,17 @@ export class BsFormRadioInput extends LitElement {
         this.disabled = false;
         this.checked = false;
     }
-    
+
     firstUpdated() {
         const inputElement = this.shadowRoot.querySelector('input');
         inputElement.addEventListener('click', event => this._handleClick(event));
         this._applyStaticCss();
     }
-    
+
     _handleClick() {
-        
+
         const radioInputClickEvent = new CustomEvent('bs-form-radio-click', {
-            bubbles: true, 
+            bubbles: true,
             composed: true,
             detail: {
                 name: this.name,
@@ -63,36 +63,36 @@ export class BsFormRadioInput extends LitElement {
 
         this.dispatchEvent(radioInputClickEvent);
     }
-    
+
     radioGroupItemSelected(name, value) {
-        
+
         if(name === this.name && value === this.value) {
             this.check();
         } else {
             this.uncheck();
         }
     }
-    
+
     _applyStaticCss() {
-        
+
         if(this.static) {
             const checkboxElement = this.shadowRoot.querySelector('input');
             checkboxElement.classList.add('position-static');
         }
     }
-    
+
     check() {
         const radioInputElement = this.shadowRoot.querySelector('input');
         radioInputElement.checked = true;
         this.checked = true;
     }
-    
+
     uncheck() {
         const radioInputElement = this.shadowRoot.querySelector('input');
         radioInputElement.checked = false;
         this.checked = false;
     }
-    
+
     toggle() {
         const radioInputElement = this.shadowRoot.querySelector('input');
         radioInputElement.checked = !radioInputElement.checked;
@@ -100,5 +100,5 @@ export class BsFormRadioInput extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-form-radio-input'))  
+if(!window.customElements.get('bs-form-radio-input'))
     window.customElements.define('bs-form-radio-input', BsFormRadioInput);

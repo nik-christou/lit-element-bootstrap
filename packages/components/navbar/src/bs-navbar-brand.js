@@ -1,9 +1,9 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsNavbarBrandCss } from './bs-navbar-brand.css.js';
-import { BsSpacingCss } from '@lit-element-bootstrap/utilities/bs-spacing.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
-import { BsContentTypographyCss } from '@lit-element-bootstrap/content/bs-content-typography.css.js';
+import { BsSpacingCss } from '@lit-element-bootstrap/content';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
+import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 export class BsNavbarBrand extends LitElement {
 

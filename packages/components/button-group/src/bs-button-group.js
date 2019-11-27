@@ -5,7 +5,7 @@ import { BsButtonGroupSmallCss } from './bs-button-group-small.css.js';
 import { BsButtonGroupLargeCss } from './bs-button-group-large.css.js';
 import { BsButtonGroupVerticalCss } from './bs-button-group-vertical.css.js';
 import { BsButtonGroupHorizontalCss } from './bs-button-group-horizontal.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsButtonGroup extends LitElement {
 

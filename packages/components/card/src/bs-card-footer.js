@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsCardFooterCss } from './bs-card-footer.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCardFooter extends LitElement {
 

@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
-import { BsContentTypographyCss } from '@lit-element-bootstrap/content/bs-content-typography.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
+import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 import { BsButtonMixin } from './bs-button-mixin.js';
 import { BsButtonsCommonCss } from './css/bs-button-common.css.js';

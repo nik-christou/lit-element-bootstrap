@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsPageLinkCss } from './bs-page-link.css.js';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content/bs-content-reboot.css.js';
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsPageLink extends LitElement {
 
