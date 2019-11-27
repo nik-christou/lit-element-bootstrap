@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "pika:build": "pika build",
-    "serve:demo": "es-dev-server --node-resolve --app-index demo.html",
+    "serve:demo": "es-dev-server --node-resolve --app-index demo.html --preserve-symlinks",
     "test": "karma start",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",

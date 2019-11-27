@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { DefaultThemeCss } from '@lit-element-bootstrap/theme/default-theme-css.js';
+import { DefaultThemeCss } from '@lit-element-bootstrap/theme';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 

@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsContentRebootCss } from '@lit-element-bootstrap/content'
+import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 import { BsDropdownNavCss } from './bs-dropdown-nav.css.js';
 import { BsDropdownSplitCss } from './bs-dropdown-split.css.js';

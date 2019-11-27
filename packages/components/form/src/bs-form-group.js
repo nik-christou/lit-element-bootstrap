@@ -2,11 +2,11 @@
 import { LitElement, html } from 'lit-element';
 import { BsFormGroupCss } from './bs-form-group.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
-import { BsColumnExtraSmallCss } from '@lit-element-bootstrap/layout/bs-column-xs.css.js';
-import { BsColumnSmallCss } from '@lit-element-bootstrap/layout/bs-column-sm.css.js';
-import { BsColumnMediumCss } from '@lit-element-bootstrap/layout/bs-column-md.css.js';
-import { BsColumnLargeCss } from '@lit-element-bootstrap/layout/bs-column-lg.css.js';
-import { BsColumnExtraLargeCss } from '@lit-element-bootstrap/layout/bs-column-xl.css.js';
+import { BsColumnExtraSmallCss } from '@lit-element-bootstrap/layout';
+import { BsColumnSmallCss } from '@lit-element-bootstrap/layout';
+import { BsColumnMediumCss } from '@lit-element-bootstrap/layout';
+import { BsColumnLargeCss } from '@lit-element-bootstrap/layout';
+import { BsColumnExtraLargeCss } from '@lit-element-bootstrap/layout';
 
 export class BsFormGroup extends LitElement {
 
