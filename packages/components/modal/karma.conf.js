@@ -15,7 +15,8 @@ module.exports = config => {
 
             esm: {
                 nodeResolve: true,
-                preserveSymlinks: true
+                preserveSymlinks: true,
+                babel: true
             },
         }),
     );
