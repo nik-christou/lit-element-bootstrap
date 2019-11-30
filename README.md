@@ -25,7 +25,7 @@ Package | Version |
 [@lit-element-bootstrap/jumbotron](https://www.npmjs.com/package/@lit-element-bootstrap/jumbotron) | 1.0.0-alpha.2 |
 [@lit-element-bootstrap/list-group](https://www.npmjs.com/package/@lit-element-bootstrap/list-group) | 1.0.0-alpha.3 |
 [@lit-element-bootstrap/media-object](https://www.npmjs.com/package/@lit-element-bootstrap/media-object) | 1.0.0-alpha.2 |
-[@lit-element-bootstrap/modal](https://www.npmjs.com/package/@lit-element-bootstrap/modal) | 1.0.0-alpha.6 |
+[@lit-element-bootstrap/modal](https://www.npmjs.com/package/@lit-element-bootstrap/modal) | 1.0.0-alpha.7 |
 [@lit-element-bootstrap/navbar](https://www.npmjs.com/package/@lit-element-bootstrap/navbar) | 1.0.0-alpha.2 |
 [@lit-element-bootstrap/navs](https://www.npmjs.com/package/@lit-element-bootstrap/navs) | 1.0.0-alpha.2 |
 [@lit-element-bootstrap/pagination](https://www.npmjs.com/package/@lit-element-bootstrap/pagination) | 1.0.0-alpha.2 |
