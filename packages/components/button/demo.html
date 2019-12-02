@@ -6,6 +6,11 @@
         <title>LitElement Bootstrap 4 Component Library</title>
     </head>
     <body>
+            <script>
+                // TODO -Remove this after user agent stylesheet bug is fixed
+                // https://bugs.chromium.org/p/chromium/issues/detail?id=946975
+                delete Document.prototype.adoptedStyleSheets;
+            </script>
         <button-demo></button-demo>
         <script type="module" src="./demo/button-demo.js"></script>
     </body>

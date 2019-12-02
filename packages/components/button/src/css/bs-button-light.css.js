@@ -1,43 +1,89 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonLightCss = css`
-    
-    :host([light]) .btn {
-        color: var(--btn-text-color, #212529);
-        background-color: var(--btn-bg-color, var(--light));
-        border-color: var(--btn-border-color, var(--light));
+    :host {
+        --light-color: var(--light, #f8f9fa);
     }
 
-    :host([light]) .btn:hover {
-        color: var(--btn-hover-text-color, #212529);
-        background-color: var(--btn-hover-bg-color, #e2e6ea);
-        border-color: var(--btn-hover-border-color, #dae0e5);
+    :host([context="light"]) {
+        --btn-text-color: var(--btn-light-text-color, #212529);
+        --btn-bg-color: var(--btn-light-bg-color, var(--light-color));
+        --btn-bd-color: var(--btn-light-bd-color, var(--light-color));
+        --btn-text-color-hover: var(--btn-light-text-color-hover, #212529);
+        --btn-bg-color-hover: var(--btn-light-bg-color-hover, #e2e6ea);
+        --btn-bd-color-hover: var(--btn-light-bd-color-hover, #dae0e5);
+        --btn-bd-color-focus: var(--btn-light-bd-color-focus, #dae0e5);
+        --btn-box-shadow-focus: var(
+            --btn-light-box-shadow-focus,
+            0 0 0 0.2rem rgba(216, 217, 219, 0.5)
+        );
+        --btn-text-color-disabled: var(
+            --btn-light-text-color-disabled,
+            #212529
+        );
+        --btn-bg-color-disabled: var(
+            --btn-light-bg-color-disabled,
+            var(--light-color)
+        );
+        --btn-bd-color-disabled: var(
+            --btn-light-bd-color-disabled,
+            var(--light-color)
+        );
+        --btn-text-color-active: var(--btn-light-text-color-active, #212529);
+        --btn-bg-color-active: var(--btn-light-bg-color-active, #dae0e5);
+        --btn-bd-color-active: var(--btn-light-bd-color-active, #d3d9df);
+        --btn-box-shadow-active-focus: var(
+            --btn-light-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(216, 217, 219, 0.5)
+        );
     }
 
-    :host([light]) .btn:focus, 
-    :host([light]) .btn.focus {
-        box-shadow: var(--btn-focus-shadow, 0 0 0 0.2rem rgba(248, 249, 250, 0.5));
-    }
-
-    :host([light]) .btn.disabled, 
-    :host([light]) .btn:disabled {
-        color: var(--btn-disabled-text-color, #212529);
-        background-color: var(--btn-disabled-bg-color, var(--light));
-        border-color: var(--btn-disabled-border-color, var(--light));
-    }
-
-    :host([light]) .btn:not(:disabled):not(.disabled):active, 
-    :host([light]) .btn:not(:disabled):not(.disabled).active,
-    :host([light][dropdown-toggle][dropdown-show]) .btn {
-        color: var(--btn-toggle-text-color, #212529);
-        background-color: var(--btn-toggle-bg-color, #dae0e5);
-        border-color: var(--btn-toggle-border-color, #d3d9df);
-    }
-
-    :host([light]) .btn:not(:disabled):not(.disabled):active:focus, 
-    :host([light]) .btn:not(:disabled):not(.disabled).active:focus,
-    :host([light][dropdown-toggle][dropdown-show]) .btn:focus {
-        box-shadow: var(--btn-toggle-focus-shadow, 0 0 0 0.2rem rgba(248, 249, 250, 0.5));
+    :host([context="light"][outline]) {
+        --btn-text-color: var(
+            --btn-outline-light-text-color,
+            var(--light-color)
+        );
+        --btn-bg-color: var(--btn-outline-light-bg-color, transparent);
+        --btn-bd-color: var(--btn-outline-light-bd-color, var(--light-color));
+        --btn-text-color-hover: var(
+            --btn-outline-light-text-color-hover,
+            #212529
+        );
+        --btn-bg-color-hover: var(
+            --btn-outline-light-bg-color-hover,
+            var(--light-color)
+        );
+        --btn-bd-color-hover: var(
+            --btn-outline-light-bd-color-hover,
+            var(--light-color)
+        );
+        --btn-box-shadow-focus: var(
+            --btn-outline-light-box-shadow-focus,
+            0 0 0 0.2rem rgba(248, 249, 250, 0.5)
+        );
+        --btn-text-color-disabled: var(
+            --btn-outline-light-text-color-disabled,
+            var(--light-color)
+        );
+        --btn-bg-color-disabled: var(
+            --btn-outline-light-bg-color-disabled,
+            #transparent
+        );
+        --btn-text-color-active: var(
+            --btn-outline-light-text-color-active,
+            #212529
+        );
+        --btn-bg-color-active: var(
+            --btn-outline-light-bg-color-active,
+            var(--light-color)
+        );
+        --btn-bd-color-active: var(
+            --btn-outline-light-bd-color-active,
+            var(--light-color)
+        );
+        --btn-box-shadow-active-focus: var(
+            --btn-outline-light-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(248, 249, 250, 0.5)
+        );
     }
 `;

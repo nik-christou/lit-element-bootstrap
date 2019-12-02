@@ -1,8 +1,6 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonCommonCss = css`
-
     @media screen and (prefers-reduced-motion: reduce) {
         .btn {
             transition: none;
@@ -21,9 +19,9 @@ export const BsButtonCommonCss = css`
         -webkit-user-select: none;
         color: var(--btn-text-color);
         background-color: var(--btn-bg-color);
-        border-color: var(--btn-bd-color);
         border-width: var(--btn-bd-width, 1px);
         border-style: var(--btn-bd-style, solid);
+        border-color: var(--btn-bd-color, transparent);
         border-top-left-radius: var(--btn-bd-top-left-radius, 0.25rem);
         border-top-right-radius: var(--btn-bd-top-right-radius, 0.25rem);
         border-bottom-right-radius: var(--btn-bd-bottom-right-radius, 0.25rem);
@@ -36,20 +34,19 @@ export const BsButtonCommonCss = css`
         width: var(--btn-width);
         height: var(--btn-height);
         flex: var(--btn-flex);
-        padding-top: var(--btn-padding-top, 0.375rem);
-        padding-bottom: var(--btn-padding-bottom, 0.375rem);
-        padding-left: var(--btn-padding-left, 0.75rem);
-        padding-right: var(--btn-padding-right, 0.75rem);
+        padding-top: var(--btn-pd-top, 0.375rem);
+        padding-bottom: var(--btn-pd-bottom, 0.375rem);
+        padding-left: var(--btn-pd-left, 0.75rem);
+        padding-right: var(--btn-pd-right, 0.75rem);
         font-size: var(--btn-font-size, 1rem);
         line-height: var(--btn-line-height, 1.5);
         position: var(--btn-position);
-        margin-top: var(--btn-margin-top);
-        margin-left: var(--btn-margin-left);
-        margin-bottom: var(--btn-margin-bottom);
-        transition: color 0.15s ease-in-out, 
-            background-color 0.15s ease-in-out, 
-            border-color 0.15s ease-in-out, 
-            box-shadow 0.15s ease-in-out;
+        margin-top: var(--btn-mg-top);
+        margin-top: var(--btn-mg-right);
+        margin-left: var(--btn-mg-left);
+        margin-bottom: var(--btn-mg-bottom);
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
 
     .btn::after {
@@ -94,9 +91,15 @@ export const BsButtonCommonCss = css`
     .btn:focus,
     .btn.focus {
         outline: 0;
-        text-decoration: none;
         z-index: var(--btn-z-index-focus);
-        box-shadow: var(--btn-box-shadow-focus, 0 0 0 0.2rem rgba(0,123,255,0.25));
+        color: var(--btn-text-color-focus);
+        background-color: var(--btn-bg-color-focus);
+        border-color: var(--btn-bd-color-focus);
+        text-decoration: var(--btn-text-decoration-focus, none);
+        box-shadow: var(
+            --btn-box-shadow-focus,
+            0 0 0 0.2rem rgba(0, 123, 255, 0.25)
+        );
     }
 
     .btn.disabled,
@@ -106,21 +109,21 @@ export const BsButtonCommonCss = css`
         border-color: var(--btn-bd-color-disabled);
     }
 
-    .btn:not(:disabled):not(.disabled):active, 
+    :host([disabled]) .btn {
+        opacity: var(--btn-opacity-disabled, 0.65);
+        pointer-events: var(--btn-pointer-events-disabled, none);
+    }
+
+    .btn:not(:disabled):not(.disabled):active,
     .btn:not(:disabled):not(.disabled).active {
         color: var(--btn-text-color-active);
         background-color: var(--btn-bg-color-active);
         border-color: var(--btn-bd-color-active);
     }
 
-    .btn:not(:disabled):not(.disabled):active:focus, 
+    .btn:not(:disabled):not(.disabled):active:focus,
     .btn:not(:disabled):not(.disabled).active:focus {
         box-shadow: var(--btn-box-shadow-active-focus);
-    }
-
-    :host([disabled]) .btn {
-        opacity: var(--btn-opacity-disabled, 0.65);
-        pointer-events: var(--btn-pointer-events-disabled, none);
     }
 
     :host(:not(:disabled):not(.disabled)) .btn {

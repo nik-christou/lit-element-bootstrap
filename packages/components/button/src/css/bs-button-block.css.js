@@ -1,12 +1,10 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonBlockCss = css`
-    
     :host([block]) {
         display: block;
     }
-    
+
     :host([block]) .btn {
         width: 100%;
     }

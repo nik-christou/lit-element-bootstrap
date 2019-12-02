@@ -1,243 +1,112 @@
+import { BsButtonRebootCss } from "./css/bs-button-reboot.js";
+import { BsButtonCommonCss } from "./css/bs-button-common.css.js";
+import { BsButtonPrimaryCss } from "./css/bs-button-primary.css.js";
+import { BsButtonSecondaryCss } from "./css/bs-button-secondary.css.js";
+import { BsButtonSuccessCss } from "./css/bs-button-success.css.js";
+import { BsButtonInfoCss } from "./css/bs-button-info.css.js";
+import { BsButtonWarningCss } from "./css/bs-button-warning.css.js";
+import { BsButtonDangerCss } from "./css/bs-button-danger.css.js";
+import { BsButtonLightCss } from "./css/bs-button-light.css.js";
+import { BsButtonDarkCss } from "./css/bs-button-dark.css.js";
+import { BsButtonBlockCss } from "./css/bs-button-block.css.js";
+import { BsButtonLinkCss } from "./css/bs-button-link.css.js";
+import { BsButtonSizeCss } from "./css/bs-button-size.css.js";
 
-const defaultThemeColors = new Map([
-    ['primary', '#007bff'],
-    ['secondary', '#6c757d'],
-    ['success', '#28a745'],
-    ['info', '#17a2b8'],
-    ['warning', '#ffc107'],
-    ['danger', '#dc3545'],
-    ['light', '#f8f9fa'],
-    ['dark', '#343a40']
-]);
+/**
+ * `BsButtonMixin`: class mixin for buttons
+ *
+ * @exports BsButtonMixin
+ * @param {*} superclass the class to mix into
+ * @return The mixin class
+ * @mixin BsButtonMixin
+ */
+export const BsButtonMixin = superclass =>
+    /**
+     * Class mixin for button elements
+     *
+     * @mixin
+     */
+    class extends superclass {
 
-const BsButtonMixin = (superClass) => class extends superClass {
-
-    static get properties() {
-        return {
-            action: { type: String },
-            toggle: { type: Boolean, reflect: true },
-            active: { type: Boolean, reflect: true },
-            disabled: { type: Boolean, reflect: true },
-            dropdownToggle: { type: Boolean, reflect: true, attribute: 'dropdown-toggle' }
-        };
-    }
-
-    constructor(...args) {
-        super(...args);
-        this.active = false;
-        this.toggle = false;
-        this.action = 'button';
-        this.disabled = false;
-        this.dropdownToggle = false;
-    }
-
-    firstUpdated() {
-
-        const btnElement = this._retrieveButtonElement();
-        this._applyButtonActivateState(btnElement);
-        this._applyButtonTypeIfApplicable();
-
-        btnElement.addEventListener('click', event => this._handleButtonClick(event));
-        btnElement.addEventListener('focusout', event => this._handleFocusOut(event));
-
-        this._setupDefaultThemeColors();
-    }
-
-    updated(changedProperties) {
-
-        super.updated();
-
-        if (changedProperties.has('disabled')) {
-            this._disabledChanged();
-        }
-    }
-
-    _setupDefaultThemeColors() {
-
-        const hostElement = this.shadowRoot.host;
-
-        for (let [key, value] of defaultThemeColors) {
-
-            if(hostElement.hasAttribute(key)) {
-                this._updateCssProperty(hostElement, key, value);
-            }
-        }
-    }
-
-    _updateCssProperty(hostElement, cssPropName, cssPropValue) {
-
-        const cssVarName = '--'+cssPropName;
-
-        if(!getComputedStyle(hostElement).getPropertyValue(cssVarName)) {
-            hostElement.style.setProperty(cssVarName, cssPropValue);
-        }
-    }
-
-    _disabledChanged() {
-        const buttonElement = this._retrieveButtonElement();
-
-        if(this.disabled) {
-
-            buttonElement.classList.add('disabled');
-            buttonElement.setAttribute('disabled', '');
-        } else {
-            buttonElement.classList.remove('disabled');
-            buttonElement.removeAttribute('disabled');
-        }
-    }
-
-    _handleFocusOut(event) {
-
-        if(this.disabled) {
-            return;
+        static get styles() {
+            return [
+                BsButtonRebootCss,
+                BsButtonCommonCss,
+                BsButtonPrimaryCss,
+                BsButtonSecondaryCss,
+                BsButtonSuccessCss,
+                BsButtonInfoCss,
+                BsButtonWarningCss,
+                BsButtonDangerCss,
+                BsButtonLightCss,
+                BsButtonDarkCss,
+                BsButtonLinkCss,
+                BsButtonBlockCss,
+                BsButtonSizeCss
+            ];
         }
 
-        if(this.active && !this.toggle) {
-            this._updateToggleState();
+        /**
+         * @param {Map} _updatedProperties
+         */
+        firstUpdated(_updatedProperties) {
+            const buttonElement = this.shadowRoot.querySelector(".btn");
+
+            buttonElement.addEventListener("click", _ =>
+                this._handleButtonClick()
+            );
+            buttonElement.addEventListener("focusout", _ =>
+                this._handleFocusOut()
+            );
         }
 
-        const btnFocusOutEvent = new CustomEvent('bs-button-focusout', {
-            bubbles: true,
-            composed: true
-        });
-
-        this.dispatchEvent(btnFocusOutEvent);
-    }
-
-    _handleButtonClick(event) {
-
-        if(this._blockDefaultEvent()) {
-            event.preventDefault();
-        };
-
-        if(this.disabled) {
-            return;
-        }
-
-        this._updateButtonFocus();
-        this._updateToggleState();
-
-        const btnClickedEvent = new CustomEvent('bs-button-click', {
-            bubbles: true,
-            composed: true,
-            detail: {
-                active: this.active,
-                action: this.action,
-                toggle: this.toggle,
-                dropdown: this.dropdownToggle
-            }
-        });
-
-        this.dispatchEvent(btnClickedEvent);
-    }
-
-    _updateToggleState() {
-
-        const buttonElement = this._retrieveButtonElement();
-
-        // added the this.dropdownToggle to enable "active"
-        // look and feel during the dropdown menu opened
-        if(this.toggle || this.dropdownToggle) {
-
-            if(this.active) {
-                buttonElement.classList.remove('active');
-                buttonElement.removeAttribute('active');
-            } else {
-                buttonElement.classList.add('active');
-                buttonElement.setAttribute('active', '');
+        _handleFocusOut() {
+            if (this.disabled) {
+                return;
             }
 
-            this.active = !this.active;
-        }
-    }
+            if (this.active && this.dropdownToggle) {
+                this.active = !this.active;
+            }
 
-    _blockDefaultEvent() {
-
-        const linkButtonElement = this.shadowRoot.querySelector('a');
-
-        if(linkButtonElement && this.href) {
-            return false;
+            this._fireFocusOutEvent();
         }
 
-        return true;
-    }
+        _handleButtonClick() {
+            if (this.disabled) {
+                return;
+            }
 
-    _retrieveButtonElement() {
-
-        const buttonElement = this.shadowRoot.querySelector('button');
-        const inputElement = this.shadowRoot.querySelector('input');
-        const hrefElement = this.shadowRoot.querySelector('a');
-
-        if(buttonElement) {
-            return buttonElement;
-        }
-
-        if(inputElement) {
-            return inputElement;
-        }
-
-        if(hrefElement) {
-            return hrefElement;
-        }
-    }
-
-    _updateButtonFocus() {
-
-        const buttonElement = this.shadowRoot.querySelector('button');
-        const inputElement = this.shadowRoot.querySelector('input');
-        const hrefElement = this.shadowRoot.querySelector('a');
-
-        if(buttonElement) {
+            const buttonElement = this.shadowRoot.querySelector(".btn");
             buttonElement.focus();
+
+            if (this.toggle || this.dropdownToggle) {
+                this.active = !this.active;
+            }
+
+            this._fireButtonClickEvent();
         }
 
-        if(inputElement) {
-            inputElement.focus();
+        _fireFocusOutEvent() {
+            const btnFocusOutEvent = new CustomEvent("bs-button-focusout", {
+                bubbles: true,
+                composed: true
+            });
+
+            this.dispatchEvent(btnFocusOutEvent);
         }
 
-        if(hrefElement) {
-            hrefElement.focus();
+        _fireButtonClickEvent() {
+            const btnClickedEvent = new CustomEvent("bs-button-click", {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    active: this.active,
+                    toggle: this.toggle,
+                    dropdown: this.dropdownToggle
+                }
+            });
+
+            this.dispatchEvent(btnClickedEvent);
         }
-    }
-
-    _applyButtonActivateState(btnElement) {
-
-        if(this.disabled && !this.active) {
-            btnElement.classList.toggle('disabled');
-        }
-
-        if(!this.disabled && this.active) {
-            btnElement.classList.toggle('active');
-        }
-    }
-
-    _applyButtonTypeIfApplicable() {
-
-        const buttonElement = this.shadowRoot.querySelector('button');
-        const inputElement = this.shadowRoot.querySelector('input');
-
-        if(buttonElement) {
-            this._applyButtonType(buttonElement);
-        }
-
-        if(inputElement) {
-            this._applyButtonType(inputElement);
-        }
-    }
-
-    _applyButtonType(btnElement) {
-        if(this.action === 'button') {
-            btnElement.setAttribute('type', 'button');
-        }
-
-        if(this.action === 'reset') {
-            btnElement.setAttribute('type', 'reset');
-        }
-
-        if(this.action === 'submit') {
-            btnElement.setAttribute('type', 'submit');
-        }
-    }
-};
-
-export { BsButtonMixin };
+    };

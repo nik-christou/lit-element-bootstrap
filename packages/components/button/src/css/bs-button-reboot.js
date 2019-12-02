@@ -30,7 +30,8 @@ export const BsButtonRebootCss = css`
         text-decoration: none;
     }
 
-    a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+    a:not([href]):not([tabindex]):hover,
+    a:not([href]):not([tabindex]):focus {
         color: inherit;
         text-decoration: none;
     }
@@ -59,7 +60,7 @@ export const BsButtonRebootCss = css`
     }
 
     button,
-    html [type="button"],
+    [type="button"],
     [type="reset"],
     [type="submit"] {
         -webkit-appearance: button;

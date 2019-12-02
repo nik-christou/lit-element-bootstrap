@@ -1,43 +1,91 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonDangerCss = css`
-    
-    :host([danger]) .btn {
-        color: var(--btn-text-color, #fff);
-        background-color: var(--btn-bg-color, var(--danger));
-        border-color: var(--btn-border-color, var(--danger));
+    :host {
+        --danger-color: var(--danger, #dc3545);
     }
 
-    :host([danger]) .btn:hover {
-        color: var(--btn-hover-text-color, #fff);
-        background-color: var(--btn-hover-bg-color, #c82333);
-        border-color: var(--btn-hover-border-color, #bd2130);
+    :host([context="danger"]:not([outline])) {
+        --btn-text-color: var(--btn-danger-text-color, #fff);
+        --btn-bg-color: var(--btn-danger-bg-color, var(--danger-color));
+        --btn-bd-color: var(--btn-danger-bd-color, var(--danger-color));
+        --btn-text-color-hover: var(--btn-danger-text-color-hover, #fff);
+        --btn-bg-color-hover: var(--btn-danger-bg-color-hover, #c82333);
+        --btn-bd-color-hover: var(--btn-danger-bd-color-hover, #bd2130);
+        --btn-bd-color-focus: var(--btn-danger-bd-color-focus, #bd2130);
+        --btn-text-color-focus: var(--btn-danger-text-color-focus, #fff);
+        --btn-bg-color-focus: var(--btn-danger-bg-color-focus, #c82333);
+        --btn-box-shadow-focus: var(
+            --btn-danger-box-shadow-focus,
+            0 0 0 0.2rem rgba(220, 53, 69, 0.5)
+        );
+        --btn-text-color-disabled: var(--btn-danger-text-color-disabled, #fff);
+        --btn-bg-color-disabled: var(
+            --btn-danger-bg-color-disabled,
+            var(--danger-color)
+        );
+        --btn-bd-color-disabled: var(
+            --btn-danger-bd-color-disabled,
+            var(--danger-color)
+        );
+        --btn-text-color-active: var(--btn-danger-text-color-active, #fff);
+        --btn-bg-color-active: var(--btn-danger-bg-color-active, #bd2130);
+        --btn-bd-color-active: var(--btn-danger-bd-color-active, #b21f2d);
+        --btn-box-shadow-active-focus: var(
+            --btn-danger-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(220, 53, 69, 0.5)
+        );
     }
 
-    :host([danger]) .btn:focus, .btn-danger.focus {
-        box-shadow: var(--btn-focus-shadow, 0 0 0 0.2rem rgba(220, 53, 69, 0.5));
-    }
-
-    :host([danger]) .btn.disabled, 
-    :host([danger]) .btn:disabled {
-        color: var(--btn-disabled-text-color, #fff);
-        background-color: var(--btn-disabled-bg-color, var(--danger));
-        border-color: var(--btn-disabled-border-color, var(--danger));
-    }
-
-    :host([danger]) .btn:not(:disabled):not(.disabled):active, 
-    :host([danger]) .btn:not(:disabled):not(.disabled).active,
-    :host([danger][dropdown-toggle][dropdown-show]) .btn {
-        color: var(--btn-toggle-text-color, #fff);
-        background-color: var(--btn-toggle-bg-color, #bd2130);
-        border-color: var(--btn-toggle-border-color, #b21f2d);
-    }
-
-    :host([danger]) .btn:not(:disabled):not(.disabled):active:focus, 
-    :host([danger]) .btn:not(:disabled):not(.disabled).active:focus,
-    :host([danger][dropdown-toggle][dropdown-show]) .btn:focus {
-        box-shadow: var(--btn-toggle-focus-shadow, 0 0 0 0.2rem rgba(220, 53, 69, 0.5));
+    :host([context="danger"][outline]) {
+        --btn-text-color: var(
+            --btn-outline-danger-text-color,
+            var(--danger-color)
+        );
+        --btn-bg-color: var(--btn-outline-danger-bg-color, transparent);
+        --btn-bd-color: var(--btn-outline-danger-bd-color, var(--danger-color));
+        --btn-text-color-hover: var(
+            --btn-outline-danger-text-color-hover,
+            #fff
+        );
+        --btn-bg-color-hover: var(
+            --btn-outline-danger-bg-color-hover,
+            var(--danger-color)
+        );
+        --btn-bd-color-hover: var(
+            --btn-outline-danger-bd-color-hover,
+            var(--danger-color)
+        );
+        --btn-text-color-focus: var(--btn-outline-danger-text-color-focus, #fff);
+        --btn-bd-color-focus: var(--btn-outline-danger-bd-color-focus, var(--danger-color));
+        --btn-bg-color-focus: var(--btn-outline-danger-bg-color-focus, var(--danger-color));
+        --btn-box-shadow-focus: var(
+            --btn-outline-danger-box-shadow-focus,
+            0 0 0 0.2rem rgba(220, 53, 69, 0.5)
+        );
+        --btn-text-color-disabled: var(
+            --btn-outline-danger-text-color-disabled,
+            var(--danger-color)
+        );
+        --btn-bg-color-disabled: var(
+            --btn-outline-danger-bg-color-disabled,
+            #transparent
+        );
+        --btn-text-color-active: var(
+            --btn-outline-danger-text-color-active,
+            #fff
+        );
+        --btn-bg-color-active: var(
+            --btn-outline-danger-bg-color-active,
+            var(--danger-color)
+        );
+        --btn-bd-color-active: var(
+            --btn-outline-danger-bd-color-active,
+            var(--danger-color)
+        );
+        --btn-box-shadow-active-focus: var(
+            --btn-outline-danger-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(220, 53, 69, 0.5)
+        );
     }
 `;
-    

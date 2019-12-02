@@ -2,10 +2,10 @@ import { LitElement, html } from "lit-element";
 import { BsButtonMixin } from './bs-button-mixin.js';
 import { classMap } from "lit-html/directives/class-map.js";
 
-export class BsButton extends BsButtonMixin(LitElement) {
+export class BsButtonInput extends BsButtonMixin(LitElement) {
     static get properties() {
         return {
-            type: {
+            label: {
                 type: String
             },
             toggle: {
@@ -30,25 +30,24 @@ export class BsButton extends BsButtonMixin(LitElement) {
 
     render() {
         return html`
-            <button
-                .type="${this.type}"
+            <input
+                type="button"
+                value="${this.label}"
                 ?disabled="${this.disabled}"
                 class="btn ${classMap({ active: this.active })}"
-            >
-                <slot></slot>
-            </button>
+            />
         `;
     }
 
     constructor() {
         super();
+        this.label = "";
         this.active = false;
         this.toggle = false;
-        this.type = "button";
         this.disabled = false;
         this.dropdownToggle = false;
     }
 }
 
-if (!window.customElements.get("bs-button"))
-    window.customElements.define("bs-button", BsButton);
+if (!window.customElements.get("bs-button-input"))
+    window.customElements.define("bs-button-input", BsButtonInput);
