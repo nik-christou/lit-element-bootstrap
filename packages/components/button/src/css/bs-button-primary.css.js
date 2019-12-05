@@ -13,13 +13,16 @@ export const BsButtonPrimaryCss = css`
         --btn-bg-color-hover: var(--btn-primary-bg-color-hover, #0069d9);
         --btn-bd-color-hover: var(--btn-primary-bd-color-hover, #0062cc);
         --btn-bd-color-focus: var(--btn-primary-bd-color-focus, #0062cc);
-        --btn-text-color-focus: var(--btn-primary-text-color-focus, #fff);
         --btn-bg-color-focus: var(--btn-primary-bg-color-focus, #0069d9);
+        --btn-text-color-focus: var(--btn-primary-text-color-focus, #fff);
         --btn-box-shadow-focus: var(
             --btn-primary-box-shadow-focus,
             0 0 0 0.2rem rgba(38, 143, 255, 0.5)
         );
-        --btn-text-color-disabled: var(--btn-primary-text-color-disabled, #fff);
+        --btn-text-color-disabled: var(
+            --btn-primary-text-color-disabled,
+            #fff
+        );
         --btn-bg-color-disabled: var(
             --btn-primary-bg-color-disabled,
             var(--primary-color)
@@ -42,19 +45,30 @@ export const BsButtonPrimaryCss = css`
             --btn-outline-primary-text-color,
             var(--primary-color)
         );
-        --btn-bg-color: var(--btn-outline-primary-bg-color, transparent);
+        --btn-bg-color: var(
+            --btn-outline-primary-bg-color,
+            transparent
+        );
         --btn-bd-color: var(
             --btn-outline-primary-bd-color,
             var(--primary-color)
         );
-
-        --btn-text-color-hover: var(--btn-outline-primary-text-color-hover,#fff);
-        --btn-bg-color-hover: var(--btn-outline-primary-bg-color-hover,var(--primary-color));
-        --btn-bd-color-hover: var(--btn-outline-primary-bd-color-hover,var(--primary-color));
-
-
-        --btn-box-shadow-focus: var(--btn-outline-primary-box-shadow-focus,0 0 0 0.2rem rgba(0, 123, 255, 0.5));
-
+        --btn-text-color-hover: var(
+            --btn-outline-primary-text-color-hover,
+            #fff
+        );
+        --btn-bg-color-hover: var(
+            --btn-outline-primary-bg-color-hover,
+            var(--primary-color)
+        );
+        --btn-bd-color-hover: var(
+            --btn-outline-primary-bd-color-hover,
+            var(--primary-color)
+        );
+        --btn-box-shadow-focus: var(
+            --btn-outline-primary-box-shadow-focus,
+            0 0 0 0.2rem rgba(0, 123, 255, 0.5)
+        );
         --btn-text-color-disabled: var(
             --btn-outline-primary-text-color-disabled,
             var(--primary-color)

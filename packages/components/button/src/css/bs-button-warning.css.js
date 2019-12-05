@@ -5,14 +5,16 @@ export const BsButtonWarningCss = css`
         --warning-color: var(--warning, #ffc107);
     }
 
-    :host([context="warning"]) {
+    :host([context="warning"]:not([outline])) {
         --btn-text-color: var(--btn-warning-text-color, #212529);
         --btn-bg-color: var(--btn-warning-bg-color, var(--warning-color));
         --btn-bd-color: var(--btn-warning-bd-color, var(--warning-color));
         --btn-text-color-hover: var(--btn-warning-text-color-hover, #212529);
         --btn-bg-color-hover: var(--btn-warning-bg-color-hover, #e0a800);
-        --btn-bd-color-hover: var(--btn-warning-bd-color-hover, #e0a800);
-        --btn-bd-color-focus: var(--btn-warning-bd-color-focus, #e0a800);
+        --btn-bd-color-hover: var(--btn-warning-bd-color-hover, #d39e00);
+        --btn-bd-color-focus: var(--btn-warning-bd-color-focus, #d39e00);
+        --btn-bg-color-focus: var(--btn-warning-bg-color-focus, #e0a800);
+        --btn-text-color-focus: var(--btn-warning-text-color-focus, #fff);
         --btn-box-shadow-focus: var(
             --btn-warning-box-shadow-focus,
             0 0 0 0.2rem rgba(255, 193, 7, 0.5)
@@ -43,7 +45,10 @@ export const BsButtonWarningCss = css`
             --btn-outline-warning-text-color,
             var(--warning-color)
         );
-        --btn-bg-color: var(--btn-outline-warning-bg-color, transparent);
+        --btn-bg-color: var(
+            --btn-outline-warning-bg-color,
+            transparent
+        );
         --btn-bd-color: var(
             --btn-outline-warning-bd-color,
             var(--warning-color)

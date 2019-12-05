@@ -5,7 +5,7 @@ export const BsButtonDarkCss = css`
         --dark-color: var(--dark, #343a40);
     }
 
-    :host([context="dark"]) {
+    :host([context="dark"]:not([outline])) {
         --btn-text-color: var(--btn-dark-text-color, #fff);
         --btn-bg-color: var(--btn-dark-bg-color, var(--dark-color));
         --btn-bd-color: var(--btn-dark-bd-color, var(--dark-color));
@@ -13,11 +13,16 @@ export const BsButtonDarkCss = css`
         --btn-bg-color-hover: var(--btn-dark-bg-color-hover, #23272b);
         --btn-bd-color-hover: var(--btn-dark-bd-color-hover, #1d2124);
         --btn-bd-color-focus: var(--btn-dark-bd-color-focus, #1d2124);
+        --btn-bg-color-focus: var(--btn-dark-bg-color-focus, #23272b);
+        --btn-text-color-focus: var(--btn-dark-text-color-focus, #fff);
         --btn-box-shadow-focus: var(
             --btn-dark-box-shadow-focus,
             0 0 0 0.2rem rgba(52, 58, 64, 0.5)
         );
-        --btn-text-color-disabled: var(--btn-dark-text-color-disabled, #fff);
+        --btn-text-color-disabled: var(
+            --btn-dark-text-color-disabled,
+            #fff
+        );
         --btn-bg-color-disabled: var(
             --btn-dark-bg-color-disabled,
             var(--dark-color)
@@ -36,10 +41,22 @@ export const BsButtonDarkCss = css`
     }
 
     :host([context="dark"][outline]) {
-        --btn-text-color: var(--btn-outline-dark-text-color, var(--dark-color));
-        --btn-bg-color: var(--btn-outline-dark-bg-color, transparent);
-        --btn-bd-color: var(--btn-outline-dark-bd-color, var(--dark-color));
-        --btn-text-color-hover: var(--btn-outline-dark-text-color-hover, #fff);
+        --btn-text-color: var(
+            --btn-outline-dark-text-color,
+            var(--dark-color)
+        );
+        --btn-bg-color: var(
+            --btn-outline-dark-bg-color,
+            transparent
+        );
+        --btn-bd-color: var(
+            --btn-outline-dark-bd-color,
+            var(--dark-color)
+        );
+        --btn-text-color-hover: var(
+            --btn-outline-dark-text-color-hover,
+            #fff
+        );
         --btn-bg-color-hover: var(
             --btn-outline-dark-bg-color-hover,
             var(--dark-color)

@@ -5,7 +5,7 @@ export const BsButtonLightCss = css`
         --light-color: var(--light, #f8f9fa);
     }
 
-    :host([context="light"]) {
+    :host([context="light"]:not([outline])) {
         --btn-text-color: var(--btn-light-text-color, #212529);
         --btn-bg-color: var(--btn-light-bg-color, var(--light-color));
         --btn-bd-color: var(--btn-light-bd-color, var(--light-color));
@@ -13,6 +13,8 @@ export const BsButtonLightCss = css`
         --btn-bg-color-hover: var(--btn-light-bg-color-hover, #e2e6ea);
         --btn-bd-color-hover: var(--btn-light-bd-color-hover, #dae0e5);
         --btn-bd-color-focus: var(--btn-light-bd-color-focus, #dae0e5);
+        --btn-bg-color-focus: var(--btn-primary-bg-color-focus, #e2e6ea);
+        --btn-text-color-focus: var(--btn-primary-text-color-focus, #212529);
         --btn-box-shadow-focus: var(
             --btn-light-box-shadow-focus,
             0 0 0 0.2rem rgba(216, 217, 219, 0.5)
@@ -43,8 +45,14 @@ export const BsButtonLightCss = css`
             --btn-outline-light-text-color,
             var(--light-color)
         );
-        --btn-bg-color: var(--btn-outline-light-bg-color, transparent);
-        --btn-bd-color: var(--btn-outline-light-bd-color, var(--light-color));
+        --btn-bg-color: var(
+            --btn-outline-light-bg-color,
+            transparent
+        );
+        --btn-bd-color: var(
+            --btn-outline-light-bd-color,
+            var(--light-color)
+        );
         --btn-text-color-hover: var(
             --btn-outline-light-text-color-hover,
             #212529

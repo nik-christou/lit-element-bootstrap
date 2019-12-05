@@ -5,19 +5,24 @@ export const BsButtonInfoCss = css`
         --info-color: var(--info, #17a2b8);
     }
 
-    :host([context="info"]) {
+    :host([context="info"]:not([outline])) {
         --btn-text-color: var(--btn-info-text-color, #fff);
         --btn-bg-color: var(--btn-info-bg-color, var(--info-color));
         --btn-bd-color: var(--btn-info-bd-color, var(--info-color));
         --btn-text-color-hover: var(--btn-info-text-color-hover, #fff);
         --btn-bg-color-hover: var(--btn-info-bg-color-hover, #138496);
         --btn-bd-color-hover: var(--btn-info-bd-color-hover, #117a8b);
-        --btn-bd-color-focus: var(--btn-danger-bd-color-focus, #117a8b);
+        --btn-bd-color-focus: var(--btn-info-bd-color-focus, #117a8b);
+        --btn-bg-color-focus: var(--btn-info-bg-color-focus, #138496);
+        --btn-text-color-focus: var(--btn-info-text-color-focus, #fff);
         --btn-box-shadow-focus: var(
             --btn-info-box-shadow-focus,
             0 0 0 0.2rem rgba(23, 162, 184, 0.5)
         );
-        --btn-text-color-disabled: var(--btn-info-text-color-disabled, #fff);
+        --btn-text-color-disabled: var(
+            --btn-info-text-color-disabled,
+            #fff
+        );
         --btn-bg-color-disabled: var(
             --btn-info-bg-color-disabled,
             var(--info-color)
@@ -36,10 +41,22 @@ export const BsButtonInfoCss = css`
     }
 
     :host([context="info"][outline]) {
-        --btn-text-color: var(--btn-outline-info-text-color, var(--info-color));
-        --btn-bg-color: var(--btn-outline-info-bg-color, transparent);
-        --btn-bd-color: var(--btn-outline-info-bd-color, var(--info-color));
-        --btn-text-color-hover: var(--btn-outline-info-text-color-hover, #fff);
+        --btn-text-color: var(
+            --btn-outline-info-text-color,
+            var(--info-color)
+        );
+        --btn-bg-color: var(
+            --btn-outline-info-bg-color,
+            transparent
+        );
+        --btn-bd-color: var(
+            --btn-outline-info-bd-color,
+            var(--info-color)
+        );
+        --btn-text-color-hover: var(
+            --btn-outline-info-text-color-hover,
+            #fff
+        );
         --btn-bg-color-hover: var(
             --btn-outline-info-bg-color-hover,
             var(--info-color)

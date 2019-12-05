@@ -12,9 +12,9 @@ export const BsButtonSecondaryCss = css`
         --btn-text-color-hover: var(--btn-secondary-text-color-hover, #fff);
         --btn-bg-color-hover: var(--btn-secondary-bg-color-hover, #5a6268);
         --btn-bd-color-hover: var(--btn-secondary-bd-color-hover, #545b62);
-        --btn-text-color-focus: var(--btn-secondary-text-color-focus, #fff);
-        --btn-bg-color-focus: var(--btn-secondary-bg-color-focus, #5a6268);
         --btn-bd-color-focus: var(--btn-secondary-bd-color-focus, #545b62);
+        --btn-bg-color-focus: var(--btn-secondary-bg-color-focus, #5a6268);
+        --btn-text-color-focus: var(--btn-secondary-text-color-focus, #fff);
         --btn-box-shadow-focus: var(
             --btn-secondary-box-shadow-focus,
             0 0 0 0.2rem rgba(108, 117, 125, 0.5)
@@ -46,7 +46,10 @@ export const BsButtonSecondaryCss = css`
             --btn-outline-secondary-text-color,
             var(--secondary-color)
         );
-        --btn-bg-color: var(--btn-outline-secondary-bg-color, transparent);
+        --btn-bg-color: var(
+            --btn-outline-secondary-bg-color,
+            transparent
+        );
         --btn-bd-color: var(
             --btn-outline-secondary-bd-color,
             var(--secondary-color)
@@ -63,9 +66,6 @@ export const BsButtonSecondaryCss = css`
             --btn-outline-secondary-bd-color-hover,
             var(--secondary-color)
         );
-        --btn-text-color-focus: var(--btn-outline-secondary-text-color-focus, #fff);
-        --btn-bd-color-focus: var(--btn-outline-secondary-bd-color-focus, var(--secondary-color));
-        --btn-bg-color-focus: var(--btn-outline-secondary-bg-color-focus, var(--secondary-color));
         --btn-box-shadow-focus: var(
             --btn-outline-secondary-box-shadow-focus,
             0 0 0 0.2rem rgba(108, 117, 125, 0.5)

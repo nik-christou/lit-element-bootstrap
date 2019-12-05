@@ -80,26 +80,28 @@ export const BsButtonCommonCss = css`
     }
 
     .btn:hover {
+        color: var(--btn-text-color-hover, #212529);
+        text-decoration: var(--btn-text-decoration-hover, none);
         z-index: var(--btn-z-index-hover);
-        color: var(--btn-text-color-hover);
         border-color: var(--btn-bd-color-hover);
         box-shadow: var(--btn-box-shadow-hover);
         background-color: var(--btn-bg-color-hover);
-        text-decoration: var(--btn-text-decoration-hover, none);
     }
 
     .btn:focus,
     .btn.focus {
         outline: 0;
-        z-index: var(--btn-z-index-focus);
-        color: var(--btn-text-color-focus);
-        background-color: var(--btn-bg-color-focus);
-        border-color: var(--btn-bd-color-focus);
-        text-decoration: var(--btn-text-decoration-focus, none);
         box-shadow: var(
             --btn-box-shadow-focus,
             0 0 0 0.2rem rgba(0, 123, 255, 0.25)
         );
+    }
+
+    :host(:not([outline])) .btn:focus,
+    :host(:not([outline])) .btn.focus {
+        color: var(--btn-text-color-focus);
+        background-color: var(--btn-bg-color-focus);
+        border-color: var(--btn-bd-color-focus);
     }
 
     .btn.disabled,
