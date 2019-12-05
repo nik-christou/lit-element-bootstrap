@@ -6,8 +6,8 @@ import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 import '@lit-element-bootstrap/button/bs-button.js';
 
-import '../src/bs-badge.js';
-import '../src/bs-badge-link.js';
+import '../bs-badge.js';
+import '../bs-badge-link.js';
 
 export class BadgeDemo extends LitElement {
 
@@ -44,10 +44,10 @@ export class BadgeDemo extends LitElement {
                 <h4>Example heading <bs-badge context="secondary">New</bs-badge></h4>
                 <h5>Example heading <bs-badge context="secondary">New</bs-badge></h5>
                 <h6>Example heading <bs-badge context="secondary">New</bs-badge></h6>
-                
+
                 <br />
 
-                <bs-button primary> Notifications 
+                <bs-button primary> Notifications
                     <bs-badge context="light">4</bs-badge>
                 </bs-button>
 
@@ -62,7 +62,7 @@ export class BadgeDemo extends LitElement {
                 <span><bs-badge context="danger">Danger</bs-badge></span>
                 <span><bs-badge context="light">Light</bs-badge></span>
                 <span><bs-badge context="dark">Dark</bs-badge></span>
-                
+
                 <br />
                 <br />
 
@@ -86,7 +86,7 @@ export class BadgeDemo extends LitElement {
                 <bs-badge-link context="danger">Danger</bs-badge-link>
                 <bs-badge-link context="light">Light</bs-badge-link>
                 <bs-badge-link context="dark">Dark</bs-badge-link>
-                
+
                 <br />
                 <br />
 

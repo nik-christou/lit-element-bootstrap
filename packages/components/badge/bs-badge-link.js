@@ -1,3 +1,7 @@
+import { LitElement, html } from "lit-element";
+import { BsBadgeLinkCss } from "./css/bs-badge-link.css.js";
+import { BsBadgeRebootCss } from "./css/bs-badge-reboot.css.js";
+
 /**
  * Badge Link Component
  *
@@ -102,25 +106,37 @@
  * @cssproperty --badge-link-dark-link-box-shadow - Dark context link box shadow, default: 0 0 0 0.2rem rgba(52, 58, 64, 0.5)
  */
 export class BsBadgeLink extends LitElement {
-    static get properties(): {
-        href: {
-            type: StringConstructor;
-            reflect: boolean;
+    static get properties() {
+        return {
+            href: {
+                type: String,
+                reflect: true
+            },
+            target: {
+                type: String,
+                reflect: true
+            }
         };
-        target: {
-            type: StringConstructor;
-            reflect: boolean;
-        };
-    };
-    static get styles(): import("lit-element").CSSResult[];
-    render(): import("lit-element").TemplateResult;
-    href: string;
-    target: string;
-}
-import { LitElement } from "lit-element";
+    }
 
-declare global {
-    interface HTMLElementTagNameMap {
-      "bs-badge-link": BsBadgeLink
+    static get styles() {
+        return [BsBadgeRebootCss, BsBadgeLinkCss];
+    }
+
+    render() {
+        return html`
+            <a href="${this.href}" .target="${this.target}">
+                <slot></slot>
+            </a>
+        `;
+    }
+
+    constructor() {
+        super();
+        this.href = "";
+        this.target = "_self";
     }
 }
+
+if (!window.customElements.get("bs-badge-link"))
+    window.customElements.define("bs-badge-link", BsBadgeLink);

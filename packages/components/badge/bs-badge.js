@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit-element";
-import { BsBadgeCss } from "./bs-badge.css.js";
-import { BsBadgeRebootCss } from "./bs-badge-reboot.css.js";
+import { BsBadgeCss } from "./css/bs-badge.css.js";
+import { BsBadgeRebootCss } from "./css/bs-badge-reboot.css.js";
 
 /**
  * Badge Component
