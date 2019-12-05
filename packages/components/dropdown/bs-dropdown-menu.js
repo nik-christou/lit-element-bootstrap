@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsDropdownMenuCss } from './bs-dropdown-menu.css.js';
+import { BsDropdownMenuCss } from './css/bs-dropdown-menu.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 const Direction = {

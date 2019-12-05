@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsDropdownItemTextCss } from './bs-dropdown-item-text.css.js';
+import { BsDropdownItemTextCss } from './css/bs-dropdown-item-text.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsDropdownItemText extends LitElement {

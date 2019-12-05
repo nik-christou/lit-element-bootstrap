@@ -1,5 +1,5 @@
 
-import { BsDropdownItemCss } from './bs-dropdown-item.css.js';
+import { BsDropdownItemCss } from './css/bs-dropdown-item.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 const BsDropdownItemMixin = (superClass) => class extends superClass {
