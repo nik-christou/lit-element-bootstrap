@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCardOverlayCss } from './bs-card-overlay.css.js';
+import { BsCardOverlayCss } from './css/bs-card-overlay.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCardOverlay extends LitElement {

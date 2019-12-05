@@ -1,14 +1,14 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCardColumnsCss } from './bs-card-columns.css.js';
+import { BsCardHeaderCss } from './css/bs-card-header.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
-export class BsCardColumns extends LitElement {
+export class BsCardHeader extends LitElement {
 
     static get styles() {
         return [
             BsContentRebootCss,
-            BsCardColumnsCss
+            BsCardHeaderCss
         ];
     }
 
@@ -19,5 +19,6 @@ export class BsCardColumns extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-columns"))
-    window.customElements.define('bs-card-columns', BsCardColumns);
+if (!window.customElements.get("bs-card-header"))
+    window.customElements.define('bs-card-header', BsCardHeader);
+

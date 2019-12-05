@@ -1,6 +1,6 @@
 
 import { LitElement, html} from 'lit-element';
-import { BsCardGroupCss } from './bs-card-group.css.js';
+import { BsCardGroupCss } from './css/bs-card-group.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCardGroup extends LitElement {

@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCardSubtitleCss } from './bs-card-subtitle.css.js';
+import { BsCardSubtitleCss } from './css/bs-card-subtitle.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCardSubtitle extends LitElement {

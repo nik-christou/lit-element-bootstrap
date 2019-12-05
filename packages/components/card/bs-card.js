@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCardCss } from './bs-card.css.js';
+import { BsCardCss } from './css/bs-card.css.js';
 import { BsTextCss } from '@lit-element-bootstrap/content';
 import { BsSizingCss } from '@lit-element-bootstrap/content';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';

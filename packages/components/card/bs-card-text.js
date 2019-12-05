@@ -1,14 +1,14 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsCardTitleCss } from './bs-card-title.css.js';
+import { BsCardTextCss } from './css/bs-card-text.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
-export class BsCardTitle extends LitElement {
+export class BsCardText extends LitElement {
 
     static get styles() {
         return [
             BsContentRebootCss,
-            BsCardTitleCss
+            BsCardTextCss
         ];
     }
 
@@ -19,5 +19,5 @@ export class BsCardTitle extends LitElement {
     }
 };
 
-if (!window.customElements.get("bs-card-title"))
-    window.customElements.define('bs-card-title', BsCardTitle);
+if (!window.customElements.get("bs-card-text"))
+    window.customElements.define('bs-card-text', BsCardText);
