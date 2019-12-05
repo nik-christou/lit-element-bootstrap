@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsTextColorCss } from '@lit-element-bootstrap/content';
+import { BsTextColorCss } from '@lit-element-bootstrap/utilities';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormHelpText extends LitElement {

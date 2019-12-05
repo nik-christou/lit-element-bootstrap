@@ -2,7 +2,7 @@
 import sinon from 'sinon/pkg/sinon-esm.js';
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../src/bs-form-input.js';
+import '../bs-form-input.js';
 
 describe('bs-form-input', () => {
     it('type attribute is set by default to text', async () => {

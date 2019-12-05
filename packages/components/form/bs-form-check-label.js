@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormCheckLabelCss } from './bs-form-check-label.css.js';
+import { BsFormCheckLabelCss } from './css/bs-form-check-label.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 

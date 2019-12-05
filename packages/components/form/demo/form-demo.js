@@ -5,15 +5,15 @@ import { DefaultThemeCss } from '@lit-element-bootstrap/theme';
 
 import '@lit-element-bootstrap/button/bs-button.js';
 
-import '../src/bs-form.js';
-import '../src/bs-form-input.js';
-import '../src/bs-form-group.js';
-import '../src/bs-form-label.js';
-import '../src/bs-form-input-feedback.js';
-import '../src/bs-form-help-text.js';
-import '../src/bs-form-check-group.js';
-import '../src/bs-form-check-label.js';
-import '../src/bs-form-checkbox-input.js';
+import '../bs-form.js';
+import '../bs-form-input.js';
+import '../bs-form-group.js';
+import '../bs-form-label.js';
+import '../bs-form-input-feedback.js';
+import '../bs-form-help-text.js';
+import '../bs-form-check-group.js';
+import '../bs-form-check-label.js';
+import '../bs-form-checkbox-input.js';
 
 export class FormDemo extends LitElement {
 

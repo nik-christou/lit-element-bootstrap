@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormCheckboxInputCss } from './bs-form-checkbox-input.css.js';
-import { BsPositionCss } from '@lit-element-bootstrap/content';
+import { BsFormCheckboxInputCss } from './css/bs-form-checkbox-input.css.js';
+import { BsPositionCss } from '@lit-element-bootstrap/utilities';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { BsFormInputMixin } from './bs-form-input-mixin.js';
 
@@ -24,7 +24,7 @@ export class BsFormCheckboxInput extends BsFormInputMixin(LitElement) {
 
     render() {
         return html`
-            <input 
+            <input
                 type="checkbox"
                 name=${this.name}
                 ?checked=${this.checked}

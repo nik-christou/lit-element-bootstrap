@@ -2,32 +2,28 @@
 import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
 import { BsFormInputMixin } from './bs-form-input-mixin.js';
-import { BsFormControlCss } from './bs-form-control.css.js';
-import { BsFormControlSizeCss } from './bs-form-control-size.css.js';
+import { BsFormControlSizeCss } from './css/bs-form-control-size.css.js';
+import { BsFormInputPlaintextCss } from './css/bs-form-input-plaintext.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
-export class BsFormInput extends BsFormInputMixin(LitElement) {
+export class BsFormInputPlaintext extends BsFormInputMixin(LitElement) {
 
     static get styles() {
         return [
             BsContentRebootCss,
-            BsFormControlCss,
-            BsFormControlSizeCss
+            BsFormControlSizeCss,
+            BsFormInputPlaintextCss
         ];
     }
 
     render() {
         return html`
             <input
-                class="form-control"
-                .type=${this.type}
+                type="text"
                 .value=${this.value}
                 name=${ifDefined(this.name)}
                 maxlength=${ifDefined(this.maxlength)}
                 minlength=${ifDefined(this.minlength)}
-                max=${ifDefined(this.max)}
-                min=${ifDefined(this.min)}
-                step=${ifDefined(this.step)}
                 pattern=${ifDefined(this.pattern)}
                 placeholder=${ifDefined(this.placeholder)}
                 ?readonly=${this.readonly}
@@ -37,5 +33,5 @@ export class BsFormInput extends BsFormInputMixin(LitElement) {
     }
 };
 
-if(!window.customElements.get('bs-form-input'))
-    window.customElements.define('bs-form-input', BsFormInput);
+if(!window.customElements.get('bs-form-input-plaintext'))
+    window.customElements.define('bs-form-input-plaintext', BsFormInputPlaintext);

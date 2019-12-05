@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormRowCss } from './bs-form-row.css.js';
+import { BsFormRowCss } from './css/bs-form-row.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormRow extends LitElement {

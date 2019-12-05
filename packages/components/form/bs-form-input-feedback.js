@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormInputFeedbackCss } from './bs-form-input-feedback.css.js';
+import { BsFormInputFeedbackCss } from './css/bs-form-input-feedback.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormInputFeedback extends LitElement {

@@ -1,7 +1,7 @@
 
 import { LitElement, html, css } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
-import { BsFormControlCss } from './bs-form-control.css.js';
+import { BsFormControlCss } from './css/bs-form-control.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormTextarea extends LitElement {
@@ -37,8 +37,8 @@ export class BsFormTextarea extends LitElement {
 
     render() {
         return html`
-            
-            <textarea 
+
+            <textarea
                 class="form-control"
                 tabIndex=${ifDefined(this.tabIndex)}
                 .wrap=${this.wrap}

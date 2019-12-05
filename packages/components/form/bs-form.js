@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { ifDefined } from 'lit-html/directives/if-defined';
-import { BsFormCss } from './bs-form.css.js';
+import { BsFormCss } from './css/bs-form.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsForm extends LitElement {

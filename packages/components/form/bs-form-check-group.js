@@ -1,14 +1,9 @@
 
-import { LitElement, html } from 'lit-element';
-import { BsFormGroupCss } from './bs-form-group.css.js';
+import { LitElement, html} from 'lit-element';
+import { BsFormCheckGroupCss } from './css/bs-form-check-group.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
-import { BsColumnExtraSmallCss } from '@lit-element-bootstrap/layout';
-import { BsColumnSmallCss } from '@lit-element-bootstrap/layout';
-import { BsColumnMediumCss } from '@lit-element-bootstrap/layout';
-import { BsColumnLargeCss } from '@lit-element-bootstrap/layout';
-import { BsColumnExtraLargeCss } from '@lit-element-bootstrap/layout';
 
-export class BsFormGroup extends LitElement {
+export class BsFormCheckGroup extends LitElement {
 
     static get properties() {
         return {
@@ -20,37 +15,31 @@ export class BsFormGroup extends LitElement {
     static get styles() {
         return [
             BsContentRebootCss,
-            BsColumnExtraSmallCss,
-            BsColumnSmallCss,
-            BsColumnMediumCss,
-            BsColumnLargeCss,
-            BsColumnExtraLargeCss,
-            BsFormGroupCss
+            BsFormCheckGroupCss
         ];
     }
 
     render() {
         return html`
+            <slot name="check"></slot>
             <slot name="label"></slot>
-            <slot name="control"></slot>
             <slot name="feedback"></slot>
-            <slot name="helptext"></slot>
+            <slot></slot>
         `;
     }
 
     constructor() {
         super();
-        this.inline = false;
         this.disabled = false;
+        this.inline = false;
     }
 
     firstUpdated() {
-        this.addEventListener('bs-form-label-click', () => this._handleLabelClickEvent());
+        this.addEventListener('bs-form-check-label-click', () => this._handleLabelClick());
         this.addEventListener('bs-form-input-validation', event => this._handleInputValidationEvent(event));
     }
 
     updated(changedProperties) {
-        super.updated();
 
         if (changedProperties.has('disabled')) {
             this._disabledChanged();
@@ -69,18 +58,27 @@ export class BsFormGroup extends LitElement {
 
         const validityState = event.detail.validityState;
         const inputFeedbackElement = this._retrieveFeedbackElement();
+        const labelElement = this._retrieveLabelElement();
 
         if(inputFeedbackElement) {
             inputFeedbackElement.showValidationFeedback(validityState);
         }
+
+        if(validityState.valid) {
+            labelElement.setAttribute('valid', '');
+            labelElement.removeAttribute('invalid');
+        } else {
+            labelElement.setAttribute('invalid', '');
+            labelElement.removeAttribute('valid');
+        }
     }
 
-    _handleLabelClickEvent() {
+    _handleLabelClick() {
 
         const inputElement = this._retrieveInputElement();
 
         if(inputElement) {
-            inputElement.setFocus();
+            inputElement.toggle();
         }
     }
 
@@ -97,6 +95,9 @@ export class BsFormGroup extends LitElement {
             this._setElementsToDisabled();
         }
     }
+
+    // TODO this is not optiomal. instead of
+    // setting attributes we should instead use css properties
 
     _setElementsToDisabled() {
 
@@ -128,10 +129,9 @@ export class BsFormGroup extends LitElement {
 
     _retrieveInputElement() {
 
-        const controlSlotElement = this.shadowRoot.querySelector('slot[name="control"]');
-        const controlSlotNodes = controlSlotElement.assignedNodes();
-
-        const inputElement = this._findInputElement(controlSlotNodes);
+        const checkSlotElement = this.shadowRoot.querySelector('slot[name="check"]');
+        const checkSlotNodes = checkSlotElement.assignedNodes();
+        const inputElement = this._findFormCheckInputElement(checkSlotNodes);
 
         return inputElement;
     }
@@ -140,7 +140,6 @@ export class BsFormGroup extends LitElement {
 
         const labelSlotElement = this.shadowRoot.querySelector('slot[name="label"]');
         const labelSlotNodes = labelSlotElement.assignedNodes();
-
         const labelElement = this._findLabelElement(labelSlotNodes);
 
         return labelElement;
@@ -156,6 +155,31 @@ export class BsFormGroup extends LitElement {
         return feedbackElement;
     }
 
+    _findFormCheckInputElement(slotNodes) {
+
+        for (let index = 0; index < slotNodes.length; index++) {
+
+            const slotItem = slotNodes[index];
+
+            if (this._isFormCheckboxInputElement(slotItem) ||
+                this._isFormRadioInputElement(slotItem)) {
+                return slotItem;
+            }
+        }
+    }
+
+    _findLabelElement(slotNodes) {
+
+        for (let index = 0; index < slotNodes.length; index++) {
+
+            const slotItem = slotNodes[index];
+
+            if (this._isLabelElement(slotItem)) {
+                return slotItem;
+            }
+        }
+    }
+
     _findInputFeedbackElement(slotNodes) {
 
         for (let index = 0; index < slotNodes.length; index++) {
@@ -166,59 +190,26 @@ export class BsFormGroup extends LitElement {
         }
     }
 
-    _findInputElement(slotNodes) {
-
-        for (let index = 0; index < slotNodes.length; index++) {
-            const slotItem = slotNodes[index];
-            if (this._isInputElement(slotItem)
-                    || this._isPlainTextInputElement(slotItem)
-                    || this._isSelectInputElement(slotItem)
-                    || this._isTextAreaElement(slotItem)) {
-                return slotItem;
-            }
-        }
-    }
-
-    _findLabelElement(slotNodes) {
-
-        for (let index = 0; index < slotNodes.length; index++) {
-            const slotItem = slotNodes[index];
-            if (this._isLabelElement(slotItem)) {
-                return slotItem;
-            }
-        }
-    }
-
     _isInputFeedbackElement(element) {
         return element.nodeType === Node.ELEMENT_NODE
                 && (element.localName === 'bs-form-input-feedback');
     }
 
-    _isInputElement(element) {
+    _isFormCheckboxInputElement(element) {
         return element.nodeType === Node.ELEMENT_NODE
-                && (element.localName === 'bs-form-input');
+                && (element.localName === 'bs-form-checkbox-input');
     }
 
-    _isSelectInputElement(element) {
+    _isFormRadioInputElement(element) {
         return element.nodeType === Node.ELEMENT_NODE
-                && (element.localName === 'bs-form-select');
-    }
-
-    _isTextAreaElement(element) {
-        return element.nodeType === Node.ELEMENT_NODE
-                && (element.localName === 'bs-form-textarea');
-    }
-
-    _isPlainTextInputElement(element) {
-        return element.nodeType === Node.ELEMENT_NODE
-                && (element.localName === 'bs-form-input-plaintext');
+                && (element.localName === 'bs-form-radio-input');
     }
 
     _isLabelElement(element) {
         return element.nodeType === Node.ELEMENT_NODE
-                && (element.localName === 'bs-form-label');
+                && (element.localName === 'bs-form-check-label');
     }
 };
 
-if(!window.customElements.get('bs-form-group'))
-    window.customElements.define('bs-form-group', BsFormGroup);
+if(!window.customElements.get('bs-form-check-group'))
+    window.customElements.define('bs-form-check-group', BsFormCheckGroup);

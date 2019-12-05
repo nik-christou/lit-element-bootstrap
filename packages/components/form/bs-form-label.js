@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormLabelCss } from './bs-form-label.css.js';
+import { BsFormLabelCss } from './css/bs-form-label.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 import { BsColumnExtraSmallCss } from '@lit-element-bootstrap/layout';

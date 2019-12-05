@@ -1,8 +1,8 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormSelectCss } from './bs-form-select.css.js';
-import { BsFormControlCss } from './bs-form-control.css.js';
-import { BsFormControlSizeCss } from './bs-form-control-size.css.js';
+import { BsFormSelectCss } from './css/bs-form-select.css.js';
+import { BsFormControlCss } from './css/bs-form-control.css.js';
+import { BsFormControlSizeCss } from './css/bs-form-control-size.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormSelect extends LitElement {
@@ -34,7 +34,7 @@ export class BsFormSelect extends LitElement {
 
     render() {
         return html`
-            <select 
+            <select
                 class="form-control"
                 ?multiple=${this.multiple}
                 ?disabled=${this.disabled}>

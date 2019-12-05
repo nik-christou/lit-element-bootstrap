@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsFormRadioInputCss } from './bs-form-radio-input.css.js';
-import { BsPositionCss } from '@lit-element-bootstrap/content';
+import { BsFormRadioInputCss } from './css/bs-form-radio-input.css.js';
+import { BsPositionCss } from '@lit-element-bootstrap/utilities';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsFormRadioInput extends LitElement {
@@ -26,7 +26,7 @@ export class BsFormRadioInput extends LitElement {
 
     render() {
         return html`
-            <input 
+            <input
                 type="radio"
                 .value=${this.value}
                 name=${this.name}
