@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsInputGroupAppendCss } from './bs-input-group-append.css.js';
+import { BsInputGroupAppendCss } from './css/bs-input-group-append.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsInputGroupAppend extends LitElement {

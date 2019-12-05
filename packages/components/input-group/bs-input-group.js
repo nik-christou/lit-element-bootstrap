@@ -1,8 +1,8 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsInputGroupCss } from './bs-input-group.css.js';
-import { BsInputGroupLargeCss } from './bs-input-group-large.css.js';
-import { BsInputGroupSmallCss } from './bs-input-group-small.css.js';
+import { BsInputGroupCss } from './css/bs-input-group.css.js';
+import { BsInputGroupLargeCss } from './css/bs-input-group-large.css.js';
+import { BsInputGroupSmallCss } from './css/bs-input-group-small.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsInputGroup extends LitElement {

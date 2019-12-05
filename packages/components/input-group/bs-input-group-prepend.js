@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsInputGroupPrependCss } from './bs-input-group-prepend.css.js';
+import { BsInputGroupPrependCss } from './css/bs-input-group-prepend.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsInputGroupPrepend extends LitElement {
