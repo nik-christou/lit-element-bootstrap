@@ -1,6 +1,6 @@
 import { html, fixture } from '@open-wc/testing';
 
-import '../src/bs-breadcrumb.js';
+import '../bs-breadcrumb.js';
 
 describe('bs-breadcrumb-item', () => {
 

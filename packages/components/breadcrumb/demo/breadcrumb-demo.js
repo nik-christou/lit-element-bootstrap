@@ -6,8 +6,8 @@ import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 
 // import '@lit-element-bootstrap/button/bs-button.js';
 
-import '../src/bs-breadcrumb.js';
-import '../src/bs-breadcrumb-item.js';
+import '../bs-breadcrumb.js';
+import '../bs-breadcrumb-item.js';
 
 export class BreadcrumbDemo extends LitElement {
 

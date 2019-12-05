@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit-element";
 import { BsBreadcrumbItem } from "./bs-breadcrumb-item.js";
-import { BsBreadcrumbCss } from "./bs-breadcrumb.css.js";
-import { BsBreadcrumbRebootCss } from "./bs-breadcrumb-reboot.css.js";
+import { BsBreadcrumbCss } from "./css/bs-breadcrumb.css.js";
+import { BsBreadcrumbRebootCss } from "./css/bs-breadcrumb-reboot.css.js";
 
 /**
  * Breadcrumb Element

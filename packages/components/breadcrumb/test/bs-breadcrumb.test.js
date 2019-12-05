@@ -1,7 +1,7 @@
 import { html, fixture } from '@open-wc/testing';
 
-import '../src/bs-breadcrumb.js';
-import '../src/bs-breadcrumb-item.js';
+import '../bs-breadcrumb.js';
+import '../bs-breadcrumb-item.js';
 
 describe('bs-breadcrumb', () => {
 
@@ -47,7 +47,7 @@ describe('bs-breadcrumb', () => {
 
         // then
         const breadcrumbItem = bsBreadcrumb.querySelector('bs-breadcrumb-item');
-        
+
         const paddingStyle = getComputedStyle(breadcrumbItem).getPropertyValue('--breadcrumb-item-padding-left');
         const beforeContent = getComputedStyle(breadcrumbItem).getPropertyValue('--breadcrumb-item-divider-content');
 
