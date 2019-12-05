@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsJumbotronCss } from './bs-jumbotron.css.js';
+import { BsJumbotronCss } from './css/bs-jumbotron.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsJumbotron extends LitElement {
