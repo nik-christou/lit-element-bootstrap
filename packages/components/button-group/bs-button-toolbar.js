@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsButtonToolbarCss } from './bs-button-toolbar.css.js';
+import { BsButtonToolbarCss } from './css/bs-button-toolbar.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsButtonToolbar extends LitElement {

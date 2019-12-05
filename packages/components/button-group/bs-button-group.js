@@ -1,10 +1,10 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsButtonGroupCss } from './bs-button-group.css.js';
-import { BsButtonGroupSmallCss } from './bs-button-group-small.css.js';
-import { BsButtonGroupLargeCss } from './bs-button-group-large.css.js';
-import { BsButtonGroupVerticalCss } from './bs-button-group-vertical.css.js';
-import { BsButtonGroupHorizontalCss } from './bs-button-group-horizontal.css.js';
+import { BsButtonGroupCss } from './css/bs-button-group.css.js';
+import { BsButtonGroupSmallCss } from './css/bs-button-group-small.css.js';
+import { BsButtonGroupLargeCss } from './css/bs-button-group-large.css.js';
+import { BsButtonGroupVerticalCss } from './css/bs-button-group-vertical.css.js';
+import { BsButtonGroupHorizontalCss } from './css/bs-button-group-horizontal.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsButtonGroup extends LitElement {
