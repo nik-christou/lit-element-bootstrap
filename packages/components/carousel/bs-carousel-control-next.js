@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCarouselControlNextCss } from './bs-carousel-control-next.css.js';
+import { BsCarouselControlNextCss } from './css/bs-carousel-control-next.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCarouselControlNext extends LitElement {

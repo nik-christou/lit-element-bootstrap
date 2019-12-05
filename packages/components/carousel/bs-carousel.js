@@ -1,6 +1,6 @@
 
 import { LitElement, html, css } from 'lit-element';
-import { BsCarouselCss } from './bs-carousel.css.js';
+import { BsCarouselCss } from './css/bs-carousel.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 const Direction = {

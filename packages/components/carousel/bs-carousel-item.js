@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCarouselItemCss } from './bs-carousel-item.css.js';
+import { BsCarouselItemCss } from './css/bs-carousel-item.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCarouselItem extends LitElement {

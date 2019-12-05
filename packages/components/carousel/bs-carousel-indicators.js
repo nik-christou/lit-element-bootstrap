@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCarouselIndicatorsCss } from './bs-carousel-indicators.css.js';
+import { BsCarouselIndicatorsCss } from './css/bs-carousel-indicators.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCarouselIndicators extends LitElement {
