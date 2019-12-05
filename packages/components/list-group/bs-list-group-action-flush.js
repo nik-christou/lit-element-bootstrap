@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsListGroupCommonCss } from './bs-list-group-common.css.js';
-import { BsListGroupActionFlushCss } from './bs-list-group-action-flush.css.js';
+import { BsListGroupCommonCss } from './css/bs-list-group-common.css.js';
+import { BsListGroupActionFlushCss } from './css/bs-list-group-action-flush.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsListGroupActionFlush extends LitElement {
