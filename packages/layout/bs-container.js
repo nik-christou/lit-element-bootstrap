@@ -1,14 +1,14 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
-import { BsRowCss } from './bs-row.css.js';
+import { BsContainerCss } from './css/bs-container.css.js';
 
-export class BsRow extends LitElement {
+export class BsContainer extends LitElement {
 
     static get styles() {
         return [
             BsContentRebootCss,
-            BsRowCss
+            BsContainerCss
         ];
     }
 
@@ -19,5 +19,6 @@ export class BsRow extends LitElement {
     }
 };
 
-if(!window.customElements.get('bs-row'))
-    window.customElements.define('bs-row', BsRow);
+if(!window.customElements.get('bs-container'))
+    window.customElements.define('bs-container', BsContainer);
+
