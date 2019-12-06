@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsCardDeckCss } from './bs-card-deck.css.js';
+import { BsCardDeckCss } from './css/bs-card-deck.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsCardDeck extends LitElement {

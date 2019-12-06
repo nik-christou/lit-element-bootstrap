@@ -1,8 +1,8 @@
 
 import { LitElement, html } from 'lit-element';
 import { BsCardCss } from './css/bs-card.css.js';
-import { BsTextCss } from '@lit-element-bootstrap/content';
-import { BsSizingCss } from '@lit-element-bootstrap/content';
+import { BsTextCss } from '@lit-element-bootstrap/utilities';
+import { BsSizingCss } from '@lit-element-bootstrap/utilities';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { configureFlushListGroupBorders } from './helper/bs-card-list-group-helper.js';
 
