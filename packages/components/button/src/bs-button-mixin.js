@@ -46,10 +46,16 @@ export const BsButtonMixin = superclass =>
             ];
         }
 
+        constructor(...args) {
+            super(...args);
+            this._addAriaRole();
+        }
+
         /**
          * @param {Map} _updatedProperties
          */
         firstUpdated(_updatedProperties) {
+
             const buttonElement = this.shadowRoot.querySelector(".btn");
 
             buttonElement.addEventListener("click", _ =>
@@ -58,6 +64,44 @@ export const BsButtonMixin = superclass =>
             buttonElement.addEventListener("focusout", _ =>
                 this._handleFocusOut()
             );
+        }
+
+        /**
+         * @param {Map} _changedProperties
+         */
+        updated(_changedProperties) {
+
+            if(_changedProperties.has("active")) {
+                this._toggleAriaPressedState();
+            }
+
+            if(_changedProperties.has("disabled")) {
+                this._toggleAriaDisabledState();
+            }
+        }
+
+        _addAriaRole() {
+            this.setAttribute("role", "button");
+        }
+
+        _toggleAriaDisabledState() {
+
+            if(this.disabled) {
+                this.setAttribute("tabindex", "-1");
+                this.setAttribute("aria-disabled", "true");
+            } else {
+                this.removeAttribute("tabindex");
+                this.removeAttribute("aria-disabled");
+            }
+        }
+
+        _toggleAriaPressedState() {
+
+            if(this.active) {
+                this.setAttribute("aria-pressed", "true");
+            } else {
+                this.removeAttribute("aria-pressed");
+            }
         }
 
         _handleFocusOut() {

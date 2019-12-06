@@ -33,8 +33,7 @@ export class BsButton extends BsButtonMixin(LitElement) {
             <button
                 .type="${this.type}"
                 ?disabled="${this.disabled}"
-                class="btn ${classMap({ active: this.active })}"
-            >
+                class="btn ${classMap({ active: this.active })}">
                 <slot></slot>
             </button>
         `;
