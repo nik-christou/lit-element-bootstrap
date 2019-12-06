@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsNavItemCss } from './bs-nav-item.css.js';
+import { BsNavItemCss } from './css/bs-nav-item.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsNavItem extends LitElement {
