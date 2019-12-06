@@ -1,21 +1,21 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsPaginationCss } from './bs-pagination.css.js';
+import { BsPageItemCss } from './css/bs-page-item.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
-export class BsPagination extends LitElement {
+export class BsPageItem extends LitElement {
 
     static get properties() {
         return {
-            small: {type: Boolean, reflect: true},
-            large: {type: Boolean, reflect: true}
+            active: {type: Boolean, reflect: true},
+            disabled: {type: Boolean, reflect: true}
         };
     }
 
     static get styles() {
         return [
             BsContentRebootCss,
-            BsPaginationCss
+            BsPageItemCss
         ];
     }
 
@@ -27,10 +27,10 @@ export class BsPagination extends LitElement {
 
     constructor() {
         super();
-        this.small = false;
-        this.large = false;
+        this.active = false;
+        this.disabled = false;
     }
 };
 
-if(!window.customElements.get('bs-pagination'))
-    window.customElements.define('bs-pagination', BsPagination);
+if(!window.customElements.get('bs-page-item'))
+    window.customElements.define('bs-page-item', BsPageItem);
