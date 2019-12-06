@@ -19,12 +19,13 @@
     "bs-*.js",
     "bs-*.d.ts",
     "css/*.js",
-    "css/*.d.ts"
+    "css/*.d.ts",
+    "custom-elements.json"
   ],
   "scripts": {
     "prepack": "yarn build",
     "build": "npm run wca-analyze:json",
-    "lit-analyze": "lit-analyzer bs-*.js --failFast",
+    "lit-analyze": "lit-analyzer bs-*.js css/*.js --failFast",
     "wca-analyze:json": "wca analyze . --outFile custom-elements.json",
     "lint:prettier": "prettier \"./**/*.js\" --tab-width 4 --list-different",
     "format:prettier": "prettier \"./**/*.js\" --tab-width 4 --write"
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@open-wc/prettier-config": "^0.1.12",
     "eslint": "^6.6.0",
-    "lit-analyzer": "^1.1.9"
+    "lit-analyzer": "^1.1.9",
+    "web-component-analyzer": "^0.1.21"
   }
 }
