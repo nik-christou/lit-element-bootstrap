@@ -3,6 +3,7 @@
     "private": true,
     "scripts": {
         "postinstall": "lerna bootstrap",
+        "pretest": "lerna run lit-analyze",
         "test": "lerna run test --ignore @lit-element-bootstrap/collapse"
     },
     "devDependencies": {
