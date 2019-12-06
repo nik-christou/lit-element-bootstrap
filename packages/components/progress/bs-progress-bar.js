@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsProgressBarCss } from './bs-progress-bar.css.js';
+import { BsProgressBarCss } from './css/bs-progress-bar.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsProgressBar extends LitElement {
