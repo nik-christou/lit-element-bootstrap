@@ -1,7 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsNavbarBrandCss } from './bs-navbar-brand.css.js';
-import { BsSpacingCss } from '@lit-element-bootstrap/content';
+import { BsNavbarBrandCss } from './css/bs-navbar-brand.css.js';
+import { BsSpacingCss } from '@lit-element-bootstrap/utilities';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 import { BsContentTypographyCss } from '@lit-element-bootstrap/content';
 

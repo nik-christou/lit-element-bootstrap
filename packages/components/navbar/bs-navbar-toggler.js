@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsNavbarTogglerCss } from './bs-navbar-toggler.css.js';
+import { BsNavbarTogglerCss } from './css/bs-navbar-toggler.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsNavbarToggler extends LitElement {

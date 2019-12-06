@@ -1,9 +1,9 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsNavbarCss } from './bs-navbar.css.js';
-import { BsNavbarExpandLargeCss } from './bs-navbar-expand-lg.css.js';
-import { BsNavbarLightColorCss } from './bs-navbar-light-color.css.js';
-import { BsNavbarDarkColorCss } from './bs-navbar-dark-color.css.js';
+import { BsNavbarCss } from './css/bs-navbar.css.js';
+import { BsNavbarExpandLargeCss } from './css/bs-navbar-expand-lg.css.js';
+import { BsNavbarLightColorCss } from './css/bs-navbar-light-color.css.js';
+import { BsNavbarDarkColorCss } from './css/bs-navbar-dark-color.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsNavbar extends LitElement {

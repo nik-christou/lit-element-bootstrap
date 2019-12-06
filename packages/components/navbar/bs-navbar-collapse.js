@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsNavbarCollapseCss } from './bs-navbar-collapse.css.js';
+import { BsNavbarCollapseCss } from './css/bs-navbar-collapse.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsNavbarCollapse extends LitElement {
