@@ -1,5 +1,5 @@
 import { html, fixture, expect, oneEvent } from '@open-wc/testing'
-import '../src/index.js'
+import '../index.js'
 
 describe('<bs-modal>', () => {
     it('does not close when clicked', async () => {

@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsModalFooterCss } from './bs-modal-footer.css.js';
+import { BsModalFooterCss } from './css/bs-modal-footer.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsModalFooter extends LitElement {

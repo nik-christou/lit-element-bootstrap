@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import { BsModalCss } from './bs-modal.css.js';
+import { BsModalCss } from './css/bs-modal.css.js';
 import { BsContentRebootCss } from '@lit-element-bootstrap/content';
 
 export class BsModal extends LitElement {
