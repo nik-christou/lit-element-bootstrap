@@ -54,6 +54,4 @@ Definition of done (before publishing)
 - All typings that are custom elements have been declared (see above)
 - Run prettier on all generated typescript typings ???
 - Make sure there are no test failures and coverage is good "yarn run test:coverage"
-- Run lit-analayzer "yarn run lit-analyze" to find issues
-- Run wca-analyzer "yarn run wca-analyze:json" to generate new custom-elements.json
 - Run prettier on all js and test file "yarn run format:prettier"
