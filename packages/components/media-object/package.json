@@ -2,8 +2,8 @@
   "name": "@lit-element-bootstrap/media-object",
   "version": "1.0.0-alpha.2",
   "description": "Bootstrap v4.1.3 media-object component in LitElement",
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "index.js",
+  "module": "index.js",
   "type": "module",
   "author": "Nikolas Christou",
   "homepage": "https://github.com/nik-christou/lit-element-bootstrap",
@@ -12,34 +12,31 @@
     "url": "https://github.com/nik-christou/lit-element-bootstrap"
   },
   "license": "MIT",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "global.d.ts",
+    "bs-*.js",
+    "bs-*.d.ts",
+    "css/*.js",
+    "css/*.d.ts"
+  ],
   "scripts": {
-    "pika:build": "pika build"
+    "prepack": "yarn build",
+    "build": "npm run wca-analyze:json",
+    "lit-analyze": "lit-analyzer bs-*.js css/*.js --failFast",
+    "wca-analyze:json": "wca analyze . --outFile custom-elements.json",
+    "lint:prettier": "prettier \"./**/*.js\" --tab-width 4 --list-different",
+    "format:prettier": "prettier \"./**/*.js\" --tab-width 4 --write"
   },
   "dependencies": {
     "@lit-element-bootstrap/content": "^1.0.0-alpha.3",
     "lit-element": "^2.2.1"
   },
-
   "devDependencies": {
-    "@pika/pack": "^0.5.0",
-    "@pika/plugin-build-web": "^0.6.1",
-    "@pika/plugin-bundle-web": "^0.6.1",
-    "@pika/plugin-standard-pkg": "^0.6.1"
-  },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-web"
-      ],
-      [
-        "@pika/plugin-bundle-web",
-        {
-            "entrypoint": "unpkg"
-        }
-      ]
-    ]
+    "@open-wc/prettier-config": "^0.1.12",
+    "eslint": "^6.6.0",
+    "lit-analyzer": "^1.1.9",
+    "web-component-analyzer": "^0.1.21"
   }
 }
