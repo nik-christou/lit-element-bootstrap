@@ -28,6 +28,28 @@ export const BsButtonMixin = superclass =>
      */
     class extends superclass {
 
+        static get properties() {
+            return {
+                toggle: {
+                    type: Boolean,
+                    reflect: true
+                },
+                active: {
+                    type: Boolean,
+                    reflect: true
+                },
+                disabled: {
+                    type: Boolean,
+                    reflect: true
+                },
+                dropdownToggle: {
+                    type: Boolean,
+                    reflect: true,
+                    attribute: "dropdown-toggle"
+                }
+            };
+        }
+
         static get styles() {
             return [
                 BsButtonRebootCss,
@@ -48,6 +70,10 @@ export const BsButtonMixin = superclass =>
 
         constructor(...args) {
             super(...args);
+            this.active = false;
+            this.toggle = false;
+            this.disabled = false;
+            this.dropdownToggle = false;
             this._addAriaRole();
         }
 
@@ -80,6 +106,26 @@ export const BsButtonMixin = superclass =>
             }
         }
 
+        async activate() {
+            this.active = true;
+            await this.updateComplete;
+        }
+
+        async deactivate() {
+            this.active = false;
+            await this.updateComplete;
+        }
+
+        async disable() {
+            this.disabled = true;
+            await this.updateComplete;
+        }
+
+        async enable() {
+            this.disabled = false;
+            await this.updateComplete;
+        }
+
         _addAriaRole() {
             this.setAttribute("role", "button");
         }
@@ -104,19 +150,23 @@ export const BsButtonMixin = superclass =>
             }
         }
 
-        _handleFocusOut() {
+        async _handleFocusOut() {
+
             if (this.disabled) {
                 return;
             }
 
             if (this.active && this.dropdownToggle) {
+
                 this.active = !this.active;
+                await this.updateComplete;
             }
 
             this._fireFocusOutEvent();
         }
 
-        _handleButtonClick() {
+        async _handleButtonClick() {
+
             if (this.disabled) {
                 return;
             }
@@ -125,13 +175,16 @@ export const BsButtonMixin = superclass =>
             buttonElement.focus();
 
             if (this.toggle || this.dropdownToggle) {
+
                 this.active = !this.active;
+                await this.updateComplete;
             }
 
             this._fireButtonClickEvent();
         }
 
         _fireFocusOutEvent() {
+
             const btnFocusOutEvent = new CustomEvent("bs-button-focusout", {
                 bubbles: true,
                 composed: true
@@ -141,6 +194,7 @@ export const BsButtonMixin = superclass =>
         }
 
         _fireButtonClickEvent() {
+
             const btnClickedEvent = new CustomEvent("bs-button-click", {
                 bubbles: true,
                 composed: true,

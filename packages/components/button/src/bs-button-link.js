@@ -3,30 +3,15 @@ import { BsButtonMixin } from './bs-button-mixin.js';
 import { classMap } from "lit-html/directives/class-map.js";
 
 export class BsButtonLink extends BsButtonMixin(LitElement) {
+
     static get properties() {
         return {
+            ...super.properties,
             href: {
                 type: String
             },
             target: {
                 type: String
-            },
-            toggle: {
-                type: Boolean,
-                reflect: true
-            },
-            active: {
-                type: Boolean,
-                reflect: true
-            },
-            disabled: {
-                type: Boolean,
-                reflect: true
-            },
-            dropdownToggle: {
-                type: Boolean,
-                reflect: true,
-                attribute: "dropdown-toggle"
             }
         };
     }
@@ -49,11 +34,6 @@ export class BsButtonLink extends BsButtonMixin(LitElement) {
         super();
         this.href = "";
         this.target = "_self";
-        this.active = false;
-        this.toggle = false;
-        this.type = "button";
-        this.disabled = false;
-        this.dropdownToggle = false;
     }
 }
 
