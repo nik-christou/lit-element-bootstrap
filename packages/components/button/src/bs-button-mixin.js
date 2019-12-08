@@ -84,8 +84,8 @@ export const BsButtonMixin = superclass =>
 
             const buttonElement = this.shadowRoot.querySelector(".btn");
 
-            buttonElement.addEventListener("click", _ =>
-                this._handleButtonClick()
+            buttonElement.addEventListener("click", event =>
+                this._handleButtonClick(event)
             );
             buttonElement.addEventListener("focusout", _ =>
                 this._handleFocusOut()
@@ -165,7 +165,14 @@ export const BsButtonMixin = superclass =>
             this._fireFocusOutEvent();
         }
 
-        async _handleButtonClick() {
+        /**
+         * @param {MouseEvent} event
+         */
+        async _handleButtonClick(event) {
+
+            // added this to avoid page refresh
+            // during tests for bs-button-link
+            event.preventDefault();
 
             if (this.disabled) {
                 return;

@@ -3,7 +3,7 @@ import { html, fixture, aTimeout, oneEvent } from '@open-wc/testing';
 
 import '../src/bs-button.js';
 
-describe('<bs-button> accessibility', () => {
+describe('<bs-button> accessibility tests', () => {
 
     it('is accessible', async () => {
 
@@ -63,7 +63,7 @@ describe('<bs-button> accessibility', () => {
     });
 });
 
-describe('<bs-button> property state', () => {
+describe('<bs-button> properties tests', () => {
 
     it('active attribute is set', async () => {
 
@@ -214,7 +214,7 @@ describe('<bs-button> property state', () => {
     });
 });
 
-describe('<bs-button> events', () => {
+describe('<bs-button> events tests', () => {
 
     it('click event', async () => {
 

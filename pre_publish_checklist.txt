@@ -35,7 +35,7 @@ Source: http://104.154.68.174/2019/11/01/how-to-publish-web-components-to-npm
 =================
 Generated typings
 =================
-All typings that are custom elements should also declare 
+All typings that are custom elements should also declare
 inside the *.d.ts file using TypeScript's interface augmentation:
 
 declare global {
@@ -56,8 +56,8 @@ Definition of done (before publishing)
 - Make sure there are no test failures and coverage is good "yarn run test:coverage"
 - Run lit-analayzer "yarn run lit-analyze" to find issues
 - Run wca-analyzer "yarn run wca-analyze:json" to generate new custom-elements.json
-- Run prettier on all js and test file "yarn run format:prettier" 
-  
+- Run prettier on all js and test file "yarn run format:prettier"
+
   ================================
   README file has been updated !!!
   README file has been updated !!!
@@ -78,13 +78,14 @@ Pre-publish preparation
 	- Extract all files from dist-src to ./pkg and remove dist-src
 	- Copy custom-elements.js to ./pkg
 	- Copy all typings to ./pkg
-	
+
 	- Copy the readme file !!!!!!!!!!!!!!!!!
 
 - Modify the generated package.json:
 	- adjust the version if not already done. (needs to be same for package.json files both inside the ./pkg and outside)
 	- remove "devDependencies"
 	- remove "files" array
+    - add a "type" module
 	- add a "main" entrypoint pointing to index.js
 	- change all remaining entrypoints to point to index.js
 	- add a "types" entrypoint pointing to index.d.ts
