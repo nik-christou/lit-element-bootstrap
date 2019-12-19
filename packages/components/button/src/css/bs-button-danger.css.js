@@ -5,7 +5,9 @@ export const BsButtonDangerCss = css`
         --danger-color: var(--danger, #dc3545);
     }
 
-    :host([context="danger"]:not([outline])) {
+    bs-button[context="danger"]:not([outline]),
+    bs-button-link[context="danger"]:not([outline]),
+    bs-button-input[context="danger"]:not([outline]) {
         --btn-text-color: var(--btn-danger-text-color, #fff);
         --btn-bg-color: var(--btn-danger-bg-color, var(--danger-color));
         --btn-bd-color: var(--btn-danger-bd-color, var(--danger-color));
@@ -40,7 +42,9 @@ export const BsButtonDangerCss = css`
         );
     }
 
-    :host([context="danger"][outline]) {
+    bs-button[context="danger"][outline],
+    bs-button-link[context="danger"][outline],
+    bs-button-input[context="danger"][outline] {
         --btn-text-color: var(
             --btn-outline-danger-text-color,
             var(--danger-color)

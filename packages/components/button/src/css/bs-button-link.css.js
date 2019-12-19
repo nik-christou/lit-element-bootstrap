@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonLinkCss = css`
-    :host([context="link"]) {
+    bs-button[context="link"],
+    bs-button-link[context="link"],
+    bs-button-input[context="link"] {
         --btn-text-color: var(--btn-link-text-color, #007bff);
         --btn-bg-color: var(--btn-link-bg-color, transparent);
         --btn-font-weight: var(--btn-link-font-weight, 400);

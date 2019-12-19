@@ -3,6 +3,18 @@ import { LitElement, html, css } from 'lit-element';
 import { DefaultThemeCss } from '@lit-element-bootstrap/theme/default-theme-css.js';
 import { BsContentTypographyCss } from '@lit-element-bootstrap/content/bs-content-typography.css.js';
 
+import { BsButtonPrimaryCss } from '../src/css/bs-button-primary.css.js';
+import { BsButtonSecondaryCss } from '../src/css/bs-button-secondary.css.js';
+import { BsButtonSuccessCss } from '../src/css/bs-button-success.css.js';
+import { BsButtonDangerCss } from '../src/css/bs-button-danger.css.js';
+import { BsButtonWarningCss } from '../src/css/bs-button-warning.css.js';
+import { BsButtonInfoCss } from '../src/css/bs-button-info.css.js';
+import { BsButtonLightCss } from '../src/css/bs-button-light.css.js';
+import { BsButtonDarkCss } from '../src/css/bs-button-dark.css.js';
+import { BsButtonLinkCss } from '../src/css/bs-button-link.css.js';
+import { BsButtonSizeCss } from '../src/css/bs-button-size.css.js';
+import { BsButtonBlockCss } from '../src/css/bs-button-block.css.js';
+
 import '@lit-element-bootstrap/dropdown/bs-dropdown.js';
 import '@lit-element-bootstrap/dropdown/bs-dropdown-menu.js';
 import '@lit-element-bootstrap/dropdown/bs-dropdown-item-link.js';
@@ -15,14 +27,21 @@ import '../src/bs-button-link.js';
 
 export class ButtonDemo extends LitElement {
 
-    static get properties() {
-        return {};
-    }
-
     static get styles() {
         return [
             DefaultThemeCss,
             BsContentTypographyCss,
+            BsButtonPrimaryCss,
+            BsButtonSecondaryCss,
+            BsButtonSuccessCss,
+            BsButtonDangerCss,
+            BsButtonWarningCss,
+            BsButtonInfoCss,
+            BsButtonLightCss,
+            BsButtonDarkCss,
+            BsButtonLinkCss,
+            BsButtonSizeCss,
+            BsButtonBlockCss,
             css`
                 .container {
                     padding-left: 15px;
@@ -94,11 +113,11 @@ export class ButtonDemo extends LitElement {
 
                 <br />
                 <div>
-                    <bs-button context="primary" large block>Block level button</bs-button>
-                    <bs-button context="secondary" large block>Block level button</bs-button>
+                    <bs-button context="primary" size="large" block>Block level button</bs-button>
+                    <bs-button context="secondary" size="large" block>Block level button</bs-button>
 
-                    <bs-button-input label="Input Block level button" context="primary" large block></bs-button-input>
-                    <bs-button-input label="Input Block level button" context="secondary" large block></bs-button-input>
+                    <bs-button-input label="Input Block level button" context="primary" size="large" block></bs-button-input>
+                    <bs-button-input label="Input Block level button" context="secondary" size="large" block></bs-button-input>
                 </div>
 
                 <br />

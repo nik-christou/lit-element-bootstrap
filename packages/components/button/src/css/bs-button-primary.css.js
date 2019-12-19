@@ -5,7 +5,9 @@ export const BsButtonPrimaryCss = css`
         --primary-color: var(--primary, #007bff);
     }
 
-    :host([context="primary"]:not([outline])) {
+    bs-button[context="primary"]:not([outline]),
+    bs-button-link[context="primary"]:not([outline]),
+    bs-button-input[context="primary"]:not([outline]) {
         --btn-text-color: var(--btn-primary-text-color, #fff);
         --btn-bg-color: var(--btn-primary-bg-color, var(--primary-color));
         --btn-bd-color: var(--btn-primary-bd-color, var(--primary-color));
@@ -40,7 +42,9 @@ export const BsButtonPrimaryCss = css`
         );
     }
 
-    :host([context="primary"][outline]) {
+    bs-button[context="primary"][outline],
+    bs-button-link[context="primary"][outline],
+    bs-button-input[context="primary"][outline] {
         --btn-text-color: var(
             --btn-outline-primary-text-color,
             var(--primary-color)

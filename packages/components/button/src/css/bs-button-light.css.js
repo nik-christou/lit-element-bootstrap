@@ -5,7 +5,9 @@ export const BsButtonLightCss = css`
         --light-color: var(--light, #f8f9fa);
     }
 
-    :host([context="light"]:not([outline])) {
+    bs-button[context="light"]:not([outline]),
+    bs-button-link[context="light"]:not([outline]),
+    bs-button-input[context="light"]:not([outline]) {
         --btn-text-color: var(--btn-light-text-color, #212529);
         --btn-bg-color: var(--btn-light-bg-color, var(--light-color));
         --btn-bd-color: var(--btn-light-bd-color, var(--light-color));
@@ -40,7 +42,9 @@ export const BsButtonLightCss = css`
         );
     }
 
-    :host([context="light"][outline]) {
+    bs-button[context="light"][outline],
+    bs-button-link[context="light"][outline],
+    bs-button-input[context="light"][outline] {
         --btn-text-color: var(
             --btn-outline-light-text-color,
             var(--light-color)

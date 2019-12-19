@@ -1,7 +1,46 @@
-import { LitElement, html } from "lit-element";
-import { BsButtonMixin } from './bs-button-mixin.js';
-import { classMap } from "lit-html/directives/class-map.js";
-
+declare const BsButtonInput_base: {
+    new (...args: any[]): {
+        [x: string]: any;
+        active: any;
+        toggle: boolean;
+        disabled: boolean;
+        dropdownToggle: boolean;
+        firstUpdated(_updatedProperties: Map<any, any>): void;
+        updated(_changedProperties: Map<any, any>): void;
+        activate(): Promise<void>;
+        deactivate(): Promise<void>;
+        disable(): Promise<void>;
+        enable(): Promise<void>;
+        _addAriaRole(): void;
+        _toggleAriaDisabledState(): void;
+        _toggleAriaPressedState(): void;
+        _handleFocusOut(): Promise<void>;
+        _handleButtonClick(event: MouseEvent): Promise<void>;
+        _fireFocusOutEvent(): void;
+        _fireButtonClickEvent(): void;
+    };
+    [x: string]: any;
+    readonly properties: {
+        toggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        active: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        disabled: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        dropdownToggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+            attribute: string;
+        };
+    };
+    readonly styles: import("lit-element").CSSResult[];
+};
 /**
  * Button component
  *
@@ -99,33 +138,36 @@ import { classMap } from "lit-html/directives/class-map.js";
  * @cssproperty --btn-box-shadow-active-focus - button active focus box-shadow
  * @cssproperty --btn-z-index-active - button active z-index
  */
-export class BsButtonInput extends BsButtonMixin(LitElement) {
-
-    static get properties() {
-        return {
-            ...super.properties,
-            label: {
-                type: String
-            }
+export class BsButtonInput extends BsButtonInput_base {
+    static get properties(): {
+        label: {
+            type: StringConstructor;
         };
-    }
+        toggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        active: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        disabled: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        dropdownToggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+            attribute: string;
+        };
+    };
+    render(): import("lit-element").TemplateResult;
+    label: string;
+}
+export {};
 
-    render() {
-        return html`
-            <input
-                type="button"
-                value="${this.label}"
-                ?disabled="${this.disabled}"
-                class="btn ${classMap({ active: this.active })}"
-            />
-        `;
-    }
-
-    constructor() {
-        super();
-        this.label = "";
+declare global {
+    interface HTMLElementTagNameMap {
+      "bs-button-input": BsButtonInput
     }
 }
-
-if (!window.customElements.get("bs-button-input"))
-    window.customElements.define("bs-button-input", BsButtonInput);

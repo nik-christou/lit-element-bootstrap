@@ -5,7 +5,9 @@ export const BsButtonSuccessCss = css`
         --success-color: var(--success, #28a745);
     }
 
-    :host([context="success"]:not([outline])) {
+    bs-button[context="success"]:not([outline]),
+    bs-button-link[context="success"]:not([outline]),
+    bs-button-input[context="success"]:not([outline]) {
         --btn-text-color: var(--btn-success-text-color, #fff);
         --btn-bg-color: var(--btn-success-bg-color, var(--success-color));
         --btn-bd-color: var(--btn-success-bd-color, var(--success-color));
@@ -40,7 +42,9 @@ export const BsButtonSuccessCss = css`
         );
     }
 
-    :host([context="success"][outline]) {
+    bs-button[context="success"][outline],
+    bs-button-link[context="success"][outline],
+    bs-button-input[context="success"][outline] {
         --btn-text-color: var(
             --btn-outline-success-text-color,
             var(--success-color)

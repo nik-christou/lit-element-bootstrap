@@ -1,16 +1,56 @@
-import { LitElement, html } from "lit-element";
-import { BsButtonMixin } from './bs-button-mixin.js';
-import { classMap } from "lit-html/directives/class-map.js";
-
+declare const BsButtonLink_base: {
+    new (...args: any[]): {
+        [x: string]: any;
+        active: any;
+        toggle: boolean;
+        disabled: boolean;
+        dropdownToggle: boolean;
+        firstUpdated(_updatedProperties: Map<any, any>): void;
+        updated(_changedProperties: Map<any, any>): void;
+        activate(): Promise<void>;
+        deactivate(): Promise<void>;
+        disable(): Promise<void>;
+        enable(): Promise<void>;
+        _addAriaRole(): void;
+        _toggleAriaDisabledState(): void;
+        _toggleAriaPressedState(): void;
+        _handleFocusOut(): Promise<void>;
+        _handleButtonClick(event: MouseEvent): Promise<void>;
+        _fireFocusOutEvent(): void;
+        _fireButtonClickEvent(): void;
+    };
+    [x: string]: any;
+    readonly properties: {
+        toggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        active: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        disabled: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        dropdownToggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+            attribute: string;
+        };
+    };
+    readonly styles: import("lit-element").CSSResult[];
+};
 /**
- * Button component
+ * Button link component
  *
- * @element bs-button
+ * @element bs-button-link
  *
  * @mixes BsButtonMixin
- * @exports BsButton
+ * @exports BsButtonLink
  *
- * @attribute label - The button label
+ * @attribute href - The link reference
+ * @attribute target - The link target
  * @attribute toggle - Indicates whether or not the button is in toggle state
  * @attribute active - Indicates whether or not the button is in active state
  * @attribute disabled - Indicates whether or not the button is in disable state
@@ -19,7 +59,8 @@ import { classMap } from "lit-html/directives/class-map.js";
  * @attribute {primary|secondary|success|info|warning|danger|light|dark|link} context -
  * Indicates the styling context to use
  *
- * @property {String} label - The button label - default: ''
+ * @property {String} href - The link reference - default: ''
+ * @property {String} target - The link target - default: _self
  * @property {Boolean} toggle - Indicates whether or not the button is in toggle state - default: false
  * @property {Boolean} active - Indicates whether or not the button is in active state - default: false
  * @property {Boolean} disabled - Indicates whether or not the button is in disabled state - default: false
@@ -99,33 +140,41 @@ import { classMap } from "lit-html/directives/class-map.js";
  * @cssproperty --btn-box-shadow-active-focus - button active focus box-shadow
  * @cssproperty --btn-z-index-active - button active z-index
  */
-export class BsButtonInput extends BsButtonMixin(LitElement) {
-
-    static get properties() {
-        return {
-            ...super.properties,
-            label: {
-                type: String
-            }
+export class BsButtonLink extends BsButtonLink_base {
+    static get properties(): {
+        href: {
+            type: StringConstructor;
         };
-    }
+        target: {
+            type: StringConstructor;
+        };
+        toggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        active: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        disabled: {
+            type: BooleanConstructor;
+            reflect: boolean;
+        };
+        dropdownToggle: {
+            type: BooleanConstructor;
+            reflect: boolean;
+            attribute: string;
+        };
+    };
+    render(): import("lit-element").TemplateResult;
+    href: string;
+    target: string;
+    _handleButtonLinkClick(event: any): void;
+}
+export {};
 
-    render() {
-        return html`
-            <input
-                type="button"
-                value="${this.label}"
-                ?disabled="${this.disabled}"
-                class="btn ${classMap({ active: this.active })}"
-            />
-        `;
-    }
-
-    constructor() {
-        super();
-        this.label = "";
+declare global {
+    interface HTMLElementTagNameMap {
+      "bs-button-link": BsButtonLink
     }
 }
-
-if (!window.customElements.get("bs-button-input"))
-    window.customElements.define("bs-button-input", BsButtonInput);

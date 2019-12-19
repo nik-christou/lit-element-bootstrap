@@ -8,7 +8,7 @@ export const BsButtonCommonCss = css`
     }
 
     :host {
-        display: inline-block;
+        display: var(--btn-display, inline-block);
         width: var(--btn-width);
         z-index: var(--btn-z-index-focus);
     }

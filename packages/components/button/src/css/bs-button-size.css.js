@@ -1,7 +1,10 @@
 import { css } from "lit-element";
 
 export const BsButtonSizeCss = css`
-    :host([size="small"]) .btn {
+
+    bs-button[size="small"],
+    bs-button-link[size="small"],
+    bs-button-input[size="small"] {
         --btn-pd-top: var(--bs-btn-small-top-pd, 0.25rem);
         --btn-pd-bottom: var(--bs-btn-small-bottom-pd, 0.25rem);
         --btn-pd-left: var(--bs-btn-small-left-pd, 0.5rem);
@@ -26,7 +29,9 @@ export const BsButtonSizeCss = css`
         );
     }
 
-    :host([size="large"]) .btn {
+    bs-button[size="large"],
+    bs-button-link[size="large"],
+    bs-button-input[size="large"] {
         --btn-pd-top: var(--bs-btn-large-top-pd, 0.5rem);
         --btn-pd-bottom: var(--bs-btn-large-bottom-pd, 0.5rem);
         --btn-pd-left: var(--bs-btn-large-left-pd, 1rem);

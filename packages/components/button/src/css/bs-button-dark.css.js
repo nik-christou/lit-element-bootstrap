@@ -5,7 +5,9 @@ export const BsButtonDarkCss = css`
         --dark-color: var(--dark, #343a40);
     }
 
-    :host([context="dark"]:not([outline])) {
+    bs-button[context="dark"]:not([outline]),
+    bs-button-link[context="dark"]:not([outline]),
+    bs-button-input[context="dark"]:not([outline]) {
         --btn-text-color: var(--btn-dark-text-color, #fff);
         --btn-bg-color: var(--btn-dark-bg-color, var(--dark-color));
         --btn-bd-color: var(--btn-dark-bd-color, var(--dark-color));
@@ -40,7 +42,9 @@ export const BsButtonDarkCss = css`
         );
     }
 
-    :host([context="dark"][outline]) {
+    bs-button[context="dark"][outline],
+    bs-button-link[context="dark"][outline],
+    bs-button-input[context="dark"][outline] {
         --btn-text-color: var(
             --btn-outline-dark-text-color,
             var(--dark-color)

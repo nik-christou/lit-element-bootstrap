@@ -5,7 +5,9 @@ export const BsButtonWarningCss = css`
         --warning-color: var(--warning, #ffc107);
     }
 
-    :host([context="warning"]:not([outline])) {
+    bs-button[context="warning"]:not([outline]),
+    bs-button-link[context="warning"]:not([outline]),
+    bs-button-input[context="warning"]:not([outline]) {
         --btn-text-color: var(--btn-warning-text-color, #212529);
         --btn-bg-color: var(--btn-warning-bg-color, var(--warning-color));
         --btn-bd-color: var(--btn-warning-bd-color, var(--warning-color));
@@ -40,7 +42,9 @@ export const BsButtonWarningCss = css`
         );
     }
 
-    :host([context="warning"][outline]) {
+    bs-button[context="warning"][outline],
+    bs-button-link[context="warning"][outline],
+    bs-button-input[context="warning"][outline] {
         --btn-text-color: var(
             --btn-outline-warning-text-color,
             var(--warning-color)

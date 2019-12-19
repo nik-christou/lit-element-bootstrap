@@ -5,7 +5,9 @@ export const BsButtonInfoCss = css`
         --info-color: var(--info, #17a2b8);
     }
 
-    :host([context="info"]:not([outline])) {
+    bs-button[context="info"]:not([outline]),
+    bs-button-link[context="info"]:not([outline]),
+    bs-button-input[context="info"]:not([outline]) {
         --btn-text-color: var(--btn-info-text-color, #fff);
         --btn-bg-color: var(--btn-info-bg-color, var(--info-color));
         --btn-bd-color: var(--btn-info-bd-color, var(--info-color));
@@ -40,7 +42,9 @@ export const BsButtonInfoCss = css`
         );
     }
 
-    :host([context="info"][outline]) {
+    bs-button[context="info"][outline],
+    bs-button-link[context="info"][outline],
+    bs-button-input[context="info"][outline] {
         --btn-text-color: var(
             --btn-outline-info-text-color,
             var(--info-color)

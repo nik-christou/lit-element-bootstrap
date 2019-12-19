@@ -5,7 +5,9 @@ export const BsButtonSecondaryCss = css`
         --secondary-color: var(--secondary, #6c757d);
     }
 
-    :host([context="secondary"]:not([outline])) {
+    bs-button[context="secondary"]:not([outline]),
+    bs-button-link[context="secondary"]:not([outline]),
+    bs-button-input[context="secondary"]:not([outline]) {
         --btn-text-color: var(--btn-secondary-text-color, #fff);
         --btn-bg-color: var(--btn-secondary-bg-color, var(--secondary-color));
         --btn-bd-color: var(--btn-secondary-bd-color, var(--secondary-color));
@@ -41,7 +43,9 @@ export const BsButtonSecondaryCss = css`
         );
     }
 
-    :host([context="secondary"][outline]) {
+    bs-button[context="secondary"][outline],
+    bs-button-link[context="secondary"][outline],
+    bs-button-input[context="secondary"][outline] {
         --btn-text-color: var(
             --btn-outline-secondary-text-color,
             var(--secondary-color)
