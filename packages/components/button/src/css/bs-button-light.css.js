@@ -49,14 +49,8 @@ export const BsButtonLightCss = css`
             --btn-outline-light-text-color,
             var(--light-color)
         );
-        --btn-bg-color: var(
-            --btn-outline-light-bg-color,
-            transparent
-        );
-        --btn-bd-color: var(
-            --btn-outline-light-bd-color,
-            var(--light-color)
-        );
+        --btn-bg-color: var(--btn-outline-light-bg-color, transparent);
+        --btn-bd-color: var(--btn-outline-light-bd-color, var(--light-color));
         --btn-text-color-hover: var(
             --btn-outline-light-text-color-hover,
             #212529

@@ -21,10 +21,7 @@ export const BsButtonDangerCss = css`
             --btn-danger-box-shadow-focus,
             0 0 0 0.2rem rgba(220, 53, 69, 0.5)
         );
-        --btn-text-color-disabled: var(
-            --btn-danger-text-color-disabled,
-            #fff
-        );
+        --btn-text-color-disabled: var(--btn-danger-text-color-disabled, #fff);
         --btn-bg-color-disabled: var(
             --btn-danger-bg-color-disabled,
             var(--danger-color)
@@ -49,14 +46,8 @@ export const BsButtonDangerCss = css`
             --btn-outline-danger-text-color,
             var(--danger-color)
         );
-        --btn-bg-color: var(
-            --btn-outline-danger-bg-color,
-            transparent
-        );
-        --btn-bd-color: var(
-            --btn-outline-danger-bd-color,
-            var(--danger-color)
-        );
+        --btn-bg-color: var(--btn-outline-danger-bg-color, transparent);
+        --btn-bd-color: var(--btn-outline-danger-bd-color, var(--danger-color));
         --btn-text-color-hover: var(
             --btn-outline-danger-text-color-hover,
             #fff

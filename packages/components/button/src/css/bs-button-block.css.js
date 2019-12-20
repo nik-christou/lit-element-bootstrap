@@ -1,7 +1,6 @@
 import { css } from "lit-element";
 
 export const BsButtonBlockCss = css`
-
     bs-button[block],
     bs-button-link[block],
     bs-button-input[block] {

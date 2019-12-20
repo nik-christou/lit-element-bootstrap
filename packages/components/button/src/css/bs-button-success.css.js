@@ -21,10 +21,7 @@ export const BsButtonSuccessCss = css`
             --btn-success-box-shadow-focus,
             0 0 0 0.2rem rgba(40, 167, 69, 0.5)
         );
-        --btn-text-color-disabled: var(
-            --btn-success-text-color-disabled,
-            #fff
-        );
+        --btn-text-color-disabled: var(--btn-success-text-color-disabled, #fff);
         --btn-bg-color-disabled: var(
             --btn-success-bg-color-disabled,
             var(--success-color)
@@ -49,10 +46,7 @@ export const BsButtonSuccessCss = css`
             --btn-outline-success-text-color,
             var(--success-color)
         );
-        --btn-bg-color: var(
-            --btn-outline-success-bg-color,
-            transparent
-        );
+        --btn-bg-color: var(--btn-outline-success-bg-color, transparent);
         --btn-bd-color: var(
             --btn-outline-success-bd-color,
             var(--success-color)

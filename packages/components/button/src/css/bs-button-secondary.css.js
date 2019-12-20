@@ -50,10 +50,7 @@ export const BsButtonSecondaryCss = css`
             --btn-outline-secondary-text-color,
             var(--secondary-color)
         );
-        --btn-bg-color: var(
-            --btn-outline-secondary-bg-color,
-            transparent
-        );
+        --btn-bg-color: var(--btn-outline-secondary-bg-color, transparent);
         --btn-bd-color: var(
             --btn-outline-secondary-bd-color,
             var(--secondary-color)

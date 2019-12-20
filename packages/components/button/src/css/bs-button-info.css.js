@@ -21,10 +21,7 @@ export const BsButtonInfoCss = css`
             --btn-info-box-shadow-focus,
             0 0 0 0.2rem rgba(23, 162, 184, 0.5)
         );
-        --btn-text-color-disabled: var(
-            --btn-info-text-color-disabled,
-            #fff
-        );
+        --btn-text-color-disabled: var(--btn-info-text-color-disabled, #fff);
         --btn-bg-color-disabled: var(
             --btn-info-bg-color-disabled,
             var(--info-color)
@@ -45,22 +42,10 @@ export const BsButtonInfoCss = css`
     bs-button[context="info"][outline],
     bs-button-link[context="info"][outline],
     bs-button-input[context="info"][outline] {
-        --btn-text-color: var(
-            --btn-outline-info-text-color,
-            var(--info-color)
-        );
-        --btn-bg-color: var(
-            --btn-outline-info-bg-color,
-            transparent
-        );
-        --btn-bd-color: var(
-            --btn-outline-info-bd-color,
-            var(--info-color)
-        );
-        --btn-text-color-hover: var(
-            --btn-outline-info-text-color-hover,
-            #fff
-        );
+        --btn-text-color: var(--btn-outline-info-text-color, var(--info-color));
+        --btn-bg-color: var(--btn-outline-info-bg-color, transparent);
+        --btn-bd-color: var(--btn-outline-info-bd-color, var(--info-color));
+        --btn-text-color-hover: var(--btn-outline-info-text-color-hover, #fff);
         --btn-bg-color-hover: var(
             --btn-outline-info-bg-color-hover,
             var(--info-color)

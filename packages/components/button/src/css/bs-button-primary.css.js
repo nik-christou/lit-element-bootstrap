@@ -21,10 +21,7 @@ export const BsButtonPrimaryCss = css`
             --btn-primary-box-shadow-focus,
             0 0 0 0.2rem rgba(38, 143, 255, 0.5)
         );
-        --btn-text-color-disabled: var(
-            --btn-primary-text-color-disabled,
-            #fff
-        );
+        --btn-text-color-disabled: var(--btn-primary-text-color-disabled, #fff);
         --btn-bg-color-disabled: var(
             --btn-primary-bg-color-disabled,
             var(--primary-color)
@@ -49,10 +46,7 @@ export const BsButtonPrimaryCss = css`
             --btn-outline-primary-text-color,
             var(--primary-color)
         );
-        --btn-bg-color: var(
-            --btn-outline-primary-bg-color,
-            transparent
-        );
+        --btn-bg-color: var(--btn-outline-primary-bg-color, transparent);
         --btn-bd-color: var(
             --btn-outline-primary-bd-color,
             var(--primary-color)

@@ -49,10 +49,7 @@ export const BsButtonWarningCss = css`
             --btn-outline-warning-text-color,
             var(--warning-color)
         );
-        --btn-bg-color: var(
-            --btn-outline-warning-bg-color,
-            transparent
-        );
+        --btn-bg-color: var(--btn-outline-warning-bg-color, transparent);
         --btn-bd-color: var(
             --btn-outline-warning-bd-color,
             var(--warning-color)

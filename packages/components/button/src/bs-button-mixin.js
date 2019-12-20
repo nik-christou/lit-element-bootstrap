@@ -103,7 +103,6 @@ export const BsButtonMixin = superclass =>
      * @mixin
      */
     class extends superclass {
-
         static get properties() {
             return {
                 toggle: {
@@ -127,10 +126,7 @@ export const BsButtonMixin = superclass =>
         }
 
         static get styles() {
-            return [
-                BsButtonRebootCss,
-                BsButtonCommonCss
-            ];
+            return [BsButtonRebootCss, BsButtonCommonCss];
         }
 
         constructor(...args) {
@@ -146,7 +142,6 @@ export const BsButtonMixin = superclass =>
          * @param {Map} _updatedProperties
          */
         firstUpdated(_updatedProperties) {
-
             const buttonElement = this.shadowRoot.querySelector(".btn");
 
             buttonElement.addEventListener("click", event =>
@@ -161,12 +156,11 @@ export const BsButtonMixin = superclass =>
          * @param {Map} _changedProperties
          */
         updated(_changedProperties) {
-
-            if(_changedProperties.has("active")) {
+            if (_changedProperties.has("active")) {
                 this._toggleAriaPressedState();
             }
 
-            if(_changedProperties.has("disabled")) {
+            if (_changedProperties.has("disabled")) {
                 this._toggleAriaDisabledState();
             }
         }
@@ -196,8 +190,7 @@ export const BsButtonMixin = superclass =>
         }
 
         _toggleAriaDisabledState() {
-
-            if(this.disabled) {
+            if (this.disabled) {
                 this.setAttribute("tabindex", "-1");
                 this.setAttribute("aria-disabled", "true");
             } else {
@@ -207,8 +200,7 @@ export const BsButtonMixin = superclass =>
         }
 
         _toggleAriaPressedState() {
-
-            if(this.active) {
+            if (this.active) {
                 this.setAttribute("aria-pressed", "true");
             } else {
                 this.removeAttribute("aria-pressed");
@@ -216,13 +208,11 @@ export const BsButtonMixin = superclass =>
         }
 
         async _handleFocusOut() {
-
             if (this.disabled) {
                 return;
             }
 
             if (this.active && this.dropdownToggle) {
-
                 this.active = !this.active;
                 await this.updateComplete;
             }
@@ -230,28 +220,18 @@ export const BsButtonMixin = superclass =>
             this._fireFocusOutEvent();
         }
 
-        // _isClickEventAllowed() {
-        //     return true;
-        // }
-
         /**
          * @param {MouseEvent} event
          */
         async _handleButtonClick(event) {
-
             if (this.disabled) {
                 return;
             }
-
-            // if(!this._isClickEventAllowed()) {
-            //     event.preventDefault();
-            // }
 
             const buttonElement = this.shadowRoot.querySelector(".btn");
             buttonElement.focus();
 
             if (this.toggle || this.dropdownToggle) {
-
                 this.active = !this.active;
                 await this.updateComplete;
             }
@@ -260,7 +240,6 @@ export const BsButtonMixin = superclass =>
         }
 
         _fireFocusOutEvent() {
-
             const btnFocusOutEvent = new CustomEvent("bs-button-focusout", {
                 bubbles: true,
                 composed: true
@@ -270,7 +249,6 @@ export const BsButtonMixin = superclass =>
         }
 
         _fireButtonClickEvent() {
-
             const btnClickedEvent = new CustomEvent("bs-button-click", {
                 bubbles: true,
                 composed: true,

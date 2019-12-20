@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit-element";
-import { BsButtonMixin } from './bs-button-mixin.js';
+import { BsButtonMixin } from "./bs-button-mixin.js";
 import { classMap } from "lit-html/directives/class-map.js";
 
 /**
@@ -102,7 +102,6 @@ import { classMap } from "lit-html/directives/class-map.js";
  * @cssproperty --btn-z-index-active - button active z-index
  */
 export class BsButtonLink extends BsButtonMixin(LitElement) {
-
     static get properties() {
         return {
             ...super.properties,
@@ -123,7 +122,8 @@ export class BsButtonLink extends BsButtonMixin(LitElement) {
                 class="btn ${classMap({
                     active: this.active,
                     disabled: this.disabled
-                })}">
+                })}"
+            >
                 <slot></slot>
             </a>
         `;
@@ -139,7 +139,6 @@ export class BsButtonLink extends BsButtonMixin(LitElement) {
      * @param {Map} _updatedProperties
      */
     firstUpdated(_updatedProperties) {
-
         super.firstUpdated(_updatedProperties);
 
         this.addEventListener("click", event =>
@@ -148,8 +147,7 @@ export class BsButtonLink extends BsButtonMixin(LitElement) {
     }
 
     _handleButtonLinkClick(event) {
-
-        if(!this.href) {
+        if (!this.href) {
             event.preventDefault();
         }
     }
