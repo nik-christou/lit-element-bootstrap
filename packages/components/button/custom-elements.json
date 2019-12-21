@@ -1,0 +1,1514 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "bs-button",
+      "description": "Button component",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "The button label - default: ''",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "active",
+          "description": "Indicates whether or not the button is in active state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "description": "Indicates whether or not the button is in toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "description": "Indicates whether or not the button is in disabled state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "outline",
+          "description": "Indicates whether or not the button is in outline mode"
+        },
+        {
+          "name": "context",
+          "description": "Indicates the styling context to use",
+          "type": "primary|secondary|success|info|warning|danger|light|dark|link"
+        }
+      ],
+      "properties": [
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "The button label - default: ''",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "description": "Indicates whether or not the button is in active state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "attribute": "toggle",
+          "description": "Indicates whether or not the button is in toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Indicates whether or not the button is in disabled state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdownToggle",
+          "attribute": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "bs-button-click",
+          "description": "Gets fired when button has been clicked on"
+        },
+        {
+          "name": "bs-button-focusout",
+          "description": "Gets fired when button loses focus"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--btn-text-color",
+          "description": "button text color"
+        },
+        {
+          "name": "--btn-bg-color",
+          "description": "button background color"
+        },
+        {
+          "name": "--btn-bd-width",
+          "description": "button border width - default: 1px"
+        },
+        {
+          "name": "--btn-bd-style",
+          "description": "button border style - default: solid"
+        },
+        {
+          "name": "--btn-bd-color",
+          "description": "button border color - default: transparent"
+        },
+        {
+          "name": "--btn-bd-top-left-radius",
+          "description": "button border top left radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-top-right-radius",
+          "description": "button border top right radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-right-radius",
+          "description": "button border bottom right radius - defaut: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-left-radius",
+          "description": "button border bottom left radius - default 0.25rem"
+        },
+        {
+          "name": "--btn-display",
+          "description": "button display - default: inline-block"
+        },
+        {
+          "name": "--btn-font-weight",
+          "description": "button font weight - default: 400"
+        },
+        {
+          "name": "--btn-text-align",
+          "description": "button text align - default: center"
+        },
+        {
+          "name": "--btn-white-space",
+          "description": "button white space - default: nowrap"
+        },
+        {
+          "name": "--btn-vertical-align",
+          "description": "button vertical align - default: middle"
+        },
+        {
+          "name": "--btn-width",
+          "description": "button width"
+        },
+        {
+          "name": "--btn-height",
+          "description": "button height"
+        },
+        {
+          "name": "--btn-flex",
+          "description": "button flex"
+        },
+        {
+          "name": "--btn-pd-top",
+          "description": "button padding top - default 0.375rem"
+        },
+        {
+          "name": "--btn-pd-bottom",
+          "description": "button padding bottom - default: 0.375rem"
+        },
+        {
+          "name": "--btn-pd-left",
+          "description": "button padding left - default: 0.75rem"
+        },
+        {
+          "name": "--btn-pd-right",
+          "description": "button padding right - default: 0.75rem"
+        },
+        {
+          "name": "--btn-font-size",
+          "description": "button font size - default: 1rem"
+        },
+        {
+          "name": "--btn-line-height",
+          "description": "button line height - default: 1.5"
+        },
+        {
+          "name": "--btn-position",
+          "description": "button position"
+        },
+        {
+          "name": "--btn-mg-top",
+          "description": "button margin top"
+        },
+        {
+          "name": "--btn-mg-right",
+          "description": "button margin right"
+        },
+        {
+          "name": "--btn-mg-left",
+          "description": "button margin left"
+        },
+        {
+          "name": "--btn-mg-bottom",
+          "description": "button margin bottom"
+        },
+        {
+          "name": "--btn-display-after",
+          "description": "button ::after display"
+        },
+        {
+          "name": "--btn-width-after",
+          "description": "button ::after width"
+        },
+        {
+          "name": "--btn-height-after",
+          "description": "button ::after height"
+        },
+        {
+          "name": "--btn-margin-left-after",
+          "description": "button ::after margin left"
+        },
+        {
+          "name": "--btn-vertical-align-after",
+          "description": "button ::after vertical align"
+        },
+        {
+          "name": "--btn-content-after",
+          "description": "button ::after content"
+        },
+        {
+          "name": "--btn-border-top-after",
+          "description": "button ::after border top"
+        },
+        {
+          "name": "--btn-border-right-after",
+          "description": "button ::after border right after"
+        },
+        {
+          "name": "--btn-border-bottom-after",
+          "description": "button ::after border bottom"
+        },
+        {
+          "name": "--btn-border-left-after",
+          "description": "button ::after border left"
+        },
+        {
+          "name": "--btn-margin-left-empty",
+          "description": "after button ::after:empty margin left"
+        },
+        {
+          "name": "--btn-display-before",
+          "description": "button ::before display"
+        },
+        {
+          "name": "--btn-width-before",
+          "description": "button ::before width"
+        },
+        {
+          "name": "--btn-height-before",
+          "description": "button ::before height"
+        },
+        {
+          "name": "--btn-margin-left-before",
+          "description": "button ::before margin left"
+        },
+        {
+          "name": "--btn-vertical-align-before",
+          "description": "button ::before vertical align"
+        },
+        {
+          "name": "--btn-content-before",
+          "description": "button ::before content"
+        },
+        {
+          "name": "--btn-border-top-before",
+          "description": "button ::before border top"
+        },
+        {
+          "name": "--btn-border-right-before",
+          "description": "button ::before border right"
+        },
+        {
+          "name": "--btn-border-bottom-before",
+          "description": "button ::before border bottom"
+        },
+        {
+          "name": "--btn-border-left-before",
+          "description": "button ::before border left"
+        },
+        {
+          "name": "--btn-text-color-hover",
+          "description": "button hover text color - default: #212529"
+        },
+        {
+          "name": "--btn-text-decoration-hover",
+          "description": "button hover text decoration - default: none"
+        },
+        {
+          "name": "--btn-z-index-hover",
+          "description": "button hover z-index"
+        },
+        {
+          "name": "--btn-bd-color-hover",
+          "description": "button hover border color"
+        },
+        {
+          "name": "--btn-box-shadow-hover",
+          "description": "button hover box shadow"
+        },
+        {
+          "name": "--btn-bg-color-hover",
+          "description": "button hover background color"
+        },
+        {
+          "name": "--btn-box-shadow-focus",
+          "description": "button focus box-shadow - default: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)"
+        },
+        {
+          "name": "--btn-text-color-focus",
+          "description": "button focus text color"
+        },
+        {
+          "name": "--btn-z-index-focus",
+          "description": "button focus z-index"
+        },
+        {
+          "name": "--btn-bg-color-focus",
+          "description": "button focus background color"
+        },
+        {
+          "name": "--btn-bd-color-focus",
+          "description": "button focus border color"
+        },
+        {
+          "name": "--btn-text-color-disabled",
+          "description": "button disabled text color"
+        },
+        {
+          "name": "--btn-bg-color-disabled",
+          "description": "button disabled background color"
+        },
+        {
+          "name": "--btn-bd-color-disabled",
+          "description": "button disabled border color"
+        },
+        {
+          "name": "--btn-opacity-disabled",
+          "description": "button disabled opacity - default: 0.65"
+        },
+        {
+          "name": "--btn-pointer-events-disabled",
+          "description": "button disabled pointer-events - default: none"
+        },
+        {
+          "name": "--btn-text-color-active",
+          "description": "button active text color"
+        },
+        {
+          "name": "--btn-bg-color-active",
+          "description": "button active background color"
+        },
+        {
+          "name": "--btn-bd-color-active",
+          "description": "button active border color"
+        },
+        {
+          "name": "--btn-box-shadow-active-focus",
+          "description": "button active focus box-shadow"
+        },
+        {
+          "name": "--btn-z-index-active",
+          "description": "button active z-index"
+        }
+      ]
+    },
+    {
+      "name": "bs-button-input",
+      "description": "Button component",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "The button label - default: ''",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "active",
+          "description": "Indicates whether or not the button is in active state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "description": "Indicates whether or not the button is in toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "description": "Indicates whether or not the button is in disabled state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "outline",
+          "description": "Indicates whether or not the button is in outline mode"
+        },
+        {
+          "name": "context",
+          "description": "Indicates the styling context to use",
+          "type": "primary|secondary|success|info|warning|danger|light|dark|link"
+        }
+      ],
+      "properties": [
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "The button label - default: ''",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "description": "Indicates whether or not the button is in active state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "attribute": "toggle",
+          "description": "Indicates whether or not the button is in toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Indicates whether or not the button is in disabled state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdownToggle",
+          "attribute": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "bs-button-click",
+          "description": "Gets fired when button has been clicked on"
+        },
+        {
+          "name": "bs-button-focusout",
+          "description": "Gets fired when button loses focus"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--btn-text-color",
+          "description": "button text color"
+        },
+        {
+          "name": "--btn-bg-color",
+          "description": "button background color"
+        },
+        {
+          "name": "--btn-bd-width",
+          "description": "button border width - default: 1px"
+        },
+        {
+          "name": "--btn-bd-style",
+          "description": "button border style - default: solid"
+        },
+        {
+          "name": "--btn-bd-color",
+          "description": "button border color - default: transparent"
+        },
+        {
+          "name": "--btn-bd-top-left-radius",
+          "description": "button border top left radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-top-right-radius",
+          "description": "button border top right radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-right-radius",
+          "description": "button border bottom right radius - defaut: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-left-radius",
+          "description": "button border bottom left radius - default 0.25rem"
+        },
+        {
+          "name": "--btn-display",
+          "description": "button display - default: inline-block"
+        },
+        {
+          "name": "--btn-font-weight",
+          "description": "button font weight - default: 400"
+        },
+        {
+          "name": "--btn-text-align",
+          "description": "button text align - default: center"
+        },
+        {
+          "name": "--btn-white-space",
+          "description": "button white space - default: nowrap"
+        },
+        {
+          "name": "--btn-vertical-align",
+          "description": "button vertical align - default: middle"
+        },
+        {
+          "name": "--btn-width",
+          "description": "button width"
+        },
+        {
+          "name": "--btn-height",
+          "description": "button height"
+        },
+        {
+          "name": "--btn-flex",
+          "description": "button flex"
+        },
+        {
+          "name": "--btn-pd-top",
+          "description": "button padding top - default 0.375rem"
+        },
+        {
+          "name": "--btn-pd-bottom",
+          "description": "button padding bottom - default: 0.375rem"
+        },
+        {
+          "name": "--btn-pd-left",
+          "description": "button padding left - default: 0.75rem"
+        },
+        {
+          "name": "--btn-pd-right",
+          "description": "button padding right - default: 0.75rem"
+        },
+        {
+          "name": "--btn-font-size",
+          "description": "button font size - default: 1rem"
+        },
+        {
+          "name": "--btn-line-height",
+          "description": "button line height - default: 1.5"
+        },
+        {
+          "name": "--btn-position",
+          "description": "button position"
+        },
+        {
+          "name": "--btn-mg-top",
+          "description": "button margin top"
+        },
+        {
+          "name": "--btn-mg-right",
+          "description": "button margin right"
+        },
+        {
+          "name": "--btn-mg-left",
+          "description": "button margin left"
+        },
+        {
+          "name": "--btn-mg-bottom",
+          "description": "button margin bottom"
+        },
+        {
+          "name": "--btn-display-after",
+          "description": "button ::after display"
+        },
+        {
+          "name": "--btn-width-after",
+          "description": "button ::after width"
+        },
+        {
+          "name": "--btn-height-after",
+          "description": "button ::after height"
+        },
+        {
+          "name": "--btn-margin-left-after",
+          "description": "button ::after margin left"
+        },
+        {
+          "name": "--btn-vertical-align-after",
+          "description": "button ::after vertical align"
+        },
+        {
+          "name": "--btn-content-after",
+          "description": "button ::after content"
+        },
+        {
+          "name": "--btn-border-top-after",
+          "description": "button ::after border top"
+        },
+        {
+          "name": "--btn-border-right-after",
+          "description": "button ::after border right after"
+        },
+        {
+          "name": "--btn-border-bottom-after",
+          "description": "button ::after border bottom"
+        },
+        {
+          "name": "--btn-border-left-after",
+          "description": "button ::after border left"
+        },
+        {
+          "name": "--btn-margin-left-empty",
+          "description": "after button ::after:empty margin left"
+        },
+        {
+          "name": "--btn-display-before",
+          "description": "button ::before display"
+        },
+        {
+          "name": "--btn-width-before",
+          "description": "button ::before width"
+        },
+        {
+          "name": "--btn-height-before",
+          "description": "button ::before height"
+        },
+        {
+          "name": "--btn-margin-left-before",
+          "description": "button ::before margin left"
+        },
+        {
+          "name": "--btn-vertical-align-before",
+          "description": "button ::before vertical align"
+        },
+        {
+          "name": "--btn-content-before",
+          "description": "button ::before content"
+        },
+        {
+          "name": "--btn-border-top-before",
+          "description": "button ::before border top"
+        },
+        {
+          "name": "--btn-border-right-before",
+          "description": "button ::before border right"
+        },
+        {
+          "name": "--btn-border-bottom-before",
+          "description": "button ::before border bottom"
+        },
+        {
+          "name": "--btn-border-left-before",
+          "description": "button ::before border left"
+        },
+        {
+          "name": "--btn-text-color-hover",
+          "description": "button hover text color - default: #212529"
+        },
+        {
+          "name": "--btn-text-decoration-hover",
+          "description": "button hover text decoration - default: none"
+        },
+        {
+          "name": "--btn-z-index-hover",
+          "description": "button hover z-index"
+        },
+        {
+          "name": "--btn-bd-color-hover",
+          "description": "button hover border color"
+        },
+        {
+          "name": "--btn-box-shadow-hover",
+          "description": "button hover box shadow"
+        },
+        {
+          "name": "--btn-bg-color-hover",
+          "description": "button hover background color"
+        },
+        {
+          "name": "--btn-box-shadow-focus",
+          "description": "button focus box-shadow - default: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)"
+        },
+        {
+          "name": "--btn-text-color-focus",
+          "description": "button focus text color"
+        },
+        {
+          "name": "--btn-z-index-focus",
+          "description": "button focus z-index"
+        },
+        {
+          "name": "--btn-bg-color-focus",
+          "description": "button focus background color"
+        },
+        {
+          "name": "--btn-bd-color-focus",
+          "description": "button focus border color"
+        },
+        {
+          "name": "--btn-text-color-disabled",
+          "description": "button disabled text color"
+        },
+        {
+          "name": "--btn-bg-color-disabled",
+          "description": "button disabled background color"
+        },
+        {
+          "name": "--btn-bd-color-disabled",
+          "description": "button disabled border color"
+        },
+        {
+          "name": "--btn-opacity-disabled",
+          "description": "button disabled opacity - default: 0.65"
+        },
+        {
+          "name": "--btn-pointer-events-disabled",
+          "description": "button disabled pointer-events - default: none"
+        },
+        {
+          "name": "--btn-text-color-active",
+          "description": "button active text color"
+        },
+        {
+          "name": "--btn-bg-color-active",
+          "description": "button active background color"
+        },
+        {
+          "name": "--btn-bd-color-active",
+          "description": "button active border color"
+        },
+        {
+          "name": "--btn-box-shadow-active-focus",
+          "description": "button active focus box-shadow"
+        },
+        {
+          "name": "--btn-z-index-active",
+          "description": "button active z-index"
+        }
+      ]
+    },
+    {
+      "name": "bs-button-link",
+      "description": "Button link component",
+      "attributes": [
+        {
+          "name": "href",
+          "description": "The link reference - default: ''",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "target",
+          "description": "The link target - default: _self",
+          "type": "String",
+          "default": "\"_self\""
+        },
+        {
+          "name": "active",
+          "description": "Indicates whether or not the button is in active state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "description": "Indicates whether or not the button is in toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "description": "Indicates whether or not the button is in disabled state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "outline",
+          "description": "Indicates whether or not the button is in outline mode"
+        },
+        {
+          "name": "context",
+          "description": "Indicates the styling context to use",
+          "type": "primary|secondary|success|info|warning|danger|light|dark|link"
+        }
+      ],
+      "properties": [
+        {
+          "name": "href",
+          "attribute": "href",
+          "description": "The link reference - default: ''",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "target",
+          "attribute": "target",
+          "description": "The link target - default: _self",
+          "type": "String",
+          "default": "\"_self\""
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "description": "Indicates whether or not the button is in active state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "attribute": "toggle",
+          "description": "Indicates whether or not the button is in toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Indicates whether or not the button is in disabled state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdownToggle",
+          "attribute": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state - default: false",
+          "type": "Boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "bs-button-click",
+          "description": "Gets fired when button has been clicked on"
+        },
+        {
+          "name": "bs-button-focusout",
+          "description": "Gets fired when button loses focus"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--btn-text-color",
+          "description": "button text color"
+        },
+        {
+          "name": "--btn-bg-color",
+          "description": "button background color"
+        },
+        {
+          "name": "--btn-bd-width",
+          "description": "button border width - default: 1px"
+        },
+        {
+          "name": "--btn-bd-style",
+          "description": "button border style - default: solid"
+        },
+        {
+          "name": "--btn-bd-color",
+          "description": "button border color - default: transparent"
+        },
+        {
+          "name": "--btn-bd-top-left-radius",
+          "description": "button border top left radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-top-right-radius",
+          "description": "button border top right radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-right-radius",
+          "description": "button border bottom right radius - defaut: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-left-radius",
+          "description": "button border bottom left radius - default 0.25rem"
+        },
+        {
+          "name": "--btn-display",
+          "description": "button display - default: inline-block"
+        },
+        {
+          "name": "--btn-font-weight",
+          "description": "button font weight - default: 400"
+        },
+        {
+          "name": "--btn-text-align",
+          "description": "button text align - default: center"
+        },
+        {
+          "name": "--btn-white-space",
+          "description": "button white space - default: nowrap"
+        },
+        {
+          "name": "--btn-vertical-align",
+          "description": "button vertical align - default: middle"
+        },
+        {
+          "name": "--btn-width",
+          "description": "button width"
+        },
+        {
+          "name": "--btn-height",
+          "description": "button height"
+        },
+        {
+          "name": "--btn-flex",
+          "description": "button flex"
+        },
+        {
+          "name": "--btn-pd-top",
+          "description": "button padding top - default 0.375rem"
+        },
+        {
+          "name": "--btn-pd-bottom",
+          "description": "button padding bottom - default: 0.375rem"
+        },
+        {
+          "name": "--btn-pd-left",
+          "description": "button padding left - default: 0.75rem"
+        },
+        {
+          "name": "--btn-pd-right",
+          "description": "button padding right - default: 0.75rem"
+        },
+        {
+          "name": "--btn-font-size",
+          "description": "button font size - default: 1rem"
+        },
+        {
+          "name": "--btn-line-height",
+          "description": "button line height - default: 1.5"
+        },
+        {
+          "name": "--btn-position",
+          "description": "button position"
+        },
+        {
+          "name": "--btn-mg-top",
+          "description": "button margin top"
+        },
+        {
+          "name": "--btn-mg-right",
+          "description": "button margin right"
+        },
+        {
+          "name": "--btn-mg-left",
+          "description": "button margin left"
+        },
+        {
+          "name": "--btn-mg-bottom",
+          "description": "button margin bottom"
+        },
+        {
+          "name": "--btn-display-after",
+          "description": "button ::after display"
+        },
+        {
+          "name": "--btn-width-after",
+          "description": "button ::after width"
+        },
+        {
+          "name": "--btn-height-after",
+          "description": "button ::after height"
+        },
+        {
+          "name": "--btn-margin-left-after",
+          "description": "button ::after margin left"
+        },
+        {
+          "name": "--btn-vertical-align-after",
+          "description": "button ::after vertical align"
+        },
+        {
+          "name": "--btn-content-after",
+          "description": "button ::after content"
+        },
+        {
+          "name": "--btn-border-top-after",
+          "description": "button ::after border top"
+        },
+        {
+          "name": "--btn-border-right-after",
+          "description": "button ::after border right after"
+        },
+        {
+          "name": "--btn-border-bottom-after",
+          "description": "button ::after border bottom"
+        },
+        {
+          "name": "--btn-border-left-after",
+          "description": "button ::after border left"
+        },
+        {
+          "name": "--btn-margin-left-empty",
+          "description": "after button ::after:empty margin left"
+        },
+        {
+          "name": "--btn-display-before",
+          "description": "button ::before display"
+        },
+        {
+          "name": "--btn-width-before",
+          "description": "button ::before width"
+        },
+        {
+          "name": "--btn-height-before",
+          "description": "button ::before height"
+        },
+        {
+          "name": "--btn-margin-left-before",
+          "description": "button ::before margin left"
+        },
+        {
+          "name": "--btn-vertical-align-before",
+          "description": "button ::before vertical align"
+        },
+        {
+          "name": "--btn-content-before",
+          "description": "button ::before content"
+        },
+        {
+          "name": "--btn-border-top-before",
+          "description": "button ::before border top"
+        },
+        {
+          "name": "--btn-border-right-before",
+          "description": "button ::before border right"
+        },
+        {
+          "name": "--btn-border-bottom-before",
+          "description": "button ::before border bottom"
+        },
+        {
+          "name": "--btn-border-left-before",
+          "description": "button ::before border left"
+        },
+        {
+          "name": "--btn-text-color-hover",
+          "description": "button hover text color - default: #212529"
+        },
+        {
+          "name": "--btn-text-decoration-hover",
+          "description": "button hover text decoration - default: none"
+        },
+        {
+          "name": "--btn-z-index-hover",
+          "description": "button hover z-index"
+        },
+        {
+          "name": "--btn-bd-color-hover",
+          "description": "button hover border color"
+        },
+        {
+          "name": "--btn-box-shadow-hover",
+          "description": "button hover box shadow"
+        },
+        {
+          "name": "--btn-bg-color-hover",
+          "description": "button hover background color"
+        },
+        {
+          "name": "--btn-box-shadow-focus",
+          "description": "button focus box-shadow - default: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)"
+        },
+        {
+          "name": "--btn-text-color-focus",
+          "description": "button focus text color"
+        },
+        {
+          "name": "--btn-z-index-focus",
+          "description": "button focus z-index"
+        },
+        {
+          "name": "--btn-bg-color-focus",
+          "description": "button focus background color"
+        },
+        {
+          "name": "--btn-bd-color-focus",
+          "description": "button focus border color"
+        },
+        {
+          "name": "--btn-text-color-disabled",
+          "description": "button disabled text color"
+        },
+        {
+          "name": "--btn-bg-color-disabled",
+          "description": "button disabled background color"
+        },
+        {
+          "name": "--btn-bd-color-disabled",
+          "description": "button disabled border color"
+        },
+        {
+          "name": "--btn-opacity-disabled",
+          "description": "button disabled opacity - default: 0.65"
+        },
+        {
+          "name": "--btn-pointer-events-disabled",
+          "description": "button disabled pointer-events - default: none"
+        },
+        {
+          "name": "--btn-text-color-active",
+          "description": "button active text color"
+        },
+        {
+          "name": "--btn-bg-color-active",
+          "description": "button active background color"
+        },
+        {
+          "name": "--btn-bd-color-active",
+          "description": "button active border color"
+        },
+        {
+          "name": "--btn-box-shadow-active-focus",
+          "description": "button active focus box-shadow"
+        },
+        {
+          "name": "--btn-z-index-active",
+          "description": "button active z-index"
+        }
+      ]
+    },
+    {
+      "name": "bs-button",
+      "description": "Button component",
+      "attributes": [
+        {
+          "name": "type",
+          "description": "Indicates type of HTMLButtonElement to use. default: 'button'",
+          "type": "String",
+          "default": "\"button\""
+        },
+        {
+          "name": "active",
+          "description": "Indicates whether or not the button is in active state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "description": "Indicates whether or not the button is in toggle state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "description": "Indicates whether or not the button is in disabled state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "outline",
+          "description": "Indicates whether or not the button is in outline mode"
+        },
+        {
+          "name": "context",
+          "description": "Indicates the styling context to use",
+          "type": "primary|secondary|success|info|warning|danger|light|dark|link"
+        }
+      ],
+      "properties": [
+        {
+          "name": "type",
+          "attribute": "type",
+          "description": "Indicates type of HTMLButtonElement to use. default: 'button'",
+          "type": "String",
+          "default": "\"button\""
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "description": "Indicates whether or not the button is in active state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggle",
+          "attribute": "toggle",
+          "description": "Indicates whether or not the button is in toggle state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Indicates whether or not the button is in disabled state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "dropdownToggle",
+          "attribute": "dropdown-toggle",
+          "description": "Indicates whether or not the button is in dropdown toggle state. default: false",
+          "type": "Boolean",
+          "default": "false"
+        }
+      ],
+      "events": [
+        {
+          "name": "bs-button-click",
+          "description": "Gets fired when button has been clicked on"
+        },
+        {
+          "name": "bs-button-focusout",
+          "description": "Gets fired when button loses focus"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--btn-text-color",
+          "description": "button text color"
+        },
+        {
+          "name": "--btn-bg-color",
+          "description": "button background color"
+        },
+        {
+          "name": "--btn-bd-width",
+          "description": "button border width - default: 1px"
+        },
+        {
+          "name": "--btn-bd-style",
+          "description": "button border style - default: solid"
+        },
+        {
+          "name": "--btn-bd-color",
+          "description": "button border color - default: transparent"
+        },
+        {
+          "name": "--btn-bd-top-left-radius",
+          "description": "button border top left radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-top-right-radius",
+          "description": "button border top right radius - default: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-right-radius",
+          "description": "button border bottom right radius - defaut: 0.25rem"
+        },
+        {
+          "name": "--btn-bd-bottom-left-radius",
+          "description": "button border bottom left radius - default 0.25rem"
+        },
+        {
+          "name": "--btn-display",
+          "description": "button display - default: inline-block"
+        },
+        {
+          "name": "--btn-font-weight",
+          "description": "button font weight - default: 400"
+        },
+        {
+          "name": "--btn-text-align",
+          "description": "button text align - default: center"
+        },
+        {
+          "name": "--btn-white-space",
+          "description": "button white space - default: nowrap"
+        },
+        {
+          "name": "--btn-vertical-align",
+          "description": "button vertical align - default: middle"
+        },
+        {
+          "name": "--btn-width",
+          "description": "button width"
+        },
+        {
+          "name": "--btn-height",
+          "description": "button height"
+        },
+        {
+          "name": "--btn-flex",
+          "description": "button flex"
+        },
+        {
+          "name": "--btn-pd-top",
+          "description": "button padding top - default 0.375rem"
+        },
+        {
+          "name": "--btn-pd-bottom",
+          "description": "button padding bottom - default: 0.375rem"
+        },
+        {
+          "name": "--btn-pd-left",
+          "description": "button padding left - default: 0.75rem"
+        },
+        {
+          "name": "--btn-pd-right",
+          "description": "button padding right - default: 0.75rem"
+        },
+        {
+          "name": "--btn-font-size",
+          "description": "button font size - default: 1rem"
+        },
+        {
+          "name": "--btn-line-height",
+          "description": "button line height - default: 1.5"
+        },
+        {
+          "name": "--btn-position",
+          "description": "button position"
+        },
+        {
+          "name": "--btn-mg-top",
+          "description": "button margin top"
+        },
+        {
+          "name": "--btn-mg-right",
+          "description": "button margin right"
+        },
+        {
+          "name": "--btn-mg-left",
+          "description": "button margin left"
+        },
+        {
+          "name": "--btn-mg-bottom",
+          "description": "button margin bottom"
+        },
+        {
+          "name": "--btn-display-after",
+          "description": "button ::after display"
+        },
+        {
+          "name": "--btn-width-after",
+          "description": "button ::after width"
+        },
+        {
+          "name": "--btn-height-after",
+          "description": "button ::after height"
+        },
+        {
+          "name": "--btn-margin-left-after",
+          "description": "button ::after margin left"
+        },
+        {
+          "name": "--btn-vertical-align-after",
+          "description": "button ::after vertical align"
+        },
+        {
+          "name": "--btn-content-after",
+          "description": "button ::after content"
+        },
+        {
+          "name": "--btn-border-top-after",
+          "description": "button ::after border top"
+        },
+        {
+          "name": "--btn-border-right-after",
+          "description": "button ::after border right after"
+        },
+        {
+          "name": "--btn-border-bottom-after",
+          "description": "button ::after border bottom"
+        },
+        {
+          "name": "--btn-border-left-after",
+          "description": "button ::after border left"
+        },
+        {
+          "name": "--btn-margin-left-empty",
+          "description": "after button ::after:empty margin left"
+        },
+        {
+          "name": "--btn-display-before",
+          "description": "button ::before display"
+        },
+        {
+          "name": "--btn-width-before",
+          "description": "button ::before width"
+        },
+        {
+          "name": "--btn-height-before",
+          "description": "button ::before height"
+        },
+        {
+          "name": "--btn-margin-left-before",
+          "description": "button ::before margin left"
+        },
+        {
+          "name": "--btn-vertical-align-before",
+          "description": "button ::before vertical align"
+        },
+        {
+          "name": "--btn-content-before",
+          "description": "button ::before content"
+        },
+        {
+          "name": "--btn-border-top-before",
+          "description": "button ::before border top"
+        },
+        {
+          "name": "--btn-border-right-before",
+          "description": "button ::before border right"
+        },
+        {
+          "name": "--btn-border-bottom-before",
+          "description": "button ::before border bottom"
+        },
+        {
+          "name": "--btn-border-left-before",
+          "description": "button ::before border left"
+        },
+        {
+          "name": "--btn-text-color-hover",
+          "description": "button hover text color - default: #212529"
+        },
+        {
+          "name": "--btn-text-decoration-hover",
+          "description": "button hover text decoration - default: none"
+        },
+        {
+          "name": "--btn-z-index-hover",
+          "description": "button hover z-index"
+        },
+        {
+          "name": "--btn-bd-color-hover",
+          "description": "button hover border color"
+        },
+        {
+          "name": "--btn-box-shadow-hover",
+          "description": "button hover box shadow"
+        },
+        {
+          "name": "--btn-bg-color-hover",
+          "description": "button hover background color"
+        },
+        {
+          "name": "--btn-box-shadow-focus",
+          "description": "button focus box-shadow - default: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)"
+        },
+        {
+          "name": "--btn-text-color-focus",
+          "description": "button focus text color"
+        },
+        {
+          "name": "--btn-z-index-focus",
+          "description": "button focus z-index"
+        },
+        {
+          "name": "--btn-bg-color-focus",
+          "description": "button focus background color"
+        },
+        {
+          "name": "--btn-bd-color-focus",
+          "description": "button focus border color"
+        },
+        {
+          "name": "--btn-text-color-disabled",
+          "description": "button disabled text color"
+        },
+        {
+          "name": "--btn-bg-color-disabled",
+          "description": "button disabled background color"
+        },
+        {
+          "name": "--btn-bd-color-disabled",
+          "description": "button disabled border color"
+        },
+        {
+          "name": "--btn-opacity-disabled",
+          "description": "button disabled opacity - default: 0.65"
+        },
+        {
+          "name": "--btn-pointer-events-disabled",
+          "description": "button disabled pointer-events - default: none"
+        },
+        {
+          "name": "--btn-text-color-active",
+          "description": "button active text color"
+        },
+        {
+          "name": "--btn-bg-color-active",
+          "description": "button active background color"
+        },
+        {
+          "name": "--btn-bd-color-active",
+          "description": "button active border color"
+        },
+        {
+          "name": "--btn-box-shadow-active-focus",
+          "description": "button active focus box-shadow"
+        },
+        {
+          "name": "--btn-z-index-active",
+          "description": "button active z-index"
+        }
+      ]
+    }
+  ]
+}
