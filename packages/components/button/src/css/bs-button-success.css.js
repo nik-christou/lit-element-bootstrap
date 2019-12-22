@@ -3,7 +3,7 @@ import { css } from "lit-element";
 export const BsButtonSuccessCss = css`
     bs-button,
     bs-button-link,
-    bs-button-input  {
+    bs-button-input {
         --success-color: var(--success, #28a745);
     }
 

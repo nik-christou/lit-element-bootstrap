@@ -3,7 +3,7 @@ import { css } from "lit-element";
 export const BsButtonDarkCss = css`
     bs-button,
     bs-button-link,
-    bs-button-input  {
+    bs-button-input {
         --dark-color: var(--dark, #343a40);
     }
 

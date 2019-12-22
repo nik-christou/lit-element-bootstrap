@@ -3,7 +3,7 @@ import { css } from "lit-element";
 export const BsButtonInfoCss = css`
     bs-button,
     bs-button-link,
-    bs-button-input  {
+    bs-button-input {
         --info-color: var(--info, #17a2b8);
     }
 

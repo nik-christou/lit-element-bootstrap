@@ -3,7 +3,7 @@ import { css } from "lit-element";
 export const BsButtonSecondaryCss = css`
     bs-button,
     bs-button-link,
-    bs-button-input  {
+    bs-button-input {
         --secondary-color: var(--secondary, #6c757d);
     }
 

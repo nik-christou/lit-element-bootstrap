@@ -3,7 +3,7 @@ import { css } from "lit-element";
 export const BsButtonLightCss = css`
     bs-button,
     bs-button-link,
-    bs-button-input  {
+    bs-button-input {
         --light-color: var(--light, #f8f9fa);
     }
 

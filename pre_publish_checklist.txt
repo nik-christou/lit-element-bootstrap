@@ -72,7 +72,7 @@ Definition of done (before publishing)
 Pre-publish preparation
 =======================
 
-- Run pika build command
+- Run "yarn run pika:build" command
 - Inside the generated pkg folder:
 	- Rename dist-web -> unpkg
 	- Extract all files from dist-src to ./pkg and remove dist-src

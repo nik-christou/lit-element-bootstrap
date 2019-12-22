@@ -3,7 +3,7 @@ import { css } from "lit-element";
 export const BsButtonWarningCss = css`
     bs-button,
     bs-button-link,
-    bs-button-input  {
+    bs-button-input {
         --warning-color: var(--warning, #ffc107);
     }
 
