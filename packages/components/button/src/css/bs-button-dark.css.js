@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonDarkCss = css`
-    :host {
+    bs-button,
+    bs-button-link,
+    bs-button-input  {
         --dark-color: var(--dark, #343a40);
     }
 

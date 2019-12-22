@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonLightCss = css`
-    :host {
+    bs-button,
+    bs-button-link,
+    bs-button-input  {
         --light-color: var(--light, #f8f9fa);
     }
 

@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonSecondaryCss = css`
-    :host {
+    bs-button,
+    bs-button-link,
+    bs-button-input  {
         --secondary-color: var(--secondary, #6c757d);
     }
 

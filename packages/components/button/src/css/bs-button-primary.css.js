@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonPrimaryCss = css`
-    :host {
+    bs-button,
+    bs-button-link,
+    bs-button-input {
         --primary-color: var(--primary, #007bff);
     }
 

@@ -18,7 +18,7 @@ export const BsButtonLinkCss = css`
 
         --btn-text-color-disabled: var(--btn-link-text-color-disabled, #6c757d);
         --btn-pointer-events-disabled: var(
-            btn-link-pointer-events-disabled,
+            --btn-link-pointer-events-disabled,
             none
         );
 

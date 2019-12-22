@@ -9,7 +9,7 @@ export const BsButtonSizeCss = css`
         --btn-pd-left: var(--bs-btn-small-left-pd, 0.5rem);
         --btn-pd-right: var(--bs-btn-small-right-pd, 0.5rem);
         --btn-font-size: var(--bs-btn-small-font-size, 0.875rem);
-        --btn-line-height: var(--bs-btn-small-line-height: 1.5);
+        --btn-line-height: var(--bs-btn-small-line-height, 1.5);
         --btn-bd-top-left-radius: var(
             --bs-btn-small-bd-top-left-radius,
             0.2rem
@@ -36,7 +36,7 @@ export const BsButtonSizeCss = css`
         --btn-pd-left: var(--bs-btn-large-left-pd, 1rem);
         --btn-pd-right: var(--bs-btn-large-right-pd, 1rem);
         --btn-font-size: var(--bs-btn-large-font-size, 1.25rem);
-        --btn-line-height: var(--bs-btn-large-line-height: 1.5);
+        --btn-line-height: var(--bs-btn-large-line-height, 1.5);
         --btn-bd-top-left-radius: var(
             --bs-btn-large-bd-top-left-radius,
             0.3rem

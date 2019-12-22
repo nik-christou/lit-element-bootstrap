@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonSuccessCss = css`
-    :host {
+    bs-button,
+    bs-button-link,
+    bs-button-input  {
         --success-color: var(--success, #28a745);
     }
 

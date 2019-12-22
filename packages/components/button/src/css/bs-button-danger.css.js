@@ -1,7 +1,9 @@
 import { css } from "lit-element";
 
 export const BsButtonDangerCss = css`
-    :host {
+    bs-button,
+    bs-button-link,
+    bs-button-input  {
         --danger-color: var(--danger, #dc3545);
     }
 
