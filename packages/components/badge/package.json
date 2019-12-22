@@ -4,7 +4,6 @@
   "description": "Bootstrap v4.3.1 badge components in LitElement",
   "main": "src/index.js",
   "module": "src/index.js",
-  "type": "module",
   "author": "Nikolas Christou",
   "homepage": "https://github.com/nik-christou/lit-element-bootstrap",
   "repository": {

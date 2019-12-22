@@ -1,43 +1,100 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonWarningCss = css`
-    
-    :host([warning]) .btn {
-        color: var(--btn-text-color, #212529);
-        background-color: var(--btn-bg-color, var(--warning));
-        border-color: var(--btn-border-color, var(--warning));
+    bs-button,
+    bs-button-link,
+    bs-button-input {
+        --warning-color: var(--warning, #ffc107);
     }
 
-    :host([warning]) .btn:hover {
-        color: var(--btn-hover-text-color, #212529);
-        background-color: var(--btn-hover-bg-color, #e0a800);
-        border-color: var(--btn-hover-border-color, #d39e00);
+    bs-button[context="warning"]:not([outline]),
+    bs-button-link[context="warning"]:not([outline]),
+    bs-button-input[context="warning"]:not([outline]) {
+        --btn-text-color: var(--btn-warning-text-color, #212529);
+        --btn-bg-color: var(--btn-warning-bg-color, var(--warning-color));
+        --btn-bd-color: var(--btn-warning-bd-color, var(--warning-color));
+        --btn-text-color-hover: var(--btn-warning-text-color-hover, #212529);
+        --btn-bg-color-hover: var(--btn-warning-bg-color-hover, #e0a800);
+        --btn-bd-color-hover: var(--btn-warning-bd-color-hover, #d39e00);
+        --btn-bd-color-focus: var(--btn-warning-bd-color-focus, #d39e00);
+        --btn-bg-color-focus: var(--btn-warning-bg-color-focus, #e0a800);
+        --btn-text-color-focus: var(--btn-warning-text-color-focus, #fff);
+        --btn-box-shadow-focus: var(
+            --btn-warning-box-shadow-focus,
+            0 0 0 0.2rem rgba(255, 193, 7, 0.5)
+        );
+        --btn-text-color-disabled: var(
+            --btn-warning-text-color-disabled,
+            #212529
+        );
+        --btn-bg-color-disabled: var(
+            --btn-warning-bg-color-disabled,
+            var(--warning-color)
+        );
+        --btn-bd-color-disabled: var(
+            --btn-warning-bd-color-disabled,
+            var(--warning-color)
+        );
+        --btn-text-color-active: var(--btn-warning-text-color-active, #212529);
+        --btn-bg-color-active: var(--btn-warning-bg-color-active, #d39e00);
+        --btn-bd-color-active: var(--btn-warning-bd-color-active, #c69500);
+        --btn-box-shadow-active-focus: var(
+            --btn-warning-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(255, 193, 7, 0.5)
+        );
     }
 
-    :host([warning]) .btn:focus, 
-    :host([warning]) .btn.focus {
-        box-shadow: var(--btn-focus-shadow, 0 0 0 0.2rem rgba(255, 193, 7, 0.5));
-    }
-
-    :host([warning]) .btn.disabled, 
-    :host([warning]) .btn:disabled {
-        color: var(--btn-disabled-text-color, #212529);
-        background-color: var(--btn-disabled-bg-color, var(--warning));
-        border-color: var(--btn-disabled-border-color, var(--warning));
-    }
-
-    :host([warning]) .btn:not(:disabled):not(.disabled):active, 
-    :host([warning]) .btn:not(:disabled):not(.disabled).active,
-    :host([warning][dropdown-toggle][dropdown-show]) .btn {
-        color: var(--btn-toggle-text-color, #212529);
-        background-color: var(--btn-toggle-bg-color, #d39e00);
-        border-color: var(--btn-toggle-border-color, #c69500);
-    }
-
-    :host([warning]) .btn:not(:disabled):not(.disabled):active:focus, 
-    :host([warning]) .btn:not(:disabled):not(.disabled).active:focus,
-    :host([warning][dropdown-toggle][dropdown-show]) .btn:focus {
-        box-shadow: var(--btn-toggle-focus-shadow, 0 0 0 0.2rem rgba(255, 193, 7, 0.5));
+    bs-button[context="warning"][outline],
+    bs-button-link[context="warning"][outline],
+    bs-button-input[context="warning"][outline] {
+        --btn-text-color: var(
+            --btn-outline-warning-text-color,
+            var(--warning-color)
+        );
+        --btn-bg-color: var(--btn-outline-warning-bg-color, transparent);
+        --btn-bd-color: var(
+            --btn-outline-warning-bd-color,
+            var(--warning-color)
+        );
+        --btn-text-color-hover: var(
+            --btn-outline-warning-text-color-hover,
+            #212529
+        );
+        --btn-bg-color-hover: var(
+            --btn-outline-warning-bg-color-hover,
+            var(--warning-color)
+        );
+        --btn-bd-color-hover: var(
+            --btn-outline-warning-bd-color-hover,
+            var(--warning-color)
+        );
+        --btn-box-shadow-focus: var(
+            --btn-outline-warning-box-shadow-focus,
+            0 0 0 0.2rem rgba(255, 193, 7, 0.5)
+        );
+        --btn-text-color-disabled: var(
+            --btn-outline-warning-text-color-disabled,
+            var(--warning-color)
+        );
+        --btn-bg-color-disabled: var(
+            --btn-outline-warning-bg-color-disabled,
+            #transparent
+        );
+        --btn-text-color-active: var(
+            --btn-outline-warning-text-color-active,
+            #212529
+        );
+        --btn-bg-color-active: var(
+            --btn-outline-warning-bg-color-active,
+            var(--warning-color)
+        );
+        --btn-bd-color-active: var(
+            --btn-outline-warning-bd-color-active,
+            var(--warning-color)
+        );
+        --btn-box-shadow-active-focus: var(
+            --btn-outline-warning-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(255, 193, 7, 0.5)
+        );
     }
 `;

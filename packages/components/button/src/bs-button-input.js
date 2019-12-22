@@ -1,22 +1,25 @@
-import { BsButtonRebootCss } from "./css/bs-button-reboot.js";
-import { BsButtonCommonCss } from "./css/bs-button-common.css.js";
+import { LitElement, html } from "lit-element";
+import { BsButtonMixin } from "./bs-button-mixin.js";
+import { classMap } from "lit-html/directives/class-map.js";
 
 /**
- * ButtonMixin
+ * Button component
  *
- * @mixin BsButtonMixin
+ * @element bs-button
  *
- * @param {*} superclass the class to mix into
- * @exports BsButtonMixin
+ * @mixes BsButtonMixin
+ * @exports BsButton
  *
+ * @attribute label - The button label
  * @attribute toggle - Indicates whether or not the button is in toggle state
  * @attribute active - Indicates whether or not the button is in active state
  * @attribute disabled - Indicates whether or not the button is in disable state
  * @attribute dropdown-toggle - Indicates whether or not the button is in dropdown toggle state
  * @attribute outline - Indicates whether or not the button is in outline mode
- * @attribute {primary|secondary|success|info|warning|danger|light|dark|link}  context -
+ * @attribute {primary|secondary|success|info|warning|danger|light|dark|link} context -
  * Indicates the styling context to use
  *
+ * @property {String} label - The button label - default: ''
  * @property {Boolean} toggle - Indicates whether or not the button is in toggle state - default: false
  * @property {Boolean} active - Indicates whether or not the button is in active state - default: false
  * @property {Boolean} disabled - Indicates whether or not the button is in disabled state - default: false
@@ -96,169 +99,32 @@ import { BsButtonCommonCss } from "./css/bs-button-common.css.js";
  * @cssproperty --btn-box-shadow-active-focus - button active focus box-shadow
  * @cssproperty --btn-z-index-active - button active z-index
  */
-export const BsButtonMixin = superclass =>
-    /**
-     * Class mixin for button elements
-     *
-     * @mixin
-     */
-    class extends superclass {
-        static get properties() {
-            return {
-                toggle: {
-                    type: Boolean,
-                    reflect: true
-                },
-                active: {
-                    type: Boolean,
-                    reflect: true
-                },
-                disabled: {
-                    type: Boolean,
-                    reflect: true
-                },
-                dropdownToggle: {
-                    type: Boolean,
-                    reflect: true,
-                    attribute: "dropdown-toggle"
-                }
-            };
-        }
-
-        static get styles() {
-            return [BsButtonRebootCss, BsButtonCommonCss];
-        }
-
-        constructor(...args) {
-            super(...args);
-            this.active = false;
-            this.toggle = false;
-            this.disabled = false;
-            this.dropdownToggle = false;
-            this._addAriaRole();
-        }
-
-        /**
-         * @param {Map} _updatedProperties
-         */
-        firstUpdated(_updatedProperties) {
-            const buttonElement = this.shadowRoot.querySelector(".btn");
-
-            buttonElement.addEventListener("click", event =>
-                this._handleButtonClick(event)
-            );
-            buttonElement.addEventListener("focusout", _ =>
-                this._handleFocusOut()
-            );
-        }
-
-        /**
-         * @param {Map} _changedProperties
-         */
-        updated(_changedProperties) {
-            if (_changedProperties.has("active")) {
-                this._toggleAriaPressedState();
+export class BsButtonInput extends BsButtonMixin(LitElement) {
+    static get properties() {
+        return {
+            ...super.properties,
+            label: {
+                type: String
             }
+        };
+    }
 
-            if (_changedProperties.has("disabled")) {
-                this._toggleAriaDisabledState();
-            }
-        }
+    render() {
+        return html`
+            <input
+                type="button"
+                value="${this.label}"
+                ?disabled="${this.disabled}"
+                class="btn ${classMap({ active: this.active })}"
+            />
+        `;
+    }
 
-        async activate() {
-            this.active = true;
-            await this.updateComplete;
-        }
+    constructor() {
+        super();
+        this.label = "";
+    }
+}
 
-        async deactivate() {
-            this.active = false;
-            await this.updateComplete;
-        }
-
-        async disable() {
-            this.disabled = true;
-            await this.updateComplete;
-        }
-
-        async enable() {
-            this.disabled = false;
-            await this.updateComplete;
-        }
-
-        _addAriaRole() {
-            this.setAttribute("role", "button");
-        }
-
-        _toggleAriaDisabledState() {
-            if (this.disabled) {
-                this.setAttribute("tabindex", "-1");
-                this.setAttribute("aria-disabled", "true");
-            } else {
-                this.removeAttribute("tabindex");
-                this.removeAttribute("aria-disabled");
-            }
-        }
-
-        _toggleAriaPressedState() {
-            if (this.active) {
-                this.setAttribute("aria-pressed", "true");
-            } else {
-                this.removeAttribute("aria-pressed");
-            }
-        }
-
-        async _handleFocusOut() {
-            if (this.disabled) {
-                return;
-            }
-
-            if (this.active && this.dropdownToggle) {
-                this.active = !this.active;
-                await this.updateComplete;
-            }
-
-            this._fireFocusOutEvent();
-        }
-
-        /**
-         * @param {MouseEvent} event
-         */
-        async _handleButtonClick(event) {
-            if (this.disabled) {
-                return;
-            }
-
-            const buttonElement = this.shadowRoot.querySelector(".btn");
-            buttonElement.focus();
-
-            if (this.toggle || this.dropdownToggle) {
-                this.active = !this.active;
-                await this.updateComplete;
-            }
-
-            this._fireButtonClickEvent();
-        }
-
-        _fireFocusOutEvent() {
-            const btnFocusOutEvent = new CustomEvent("bs-button-focusout", {
-                bubbles: true,
-                composed: true
-            });
-
-            this.dispatchEvent(btnFocusOutEvent);
-        }
-
-        _fireButtonClickEvent() {
-            const btnClickedEvent = new CustomEvent("bs-button-click", {
-                bubbles: true,
-                composed: true,
-                detail: {
-                    active: this.active,
-                    toggle: this.toggle,
-                    dropdown: this.dropdownToggle
-                }
-            });
-
-            this.dispatchEvent(btnClickedEvent);
-        }
-    };
+if (!window.customElements.get("bs-button-input"))
+    window.customElements.define("bs-button-input", BsButtonInput);

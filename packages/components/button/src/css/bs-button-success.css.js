@@ -1,43 +1,97 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonSuccessCss = css`
-
-    :host([success]) .btn {
-        color: var(--btn-text-color, #fff);
-        background-color: var(--btn-bg-color, var(--success));
-        border-color: var(--btn-border-color, var(--success));
+    bs-button,
+    bs-button-link,
+    bs-button-input {
+        --success-color: var(--success, #28a745);
     }
 
-    :host([success]) .btn:hover {
-        color: var(--btn-hover-text-color, #fff);
-        background-color: var(--btn-hover-bg-color, #218838);
-        border-color: var(--btn-hover-border-color, #1e7e34);
+    bs-button[context="success"]:not([outline]),
+    bs-button-link[context="success"]:not([outline]),
+    bs-button-input[context="success"]:not([outline]) {
+        --btn-text-color: var(--btn-success-text-color, #fff);
+        --btn-bg-color: var(--btn-success-bg-color, var(--success-color));
+        --btn-bd-color: var(--btn-success-bd-color, var(--success-color));
+        --btn-text-color-hover: var(--btn-success-text-color-hover, #fff);
+        --btn-bg-color-hover: var(--btn-success-bg-color-hover, #218838);
+        --btn-bd-color-hover: var(--btn-success-bd-color-hover, #1e7e34);
+        --btn-bd-color-focus: var(--btn-success-bd-color-focus, #1e7e34);
+        --btn-bg-color-focus: var(--btn-success-bg-color-focus, #218838);
+        --btn-text-color-focus: var(--btn-success-text-color-focus, #fff);
+        --btn-box-shadow-focus: var(
+            --btn-success-box-shadow-focus,
+            0 0 0 0.2rem rgba(40, 167, 69, 0.5)
+        );
+        --btn-text-color-disabled: var(--btn-success-text-color-disabled, #fff);
+        --btn-bg-color-disabled: var(
+            --btn-success-bg-color-disabled,
+            var(--success-color)
+        );
+        --btn-bd-color-disabled: var(
+            --btn-success-bd-color-disabled,
+            var(--success-color)
+        );
+        --btn-text-color-active: var(--btn-success-text-color-active, #fff);
+        --btn-bg-color-active: var(--btn-success-bg-color-active, #1e7e34);
+        --btn-bd-color-active: var(--btn-success-bd-color-active, #1c7430);
+        --btn-box-shadow-active-focus: var(
+            --btn-success-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(40, 167, 69, 0.5)
+        );
     }
 
-    :host([success]) .btn:focus, 
-    :host([success]) .btn.focus {
-        box-shadow: var(--btn-focus-shadow, 0 0 0 0.2rem rgba(40, 167, 69, 0.5));
-    }
-
-    :host([success]) .btn.disabled, 
-    :host([success]) .btn:disabled {
-        color: var(--btn-disabled-text-color, #fff);
-        background-color: var(--btn-disabled-bg-color, var(--success));
-        border-color: var(--btn-disabled-border-color, var(--success));
-    }
-
-    :host([success]) .btn:not(:disabled):not(.disabled):active, 
-    :host([success]) .btn:not(:disabled):not(.disabled).active,
-    :host([success][dropdown-toggle][dropdown-show]) .btn {
-        color: var(--btn-toggle-text-color, #fff);
-        background-color: var(--btn-toggle-bg-color, #1e7e34);
-        border-color: var(--btn-toggle-border-color, #1c7430);
-    }
-
-    :host([success]) .btn:not(:disabled):not(.disabled):active:focus, 
-    :host([success]) .btn:not(:disabled):not(.disabled).active:focus,
-    :host([success][dropdown-toggle][dropdown-show]) .btn:focus {
-        box-shadow: var(--btn-toggle-focus-shadow, 0 0 0 0.2rem rgba(40, 167, 69, 0.5));
+    bs-button[context="success"][outline],
+    bs-button-link[context="success"][outline],
+    bs-button-input[context="success"][outline] {
+        --btn-text-color: var(
+            --btn-outline-success-text-color,
+            var(--success-color)
+        );
+        --btn-bg-color: var(--btn-outline-success-bg-color, transparent);
+        --btn-bd-color: var(
+            --btn-outline-success-bd-color,
+            var(--success-color)
+        );
+        --btn-text-color-hover: var(
+            --btn-outline-success-text-color-hover,
+            #fff
+        );
+        --btn-bg-color-hover: var(
+            --btn-outline-success-bg-color-hover,
+            var(--success-color)
+        );
+        --btn-bd-color-hover: var(
+            --btn-outline-success-bd-color-hover,
+            var(--success-color)
+        );
+        --btn-box-shadow-focus: var(
+            --btn-outline-success-box-shadow-focus,
+            0 0 0 0.2rem rgba(40, 167, 69, 0.5)
+        );
+        --btn-text-color-disabled: var(
+            --btn-outline-success-text-color-disabled,
+            var(--success-color)
+        );
+        --btn-bg-color-disabled: var(
+            --btn-outline-success-bg-color-disabled,
+            #transparent
+        );
+        --btn-text-color-active: var(
+            --btn-outline-success-text-color-active,
+            #fff
+        );
+        --btn-bg-color-active: var(
+            --btn-outline-success-bg-color-active,
+            var(--success-color)
+        );
+        --btn-bd-color-active: var(
+            --btn-outline-success-bd-color-active,
+            var(--success-color)
+        );
+        --btn-box-shadow-active-focus: var(
+            --btn-outline-success-box-shadow-active-focus,
+            0 0 0 0.2rem rgba(40, 167, 69, 0.5)
+        );
     }
 `;

@@ -1,17 +1,16 @@
-
-import { css } from 'lit-element';
+import { css } from "lit-element";
 
 export const BsButtonBlockCss = css`
-    
-    :host([block]) {
+    bs-button[block],
+    bs-button-link[block],
+    bs-button-input[block] {
         display: block;
-    }
-    
-    :host([block]) .btn {
-        width: 100%;
+        --btn-width: 100%;
     }
 
-    :host([block]:not(:first-child)) .btn {
+    bs-button[block]:not(:first-child),
+    bs-button-link[block]:not(:first-child),
+    bs-button-input[block]:not(:first-child) {
         margin-top: 0.5rem;
     }
 `;
