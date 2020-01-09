@@ -1,0 +1,26 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "bs-button-group",
+      "attributes": [
+        {
+          "name": "direction",
+          "type": "string",
+          "default": "\"horizontal\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "direction",
+          "attribute": "direction",
+          "type": "string",
+          "default": "\"horizontal\""
+        }
+      ]
+    },
+    {
+      "name": "bs-button-toolbar"
+    }
+  ]
+}

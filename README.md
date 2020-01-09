@@ -16,7 +16,7 @@ Package | Version |
 [@lit-element-bootstrap/badge](https://www.npmjs.com/package/@lit-element-bootstrap/badge) | 1.0.0 |
 [@lit-element-bootstrap/breadcrumb](https://www.npmjs.com/package/@lit-element-bootstrap/breadcrumb) | 1.0.1 |
 [@lit-element-bootstrap/button](https://www.npmjs.com/package/@lit-element-bootstrap/button) | 1.0.0 |
-[@lit-element-bootstrap/button-group](https://www.npmjs.com/package/@lit-element-bootstrap/button-group) | 1.0.0-alpha.2 |
+[@lit-element-bootstrap/button-group](https://www.npmjs.com/package/@lit-element-bootstrap/button-group) | 1.0.0 |
 [@lit-element-bootstrap/card](https://www.npmjs.com/package/@lit-element-bootstrap/card) | 1.0.0-alpha.2 |
 [@lit-element-bootstrap/carousel](https://www.npmjs.com/package/@lit-element-bootstrap/carousel) | 1.0.0-alpha.2 |
 [@lit-element-bootstrap/dropdown](https://www.npmjs.com/package/@lit-element-bootstrap/dropdown) | 1.0.0-alpha.4 |
