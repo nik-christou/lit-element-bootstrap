@@ -67,6 +67,9 @@ export class BsDropdown extends LitElement {
     _configurePopper(dropdownButtonElement, dropdownMenuElement) {
         
         const dropdDownMenuPlacement = dropdownMenuElement.getAttribute('x-placement');
+        if (!dropdDownMenuPlacement) {
+            return;
+        }
         const referenceElement = this._findReferenceElement(dropdownButtonElement);
 
         const config = this._createPopperConfig(dropdDownMenuPlacement);
