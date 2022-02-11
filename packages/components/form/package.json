@@ -41,7 +41,7 @@
     "@pika/plugin-standard-pkg": "^0.7.1",
     "es-dev-server": "^1.23.1",
     "deepmerge": "^4.2.2",
-    "karma": "^4.4.1",
+    "karma": "^6.3.14",
     "sinon": "^7.5.0"
   },
   "@pika/pack": {
