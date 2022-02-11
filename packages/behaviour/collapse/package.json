@@ -34,7 +34,7 @@
     "@open-wc/karma-esm": "^2.7.1",
     "@open-wc/testing-karma": "^3.1.38",
     "deepmerge": "^4.1.1",
-    "karma": "^4.3.0",
+    "karma": "^6.3.14",
     "sinon": "^7.5.0",
     "lit-analyzer": "^1.1.8"
   },
