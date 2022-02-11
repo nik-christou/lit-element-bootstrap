@@ -43,7 +43,7 @@
     "chai": "^4.2.0",
     "es-dev-server": "^1.23.1",
     "eslint": "^6.6.0",
-    "karma": "^4.4.1",
+    "karma": "^6.3.14",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage-istanbul-reporter": "^2.1.0",
